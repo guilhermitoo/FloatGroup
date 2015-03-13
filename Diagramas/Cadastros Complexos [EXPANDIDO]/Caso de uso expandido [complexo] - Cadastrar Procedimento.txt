@@ -1,0 +1,43 @@
+Caso de uso expandido (complexo): Cadastrar procedimentos:
+
+Cenário principal:
+
+Ator						Sistema
+
+1. O dentista solicita uma relação de procedimentos
+na tela de atendimento selecionando a opção 'Incluir 
+Procedimento'.
+						2. O sistema fornece uma lista com os procedimentos 
+						     cadastrados.
+3. O dentista seleciona o procedimento desejado 
+selecionando a opção 'Incluir Procedimento'.
+						4. O sistema armazena o procedimento selecionado e 
+						     o inclui no atendimento do paciente.
+5. O dentista inclui outro procedimento voltando ao
+passo 1 ou finaliza a inclusão no atendimento do pa-
+ciente selecionando a opção 'Finalizar Inclusão'.
+						6. O sistema sai da tela de inclusão de procedimentos
+						     e retorna para a tela de atendimento.
+
+
+
+
+
+Cenários alternativos:
+
+Ator						Sistema
+
+3. O dentista seleciona a opção 'Incluir Procedimento' 
+sem selecionar algum procedimento.
+						3.1 O sistema emite a mensagem "Nenhum procedimento
+						       selecionado".
+5. O dentista seleciona a opção 'Finalizar Inclusão' 
+sem ter selecionado algum procedimento.
+						5.1 O sistema emite a mensagem "Sair sem incluir proce-
+						       dimento?" com as alternativas "Sim" e "Não".
+5.1.1 O dentista seleciona a opção "Sim"
+						5.1.1.1 O sistema sai da tela de inclusão de procedimentos
+						       e retorna para a tela de atendimento.
+5.1.2 O dentista seleciona a opção "Não".
+						5.1.2.1 O sistema permanece na tela de inclusão de proce-
+						       dimentos.

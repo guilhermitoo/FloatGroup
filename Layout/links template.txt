@@ -1,0 +1,15 @@
+Templates Exemplos
+
+http://binarycart.com/bclivedemos/01-05-2014/v1/bs-binary-admin/index.html
+
+http://www.prepbootstrap.com/bootstrap-theme/dark-admin/preview/index.html
+
+http://www.blacktie.co/demo/dashgumfree/
+
+Exemplo para tela de login
+
+http://bootstraptaste.com/theme/siimple/
+
+(considere apenas o topo do site para login) http://htmlcoder.me/preview/worthy/v.1.0/
+
+http://www.bootply.com/render/101009

@@ -1,0 +1,12 @@
+Métodos
+
+Classe Login
+
+Salvar  |
+Editar  | - padrão de todas as classes
+Deletar |
+
+
+Métodos específicos
+ 
+

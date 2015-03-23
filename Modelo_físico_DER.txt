@@ -1,0 +1,125 @@
+create table pessoas
+(
+	id         int         not null primary key identity,
+	nome       varchar(50) not null,
+	cpf        varchar(12) not null unique,
+	rg 	   varchar(12),
+	nascimento varchar(10),
+	sexo       varcahr(10),
+	logradouro varchar(100),
+	telefone   varchar(20), --relacionamento
+	usuario	   int		not null --relacionamento
+	cidade/estado -- relacionamento	
+)
+
+create table usuario
+(
+	id_usuario int         not null primary key identity,
+	logn       varchar(10),
+	senha      varchar(10)
+	pessoa --realcionamento
+)
+
+create table cidade
+(
+	id_cidade int         not null primary key identity, --IBGE ou cidade
+	nome	  varchar(100)
+	pessoa --realcionamento
+)
+
+create table estado
+(
+	id_estado int         not null primary key identity,
+	nome      varchar(2)
+	cidade -- relacionamento
+)
+
+create table paciente
+(
+	status_tratamento varchar(15)
+	pessoa --realcionamento
+)
+
+create table funcionario
+(
+	pessoa --realcionamento
+	-- usuario
+)
+
+create table dentista
+(
+	pessoa --realcionamento
+	cro            int         not null primary key identity,
+)
+
+create table agendamento
+(
+	id_agendamento int         not null primary key identity,
+	data           date,
+	dentista -- relacionamento,
+	paciente -- relacionamento,
+	atendimento --relacionamento
+)
+
+create table convenio
+(
+	int_convenio  int         not null primary key identity,
+	cnpj          varchar(15),
+	razao_social  varchar(100),
+	nome_fantasia varchar(100),
+	ie            varchar(20),
+	logradouro    varchar(100),
+	cidade --relacionamento
+	paciente -- relacionamento
+)
+
+create table atendimento
+(
+	data          date,
+	status        varchar(20),
+	arquivo -- relacionamento
+	agendamento -- relacionamento
+	receita -- relacionamento
+	procedimento --relacionamento
+)
+
+create table arquivo
+(
+	id_arquivo  int         not null primary key identity,
+	descricao   varchar(100),
+	arquivo     varchar(100) ???
+	atendimento --relacionamento
+)
+
+create table procedimento
+(
+	id_procedimento int         not null primary key identity,
+	descricao       varchar(100),
+	valor           decimal(10,2)
+	atendimento --relacionamento
+)
+
+ --n para n atendimento/procedimento
+quantidade varchar(20),
+total      decimal(10,2)
+
+create table receita
+(
+	id_receita int         not null primary key identity,
+	descricao  varchar(100)
+	atendimento -- realacionamento
+)
+
+ -- n para n receita/medicamento
+dose varcahr(50)
+
+create table medicamento
+(
+	id_medicamento     int         not null primary key identity,
+	nome           	   varchar(100),
+	classe_terapeutica varchar(50),
+	tarja              varchar(50),
+	modo_uso           varchar(50),
+	descricao          varchar(100),
+	observacao         varchar(300),
+)

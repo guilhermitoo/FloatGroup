@@ -1,0 +1,32 @@
+Caso de uso expandido (básico): Cadastrar procedimentos:
+
+Cenário Principal:
+
+Ator							Sistema
+
+1. O dentista solicita a inclusão de um novo procedimento
+na relação de procedimentos.
+							2. O sistema fornece um campo para ser incluido o nome do 
+							procedimento a ser inserido.
+3. O dentista digita o nome do procedimento a ser inserido
+e seleciona a opção 'cadastrar'.
+							4. O sistema adiciona o novo procedimento ao rol de procedimentos,
+							e exibe uma mensagem perguntando se o dentista deseja inserir 
+							outro procedimento com as opções 'sim' e 'não'.
+5. O dentista seleciona a opção 'sim'.
+							5.0.1. O sistema fornece novamente o campo para cadastro do novo
+							procedimento.
+5.1. O dentista seleciona a opção 'não'.
+							5.1.1. O sistema retorna à tela que o dentista estava usando antes de
+							iniciar o cadastro de procedimento.
+
+
+
+Cenários alternativos:
+
+Ator							Sistema
+
+3. O dentista seleciona a opção 'salvar' sem ter preenchido
+o campo referente.
+							3.1 O Sistema exibe uma mensagem informando a ausência de 
+							preenchimento do campo que inclui o procedimento.							

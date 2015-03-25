@@ -117,3 +117,26 @@ create table atendimentos
 	dentista_id int not null references dentistas,
 	tratamento_id int not null references tratamentos
 )
+
+create table itensAtendimento
+(
+	atendimento_id int not null references atendimentos,
+	procedimento_id int not null references procedimentos,
+	qtd int not null,
+	primary key(atendimento_id,procedimento_id)
+)
+
+create table receitas
+(
+	id int not null primary key identity,
+	descricao varchar(200),
+	atendimento_id int not null references atendimentos
+)
+
+create table itensReceita
+(
+	receita_id int not null references receitas,
+	procedimento_id int not null references procedimentos,
+	dose varchar(10) not null,
+	obs varchar(100)
+)

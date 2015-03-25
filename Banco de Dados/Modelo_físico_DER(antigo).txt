@@ -1,0 +1,34 @@
+
+
+create table atendimento
+(
+	data          date,
+	status        varchar(20),
+	arquivo -- relacionamento
+	agendamento -- relacionamento
+	receita -- relacionamento
+	procedimento --relacionamento
+)
+
+
+create table procedimento
+(
+	id_procedimento int         not null primary key identity,
+	descricao       varchar(100),
+	valor           decimal(10,2)
+	atendimento --relacionamento
+)
+
+ --n para n atendimento/procedimento
+quantidade varchar(20),
+total      decimal(10,2)
+
+create table receita
+(
+	id_receita int         not null primary key identity,
+	descricao  varchar(100)
+	atendimento -- realacionamento
+)
+
+ -- n para n receita/medicamento
+dose varcahr(50)

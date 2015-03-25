@@ -33,7 +33,7 @@ create table pessoas
 	sexo		char(1),
 	logradouro	varchar(100),
 	usuario		varchar(20),
-	senha		varchar(50),
+	senha		varchar(50),	
 	cidade_id	int			not null	references cidades -- relacionamento	
 )
 
@@ -68,8 +68,7 @@ create table medicamentos
 	nome           	   varchar(100) not null,
 	classe_terapeutica varchar(50),
 	tarja              varchar(50),
-	posologia          varchar(50),
-	observacao         varchar(300)
+	posologia          varchar(50)
 )
 
 create table imagens
@@ -82,8 +81,39 @@ create table imagens
 
 create table avaliacoes
 (
-	id			int		 not null		primary key		identity,
+	id			int		 not null	primary key	identity,
 	data		datetime not null,
 	dentista_id	int		 not null	references dentistas,
 	paciente_id int		 not null	references pacientes
+)
+
+create table tratamentos
+(
+	avaliacao_id int	not null	primary key	references pacientes,
+	status		char(1)	not null,
+	total		decimal(15,2)
+)
+
+create table procedimentos
+(
+	id			int		not null		primary key		identity,
+	descricao	varchar(80)
+)
+
+create table itensTratamento
+(
+	tratamento_id int not null references tratamentos,
+	procedimento_id int not null references procedimentos,
+	qtd int not null,
+	valor decimal(15,2),
+	status char(1) not null,
+	primary key(tratamento_id,procedimento_id)
+)
+
+create table atendimentos
+(
+	id int not null primary key identity,
+	data date not null,
+	dentista_id int not null references dentistas,
+	tratamento_id int not null references tratamentos
 )

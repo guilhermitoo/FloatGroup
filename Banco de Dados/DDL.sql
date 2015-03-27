@@ -18,9 +18,7 @@ create table convenios
 	cnpj			varchar(20) unique,
 	ie				varchar(20),
 	razao_social	varchar(100),
-	nome_fantasia	varchar(100),
-	logradouro		varchar(100),
-	cidade_id		int			not null	references cidades --relacionamento
+	nome_fantasia	varchar(100)
 )
 
 create table pessoas
@@ -33,7 +31,9 @@ create table pessoas
 	sexo		char(1),
 	logradouro	varchar(100),
 	usuario		varchar(20),
-	senha		varchar(50),	
+	senha		varchar(50),
+	status		int,
+	obs		varchar(200),	
 	cidade_id	int			not null	references cidades -- relacionamento	
 )
 
@@ -46,6 +46,8 @@ create table pacientes
 create table funcionarios
 (
 	pessoa_id	int		not null	primary key		references pessoas
+	salario		decimal(15,2),
+	cargo		string
 )
 
 create table dentistas
@@ -58,6 +60,7 @@ create table telefones
 (
 	pessoa_id	int			not null,
 	numero		varchar(20) not null,
+	tipo		string,
 	primary key(pessoa_id,numero)
 )
 
@@ -89,15 +92,15 @@ create table avaliacoes
 
 create table tratamentos
 (
-	avaliacao_id int	not null	primary key	references pacientes,
-	status		char(1)	not null,
-	total		decimal(15,2)
+	avaliacao_id int not null primary key references pacientes,
+	status char(1)	not null,
+	total decimal(15,2)
 )
 
 create table procedimentos
 (
-	id			int		not null		primary key		identity,
-	descricao	varchar(80)
+	id int not null	primary key identity,
+	descricao varchar(80)
 )
 
 create table itensTratamento
@@ -114,6 +117,7 @@ create table atendimentos
 (
 	id int not null primary key identity,
 	data date not null,
+	status int,
 	dentista_id int not null references dentistas,
 	tratamento_id int not null references tratamentos
 )

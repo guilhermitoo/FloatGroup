@@ -70,7 +70,7 @@
                     </li> 
 
                     <li>
-                        <a  href="tab-panel.html"><i class="fa fa-qrcode fa-3x"></i> Relatórios</a>
+                        <a  href="relatorios.html"><i class="fa fa-qrcode fa-3x"></i> Relatórios</a>
                     </li>
                
 <!--                      <li  >
@@ -97,15 +97,58 @@
                     <div class="col-md-12">
                      <h2>AGENDAR</h2>   
                         <h5>agendamento do paciente e não agenda do dentista</h5>
-                       
+                      <hr />        
+                      
+                      <div class="col-md-12">
+                        <div class="panel panel-default">
+                          <div class="table-responsive">          
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Paciente</th>
+                                  <th>Motivo</th>
+                                  <th>Hora</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Claudia</td>
+                                  <td>Avaliação</td>
+                                  <td>10:00</td>
+                                  <td>Concluido</td>
+                                  <td><img src="assets/img/check.png" class="img-responsive" alt="Responsive image"></td>
+                                </tr>
+                                <tr>
+                                  <td>Danilo</td>
+                                  <td>Consulta</td>
+                                  <td>11:00</td>
+                                  <td>Pensente</td>
+                                  <td><img src="assets/img/pendente.png" class="img-responsive" alt="Responsive image"></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                          <label>Data</label>
+                            <input type= "number" min="1" max="30" step="1" />
+                            /
+                            <input type= "number" min="1" max="12" step="1" />
+                            /
+                            <input type= "number" min="1000" max="9999" step="1" />
+                          <label>Hora</label>
+                            <input type= "number" min="00" max="23" step="1" />
+                            :
+                            <input type= "number" min="00" max="59" step="1" />
+                            <button type="submit" class="btn btn-info">Agendar</button>
+
+                            
+                      </div>
+
                     </div>
-                </div>
                  <!-- /. ROW  -->
-                 <hr />
-
-
-                 
-             <!-- /. PAGE INNER  -->
+                </div>
+              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
         </div>

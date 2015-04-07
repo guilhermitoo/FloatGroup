@@ -1,0 +1,5 @@
+H:\Dados\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll
+H:\Dados\Web_Odonto\BackEnd\bin\Debug\BackEnd.pdb
+H:\Dados\Web_Odonto\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+H:\Dados\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
+H:\Dados\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb

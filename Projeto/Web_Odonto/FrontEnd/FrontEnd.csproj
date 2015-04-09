@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agenda.aspx" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\font-awesome.css" />
@@ -182,18 +183,43 @@
     <Content Include="assets\js\morris\morris-0.4.3.min.css" />
     <Content Include="assets\js\morris\morris.js" />
     <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="atendimento.aspx" />
     <Content Include="cidades.aspx" />
+    <Content Include="convenios.aspx" />
     <Content Include="index.aspx" />
     <Content Include="medicamentos.aspx" />
+    <Content Include="procedimentos.aspx" />
+    <Content Include="relatorios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agenda.aspx.cs">
+      <DependentUpon>agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agenda.aspx.designer.cs">
+      <DependentUpon>agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="atendimento.aspx.cs">
+      <DependentUpon>atendimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="atendimento.aspx.designer.cs">
+      <DependentUpon>atendimento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cidades.aspx.cs">
       <DependentUpon>cidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="cidades.aspx.designer.cs">
       <DependentUpon>cidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="convenios.aspx.cs">
+      <DependentUpon>convenios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="convenios.aspx.designer.cs">
+      <DependentUpon>convenios.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -209,7 +235,28 @@
     <Compile Include="medicamentos.aspx.designer.cs">
       <DependentUpon>medicamentos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="procedimentos.aspx.cs">
+      <DependentUpon>procedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="procedimentos.aspx.designer.cs">
+      <DependentUpon>procedimentos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pessoas.aspx.cs">
+      <DependentUpon>pessoas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pessoas.aspx.designer.cs">
+      <DependentUpon>pessoas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios.aspx.cs">
+      <DependentUpon>relatorios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="relatorios.aspx.designer.cs">
+      <DependentUpon>relatorios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web_Odonto.Master.cs">
       <DependentUpon>Web_Odonto.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +282,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="pessoas.aspx" />
     <Content Include="Web_Odonto.Master" />
   </ItemGroup>
   <ItemGroup>

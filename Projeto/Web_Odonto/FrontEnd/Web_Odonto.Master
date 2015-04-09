@@ -20,6 +20,9 @@
         <!-- GOOGLE FONTS-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'
         type='text/css' />
+        <!-- DATEPICKER -->
+        <link href="assets/js/Bootstrap-Datepicker/css/datepicker.css" rel="stylesheet">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
         
     </asp:ContentPlaceHolder>
@@ -60,13 +63,13 @@
                             <a href="#"><i class="fa fa-sitemap fa-3x"></i> Cadastros <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="cadastroPessoa.html">Pessoa</a>
+                                    <a href="pessoas.aspx">Pessoa</a>
                                 </li>
                                 <li>
-                                    <a href="cadastroConvenio.html">Convênio</a>
+                                    <a href="convenios.aspx">Convênio</a>
                                 </li>
                                 <li>
-                                    <a href="cadastroProcedimento.html">Procedimento</a>
+                                    <a href="procedimentos.aspx">Procedimento</a>
                                 </li>
                                 <li>
                                     <a href="medicamentos.aspx">Medicamento</a>
@@ -78,13 +81,13 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="agenda.html"><i class="fa fa-desktop fa-3x"></i> Agenda</a>
+                            <a href="agenda.aspx"><i class="fa fa-desktop fa-3x"></i> Agenda</a>
                         </li>
                         <li>
-                            <a href="atendimento.html"><i class="fa fa-bar-chart-o fa-3x"></i> Atendimento</a>
+                            <a href="atendimento.aspx"><i class="fa fa-bar-chart-o fa-3x"></i> Atendimento</a>
                         </li>
                         <li>
-                            <a href="relatorios.html"><i class="fa fa-qrcode fa-3x"></i> Relatórios</a>
+                            <a href="relatorios.aspx"><i class="fa fa-qrcode fa-3x"></i> Relatórios</a>
                         </li>
                        
                     </ul>
@@ -124,5 +127,38 @@
             <script src="assets/js/custom.js">
                         
             </script>
+        
+            <!-- DATEPICKER -->
+   <script src="assets/js/datepicker/jquery.js">
+
+   </script>
+   
+   <script src="assets/js/datepicker/jquery-ui.js">
+
+   </script>
+
+   <script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">
+
+   </script>
+
+   <script type="text/javascript">
+  
+       <script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">
+
+   </script>
+
+   <script type="text/javascript">
+  
+       $('#datepicker').datepicker({
+           format: "dd/mm/yyyy",
+           language: "pt-BR",
+           calendarWeeks: true,
+           todayHighlight: true
+       }); 
+
+   </script> 
+
+   </script>
+
 </body>
 </html>

@@ -150,7 +150,7 @@ go
 create table itensReceita
 (
 	receita_id int not null references receitas,
-	procedimento_id int not null references procedimentos,
+	medicamento_id int not null references medicamentos,
 	dose varchar(10) not null,
 	obs varchar(100),
 	periodo varchar(50)

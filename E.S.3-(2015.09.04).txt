@@ -1,0 +1,17 @@
+Formato para Caso de Uso Expandido:
+
+TIPO:
+ PRIMÁRIO - Processos mais importantes: ex: sacar, depositar...
+ SECUNDÁRIO - Processos menos importantes: ex: modificar senha.
+
+GRAU DE ABSTRAÇÃO:
+ ESSENCIAL - Descrição do que é necessário para a engenharia de software sem considerar detalhes de como o caso de uso será implementado.
+ REAL - Descrição real do cenário do caso de uso considerando tecnoligia, E/S, interface.
+
+ENTREGA DIA 16/04:
+-Lista de Requisitos (R1, R2, R3) (funcionais e não funcionais)
+-Lista de Funcionalidades (NÃO tem R1, R2...)
+-Diagrama de Casos de Uso
+-Diagrama de Classes
+-Diagrama Entidade e Relacionamento
+-Casos de Uso Expandidos (um para cada caso de uso)

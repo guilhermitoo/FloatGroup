@@ -7,7 +7,7 @@
     <div class="row">
                         <div class="col-md-12">
                             <h2>
-                                CADASTRO MEDICAMENTO
+                                CADASTRO DE CIDADE
                             </h2>
                             <h5>
                                 Faça cadastro de Cidade/Estado
@@ -24,12 +24,17 @@
                                                     <label>
                                                        Cidade
                                                     </label>
-                                                    <input class="form-control" />
+                                                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control" 
+                                                            placeholder="Digite o nome da cidade" ToolTip="Nome da Cidade">
+                                                        </asp:TextBox>
                                                     <br />
                                                     <label>
                                                        Estado
-                                                    </label>
-                                                    <input class="form-control" />
+                                                    </label>     
+                                                        <asp:DropDownList ID="ddUF" runat="server" ToolTip="Selecione o estado">
+                                                            <asp:ListItem>SP</asp:ListItem>
+                                                            <asp:ListItem>MG</asp:ListItem>
+                                                    </asp:DropDownList>
                                                     </div>
                                                 </form>
                                                 </div>
@@ -38,19 +43,15 @@
                                 </div>
                             <!-- Botões -->
                             <div class="col-md-offset-3">
-                                <form role="form">
+                               
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">
-                                            Salvar
-                                        </button>
+                                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
                                         <button type="submit" class="btn btn-success">
-                                            Limpar
-                                        </button>
+                                            Limpar</button>
                                         <button type="submit" class="btn btn-warning">
-                                            Sair
-                                        </button>
+                                            Sair</button>
                                     </div>
-                                </form>
+                           
                             </div>                                                                      
                             </div>
         </div>

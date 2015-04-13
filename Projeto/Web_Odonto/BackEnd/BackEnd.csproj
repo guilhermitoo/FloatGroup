@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Data\CidadeData.cs" />
     <Compile Include="Data\Conexao.cs" />
+    <Compile Include="Data\MedicamentoData.cs" />
     <Compile Include="Entity\Atendimento.cs" />
     <Compile Include="Entity\Avaliacao.cs" />
     <Compile Include="Entity\Cidade.cs" />
@@ -56,13 +57,11 @@
     <Compile Include="Entity\Pessoa.cs" />
     <Compile Include="Entity\Procedimento.cs" />
     <Compile Include="Entity\Receita.cs" />
-    <Compile Include="Entity\Telefone.cs" />
     <Compile Include="Entity\Tratamento.cs" />
+    <Compile Include="Model\CidadeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

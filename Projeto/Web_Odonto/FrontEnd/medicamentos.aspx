@@ -21,30 +21,26 @@
                                         <div class="col-md-6">
                                             <form role="form">
                                                 <div class="form-group">
-                                                    <label>
-                                                        Código do Medicamento
-                                                    </label>
-                                                    <input class="form-control" />
                                                     <br />
                                                     <label>
                                                         Nome do Medicamento
                                                     </label>
-                                                    <input class="form-control" />
+                                                    <input class="form-control" id="txtNome"/>
                                                     <br />
                                                     <label>
                                                         Tarja
                                                     </label>
-                                                    <input class="form-control" />
+                                                    <input class="form-control" id="txtTarja"/>
                                                     <br />
                                                     <label>
                                                         Classe Terapêutica
                                                     </label>
-                                                    <input class="form-control" />
+                                                    <input class="form-control" id="txtClasseTerapeutica"/>
                                                     <br />
                                                     <label for="descricao">
                                                         Posologia:
                                                     </label>
-                                                    <textarea class="form-control" rows="5" id="comment">
+                                                    <textarea class="form-control" rows="5" id="txtPosologia">
                                                     </textarea>
                                                     <br />
                                                     <label for="descricao">
@@ -53,7 +49,7 @@
                                                             Observações:
                                                         </small>
                                                     </label>
-                                                    <textarea class="form-control" rows="5" id="Textarea1">
+                                                    <textarea class="form-control" rows="5" id="txtObs">
                                                     </textarea>
                                                 </div>
                                             </form>
@@ -69,9 +65,9 @@
                             <div class="col-md-offset-3">
                                 <form role="form">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">
-                                            Salvar
-                                        </button>
+                                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" 
+                                            CssClass="btn btn-info" OnClick="btnSalvar_Click" />
+                                        
                                         <button type="submit" class="btn btn-success">
                                             Limpar
                                         </button>

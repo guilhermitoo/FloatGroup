@@ -15,12 +15,12 @@ namespace BackEnd.Data
         public SqlCommand       Cmd { get; set; }
         public SqlDataReader    Dr { get; set; }
 
-        public Conexao(string stringConexao)
+        public Conexao(string sConexao)
         {
             try
             {
                 Cnn = new SqlConnection();
-                Cnn.ConnectionString = stringConexao;
+                Cnn.ConnectionString = sConexao;
                 Cnn.Open();
             }
             catch { 

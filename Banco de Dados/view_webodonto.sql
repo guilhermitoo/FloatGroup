@@ -109,7 +109,7 @@ select * from v_avaliacoes
 
 create view v_tratamentos
 as
-	select a.Código Código,
+	select a.Código,
 		   t.status Status,
 		   t.total  Total
 	from tratamentos t
@@ -153,7 +153,7 @@ select * from v_atendimento
 
 create view v_itensAtendimento
 as
-	select a.[Código Tratamento] 'Código Tratamento',
+	select a.[Código Tratamento],
 		   p.Descrição           'Descrição Procedimento',
 		   ia.qtd
 	from itensAtendimento ia
@@ -175,7 +175,7 @@ select * from receitas
 create view v_itensReceita
 as
 	select r.Código      'Código receita',
-		   m.Medicamento Medicamento,
+		   m.Medicamento,
 		   ir.dose       Dose,
 		   ir.periodo    Período,
 		   ir.obs        Observação

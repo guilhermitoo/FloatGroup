@@ -12,3 +12,10 @@ C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin
 C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
 C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.dll
 C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\FrontEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\FrontEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\BackEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\BackEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.pdb

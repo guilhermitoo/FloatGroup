@@ -11,7 +11,7 @@ namespace BackEnd.Data
 {
     class CidadeData : Conexao
     {
-        public CidadeData(string stringConexao) : base(stringConexao) { }
+        public CidadeData(string sConexao) : base(sConexao) { }
         
         // Função inserir cidade
         public bool Inserir(Cidade cidade)
@@ -21,7 +21,7 @@ namespace BackEnd.Data
             {
                 Cmd = new SqlCommand();
                 Cmd.Connection = Cnn;
-                Cmd.CommandText = @"insert into cidades values (@nome,@uf);";
+                Cmd.CommandText = @"exec cadCidade @nome,@uf;";
 
                 Cmd.Parameters.AddWithValue("@nome", cidade.Nome);
                 Cmd.Parameters.AddWithValue("@uf", cidade.UF);                
@@ -42,11 +42,12 @@ namespace BackEnd.Data
             {
                 Cmd = new SqlCommand();
                 Cmd.Connection = Cnn;
-                Cmd.CommandText = @"update cidades set nome = @nome, uf = @uf where id = @id ";
+                Cmd.CommandText = @"exec alteraCidade @id,@nome,@uf;";
 
+                Cmd.Parameters.AddWithValue("@id", cidade.Id);
                 Cmd.Parameters.AddWithValue("@nome", cidade.Nome);
                 Cmd.Parameters.AddWithValue("@uf", cidade.UF);                
-                Cmd.Parameters.AddWithValue("@id", cidade.Id);
+                
 
                 Cmd.ExecuteNonQuery();
 
@@ -56,5 +57,24 @@ namespace BackEnd.Data
             { }
             return ok;
         }
+
+        public bool Excluir(Cidade cidade)
+        {
+            bool ok = true;
+            try {
+                Cmd = new SqlCommand();
+                Cmd.Connection = Cnn;
+                Cmd.CommandText = @"delete * from cidades where id = @id";
+
+                Cmd.Parameters.AddWithValue("@id", cidade.Id);
+
+                Cmd.ExecuteNonQuery();
+
+                ok = true;
+            }
+            catch { }
+            return ok;
+        }
+
     }
 }

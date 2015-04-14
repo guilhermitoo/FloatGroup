@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Linq.Mapping;
 
 namespace BackEnd.Entity
 {
+    [Table(Name="pessoas")]
     public class Pessoa
     {
         public int Id { get; set; }
@@ -22,6 +24,7 @@ namespace BackEnd.Entity
         public int Status { get; set; }
         public string Obs { get; set; }
         public int TipoUsuario { get; set; }
+        [Column(Name="cidade_id", CanBeNull=false)] // verificar chave estrangeira com igor 
         public Cidade Cidade { get; set; }
 
         public Pessoa() { }

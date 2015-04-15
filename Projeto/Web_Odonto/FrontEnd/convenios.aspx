@@ -20,38 +20,38 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <!--Lado Esquerdo do Formulário -->
-                                        <div class="col-md-6">
-                                            <form role="form">
-                                                <div class="form-group">
-                                                    <label>
-                                                        CNPJ
-                                                    </label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="Digite a CNPJ">
-                                                        <span class="input-group-btn">
-                                                            <button class="btn btn-default" type="button">
-                                                                Procurar
-                                                            </button>
-                                                        </span>
-                                                    </div>
-                                                    <br />
-                                                    <label>
-                                                        Razão Social
-                                                    </label>
-                                                    <input class="form-control" />
-                                                    <br />
-                                                    <label>
-                                                        Nome Fantasia
-                                                    </label>
-                                                    <input class="form-control" />
-                                                    <br />
-                                                    <label>
-                                                        IE (Inscrição Estadual)
-                                                    </label>
-                                                    <input class="form-control" />
-                                                    <br />
+                                        <div class="col-md-6">                                            
+                                            <div class="form-group">
+                                                <label>
+                                                    CNPJ
+                                                </label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Digite a CNPJ" id ="txtCNPJ"/>
+                                                    
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="button">
+                                                            Procurar
+                                                        </button>
+                                                    </span>
                                                 </div>
-                                            </form>
+                                                <br />
+                                                <label>
+                                                    Razão Social
+                                                </label>
+                                                <input class="form-control" id="txtRazao"/>
+                                                <br />
+                                                <label>
+                                                    Nome Fantasia
+                                                </label>
+                                                <input class="form-control" id="txtNomeFantasia"/>
+                                                <br />
+                                                <label>
+                                                    IE (Inscrição Estadual)
+                                                </label>
+                                                <input class="form-control" id="txtIe"/>
+                                                <br />
+                                            </div>
+                               
                                         </div>
                                         <!-- row -->
                                     </div>
@@ -64,15 +64,13 @@
                             <div class="col-md-offset-3">
                                 <form role="form">
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-info">
-                                            Salvar
-                                        </button>
+                                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click"/>
+                                        
                                         <button type="submit" class="btn btn-success">
                                             Limpar
                                         </button>
                                         <button type="submit" class="btn btn-warning">
-                                            Sair
-                                        </button>
+                                            Sair</button>
                                     </div>
                                 </form>
                             </div>

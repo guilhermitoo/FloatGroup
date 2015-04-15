@@ -10,21 +10,21 @@ using System.Data.Linq;
 
 namespace BackEnd.Model
 {
-    public class CidadeModel
+    public class ConvenioModel
     {
         private string sConexao;
-        public CidadeModel(string sConexao)
+        public ConvenioModel(string sConexao)
         {
             this.sConexao = sConexao;
         }
 
-        public bool Inserir(Cidade cidade)
+        public bool Inserir(Convenio convenio)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.InsertOnSubmit(cidade);
+                    bd.TabelaConvenio.InsertOnSubmit(convenio);
                     bd.SubmitChanges();
                     return true;
                 }
@@ -35,20 +35,22 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Cidade cidade)
+        public bool Editar(Convenio convenio)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    var query = from cid in bd.TabelaCidade
-                                where cid.Id == cidade.Id
-                                select cid;
-                    foreach (Cidade cid in query)
+                    var query = from con in bd.TabelaConvenio
+                                where con.Id == convenio.Id
+                                select con;
+                    foreach (Convenio con in query)
                     {
-                        cid.Nome = cidade.Nome;
-                        cid.UF = cidade.UF;                       
-                        cid.Id = cidade.Id;
+                        con.Cnpj = convenio.Cnpj;
+                        con.Ie = convenio.Ie;
+                        con.RazaoSocial = convenio.RazaoSocial;
+                        con.NomeFantasia = convenio.NomeFantasia;
+                        con.Id = convenio.Id;
                     }
 
                     bd.SubmitChanges();
@@ -61,13 +63,13 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(Cidade cidade)
+        public bool Excluir(Convenio convenio)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.DeleteOnSubmit(bd.TabelaCidade.First(p => p.Id == cidade.Id));
+                    bd.TabelaConvenio.DeleteOnSubmit(bd.TabelaConvenio.First(p => p.Id == convenio.Id));
                     bd.SubmitChanges();
                     return true;
                 }
@@ -78,22 +80,21 @@ namespace BackEnd.Model
             }
         }
 
-        public Cidade Obter(int id)
+        public Convenio Obter(int id)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaCidade.First(p => p.Id == id);
+                return bd.TabelaConvenio.First(p => p.Id == id);
             }
         }
 
-        public List<Cidade> Listar()
+        public List<Convenio> Listar()
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaCidade.ToList();
+                return bd.TabelaConvenio.ToList();
             }
 
-        }
-
+        }    
     }
 }

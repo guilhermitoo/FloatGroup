@@ -47,8 +47,10 @@ namespace BackEnd.Model
                     foreach (Medicamento med in query)
                     {
                         med.Nome = medicamento.Nome;
-                        med.ClasseTerapeutica = medicamento.ClasseTerapeutica;                       
-                        
+                        med.ClasseTerapeutica = medicamento.ClasseTerapeutica;
+                        med.Tarja = medicamento.Tarja;
+                        med.Posologia = medicamento.Posologia;
+                        med.Unidade = medicamento.Unidade;
                         med.Id = medicamento.Id;
                     }
 
@@ -62,13 +64,13 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(Cidade cidade)
+        public bool Excluir(Medicamento medicamento)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.DeleteOnSubmit(bd.TabelaCidade.First(p => p.Id == cidade.Id));
+                    bd.TabelaMedicamento.DeleteOnSubmit(bd.TabelaMedicamento.First(p => p.Id == medicamento.Id));
                     bd.SubmitChanges();
                     return true;
                 }

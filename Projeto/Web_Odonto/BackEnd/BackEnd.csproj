@@ -43,7 +43,6 @@
     <Compile Include="Data\CidadeData.cs" />
     <Compile Include="Data\Conexao.cs" />
     <Compile Include="Data\MedicamentoData.cs" />
-    <Compile Include="Data\PessoaData.cs" />
     <Compile Include="Data\WebOdontoContext.cs" />
     <Compile Include="Entity\Atendimento.cs" />
     <Compile Include="Entity\Avaliacao.cs" />

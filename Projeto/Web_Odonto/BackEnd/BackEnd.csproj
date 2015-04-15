@@ -63,6 +63,7 @@
     <Compile Include="Entity\Tratamento.cs" />
     <Compile Include="Model\CidadeModel.cs" />
     <Compile Include="Model\ConvenioModel.cs" />
+    <Compile Include="Model\MedicamentoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

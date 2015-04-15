@@ -187,6 +187,7 @@
     <Content Include="cidades.aspx" />
     <Content Include="convenios.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="listaCidades.aspx" />
     <Content Include="medicamentos.aspx" />
     <Content Include="procedimentos.aspx" />
     <Content Include="relatorios.aspx" />
@@ -227,6 +228,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaCidades.aspx.cs">
+      <DependentUpon>listaCidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaCidades.aspx.designer.cs">
+      <DependentUpon>listaCidades.aspx</DependentUpon>
     </Compile>
     <Compile Include="medicamentos.aspx.cs">
       <DependentUpon>medicamentos.aspx</DependentUpon>

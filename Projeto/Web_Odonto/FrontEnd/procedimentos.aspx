@@ -3,76 +3,68 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="page-wrapper">
-                <div id="page-inner">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>
-                                CADASTRO PROCEDIMENTO
-                            </h2>
-                            <h5>
-                                Faça cadastro de Procedimento
-                            </h5>
-                        </div>
-                        <hr />
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <!--Lado Esquerdo do Formulário -->
-                                        <div class="col-md-6">
-                                            <form role="form">
-                                                <div class="form-group">
-                                                    <label>
-                                                        Procedimento
-                                                    </label>
-                                                    <input class="form-control" />
-                                                    <br />
-                                                    <label>
-                                                        C I D
-                                                    </label>
-                                                    <input class="form-control" />
-                                                    <br />
+    
+    <h2>
+        CADASTRO PROCEDIMENTO
+    </h2>
+    <h5>
+        Faça cadastro de Procedimento
+    </h5>
+                        
+    <hr />
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <!--Lado Esquerdo do Formulário -->
+                    <div class="col-md-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>
+                                    Procedimento
+                                </label>
+                                <input class="form-control" />
+                                <br />
+                                <label>
+                                    C I D
+                                </label>
+                                <input class="form-control" />
+                                <br />
                                                     
-                                                    <br />
-                                                    <label for="descricao">
-                                                        Descrição:
-                                                    </label>
-                                                    <textarea class="form-control" rows="5" id="comment">
-                                                    </textarea>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <!-- row -->
-                                    </div>
-                                    <!-- panel-body -->
-                                </div>
-                                <!-- panel panel-default -->
+                                <br />
+                                <label for="descricao">
+                                    Descrição:
+                                </label>
+                                <textarea class="form-control" rows="5" id="comment">
+                                </textarea>
                             </div>
-                            <!-- col-md-12 -->
-                            <!-- Botões -->
-                            <div class="col-md-offset-3">
-                                <form role="form">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-info">
-                                            Salvar
-                                        </button>
-                                        <button type="submit" class="btn btn-success">
-                                            Limpar
-                                        </button>
-                                        <button type="submit" class="btn btn-warning">
-                                            Sair
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- /. PAGE ROW -->
-                        <!-- /. PAGE INNER -->
+                        </form>
                     </div>
-                    <!-- /. PAGE WRAPPER -->
+                    <!-- row -->
                 </div>
-                <!-- /. WRAPPER -->
+                <!-- panel-body -->
             </div>
+            <!-- panel panel-default -->
+        </div>
+        <!-- col-md-12 -->
+        <!-- Botões -->
+        <div class="col-md-offset-3">
+            <form role="form">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info">
+                        Salvar
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        Limpar
+                    </button>
+                    <button type="submit" class="btn btn-warning">
+                        Sair
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /. PAGE ROW -->
+    <!-- /. PAGE INNER -->
 
 </asp:Content>

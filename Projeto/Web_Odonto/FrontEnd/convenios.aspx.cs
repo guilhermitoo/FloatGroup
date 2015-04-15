@@ -15,13 +15,24 @@ namespace FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             Convenio convenio = new Convenio();
-                       
+
+            convenio.Cnpj = txtCNPJ.Text;
+            convenio.Ie = txtIe.Text;
+            convenio.RazaoSocial = txtRazao.Text;
+            convenio.NomeFantasia = txtNomeFantasia.Text;
+
+            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
+
+            ConvenioModel model = new ConvenioModel(sConexao);
+
+            model.Inserir(convenio);
+
         }
     }
 }

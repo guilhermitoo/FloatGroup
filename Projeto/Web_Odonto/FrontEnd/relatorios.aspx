@@ -3,10 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="page-wrapper">
-        <div id="page-inner">
-          <div class="row">
-            <div class="col-md-12">
               <h2>
                 RELATÓRIOS
               </h2>
@@ -66,12 +62,5 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- /. ROW -->
-            </div>
-            <!-- /. PAGE INNER -->
-          </div>
-          <!-- /. PAGE WRAPPER -->
-        </div>
 
 </asp:Content>

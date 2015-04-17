@@ -15,46 +15,36 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-md-6">
-                        <form role="form">
-                            <div class="form-group">
-                                <br />
-                                <label>
-                                    Nome do Medicamento
-                                </label>
-                                <asp:TextBox CssClass="form-control" id="txtNome" runat="server"/>
-                                <br />
-                                <label>
-                                    Tarja
-                                </label>
-                                <asp:TextBox  class="form-control" id="txtTarja" runat="server"/>
-                                <br />
-                                <label>
-                                    Classe Terapêutica
-                                </label>
-                                <asp:TextBox  class="form-control" id="txtClasseTerapeutica" runat="server"/>
-                                <br />
-                                <label>
-                                    Unidade
-                                </label>
-                                <asp:TextBox  class="form-control" id="txtUnidade" runat="server"/>
-                                <br />
-                                <label for="descricao">
-                                    Posologia:
-                                </label>                                
-                                <textarea class="form-control" rows="5" id="txtPosologia" runat="server">
-                                </textarea>
-                                <br />
-                                <label for="descricao">
-                                    *
-                                    <small>
-                                        Observações:
-                                    </small>
-                                </label>
-                                <textarea class="form-control" rows="5" id="txtObs" runat="server">
-                                </textarea>
-                            </div>
-                        </form>
+                    <div class="col-md-6">                        
+                        <div class="form-group">
+                            <br />
+                            <label>
+                                Nome do Medicamento
+                            </label>
+                            <asp:TextBox CssClass="form-control" id="txtNome" runat="server"/>
+                            <br />
+                            <label>
+                                Tarja
+                            </label>
+                            <asp:TextBox  class="form-control" id="txtTarja" runat="server"/>
+                            <br />
+                            <label>
+                                Classe Terapêutica
+                            </label>
+                            <asp:TextBox  class="form-control" id="txtClasseTerapeutica" runat="server"/>
+                            <br />
+                            <label>
+                                Unidade
+                            </label>
+                            <asp:TextBox  class="form-control" id="txtUnidade" runat="server"/>
+                            <br />
+                            <label for="descricao">
+                                Posologia:
+                            </label>                                
+                            <textarea class="form-control" rows="5" id="txtPosologia" runat="server">
+                            </textarea>
+                            <br />                          
+                        </div>                        
                     </div>
                     <!-- row -->
                 </div>

@@ -17,15 +17,17 @@ Faça cadastro de Funcionário, Paciente, e Dentista
         <div class="row">
         <div class="col-md-6">          
             <div class="form-group">
-                <label>
-                Escolha o tipo de cadastro
-                </label>
-                <asp:DropDownList ID="ddTipoPessoa" class="form-control" runat="server" OnSelectedIndexChanged="ddTipoPessoa_SelectedIndexChanged">
-                <asp:ListItem Value="P">Paciente</asp:ListItem>
-                <asp:ListItem Value="F">Funcionário</asp:ListItem>
-                <asp:ListItem Value="D">Dentista</asp:ListItem>
-                </asp:DropDownList>
-                <br />
+                <div class="list-group">
+                    <label>
+                    Escolha o tipo de cadastro
+                    </label>
+                    <asp:DropDownList ID="ddTipoPessoa" class="form-control" runat="server" OnSelectedIndexChanged="ddTipoPessoa_SelectedIndexChanged">
+                        <asp:ListItem Value="P">Paciente</asp:ListItem>
+                        <asp:ListItem Value="F">Funcionário</asp:ListItem>
+                        <asp:ListItem Value="D">Dentista</asp:ListItem>
+                    </asp:DropDownList>
+                    <br />
+                </div>
                 <label>
                 Status:
                 </label>
@@ -136,21 +138,29 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                     <br />
                 </div>
                 <!-- Dentista -->
-                <label id="lblCro" runat="server">C.R.O.</label>
-                <asp:TextBox ID="txtCro" runat="server" CssClass="form-control" TextMode="Number" />
-                <br />
+                <div id="dCro" runat="server">
+                    <label id="lblCro" runat="server">C.R.O.</label>
+                    <asp:TextBox ID="txtCro" runat="server" CssClass="form-control" TextMode="Number" />
+                    <br />
+                </div>
                 <!-- Funcionario -->
-                <label id="lblCargo" runat="server">Cargo</label>
-                <asp:TextBox ID="txtCargo" runat="server" CssClass="form-control"/>
-                <br />
-                <label id="lblSalario" runat="server">Salário</label>
-                <asp:TextBox ID="txtSalario" runat="server" CssClass="form-control" TextMode="Number" />
-                <br />
+                <div id="dCargo" runat="server">
+                    <label id="lblCargo" runat="server">Cargo</label>
+                    <asp:TextBox ID="txtCargo" runat="server" CssClass="form-control"/>
+                    <br />
+                </div>
+                <div id="dSalario" runat="server">
+                    <label id="lblSalario" runat="server">Salário</label>
+                    <asp:TextBox ID="txtSalario" runat="server" CssClass="form-control" TextMode="Number" />
+                    <br />
+                </div>
                 <!-- Paciente -->
-                <label id="lblConvenio" runat="server">Convênio</label>
-                <asp:DropDownList ID="ddConvenio" runat="server">
-                    <asp:ListItem Selected="True">Nenhum</asp:ListItem>
-                </asp:DropDownList>
+                <div id="dConvenio" runat="server">
+                    <label id="lblConvenio" runat="server">Convênio</label>
+                    <asp:DropDownList ID="ddConvenio" runat="server">
+                        <asp:ListItem Selected="True">Nenhum</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
                 <br />
             </div>            
         </div>

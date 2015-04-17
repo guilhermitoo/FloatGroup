@@ -11,7 +11,7 @@ namespace FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ModificaCampos();
         }
 
         protected void ddTipoPessoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -24,21 +24,14 @@ namespace FrontEnd
             // verifica qual cadastro foi selecionado e modifica os campos que estão sendo exibidos
             String sTipo = ddTipoPessoa.SelectedValue ;
 
-            txtCargo.Visible = sTipo.Equals("F");
-            txtCro.Visible = sTipo.Equals("D");
-            txtSalario.Visible = sTipo.Equals("F");
-            ddConvenio.Visible = sTipo.Equals("P");
-            ddTipoUsuario.Visible = ( sTipo.Equals("F") || sTipo.Equals("D"));
-            txtSenha.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
-            txtUsuario.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
-
-            lblCargo.Visible = txtCargo.Visible;
-            lblCro.Visible = txtCro.Visible;
-            lblSalario.Visible = txtSalario.Visible;
-            lblConvenio.Visible = ddConvenio.Visible;
-            lblTipoUsuario.Visible = ddTipoUsuario.Visible;
-            lblSenha.Visible = txtSenha.Visible;
-            lblUsuario.Visible = txtUsuario.Visible;
+            dCargo.Visible = sTipo.Equals("F");
+            dCro.Visible = sTipo.Equals("D");
+            dSalario.Visible = sTipo.Equals("F");
+            dConvenio.Visible = sTipo.Equals("P");
+            dTipoUsuario.Visible = ( sTipo.Equals("F") || sTipo.Equals("D"));
+            dSenha.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
+            dUsuario.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
         }
+
     }
 }

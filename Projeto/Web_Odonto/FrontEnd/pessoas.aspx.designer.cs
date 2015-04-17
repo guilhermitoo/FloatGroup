@@ -121,6 +121,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtSenha;
         
         /// <summary>
+        /// dCro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dCro;
+        
+        /// <summary>
         /// lblCro control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCro;
+        
+        /// <summary>
+        /// dCargo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dCargo;
         
         /// <summary>
         /// lblCargo control.
@@ -157,6 +175,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtCargo;
         
         /// <summary>
+        /// dSalario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dSalario;
+        
+        /// <summary>
         /// lblSalario control.
         /// </summary>
         /// <remarks>
@@ -173,6 +200,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSalario;
+        
+        /// <summary>
+        /// dConvenio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dConvenio;
         
         /// <summary>
         /// lblConvenio control.

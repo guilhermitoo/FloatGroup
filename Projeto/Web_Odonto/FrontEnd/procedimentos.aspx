@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     
     <h2>
         CADASTRO PROCEDIMENTO
@@ -17,28 +16,15 @@
             <div class="panel-body">
                 <div class="row">
                     <!--Lado Esquerdo do Formulário -->
-                    <div class="col-md-6">
-                        <form role="form">
-                            <div class="form-group">
-                                <label>
-                                    Procedimento
-                                </label>
-                                <input class="form-control" />
-                                <br />
-                                <label>
-                                    C I D
-                                </label>
-                                <input class="form-control" />
-                                <br />
-                                                    
-                                <br />
-                                <label for="descricao">
-                                    Descrição:
-                                </label>
-                                <textarea class="form-control" rows="5" id="comment">
-                                </textarea>
-                            </div>
-                        </form>
+                    <div class="col-md-6">                        
+                        <div class="form-group">
+                            <label>
+                                Descrição completa do procedimento
+                            </label>
+                            <input class="form-control" />
+                            <br />
+ 
+                        </div>                    
                     </div>
                     <!-- row -->
                 </div>

@@ -14,9 +14,9 @@ go
 
 create table convenios
 (
-	id				int			not null	primary key identity,
-	cnpj			varchar(20) unique,
-	ie				varchar(20),
+	id		int not null primary key identity,
+	cnpj		varchar(20) not null unique,
+	ie		varchar(20),
 	razao_social	varchar(100),
 	nome_fantasia	varchar(100)
 )
@@ -24,10 +24,10 @@ go
 
 create table pessoas
 (
-	id			int         not null primary key identity,
+	id		int not null primary key identity,
 	nome		varchar(100) not null,
-	cpf			varchar(15) not null unique,
-	rg 			varchar(12),
+	cpf		varchar(15) not null unique,
+	rg 		varchar(12),
 	nascimento	date,
 	telefone1	varchar(15),
 	telefone2	varchar(15),
@@ -51,16 +51,17 @@ go
 
 create table funcionarios
 (
-	pessoa_id	int		not null	primary key		references pessoas,
-	salario		decimal(15,2),
-	cargo		varchar(50)
+	pessoa_id	int not null primary key		references pessoas,
+	salario		decimal(15,2) not null,
+	cargo		varchar(50) not null
 )
 go
 
 create table dentistas
 (
 	pessoa_id	int		not null	primary key		references pessoas,
-	cro			varchar(20) not null unique
+	cro			varchar(20) not null unique,
+	salario decimal(15,2) not null
 )
 go
 
@@ -105,7 +106,7 @@ go
 create table procedimentos
 (
 	id int not null	primary key identity,
-	descricao varchar(80)
+	descricao varchar(80) not null,
 )
 go
 
@@ -142,7 +143,7 @@ go
 create table receitas
 (
 	id int not null primary key identity,
-	descricao varchar(200),
+	descricao varchar(200) not null,
 	atendimento_id int not null references atendimentos
 )
 go
@@ -153,6 +154,7 @@ create table itensReceita
 	medicamento_id int not null references medicamentos,
 	dose varchar(10) not null,
 	obs varchar(100),
-	periodo varchar(50)
+	periodo varchar(50),
+	primary key (receita_id,medicamento_id)
 )
 go

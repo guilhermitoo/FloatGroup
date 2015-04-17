@@ -1,4 +1,4 @@
-create database WebOdonto
+\create database WebOdonto
 go
 
 use WebOdonto

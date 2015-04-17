@@ -10,21 +10,21 @@ using System.Data.Linq;
 
 namespace BackEnd.Model
 {
-    public class CidadeModel
+    public class PacienteModel
     {
         private string sConexao;
-        public CidadeModel(string sConexao)
+        public PacienteModel(string sConexao)
         {
             this.sConexao = sConexao;
         }
 
-        public bool Inserir(Cidade cidade)
+        public bool Inserir(Paciente paciente)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.InsertOnSubmit(cidade);
+                    bd.TabelaPaciente.InsertOnSubmit(paciente);
                     bd.SubmitChanges();
                     return true;
                 }
@@ -35,20 +35,34 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Cidade cidade)
+        public bool Editar(Paciente paciente)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    var query = from cid in bd.TabelaCidade
-                                where cid.Id == cidade.Id
-                                select cid;
-                    foreach (Cidade cid in query)
+                    var query = from pac in bd.TabelaPaciente
+                                where pac.Id == paciente.Id
+                                select pac;
+                    foreach (Paciente pac in query)
                     {
-                        cid.Nome = cidade.Nome;
-                        cid.UF = cidade.UF;                       
-                        cid.Id = cidade.Id;
+
+                        pac.Nome = paciente.Nome;
+                        pac.Cpf = paciente.Cpf;
+                        pac.Rg = paciente.Rg;
+                        pac.Nascimento = paciente.Nascimento;
+                        pac.Telefone1 = paciente.Telefone1;
+                        pac.Telefone2 = paciente.Telefone2;
+                        pac.Sexo = paciente.Sexo;
+                        pac.Endereco = paciente.Endereco;
+                        pac.Usuario = paciente.Usuario;
+                        pac.Senha = paciente.Senha;
+                        pac.Status = paciente.Status;
+                        pac.Obs = paciente.Obs;
+                        pac.TipoUsuario = paciente.TipoUsuario;
+                        pac.Cidade = paciente.Cidade;
+                        pac.Convenio = paciente.Convenio;
+
                     }
 
                     bd.SubmitChanges();
@@ -61,13 +75,13 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(Cidade cidade)
+        public bool Excluir(Paciente paciente)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.DeleteOnSubmit(bd.TabelaCidade.First(p => p.Id == cidade.Id));
+                    bd.TabelaPaciente.DeleteOnSubmit(bd.TabelaPaciente.First(p => p.Id == paciente.Id));
                     bd.SubmitChanges();
                     return true;
                 }
@@ -78,33 +92,21 @@ namespace BackEnd.Model
             }
         }
 
-        public Cidade Obter(int id)
+        public Paciente Obter(int id)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaCidade.First(p => p.Id == id);
+                return bd.TabelaPaciente.First(p => p.Id == id);
             }
         }
 
-        public List<Cidade> Listar()
+        public List<Paciente> Listar()
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaCidade.ToList();
+                return bd.TabelaPaciente.ToList();
             }
-        }
 
-        public List<Cidade> ListarPorNome(string Nome)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                
-                String sSql = "select * from cidades C where C.nome like '%"+Nome+"%' ";
-                var query = bd.ExecuteQuery<Cidade>(sSql);
-                return query.ToList();
-                //return bd.TabelaCidade.ToList(); 
-            }
         }
-
     }
 }

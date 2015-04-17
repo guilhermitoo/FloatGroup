@@ -4,10 +4,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <h1>Lista de Cidades</h1>
-
-    <asp:HyperLink ID="btnNovo" runat="server" CssClass="btn btn-success" 
-        NavigateUrl="~/cidades.aspx" >Novo</asp:HyperLink>      
-
+    <br />  
+    <br />        
+    <div class="col-md-5">
+        <asp:TextBox ID="txtNomeCidade" runat="server" CssClass="form-control" placeholder="Digite o nome da cidade que deseja buscar" ToolTip="Nome da Cidade" ></asp:TextBox>    
+    </div>
+    <div class="col-md-2">
+        <asp:Button ID="btnBuscarCidade" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscarCidade_Click"/>
+        <asp:Button ID="tbnSair" runat="server" CssClass="btn btn-danger" Text="Sair" OnClick="tbnSair_Click"/>
+    </div>
+    <br />
+    <br />
+    <br />
     <asp:Repeater ID="rlistaCidades" runat="server">     
         <HeaderTemplate>
             <table class="table table-hover">
@@ -23,9 +31,9 @@
                 <td><%# DataBinder.Eval(Container.DataItem,"Id") %></td>
                 <td><%# DataBinder.Eval(Container.DataItem,"Nome") %></td>
                 <td><%# DataBinder.Eval(Container.DataItem,"UF") %></td>                    
-                <td>
-                    <asp:HyperLink ID="hplExibir" runat="server" CssClass="btn btn-info" 
-                            NavigateUrl='<%# DataBinder.Eval(Container.DataItem, "Id", "ExibirItem.aspx?ID={0}") %>'>Exibir</asp:HyperLink>
+                <td>            
+                    <asp:HyperLink ID="btnEditar" runat="server" CssClass="btn btn-info" 
+                            NavigateUrl='<%# DataBinder.Eval(Container.DataItem, "Id", "cidades.aspx?ID={0}") %>'>Editar</asp:HyperLink>
                 </td>
             </tr>
         </ItemTemplate>

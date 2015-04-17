@@ -17,6 +17,10 @@ namespace BackEnd.Data
         private Table<Medicamento> _tabelaMedicamento;
         private Table<Convenio> _tabelaConvenio;
         private Table<Pessoa> _tabelaPessoa;
+        private Table<Dentista> _tabelaDentista;
+        private Table<Funcionario> _tabelaFuncionario;
+        private Table<Paciente> _tabelaPaciente;
+
 
         public WebOdontoContext(string sConexao)
             : base(sConexao)
@@ -88,5 +92,51 @@ namespace BackEnd.Data
             }
         }
 
+        public Table<Dentista> TabelaDentista
+        {
+            get
+            {
+                if (_tabelaDentista == null)
+                {
+                    _tabelaDentista = this.GetTable<Dentista>();
+                }
+                return _tabelaDentista;
+            }
+            set 
+            {
+                _tabelaDentista = value;
+            }
+        }
+        public Table<Funcionario> TabelaFuncionario
+        {
+            get
+            {
+                if (_tabelaFuncionario == null)
+                {
+                    _tabelaFuncionario = this.GetTable<Funcionario>();
+                }
+                return _tabelaFuncionario;
+            }
+            set
+            {
+                _tabelaFuncionario = value;
+            }
+        }
+
+        public Table<Paciente> TabelaPaciente
+        {
+            get
+            {
+                if (_tabelaPaciente == null)
+                {
+                    _tabelaPaciente = this.GetTable<Paciente>();
+                }
+                return _tabelaPaciente;
+            }
+            set
+            {
+                _tabelaPaciente = value;
+            }
+        }
     }
 }

@@ -52,14 +52,25 @@ namespace FrontEnd
             else
             {
                 model.Inserir(cidade);
-            }        
+            }
+            Response.Redirect("cidades.aspx");  
 
-        
         }
 
         protected void btnListar_Click(object sender, EventArgs e)
         {
             Response.Redirect("listaCidades.aspx");
+        }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            // limpa os campos da tela
+            Response.Redirect("cidades.aspx");                       
+        }
+
+        protected void btnSair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
         }
 
         

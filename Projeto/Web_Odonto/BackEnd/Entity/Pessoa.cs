@@ -26,11 +26,11 @@ namespace BackEnd.Entity
         public string Telefone2 { get; set; }
         [Column(Name = "Sexo")]
         public char Sexo { get; set; }
-        [Column(Name = "Logradouro")]
-        public string Logradouro { get; set; }
-        [Column(Name = "Login:")]
-        public string Login { get; set; }
-        [Column(Name = "Senha:")]
+        [Column(Name = "Endereco")]
+        public string Endereco { get; set; }
+        [Column(Name = "Usuario")]
+        public string Usuario { get; set; }
+        [Column(Name = "Senha")]
         public string Senha { get; set; }
         [Column(Name = "Status", CanBeNull = false)]
         public int Status { get; set; }
@@ -44,7 +44,7 @@ namespace BackEnd.Entity
         public Pessoa() { }
 
         public Pessoa(int id, string nome, string cpf, string rg, DateTime nascimento, string telefone1, string telefone2,char sexo, 
-            string logradouro, string login, string senha, int status, string obs, int tipoUsuario, Cidade cidade)
+            string endereco, string usuario, string senha, int status, string obs, int tipoUsuario, Cidade cidade)
         {
             this.Id = id;
             this.Nome = nome;
@@ -54,8 +54,8 @@ namespace BackEnd.Entity
             this.Telefone1 = telefone1;
             this.Telefone2 = telefone2;
             this.Sexo = sexo;                     
-            this.Logradouro = logradouro;
-            this.Login = login;
+            this.Endereco = endereco;
+            this.Usuario = usuario;
             this.Senha = senha;
             this.Status = status;
             this.Obs = obs;

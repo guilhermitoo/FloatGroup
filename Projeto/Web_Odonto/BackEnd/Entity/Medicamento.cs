@@ -14,10 +14,10 @@ namespace BackEnd.Entity
         public int Id { get; set; } // CHAVE PRIMÁRIA
         [Column(Name = "nome", CanBeNull = false)]
         public string Nome { get; set; }
-        [Column(Name = "tarja")]
-        public string Tarja { get; set; }
         [Column(Name = "classe_terapeutica")]
         public string ClasseTerapeutica { get; set; }
+        [Column(Name = "tarja")]
+        public string Tarja { get; set; }        
         [Column(Name = "posologia")]
         public string Posologia { get; set; }
         [Column(Name = "unidade")]

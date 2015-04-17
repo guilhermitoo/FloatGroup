@@ -22,22 +22,27 @@
                                 <label>
                                     Nome do Medicamento
                                 </label>
-                                <input class="form-control" id="txtNome"/>
+                                <asp:TextBox CssClass="form-control" id="txtNome" runat="server"/>
                                 <br />
                                 <label>
                                     Tarja
                                 </label>
-                                <input class="form-control" id="txtTarja"/>
+                                <asp:TextBox  class="form-control" id="txtTarja" runat="server"/>
                                 <br />
                                 <label>
                                     Classe Terapêutica
                                 </label>
-                                <input class="form-control" id="txtClasseTerapeutica"/>
+                                <asp:TextBox  class="form-control" id="txtClasseTerapeutica" runat="server"/>
+                                <br />
+                                <label>
+                                    Unidade
+                                </label>
+                                <asp:TextBox  class="form-control" id="txtUnidade" runat="server"/>
                                 <br />
                                 <label for="descricao">
                                     Posologia:
-                                </label>
-                                <textarea class="form-control" rows="5" id="txtPosologia">
+                                </label>                                
+                                <textarea class="form-control" rows="5" id="txtPosologia" runat="server">
                                 </textarea>
                                 <br />
                                 <label for="descricao">
@@ -46,7 +51,7 @@
                                         Observações:
                                     </small>
                                 </label>
-                                <textarea class="form-control" rows="5" id="txtObs">
+                                <textarea class="form-control" rows="5" id="txtObs" runat="server">
                                 </textarea>
                             </div>
                         </form>

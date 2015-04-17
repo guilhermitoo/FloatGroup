@@ -80,5 +80,33 @@ namespace BackEnd.Model
                 }
             }
         }
+
+        public Medicamento Obter(int id)
+        {
+            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            {
+                return bd.TabelaMedicamento.First(p => p.Id == id);
+            }
+        }
+
+        public List<Medicamento> Listar()
+        {
+            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            {
+                return bd.TabelaMedicamento.ToList();
+            }
+        }
+
+        public List<Medicamento> ListarPorNome(string Nome)
+        {
+            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            {
+
+                String sSql = "select * from medicamentos m where m.nome like '%" + Nome + "%' ";
+                var query = bd.ExecuteQuery<Medicamento>(sSql);
+                return query.ToList();
+                //return bd.TabelaCidade.ToList(); 
+            }
+        }
     }
 }

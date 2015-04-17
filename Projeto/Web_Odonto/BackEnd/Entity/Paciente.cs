@@ -10,14 +10,17 @@ namespace BackEnd.Entity
     [Table(Name = "Paciente")]
     public class Paciente : Pessoa
     {
-        [Column(Name = "pessoa_id", IsDbGenerated = true, IsPrimaryKey = true, CanBeNull = false)]
+        [Column(Name = "pessoa_id", IsPrimaryKey = true, CanBeNull = false)]
         public Pessoa Pessoa { get; set; }
+        [Column(Name = "convenio_id", IsPrimaryKey = true)]
+        public Convenio Convenio { get; set; }
 
         public Paciente() { }
 
-        public Paciente(Pessoa pessoa)
+        public Paciente(Pessoa pessoa,Convenio convenio)
         {
             this.Pessoa = pessoa;
+            this.Convenio = convenio;
         }
     }
 }

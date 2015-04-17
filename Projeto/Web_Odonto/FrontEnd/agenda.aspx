@@ -67,8 +67,7 @@ aria-hidden="true">
         </button>
                        
         <!-- CONTEUDO ATENDIMENTO-->
-        <div class="collapse" id="atendimento">
-        <form role="form">
+        <div class="collapse" id="atendimento">      
             <div class="form-group">
                 <label>
                 Paciente
@@ -82,8 +81,7 @@ aria-hidden="true">
                 </button>
                 </span>
             </div>
-            </div>
-            </form>
+            </div>            
 
                           
             <!-- NUMERO E STATUS-->

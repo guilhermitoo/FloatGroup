@@ -21,5 +21,20 @@ namespace FrontEnd
             rlistaCidades.DataSource = model.Listar();
             rlistaCidades.DataBind();
         }
+
+        protected void tbnSair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cidades.aspx");
+        }
+
+        protected void btnBuscarCidade_Click(object sender, EventArgs e)
+        {
+            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
+            CidadeModel model = new CidadeModel(sConexao);
+
+            rlistaCidades.DataSource = model.ListarPorNome(txtNomeCidade.Text);
+            rlistaCidades.DataBind();
+        }
+
     }
 }

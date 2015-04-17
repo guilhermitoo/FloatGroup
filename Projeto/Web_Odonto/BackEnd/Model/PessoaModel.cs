@@ -10,21 +10,21 @@ using System.Data.Linq;
 
 namespace BackEnd.Model
 {
-    public class CidadeModel
+    public class PessoaModel
     {
         private string sConexao;
-        public CidadeModel(string sConexao)
+        public PessoaModel(string sConexao)
         {
             this.sConexao = sConexao;
         }
 
-        public bool Inserir(Cidade cidade)
+        public bool Inserir(Pessoa pessoa)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.InsertOnSubmit(cidade);
+                    bd.TabelaPessoa.InsertOnSubmit(pessoa);
                     bd.SubmitChanges();
                     return true;
                 }
@@ -35,20 +35,32 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Cidade cidade)
+        public bool Editar(Pessoa pessoa)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    var query = from cid in bd.TabelaCidade
-                                where cid.Id == cidade.Id
-                                select cid;
-                    foreach (Cidade cid in query)
+                    var query = from p in bd.TabelaPessoa
+                                where p.Id == pessoa.Id
+                                select p;
+                    foreach (Pessoa p in query)
                     {
-                        cid.Nome = cidade.Nome;
-                        cid.UF = cidade.UF;                       
-                        cid.Id = cidade.Id;
+
+                        p.Nome = pessoa.Nome;
+                        p.Cpf = pessoa.Cpf;
+                        p.Rg = pessoa.Rg;
+                        p.Nascimento = pessoa.Nascimento;
+                        p.Telefone1 = pessoa.Telefone1;
+                        p.Telefone2 = pessoa.Telefone2;
+                        p.Sexo = pessoa.Sexo;
+                        p.Endereco = pessoa.Endereco;
+                        p.Usuario = pessoa.Usuario;
+                        p.Senha = pessoa.Senha;
+                        p.Status = pessoa.Status;
+                        p.Obs = pessoa.Obs;
+                        p.TipoUsuario = pessoa.TipoUsuario;
+                        p.Cidade = pessoa.Cidade;
                     }
 
                     bd.SubmitChanges();
@@ -61,13 +73,13 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(Cidade cidade)
+        public bool Excluir(Pessoa pessoa)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaCidade.DeleteOnSubmit(bd.TabelaCidade.First(p => p.Id == cidade.Id));
+                    bd.TabelaPessoa.DeleteOnSubmit(bd.TabelaPessoa.First(p => p.Id == pessoa.Id));
                     bd.SubmitChanges();
                     return true;
                 }
@@ -78,33 +90,21 @@ namespace BackEnd.Model
             }
         }
 
-        public Cidade Obter(int id)
+        public Pessoa Obter(int id)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaCidade.First(p => p.Id == id);
+                return bd.TabelaPessoa.First(p => p.Id == id);
             }
         }
 
-        public List<Cidade> Listar()
+        public List<Pessoa> Listar()
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaCidade.ToList();
+                return bd.TabelaPessoa.ToList();
             }
-        }
 
-        public List<Cidade> ListarPorNome(string Nome)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                
-                String sSql = "select * from cidades C where C.nome like '%"+Nome+"%' ";
-                var query = bd.ExecuteQuery<Cidade>(sSql);
-                return query.ToList();
-                //return bd.TabelaCidade.ToList(); 
-            }
         }
-
     }
 }

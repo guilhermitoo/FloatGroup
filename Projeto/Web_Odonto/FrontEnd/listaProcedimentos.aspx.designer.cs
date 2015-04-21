@@ -10,51 +10,42 @@
 namespace FrontEnd {
     
     
-    public partial class procedimentos {
+    public partial class listaProcedimentos {
         
         /// <summary>
-        /// txtDescricao control.
+        /// txtDescricaoProcedimento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
+        protected global::System.Web.UI.WebControls.TextBox txtDescricaoProcedimento;
         
         /// <summary>
-        /// btnSalvar control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// btnListar control.
+        /// tbnSair control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListar;
+        protected global::System.Web.UI.WebControls.Button tbnSair;
         
         /// <summary>
-        /// btnLimpar control.
+        /// rListaProcedimentos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimpar;
-        
-        /// <summary>
-        /// btnSair control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSair;
+        protected global::System.Web.UI.WebControls.Repeater rListaProcedimentos;
     }
 }

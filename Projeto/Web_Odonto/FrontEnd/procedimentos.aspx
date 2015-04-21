@@ -16,16 +16,13 @@
             <div class="panel-body">
                 <div class="row">
                     <!--Lado Esquerdo do Formulário -->
-                    <div class="col-md-6">                        
-                        <div class="form-group">
-                            <label>
-                                Descrição completa do procedimento
-                            </label>
-                            <input class="form-control" />
-                            <br />
- 
-                        </div>                    
-                    </div>
+                    <div class="col-md-6">                                                
+                        <label>
+                            Descrição completa do procedimento
+                        </label>
+                        <asp:TextBox id="txtDescricao" runat="server" CssClass="form-control" />
+                        <br /> 
+                        </div>                                        
                     <!-- row -->
                 </div>
                 <!-- panel-body -->
@@ -34,20 +31,13 @@
         </div>
         <!-- col-md-12 -->
         <!-- Botões -->
-        <div class="col-md-offset-3">
-            <form role="form">
-                <div class="form-group">
-                    <button type="submit" class="btn btn-info">
-                        Salvar
-                    </button>
-                    <button type="submit" class="btn btn-success">
-                        Limpar
-                    </button>
-                    <button type="submit" class="btn btn-warning">
-                        Sair
-                    </button>
-                </div>
-            </form>
+        <div class="col-md-offset-3">            
+            <div class="form-group">
+                <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
+                <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" OnClick="btnListar_Click" />
+                <asp:Button ID="btnLimpar" runat="server" Text="Limpar" CssClass="btn btn-success" OnClick="btnLimpar_Click" />
+                <asp:Button ID="btnSair" runat="server" Text="Sair" CssClass="btn btn-warning" OnClick="btnSair_Click" />
+            </div>            
         </div>
     </div>
     <!-- /. PAGE ROW -->

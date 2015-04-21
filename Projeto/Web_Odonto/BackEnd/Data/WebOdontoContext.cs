@@ -20,6 +20,7 @@ namespace BackEnd.Data
         private Table<Dentista> _tabelaDentista;
         private Table<Funcionario> _tabelaFuncionario;
         private Table<Paciente> _tabelaPaciente;
+        private Table<Procedimento> _tabelaProcedimento;
 
 
         public WebOdontoContext(string sConexao)
@@ -136,6 +137,22 @@ namespace BackEnd.Data
             set
             {
                 _tabelaPaciente = value;
+            }
+        }
+
+        public Table<Procedimento> TabelaProcedimento
+        {
+            get
+            {
+                if (_tabelaProcedimento == null)
+                {
+                    _tabelaProcedimento = this.GetTable<Procedimento>();
+                }
+                return _tabelaProcedimento;
+            }
+            set
+            {
+                _tabelaProcedimento = value;
             }
         }
     }

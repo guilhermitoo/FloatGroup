@@ -28,6 +28,10 @@ namespace FrontEnd
 
                 //preencher caixas de texto com valores de produto
                 txtNome.Text = medicamento.Nome;
+                txtClasseTerapeutica.Text = medicamento.ClasseTerapeutica;
+                txtTarja.Text = medicamento.Tarja;
+                txtUnidade.Text = medicamento.Unidade;
+                txtPosologia.InnerText = medicamento.Posologia;
                 
             }
         }
@@ -56,6 +60,21 @@ namespace FrontEnd
                 model.Inserir(medicamento);
             }
             Response.Redirect("medicamentos.aspx");  
+        }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("medicamentos.aspx");
+        }
+
+        protected void btnSair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnListar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("listaMedicamentos.aspx");
         }
     }
 }

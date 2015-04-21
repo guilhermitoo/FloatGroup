@@ -67,6 +67,7 @@
     <Compile Include="Model\MedicamentoModel.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PessoaModel.cs" />
+    <Compile Include="Model\ProcedimentoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

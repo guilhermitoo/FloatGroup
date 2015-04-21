@@ -7,11 +7,11 @@
     <br />  
     <br />        
     <div class="col-md-5">
-        <asp:TextBox ID="txtNomeMedicamento" runat="server" CssClass="form-control" placeholder="Digite o nome do medicamento que deseja buscar" ToolTip="Nome da Cidade" ></asp:TextBox>    
+        <asp:TextBox ID="txtNomeMedicamento" runat="server" CssClass="form-control" placeholder="Digite o nome do medicamento que deseja buscar" ToolTip="Nome da Medicamento" ></asp:TextBox>    
     </div>
     <div class="col-md-2">
-        <asp:Button ID="btnBuscar" runat="server" CssClass="btn btn-primary" Text="Buscar"/>
-        <asp:Button ID="tbnSair" runat="server" CssClass="btn btn-danger" Text="Sair"/>
+        <asp:Button ID="btnBuscar" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscar_Click"/>
+        <asp:Button ID="tbnSair" runat="server" CssClass="btn btn-danger" Text="Sair" OnClick="tbnSair_Click"/>
     </div>
     <br />
     <br />

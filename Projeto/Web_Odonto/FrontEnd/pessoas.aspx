@@ -15,18 +15,16 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     <div class="panel panel-default">
     <div class="panel-body">
         <div class="row">
-        <div class="col-md-6">          
-            <div class="form-group">
+        <div class="col-md-6">                  
                 <div class="list-group">
                     <label>
                     Escolha o tipo de cadastro
-                    </label>
-                    <asp:DropDownList ID="ddTipoPessoa" class="form-control" runat="server" OnSelectedIndexChanged="ddTipoPessoa_SelectedIndexChanged">
+                    </label>                    
+                    <asp:DropDownList ID="ddTipoPessoa" CssClass="form-control" runat="server" OnSelectedIndexChanged="ddTipoPessoa_SelectedIndexChanged" AutoPostBack="True">
                         <asp:ListItem Value="P">Paciente</asp:ListItem>
                         <asp:ListItem Value="F">Funcionário</asp:ListItem>
                         <asp:ListItem Value="D">Dentista</asp:ListItem>
-                    </asp:DropDownList>
-                    <br />
+                    </asp:DropDownList>                                                      
                 </div>
                 <label>
                 Status:
@@ -157,7 +155,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                 <!-- Paciente -->
                 <div id="dConvenio" runat="server">
                     <label id="lblConvenio" runat="server">Convênio</label>
-                    <asp:DropDownList ID="ddConvenio" runat="server">
+                    <asp:DropDownList ID="ddConvenio" runat="server" CssClass="form-control">
                         <asp:ListItem Selected="True">Nenhum</asp:ListItem>
                     </asp:DropDownList>
                 </div>
@@ -173,7 +171,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     <!-- col-md-12 -->
     <!-- Botões -->
     <div class="col-md-offset-3">
-    <form role="form">
+    
         <div class="form-group">
         <button type="submit" class="btn btn-info">
             Salvar
@@ -185,9 +183,9 @@ Faça cadastro de Funcionário, Paciente, e Dentista
             Sair
         </button>
         </div>
-    </form>
+    
     </div>
-</div>
+
 <!-- /. PAGE ROW -->
 <!-- /. PAGE INNER -->
 

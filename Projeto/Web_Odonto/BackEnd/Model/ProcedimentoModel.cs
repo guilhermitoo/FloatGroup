@@ -8,23 +8,24 @@ using BackEnd.Data;
 using BackEnd.Entity;
 using System.Data.Linq;
 
+
 namespace BackEnd.Model
 {
-    public class MedicamentoModel
+    public class ProcedimentoModel
     {
         private string sConexao;
-        public MedicamentoModel(string sConexao)
+        public ProcedimentoModel(string sConexao)
         {
             this.sConexao = sConexao;
         }
 
-        public bool Inserir(Medicamento medicamento)
+        public bool Inserir(Procedimento procedimento)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaMedicamento.InsertOnSubmit(medicamento);
+                    bd.TabelaProcedimento.InsertOnSubmit(procedimento);
                     bd.SubmitChanges();
                     return true;
                 }
@@ -35,23 +36,19 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Medicamento medicamento)
+        public bool Editar(Procedimento procedimento)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    var query = from med in bd.TabelaMedicamento
-                                where med.Id == medicamento.Id
-                                select med;
-                    foreach (Medicamento med in query)
+                    var query = from proc in bd.TabelaProcedimento
+                                where proc.Id == procedimento.Id
+                                select proc;
+                    foreach (Procedimento proc in query)
                     {
-                        med.Nome = medicamento.Nome;
-                        med.ClasseTerapeutica = medicamento.ClasseTerapeutica;
-                        med.Tarja = medicamento.Tarja;
-                        med.Posologia = medicamento.Posologia;
-                        med.Unidade = medicamento.Unidade;
-                        med.Id = medicamento.Id;
+                        proc.Descricao = procedimento.Descricao;
+                        proc.Id= procedimento.Id;                        
                     }
 
                     bd.SubmitChanges();
@@ -64,13 +61,13 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(Medicamento medicamento)
+        public bool Excluir(Procedimento procedimento)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
                 try
                 {
-                    bd.TabelaMedicamento.DeleteOnSubmit(bd.TabelaMedicamento.First(p => p.Id == medicamento.Id));
+                    bd.TabelaProcedimento.DeleteOnSubmit(bd.TabelaProcedimento.First(p => p.Id == procedimento.Id));
                     bd.SubmitChanges();
                     return true;
                 }
@@ -81,29 +78,29 @@ namespace BackEnd.Model
             }
         }
 
-        public Medicamento Obter(int id)
+        public Procedimento Obter(int id)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaMedicamento.First(p => p.Id == id);
+                return bd.TabelaProcedimento.First(p => p.Id == id);
             }
         }
 
-        public List<Medicamento> Listar()
+        public List<Procedimento> Listar()
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-                return bd.TabelaMedicamento.ToList();
+                return bd.TabelaProcedimento.ToList();
             }
         }
 
-        public List<Medicamento> ListarPorNome(string Nome)
+        public List<Procedimento> ListarPorDescricao(string Descricao)
         {
             using (WebOdontoContext bd = new WebOdontoContext(sConexao))
             {
-
-                String sSql = "select * from medicamentos m where m.nome like '%" + Nome + "%' ";
-                var query = bd.ExecuteQuery<Medicamento>(sSql);
+                
+                String sSql = "select * from procedimentos P where P.descricao like '%"+Descricao+"%' ";
+                var query = bd.ExecuteQuery<Procedimento>(sSql);
                 return query.ToList();                
             }
         }

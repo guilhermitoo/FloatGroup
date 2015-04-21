@@ -189,6 +189,7 @@
     <Content Include="index.aspx" />
     <Content Include="listaCidades.aspx" />
     <Content Include="listaMedicamentos.aspx" />
+    <Content Include="listaProcedimentos.aspx" />
     <Content Include="medicamentos.aspx" />
     <Content Include="procedimentos.aspx" />
     <Content Include="relatorios.aspx" />
@@ -243,6 +244,13 @@
     </Compile>
     <Compile Include="listaMedicamentos.aspx.designer.cs">
       <DependentUpon>listaMedicamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaProcedimentos.aspx.cs">
+      <DependentUpon>listaProcedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaProcedimentos.aspx.designer.cs">
+      <DependentUpon>listaProcedimentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="medicamentos.aspx.cs">
       <DependentUpon>medicamentos.aspx</DependentUpon>

@@ -33,5 +33,10 @@ namespace FrontEnd
             dUsuario.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
         }
 
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ModificaCampos();
+        }
+
     }
 }

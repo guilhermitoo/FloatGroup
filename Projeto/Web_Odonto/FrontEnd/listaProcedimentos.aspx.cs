@@ -9,31 +9,31 @@ using System.Configuration;
 
 namespace FrontEnd
 {
-    public partial class listaMedicamentos : System.Web.UI.Page
+    public partial class listaProcedimentos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
 
-            MedicamentoModel model = new MedicamentoModel(sConexao);
+            ProcedimentoModel model = new ProcedimentoModel(sConexao);
 
             // asp:repeater
-            rlistaMedicamentos.DataSource = model.Listar();
-            rlistaMedicamentos.DataBind();
+            rListaProcedimentos.DataSource = model.Listar();
+            rListaProcedimentos.DataBind();
         }
 
         protected void tbnSair_Click(object sender, EventArgs e)
         {
-            Response.Redirect("medicamentos.aspx");
+            Response.Redirect("procedimentos.aspx");
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-            MedicamentoModel model = new MedicamentoModel(sConexao);
+            ProcedimentoModel model = new ProcedimentoModel(sConexao);
 
-            rlistaMedicamentos.DataSource = model.ListarPorNome(txtNomeMedicamento.Text);
-            rlistaMedicamentos.DataBind();
+            rListaProcedimentos.DataSource = model.ListarPorDescricao(txtDescricaoProcedimento.Text);
+            rListaProcedimentos.DataBind();
         }
     }
 }

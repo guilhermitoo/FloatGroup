@@ -95,6 +95,18 @@ namespace BackEnd.Model
                 return bd.TabelaConvenio.ToList();
             }
 
-        }    
+        }
+
+        public List<Convenio> ListarPorNome(string Nome)
+        {
+            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            {
+
+                String sSql = "select C.* from convenios C where ( C.nome_fantasia like '%" + Nome + "%' ) or "+
+                                                                "( C.razao_social like '%" + Nome + "%' ) ";                                                               
+                var query = bd.ExecuteQuery<Convenio>(sSql);
+                return query.ToList();
+            }
+        }
     }
 }

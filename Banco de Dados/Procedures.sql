@@ -109,13 +109,14 @@ create procedure cadDentista
 	@obs		varchar(200),	
 	@tipoUsuario int,
 	@cidade_id	int,
-	@cro		varchar(20)
+	@cro		varchar(20),
+	@salario	decimal(15,2)
 )
 as
 begin
 	insert into pessoas values (@nome,@cpf,@rg,@nascimento,@telefone1,@telefone2,@sexo,@endereco,
 							@usuario,@senha,@status,@obs,@tipoUsuario,@cidade_id);
-	insert into dentistas values (@@IDENTITY,@cro);
+	insert into dentistas values (@@IDENTITY,@cro,@salario);
 end
 go
 
@@ -354,7 +355,8 @@ create procedure alteraDentista
 	@obs		varchar(200),	
 	@tipoUsuario int,
 	@cidade_id	int,
-	@cro		varchar(20)
+	@cro		varchar(20),
+	@salario	decimal(15,2)
 )
 as
 begin
@@ -362,7 +364,7 @@ begin
 	sexo = @sexo, endereco = @endereco, usuario = @usuario, senha = @senha, status = @status, obs = @obs, tipoUsuario = @tipoUsuario,
 	cidade_id = @cidade_id where ( id = @id );
 
-	update dentistas set cro = @cro where ( pessoa_id = @id );
+	update dentistas set cro = @cro, salario = @salario where ( pessoa_id = @id );
 end
 go
 
@@ -495,7 +497,7 @@ exec cadPaciente 'Jairo','123.123.321-22','123.123.123-1','24/06/1995','17323232
 go
 exec cadFuncionario 'Gui','123.123.321-23','123.123.123-1','24/06/1995','1732323232','12323232123','M','Rua de barro nº 2','jaja','juju',1,'',1,1,560.33,'programador'
 go
-exec cadDentista 'Guiga','123.123.321-25','123.123.123-1','24/06/1995','1732323232','12323232123','M','Rua de barro nº 2','jaja','juju',1,'',1,1,'32363'
+exec cadDentista 'Guiga','123.123.321-25','123.123.123-1','24/06/1995','1732323232','12323232123','M','Rua de barro nº 2','jaja','juju',1,'',1,1,'32363',1200
 go
 exec cadImagem 1,'foto antes do tratamento',123123
 go
@@ -528,7 +530,7 @@ exec alteraPaciente 1,'KKKKKK','12312','333','12/12/12','(17)1212-1212','','M','
 go
 exec alteraFuncionario 3,'nome','123.123.123-30','12.123.123-2','12/12/12','(18)123-123','','M','endereco','usuario','senha',1,'',1,1,2390,'analista'
 go
-exec alteraDentista 4,'nomed','','','','','','M','','','',1,'',1,1,'123'
+exec alteraDentista 4,'nomed','','','','','','M','','','',1,'',1,1,'123',1300
 go
 exec alteraImagem 3,1,'foto2',0x0001E0F3
 go

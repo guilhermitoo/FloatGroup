@@ -26,7 +26,7 @@ namespace FrontEnd
 
             dCargo.Visible = sTipo.Equals("F");
             dCro.Visible = sTipo.Equals("D");
-            dSalario.Visible = sTipo.Equals("F");
+            dSalario.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
             dConvenio.Visible = sTipo.Equals("P");
             dTipoUsuario.Visible = ( sTipo.Equals("F") || sTipo.Equals("D"));
             dSenha.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));

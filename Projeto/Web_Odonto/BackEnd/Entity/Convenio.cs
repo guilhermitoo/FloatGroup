@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Linq.Mapping;
 namespace BackEnd.Entity
 {
-     [Table(Name = "convenios")]
+    [Table(Name = "convenios")]
     public class Convenio
     {
         [Column(Name = "id", IsDbGenerated = true, IsPrimaryKey = true, CanBeNull = false)]
@@ -15,7 +15,7 @@ namespace BackEnd.Entity
         public string RazaoSocial { get; set; }
         [Column(Name="nome_fantasia")]
         public string NomeFantasia { get; set; }
-        [Column(Name = "cnpj")]
+        [Column(Name = "cnpj", CanBeNull = false)]
         public string Cnpj { get; set; }
         [Column(Name = "ie")]
         public string Ie { get; set; }        

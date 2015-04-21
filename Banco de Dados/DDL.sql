@@ -1,4 +1,4 @@
-\create database WebOdonto
+create database WebOdonto
 go
 
 use WebOdonto
@@ -9,6 +9,17 @@ create table cidades
 	id		int			not null	primary key identity,
 	nome			varchar(30)	not null,
 	uf				char(2)
+)
+go
+
+create table medicamentos
+(
+	id				   int          not null primary key identity,
+	nome           	   varchar(100) not null,
+	classe_terapeutica varchar(50),
+	tarja              varchar(50),
+	posologia          varchar(50),
+	unidade			   varchar(10)
 )
 go
 
@@ -62,17 +73,6 @@ create table dentistas
 	pessoa_id	int		not null	primary key		references pessoas,
 	cro			varchar(20) not null unique,
 	salario decimal(15,2) not null
-)
-go
-
-create table medicamentos
-(
-	id				   int          not null primary key identity,
-	nome           	   varchar(100) not null,
-	classe_terapeutica varchar(50),
-	tarja              varchar(50),
-	posologia          varchar(50),
-	unidade			   varchar(10)
 )
 go
 
@@ -158,3 +158,4 @@ create table itensReceita
 	primary key (receita_id,medicamento_id)
 )
 go
+

@@ -55,22 +55,18 @@
         </div>
         <!-- panel panel-default -->
     </div>
+    </div>
     <!-- col-md-12 -->
     <!-- Botões -->
-    <div class="col-md-offset-3">
-        <form role="form">
-            <div class="form-group">
-                <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click"/>
-                                        
-                <button type="submit" class="btn btn-success">
-                    Limpar
-                </button>
-                <button type="submit" class="btn btn-warning">
-                    Sair</button>
-            </div>
-        </form>
+    <div class="col-md-offset-3">   
+        <div class="form-group">
+                <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
+                <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" OnClick="btnListar_Click" />
+                <asp:Button ID="btnLimpar" runat="server" Text="Limpar" CssClass="btn btn-success" OnClick="btnLimpar_Click" />
+                <asp:Button ID="btnSair" runat="server" Text="Sair" CssClass="btn btn-warning" OnClick="btnSair_Click" />
+        </div>        
     </div>
-</div>
+
 <!-- /. PAGE ROW -->
                         
 

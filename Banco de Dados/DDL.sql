@@ -99,6 +99,8 @@ create table tratamentos
 (
 	avaliacao_id int not null primary key references avaliacoes,
 	status int check(status in (1,2,3)) not null, -- 1 = Em Orçameto, 2 = Em Andamento, 3 = Concluído
+	dataInicial date,
+	dataFinal date,
 	total decimal(15,2)
 )
 go

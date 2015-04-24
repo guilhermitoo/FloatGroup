@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Linq.Mapping;
+
 namespace BackEnd.Entity
 {
     [Table(Name = "convenios")]

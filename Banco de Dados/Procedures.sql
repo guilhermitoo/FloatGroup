@@ -148,11 +148,13 @@ create procedure cadTratamento
 (
 	@avaliacao_id int,
 	@status int,
+	@dataInicial date,
+	@dataFinal date,
 	@total decimal(15,2)
 )
 as
 begin
-	insert into tratamentos values(@avaliacao_id,@status,@total);
+	insert into tratamentos values(@avaliacao_id,@status,@dataInicial,@dataFinal,@total);
 end
 go
 
@@ -398,11 +400,13 @@ create procedure alteraTratamento
 (
 	@avaliacao_id int,
 	@status int,
+	@dataInicial date,
+	@dataFinal date,
 	@total decimal(15,2)
 )
 as
 begin 
-	update tratamentos set status = @status, total = @total where ( avaliacao_id = @avaliacao_id );
+	update tratamentos set status = @status, dataInicial = @dataInicial, dataFinal = @dataFinal ,total = @total where ( avaliacao_id = @avaliacao_id );
 end
 go
 

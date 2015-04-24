@@ -111,6 +111,8 @@ create view v_tratamentos
 as
 	select a.Código,
 		   t.status Status,
+		   t.dataInicial 'Data Inicial',
+		   t.dataFinal 'Data Final',
 		   t.total  Total
 	from tratamentos t
 	join v_avaliacoes a on (t.avaliacao_id = a.Código)

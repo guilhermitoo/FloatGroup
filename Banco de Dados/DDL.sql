@@ -88,10 +88,10 @@ go
 
 create table avaliacoes
 (
-	id			int		 not null	primary key	identity,
-	data		datetime not null,
-	dentista_id	int		 not null	references dentistas,
-	paciente_id int		 not null	references pacientes
+	id			int	not null	primary key	identity,
+	data		datetime 	not null,
+	dentista_id	int		not null	references dentistas,
+	paciente_id int		 	not null	references pacientes
 )
 go
 

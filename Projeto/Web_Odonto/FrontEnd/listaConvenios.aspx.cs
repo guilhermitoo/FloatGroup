@@ -16,7 +16,7 @@ namespace FrontEnd
         {
             string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
 
-            ConvenioModel model = new ConvenioModel(sConexao);
+            ConvenioModel model = new ConvenioModel();
 
             // asp:repeater
             rlistaConvenio.DataSource = model.Listar();
@@ -24,9 +24,8 @@ namespace FrontEnd
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-            ConvenioModel model = new ConvenioModel(sConexao);
+        {            
+            ConvenioModel model = new ConvenioModel();
 
             rlistaConvenio.DataSource = model.ListarPorNome(txtConvenio.Text);
             rlistaConvenio.DataBind();

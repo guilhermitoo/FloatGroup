@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Configuration;
 using BackEnd.Model;
 
@@ -16,48 +16,41 @@ namespace FrontEnd
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["ID"] != null && !IsPostBack)
-            {
-                // recupera a string de conexão
-                string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
+            {               
                 //recupera o id
                 int id = int.Parse(Request.QueryString["ID"]);
                 // declara o objeto model
-                ConvenioModel model = new ConvenioModel(sConexao);
+                ConvenioModel model = new ConvenioModel();
                 //recupera o produto do id informado
-                Convenio convenio = model.Obter(id);
+                convenio convenio = model.Obter(id);
 
                 //preencher caixas de texto com valores de produto
-                txtRazao.Text = convenio.RazaoSocial;
-                txtNomeFantasia.Text = convenio.NomeFantasia;
-                txtCNPJ.Text = convenio.Cnpj;
-                txtIe.Text = convenio.Ie;
+                txtRazao.Text = convenio.razao_social;
+                txtNomeFantasia.Text = convenio.nome_fantasia;
+                txtCNPJ.Text = convenio.cnpj;
+                txtIe.Text = convenio.ie;
             }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Convenio convenio = new Convenio();
+            convenio convenio = new convenio();
 
-            convenio.Cnpj = txtCNPJ.Text;
-            convenio.Ie = txtIe.Text;
-            convenio.RazaoSocial = txtRazao.Text;
-            convenio.NomeFantasia = txtNomeFantasia.Text;
+            convenio.cnpj = txtCNPJ.Text;
+            convenio.ie = txtIe.Text;
+            convenio.razao_social= txtRazao.Text;
+            convenio.nome_fantasia = txtNomeFantasia.Text;            
 
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-
-            ConvenioModel model = new ConvenioModel(sConexao);
+            ConvenioModel model = new ConvenioModel();
 
             //se existir ID então faz a edição, se não existir ID, é uma inserção
             if (Request.QueryString["ID"] != null)
-            {
-                convenio.Id = int.Parse(Request.QueryString["ID"]);
-                model.Editar(convenio);
-            }
-            else
-            {
-                model.Inserir(convenio);
-            }
-            Response.Redirect("convenios.aspx");  
+                convenio.id = int.Parse(Request.QueryString["ID"]);
+
+            // faz a inserção ou atualização do cadastro da cidade
+            if ( model.InserirAtualizar(convenio) )
+                Response.Redirect("convenio.aspx");   
+                            
         }
 
         protected void btnSair_Click(object sender, EventArgs e)

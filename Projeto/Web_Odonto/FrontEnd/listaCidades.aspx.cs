@@ -12,10 +12,8 @@ namespace FrontEnd
     public partial class listaCidades : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-
-            CidadeModel model = new CidadeModel(sConexao);
+        {            
+            CidadeModel model = new CidadeModel();
 
             // asp:repeater
             rlistaCidades.DataSource = model.Listar();
@@ -28,9 +26,8 @@ namespace FrontEnd
         }
 
         protected void btnBuscarCidade_Click(object sender, EventArgs e)
-        {
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-            CidadeModel model = new CidadeModel(sConexao);
+        {            
+            CidadeModel model = new CidadeModel();
 
             rlistaCidades.DataSource = model.ListarPorNome(txtNomeCidade.Text);
             rlistaCidades.DataBind();

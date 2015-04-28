@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WebOdonto" Class="WebOdontoClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DIAS;Initial Catalog=WebOdonto;Integrated Security=True" SettingsObjectName="BackEnd.Properties.Settings" SettingsPropertyName="WebOdontoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.atendimentos" Member="atendimentos">
+    <Type Name="atendimento">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dentista_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tratamento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="atendimento_itensAtendimento" Member="itemAtendimentos" ThisKey="id" OtherKey="atendimento_id" Type="itemAtendimento" />
+      <Association Name="atendimento_receita" Member="receitas" ThisKey="id" OtherKey="atendimento_id" Type="receita" />
+      <Association Name="dentista_atendimento" Member="dentista" ThisKey="dentista_id" OtherKey="pessoa_id" Type="dentista" IsForeignKey="true" />
+      <Association Name="tratamento_atendimento" Member="tratamento" ThisKey="tratamento_id" OtherKey="avaliacao_id" Type="tratamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.avaliacoes" Member="avaliacaos">
+    <Type Name="avaliacao">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dentista_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paciente_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="avaliacoe_tratamento" Member="tratamento" ThisKey="id" OtherKey="avaliacao_id" Type="tratamento" Cardinality="One" />
+      <Association Name="dentista_avaliacoe" Member="dentista" ThisKey="dentista_id" OtherKey="pessoa_id" Type="dentista" IsForeignKey="true" />
+      <Association Name="paciente_avaliacoe" Member="paciente" ThisKey="paciente_id" OtherKey="pessoa_id" Type="paciente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cidades" Member="cidades">
+    <Type Name="cidade">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="uf" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Association Name="cidade_pessoa" Member="pessoas" ThisKey="id" OtherKey="cidade_id" Type="pessoa" />
+    </Type>
+  </Table>
+  <Table Name="dbo.convenios" Member="convenios">
+    <Type Name="convenio">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cnpj" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ie" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="razao_social" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nome_fantasia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="convenio_paciente" Member="pacientes" ThisKey="id" OtherKey="convenio_id" Type="paciente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dentistas" Member="dentistas">
+    <Type Name="dentista">
+      <Column Name="pessoa_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cro" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="salario" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Association Name="dentista_atendimento" Member="atendimentos" ThisKey="pessoa_id" OtherKey="dentista_id" Type="atendimento" />
+      <Association Name="dentista_avaliacoe" Member="avaliacaos" ThisKey="pessoa_id" OtherKey="dentista_id" Type="avaliacao" />
+      <Association Name="pessoa_dentista" Member="pessoa" ThisKey="pessoa_id" OtherKey="id" Type="pessoa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.funcionarios" Member="funcionarios">
+    <Type Name="funcionario">
+      <Column Name="pessoa_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="salario" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="cargo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="pessoa_funcionario" Member="pessoa" ThisKey="pessoa_id" OtherKey="id" Type="pessoa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.imagens" Member="imagems">
+    <Type Name="imagem">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="paciente_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="arquivo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="paciente_imagen" Member="paciente" ThisKey="paciente_id" OtherKey="pessoa_id" Type="paciente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.itensAtendimento" Member="itemAtendimentos">
+    <Type Name="itemAtendimento">
+      <Column Name="atendimento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="procedimento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="atendimento_itensAtendimento" Member="atendimento" ThisKey="atendimento_id" OtherKey="id" Type="atendimento" IsForeignKey="true" />
+      <Association Name="procedimento_itensAtendimento" Member="procedimento" ThisKey="procedimento_id" OtherKey="id" Type="procedimento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.itensReceita" Member="itemReceitas">
+    <Type Name="itemReceita">
+      <Column Name="receita_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="medicamento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dose" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="periodo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="medicamento_itensReceita" Member="medicamento" ThisKey="medicamento_id" OtherKey="id" Type="medicamento" IsForeignKey="true" />
+      <Association Name="receita_itensReceita" Member="receita" ThisKey="receita_id" OtherKey="id" Type="receita" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.itensTratamento" Member="itemTratamentos">
+    <Type Name="itemTratamento">
+      <Column Name="tratamento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="procedimento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="procedimento_itensTratamento" Member="procedimento" ThisKey="procedimento_id" OtherKey="id" Type="procedimento" IsForeignKey="true" />
+      <Association Name="tratamento_itensTratamento" Member="tratamento" ThisKey="tratamento_id" OtherKey="avaliacao_id" Type="tratamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.medicamentos" Member="medicamentos">
+    <Type Name="medicamento">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="classe_terapeutica" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tarja" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="posologia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="unidade" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="medicamento_itensReceita" Member="itemReceitas" ThisKey="id" OtherKey="medicamento_id" Type="itemReceita" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pacientes" Member="pacientes">
+    <Type Name="paciente">
+      <Column Name="pessoa_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="convenio_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="paciente_avaliacoe" Member="avaliacaos" ThisKey="pessoa_id" OtherKey="paciente_id" Type="avaliacao" />
+      <Association Name="paciente_imagen" Member="imagems" ThisKey="pessoa_id" OtherKey="paciente_id" Type="imagem" />
+      <Association Name="convenio_paciente" Member="convenio" ThisKey="convenio_id" OtherKey="id" Type="convenio" IsForeignKey="true" />
+      <Association Name="pessoa_paciente" Member="pessoa" ThisKey="pessoa_id" OtherKey="id" Type="pessoa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pessoas" Member="pessoas">
+    <Type Name="pessoa">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="nascimento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="telefone1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="telefone2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="endereco" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="tipoUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cidade_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="pessoa_dentista" Member="dentista" ThisKey="id" OtherKey="pessoa_id" Type="dentista" Cardinality="One" />
+      <Association Name="pessoa_funcionario" Member="funcionario" ThisKey="id" OtherKey="pessoa_id" Type="funcionario" Cardinality="One" />
+      <Association Name="pessoa_paciente" Member="paciente" ThisKey="id" OtherKey="pessoa_id" Type="paciente" Cardinality="One" />
+      <Association Name="cidade_pessoa" Member="cidade" ThisKey="cidade_id" OtherKey="id" Type="cidade" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.procedimentos" Member="procedimentos">
+    <Type Name="procedimento">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="procedimento_itensAtendimento" Member="itemAtendimentos" ThisKey="id" OtherKey="procedimento_id" Type="itemAtendimento" />
+      <Association Name="procedimento_itensTratamento" Member="itemTratamentos" ThisKey="id" OtherKey="procedimento_id" Type="itemTratamento" />
+    </Type>
+  </Table>
+  <Table Name="dbo.receitas" Member="receitas">
+    <Type Name="receita">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="atendimento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="receita_itensReceita" Member="itemReceitas" ThisKey="id" OtherKey="receita_id" Type="itemReceita" />
+      <Association Name="atendimento_receita" Member="atendimento" ThisKey="atendimento_id" OtherKey="id" Type="atendimento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tratamentos" Member="tratamentos">
+    <Type Name="tratamento">
+      <Column Name="avaliacao_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="dataInicial" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="dataFinal" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tratamento_atendimento" Member="atendimentos" ThisKey="avaliacao_id" OtherKey="tratamento_id" Type="atendimento" />
+      <Association Name="tratamento_itensTratamento" Member="itemTratamentos" ThisKey="avaliacao_id" OtherKey="tratamento_id" Type="itemTratamento" />
+      <Association Name="avaliacoe_tratamento" Member="avaliacao" ThisKey="avaliacao_id" OtherKey="id" Type="avaliacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.cadTratamento" Method="cadTratamento">
+    <Parameter Name="avaliacao_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Decimal(15,2)" />
+  </Function>
+  <Function Name="dbo.cadReceita" Method="cadReceita">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="atendimento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadProcedimento" Method="cadProcedimento">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadPaciente" Method="cadPaciente">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="nascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="telefone1" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="telefone2" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="endereco" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="senha" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="tipoUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cidade_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="convenio" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadMedicamento" Method="cadMedicamento">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="classe_terapeutica" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tarja" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="posologia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="unidade" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadItemTratamento" Method="cadItemTratamento">
+    <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="qtd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="valor" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadItemReceita" Method="cadItemReceita">
+    <Parameter Name="receita_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="medicamento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dose" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="periodo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadItemAtendimento" Method="cadItemAtendimento">
+    <Parameter Name="atendimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="qtd" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadImagem" Method="cadImagem">
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="arquivo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadFuncionario" Method="cadFuncionario">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="nascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="telefone1" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="telefone2" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="endereco" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="senha" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="tipoUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cidade_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="salario" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Parameter Name="cargo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadDentista" Method="cadDentista">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="nascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="telefone1" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="telefone2" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="endereco" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="senha" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="tipoUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cidade_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cro" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="salario" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadConvenio" Method="cadConvenio">
+    <Parameter Name="cnpj" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ie" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="razao_social" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="nome_fantasia" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadCidade" Method="cadCidade">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="uf" Type="System.String" DbType="Char(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadAvaliacao" Method="cadAvaliacao">
+    <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadAtendimento" Method="cadAtendimento">
+    <Parameter Name="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraTratamento" Method="alteraTratamento">
+    <Parameter Name="avaliacao_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="total" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraReceita" Method="alteraReceita">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="atendimento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraProcedimento" Method="alteraProcedimento">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraPaciente" Method="alteraPaciente">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="nascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="telefone1" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="telefone2" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="endereco" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="senha" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="tipoUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cidade_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="convenio" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraMedicamento" Method="alteraMedicamento">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="classe_terapeutica" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tarja" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="posologia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="unidade" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraItemTratamento" Method="alteraItemTratamento">
+    <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="qtd" Type="System.Int32" DbType="Int" />
+    <Parameter Name="valor" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraItemReceita" Method="alteraItemReceita">
+    <Parameter Name="receita_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="medicamento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dose" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="periodo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraItemAtendimento" Method="alteraItemAtendimento">
+    <Parameter Name="atendimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="qtd" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraImagem" Method="alteraImagem">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="arquivo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraFuncionario" Method="alteraFuncionario">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="nascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="telefone1" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="telefone2" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="endereco" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="senha" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="tipoUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cidade_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="salario" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Parameter Name="cargo" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraDentista" Method="alteraDentista">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="nascimento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="telefone1" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="telefone2" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="endereco" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="senha" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="tipoUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cidade_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cro" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="salario" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraConvenio" Method="alteraConvenio">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cnpj" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="ie" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="razao_social" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="nome_fantasia" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraCidade" Method="alteraCidade">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="uf" Type="System.String" DbType="Char(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraAvaliacao" Method="alteraAvaliacao">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraAtendimento" Method="alteraAtendimento">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="data" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

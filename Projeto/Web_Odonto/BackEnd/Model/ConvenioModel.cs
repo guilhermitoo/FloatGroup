@@ -4,28 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using BackEnd.Data;
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Data.Linq;
 
 namespace BackEnd.Model
 {
     public class ConvenioModel
     {
-        private string sConexao;
-        public ConvenioModel(string sConexao)
+        public ConvenioModel() {}
+
+        public bool InserirAtualizar(convenio con)
         {
-            this.sConexao = sConexao;
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+
+            try
+            {
+                Table<convenio> tabelaConvenio = db.GetTable<convenio>();
+                if (con.id == 0)
+                {
+                    db.cadConvenio(con.cnpj,con.ie,con.razao_social,con.nome_fantasia);
+                    tabelaConvenio.Context.SubmitChanges();
+                }
+                else
+                {
+                    db.alteraConvenio(con.id ,con.cnpj, con.ie, con.razao_social, con.nome_fantasia);
+                    tabelaConvenio.Context.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public bool Inserir(Convenio convenio)
+        public bool Excluir(convenio convenio)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 try
                 {
-                    bd.TabelaConvenio.InsertOnSubmit(convenio);
-                    bd.SubmitChanges();
+                    Table<convenio> tabelaConvenio = db.GetTable<convenio>();
+                    tabelaConvenio.DeleteOnSubmit(tabelaConvenio.First(p => p.id == convenio.id));
+                    tabelaConvenio.Context.SubmitChanges();
                     return true;
                 }
                 catch
@@ -35,76 +56,33 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Convenio convenio)
+        public convenio Obter(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    var query = from con in bd.TabelaConvenio
-                                where con.Id == convenio.Id
-                                select con;
-                    foreach (Convenio con in query)
-                    {
-                        con.Cnpj = convenio.Cnpj;
-                        con.Ie = convenio.Ie;
-                        con.RazaoSocial = convenio.RazaoSocial;
-                        con.NomeFantasia = convenio.NomeFantasia;
-                        con.Id = convenio.Id;
-                    }
-
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<convenio> tabelaConvenio = db.GetTable<convenio>();
+                return tabelaConvenio.First(p => p.id == id);
             }
         }
 
-        public bool Excluir(Convenio convenio)
+        public List<convenio> Listar()
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaConvenio.DeleteOnSubmit(bd.TabelaConvenio.First(p => p.Id == convenio.Id));
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
-
-        public Convenio Obter(int id)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaConvenio.First(p => p.Id == id);
-            }
-        }
-
-        public List<Convenio> Listar()
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaConvenio.ToList();
+                Table<convenio> tabelaConvenio = db.GetTable<convenio>();
+                return tabelaConvenio.ToList();
             }
 
         }
 
-        public List<Convenio> ListarPorNome(string Nome)
+        public List<convenio> ListarPorNome(string Nome)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
                 String sSql = "select C.* from convenios C where ( C.nome_fantasia like '%" + Nome + "%' ) or "+
                                                                 "( C.razao_social like '%" + Nome + "%' ) ";                                                               
-                var query = bd.ExecuteQuery<Convenio>(sSql);
+                var query = db.ExecuteQuery<convenio>(sSql);
                 return query.ToList();
             }
         }

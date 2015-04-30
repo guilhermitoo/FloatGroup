@@ -9,6 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"
         />
        
+        <!-- JQUERY SCRIPTS -->
+        <script src="assets/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP STYLES-->
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
@@ -28,6 +30,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body id="wrapper">
+    
     <div>
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -100,7 +103,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <asp:ContentPlaceHolder ID="p" runat="server">
         
                         </asp:ContentPlaceHolder>
                     </div>
@@ -111,11 +114,7 @@
     </form>
 
     <!-- scripts do bootstrap -->
-
-    <!-- JQUERY SCRIPTS -->
-            <script src="assets/js/jquery-1.10.2.js">
-                        
-            </script>
+                                    
             <!-- BOOTSTRAP SCRIPTS -->
             <script src="assets/js/bootstrap.min.js">
                         
@@ -147,13 +146,7 @@
 
    <script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">
 
-   </script>
-
-   <script type="text/javascript">
-  
-       <script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">
-
-   </script>
+   </script>        
 
    <script type="text/javascript">
   

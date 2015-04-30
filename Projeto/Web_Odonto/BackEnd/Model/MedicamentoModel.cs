@@ -4,28 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using BackEnd.Data;
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Data.Linq;
 
 namespace BackEnd.Model
 {
     public class MedicamentoModel
-    {
-        private string sConexao;
-        public MedicamentoModel(string sConexao)
+    {        
+        public MedicamentoModel() { }
+
+        public bool InserirAtualizar(medicamento m)
         {
-            this.sConexao = sConexao;
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+
+            try
+            {
+                Table<medicamento> tabelaMedicamento = db.GetTable<medicamento>();
+                if (m.id == 0)
+                {
+                    db.cadMedicamento(m.nome, m.classe_terapeutica, m.tarja, m.posologia, m.unidade);
+                    tabelaMedicamento.Context.SubmitChanges();
+                }
+                else
+                {
+                    db.alteraMedicamento(m.id, m.nome, m.classe_terapeutica, m.tarja, m.posologia, m.unidade);
+                    tabelaMedicamento.Context.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public bool Inserir(Medicamento medicamento)
+        public bool Excluir(medicamento medicamento)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 try
                 {
-                    bd.TabelaMedicamento.InsertOnSubmit(medicamento);
-                    bd.SubmitChanges();
+                    Table<medicamento> tabelaMedicamento = db.GetTable<medicamento>();
+                    tabelaMedicamento.DeleteOnSubmit(tabelaMedicamento.First(p => p.id == medicamento.id));
+                    db.SubmitChanges();
                     return true;
                 }
                 catch
@@ -35,75 +56,31 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Medicamento medicamento)
+        public medicamento Obter(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    var query = from med in bd.TabelaMedicamento
-                                where med.Id == medicamento.Id
-                                select med;
-                    foreach (Medicamento med in query)
-                    {
-                        med.Nome = medicamento.Nome;
-                        med.ClasseTerapeutica = medicamento.ClasseTerapeutica;
-                        med.Tarja = medicamento.Tarja;
-                        med.Posologia = medicamento.Posologia;
-                        med.Unidade = medicamento.Unidade;
-                        med.Id = medicamento.Id;
-                    }
-
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<medicamento> tabelaMedicamento = db.GetTable<medicamento>();
+                return tabelaMedicamento.First(p => p.id == id);
             }
         }
 
-        public bool Excluir(Medicamento medicamento)
+        public List<medicamento> Listar()
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaMedicamento.DeleteOnSubmit(bd.TabelaMedicamento.First(p => p.Id == medicamento.Id));
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<medicamento> tabelaMedicamento = db.GetTable<medicamento>();
+                return tabelaMedicamento.ToList();
             }
         }
 
-        public Medicamento Obter(int id)
+        public List<medicamento> ListarPorNome(string Nome)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                return bd.TabelaMedicamento.First(p => p.Id == id);
-            }
-        }
-
-        public List<Medicamento> Listar()
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaMedicamento.ToList();
-            }
-        }
-
-        public List<Medicamento> ListarPorNome(string Nome)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-
+                
                 String sSql = "select * from medicamentos m where m.nome like '%" + Nome + "%' ";
-                var query = bd.ExecuteQuery<Medicamento>(sSql);
+                var query = db.ExecuteQuery<medicamento>(sSql);
                 return query.ToList();                
             }
         }

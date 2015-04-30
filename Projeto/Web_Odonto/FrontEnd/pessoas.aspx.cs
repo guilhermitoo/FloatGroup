@@ -4,39 +4,183 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
+
+using BackEnd.EntityData;
+using BackEnd.Model;
 
 namespace FrontEnd
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class pessoas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            ModificaCampos();
+        {            
+            // carrega todas as cidades e lista no DropDown Cidades            
+            CidadeModel cidModel = new CidadeModel();
+            // atribui uma lista de cidades para o DropDown
+            ddCidade.DataSource = cidModel.Listar();
+            ddCidade.DataValueField = "id";
+            ddCidade.DataTextField = "nome";
+            ddCidade.DataBind();
+
+            // carrega todos os convenios e lista no DropDown Convenios
+            ConvenioModel conModel = new ConvenioModel();
+            ddConvenio.DataSource = conModel.Listar();
+            ddConvenio.DataValueField = "id";
+            ddConvenio.DataTextField = "razao_social";            
+            ddConvenio.DataBind();
+
+            if (Request.QueryString["ID"] != null && !IsPostBack)
+            {
+                //recupera o id
+                int id = int.Parse(Request.QueryString["ID"]);
+                // declara os objetos models
+                PessoaModel Model = new PessoaModel();
+                DentistaModel dModel = new DentistaModel();
+                PacienteModel pModel = new PacienteModel();
+                FuncionarioModel fModel = new FuncionarioModel();
+                //recupera a pessoa do id informado
+                pessoa pessoa = Model.Obter(id);       
+        
+                // verifica se é dentista, funcionário ou paciente 
+                if ( dModel.Verifica(pessoa.id) ) {
+                    dentista dentista = dModel.Obter(id);
+                    cbTipoPessoa.Items.FindByValue("D").Selected = true;
+                    txtCro.Text = dentista.cro;
+                }
+                if ( fModel.Verifica(pessoa.id) ) {
+                    funcionario funcionario = fModel.Obter(id);
+                    cbTipoPessoa.Items.FindByValue("F").Selected = true;
+                    txtCargo.Text = funcionario.cargo;
+                    txtSalario.Text = funcionario.salario.ToString();
+                }
+                if ( pModel.Verifica(pessoa.id) ) {
+                    paciente paciente = pModel.Obter(id);
+                    cbTipoPessoa.Items.FindByValue("P").Selected = true;
+                    ddConvenio.Items.FindByValue(paciente.convenio_id.ToString());
+                }
+                // DADOS DE PESSOA
+                rdStatus.Items.FindByValue(pessoa.status.ToString());
+                txtNome.Text = pessoa.nome;
+                rdSexo.Items.FindByValue(pessoa.sexo.ToString());
+                datepicker.Value = pessoa.nascimento.ToString();
+                txtRg.Text = pessoa.rg;
+                txtCpf.Text = pessoa.cpf;
+                ddCidade.Items.FindByValue(pessoa.cidade_id.ToString());
+                txtEndereco.Text = pessoa.endereco;                
+                txtTelefone1.Text = pessoa.telefone1;
+                txtTelefone2.Text = pessoa.telefone2;
+                txtObs.InnerText = pessoa.obs;
+                ddTipoUsuario.Items.FindByValue(pessoa.tipoUsuario.ToString());
+                txtUsuario.Text = pessoa.usuario;
+                txtSenha.Text = pessoa.senha;
+            }
         }
 
-        protected void ddTipoPessoa_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            ModificaCampos();            
+            Response.Redirect("pessoas.aspx");
         }
 
-        private void ModificaCampos()
+        protected void btnSair_Click(object sender, EventArgs e)
         {
-            // verifica qual cadastro foi selecionado e modifica os campos que estão sendo exibidos
-            String sTipo = ddTipoPessoa.SelectedValue ;
-
-            dCargo.Visible = sTipo.Equals("F");
-            dCro.Visible = sTipo.Equals("D");
-            dSalario.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
-            dConvenio.Visible = sTipo.Equals("P");
-            dTipoUsuario.Visible = ( sTipo.Equals("F") || sTipo.Equals("D"));
-            dSenha.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
-            dUsuario.Visible = (sTipo.Equals("F") || sTipo.Equals("D"));
+            Response.Redirect("index.aspx");
         }
 
-        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            ModificaCampos();
+            // salva o cadastro da pessoa
+            // deve verificar quais opções no tipo de pessoa estão marcadas (PACIENTE, FUNCIONARIO, DENTISTA)
+            // e deve inserir/atualizar os cadastros que estiverem marcados
+
+            pessoa pessoa = new pessoa();
+            PessoaModel pessoaModel = new PessoaModel();
+            
+            // DADOS DE PESSOA
+            pessoa.nome = txtNome.Text;
+            pessoa.status = Int32.Parse(rdStatus.SelectedValue);
+            pessoa.sexo = Char.Parse(rdSexo.SelectedValue);
+            pessoa.nascimento = DateTime.Parse(datepicker.Value);
+            pessoa.rg = txtRg.Text;
+            pessoa.cpf = txtCpf.Text;
+            pessoa.cidade_id = Int32.Parse(ddCidade.SelectedValue);
+            pessoa.endereco = txtEndereco.Text;
+            pessoa.telefone1 = txtTelefone1.Text;
+            pessoa.telefone2 = txtTelefone2.Text;
+            pessoa.obs = txtObs.InnerText;
+            pessoa.tipoUsuario = Int32.Parse(ddTipoUsuario.SelectedValue);
+            pessoa.usuario = txtUsuario.Text;
+            pessoa.senha = txtSenha.Text;
+
+            bool bNovo = true;
+            if (Request.QueryString["ID"] != null)
+            {
+                pessoa.id = int.Parse(Request.QueryString["ID"]);
+                bNovo = false; 
+            }
+            // verificar os tipos
+            if (cbTipoPessoa.Items.FindByValue("P").Selected) 
+            {
+                paciente paciente = new paciente();
+                paciente.convenio_id = Int32.Parse(ddConvenio.SelectedValue);
+                paciente.pessoa = pessoa;
+                PacienteModel pModel = new PacienteModel();
+                // tenta inserir ou atualizar o cadastro
+                if (pModel.InserirAtualizar(paciente))
+                {                    
+                    if (bNovo)
+                    {   // se for um cadastro novo busca pelo cpf que foi inserido e volta o id novo para o objeto pessoa
+                        // evitando que ele faça 3 cadastros
+                        pessoa.id = (pessoaModel.ObterCPF(pessoa.cpf)).id;
+                        bNovo = false;
+                    }
+                }
+            }
+            if (cbTipoPessoa.Items.FindByValue("D").Selected)
+            {
+                dentista dentista = new dentista();
+                dentista.cro = txtCro.Text;
+                dentista.salario = Decimal.Parse(txtSalario.Text);
+                dentista.pessoa = pessoa;
+                DentistaModel dModel = new DentistaModel();
+                // tenta inserir ou atualizar o cadastro
+                if (dModel.InserirAtualizar(dentista))
+                {
+                    if (bNovo)
+                    {   // se for um cadastro novo busca pelo cpf que foi inserido e volta o id novo para o objeto pessoa
+                        // evitando que ele faça 3 cadastros
+                        pessoa.id = (pessoaModel.ObterCPF(pessoa.cpf)).id;
+                        bNovo = false;
+                    }
+                }
+            }
+            if (cbTipoPessoa.Items.FindByValue("F").Selected)
+            {
+                funcionario funcionario = new funcionario();
+                funcionario.cargo = txtCargo.Text;
+                funcionario.salario = Decimal.Parse(txtSalario.Text);
+                funcionario.pessoa = pessoa;
+                FuncionarioModel fModel = new FuncionarioModel();               
+                // tenta inserir ou atualizar o cadastro
+                if (fModel.InserirAtualizar(funcionario))
+                {
+                    if (bNovo)
+                    {   // se for um cadastro novo busca pelo cpf que foi inserido e volta o id novo para o objeto pessoa
+                        // evitando que ele faça 3 cadastros
+                        pessoa.id = (pessoaModel.ObterCPF(pessoa.cpf)).id;
+                        bNovo = false;
+                    }
+                }
+            }
+            Response.Redirect("pessoas.aspx");           
         }
 
+        [WebMethod]
+        public static bool VerificaCPF(string cpf)
+        {
+            PessoaModel p = new PessoaModel();
+
+            return p.ValidaCPF(cpf);
+        }
     }
 }

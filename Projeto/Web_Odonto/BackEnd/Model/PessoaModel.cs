@@ -4,107 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using BackEnd.Data;
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Data.Linq;
 
 namespace BackEnd.Model
 {
     public class PessoaModel
     {
-        private string sConexao;
-        public PessoaModel(string sConexao)
-        {
-            this.sConexao = sConexao;
-        }
+        public PessoaModel() { }             
 
-        public bool Inserir(Pessoa pessoa)
+        public pessoa Obter(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaPessoa.InsertOnSubmit(pessoa);
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<pessoa> tabelaPessoa = db.GetTable<pessoa>();
+                return tabelaPessoa.First(p => p.id == id);
             }
         }
 
-        public bool Editar(Pessoa pessoa)
+        public List<pessoa> Listar()
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    var query = from p in bd.TabelaPessoa
-                                where p.Id == pessoa.Id
-                                select p;
-                    foreach (Pessoa p in query)
-                    {
-
-                        p.Nome = pessoa.Nome;
-                        p.Cpf = pessoa.Cpf;
-                        p.Rg = pessoa.Rg;
-                        p.Nascimento = pessoa.Nascimento;
-                        p.Telefone1 = pessoa.Telefone1;
-                        p.Telefone2 = pessoa.Telefone2;
-                        p.Sexo = pessoa.Sexo;
-                        p.Endereco = pessoa.Endereco;
-                        p.Usuario = pessoa.Usuario;
-                        p.Senha = pessoa.Senha;
-                        p.Status = pessoa.Status;
-                        p.Obs = pessoa.Obs;
-                        p.TipoUsuario = pessoa.TipoUsuario;
-                        p.Cidade = pessoa.Cidade;
-                    }
-
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<pessoa> tabelaPessoa = db.GetTable<pessoa>();
+                return tabelaPessoa.ToList();
             }
         }
 
-        public bool Excluir(Pessoa pessoa)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+        public bool ValidaCPF(string cpf) 
+        {            
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaPessoa.DeleteOnSubmit(bd.TabelaPessoa.First(p => p.Id == pessoa.Id));
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
+                
+                String sSql = "select id from pessoas P where P.cpf like '%"+cpf+"%' ";
+                var query = db.ExecuteQuery<pessoa>(sSql);
+                return (query.Count() < 1);
+            }           
         }
-
-        public Pessoa Obter(int id)
+        
+        public pessoa ObterCPF(string cpf)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                return bd.TabelaPessoa.First(p => p.Id == id);
+                Table<pessoa> tabelaPessoa = db.GetTable<pessoa>();
+                return tabelaPessoa.First(p => p.cpf == cpf);
             }
-        }
-
-        public List<Pessoa> Listar()
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaPessoa.ToList();
-            }
-
         }
     }
 }

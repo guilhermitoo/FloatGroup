@@ -4,29 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using BackEnd.Data;
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Data.Linq;
 
 
 namespace BackEnd.Model
 {
     public class ProcedimentoModel
-    {
-        private string sConexao;
-        public ProcedimentoModel(string sConexao)
+    {        
+        public ProcedimentoModel() { }
+
+        public bool InserirAtualizar(procedimento p)
         {
-            this.sConexao = sConexao;
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();            
+            try
+            {
+                Table<procedimento> tabelaProcedimento = db.GetTable<procedimento>();
+                if (p.id == 0)
+                {
+                    db.cadProcedimento(p.descricao);
+                    tabelaProcedimento.Context.SubmitChanges();
+                }
+                else
+                {
+                    db.alteraProcedimento(p.id,p.descricao);
+                    tabelaProcedimento.Context.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }            
         }
 
-        public bool Inserir(Procedimento procedimento)
+        public bool Excluir(procedimento procedimento)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 try
                 {
-                    bd.TabelaProcedimento.InsertOnSubmit(procedimento);
-                    bd.SubmitChanges();
+                    Table<procedimento> tabelaProcedimento = db.GetTable<procedimento>();
+                    tabelaProcedimento.DeleteOnSubmit(tabelaProcedimento.First(p => p.id == procedimento.id));
+                    db.SubmitChanges();
                     return true;
                 }
                 catch
@@ -36,71 +56,31 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Procedimento procedimento)
+        public procedimento Obter(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    var query = from proc in bd.TabelaProcedimento
-                                where proc.Id == procedimento.Id
-                                select proc;
-                    foreach (Procedimento proc in query)
-                    {
-                        proc.Descricao = procedimento.Descricao;
-                        proc.Id= procedimento.Id;                        
-                    }
-
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<procedimento> tabelaProcedimento = db.GetTable<procedimento>();
+                return tabelaProcedimento.First(p => p.id == id);
             }
         }
 
-        public bool Excluir(Procedimento procedimento)
+        public List<procedimento> Listar()
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaProcedimento.DeleteOnSubmit(bd.TabelaProcedimento.First(p => p.Id == procedimento.Id));
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<procedimento> tabelaProcedimento = db.GetTable<procedimento>();
+                return tabelaProcedimento.ToList();
             }
         }
 
-        public Procedimento Obter(int id)
+        public List<procedimento> ListarPorDescricao(string Descricao)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaProcedimento.First(p => p.Id == id);
-            }
-        }
-
-        public List<Procedimento> Listar()
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaProcedimento.ToList();
-            }
-        }
-
-        public List<Procedimento> ListarPorDescricao(string Descricao)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 
                 String sSql = "select * from procedimentos P where P.descricao like '%"+Descricao+"%' ";
-                var query = bd.ExecuteQuery<Procedimento>(sSql);
+                var query = db.ExecuteQuery<procedimento>(sSql);
                 return query.ToList();                
             }
         }

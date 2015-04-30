@@ -82,10 +82,8 @@ namespace BackEnd.Model
                 
                 String sSql = "select * from cidades C where C.nome like '%"+Nome+"%' ";
                 var query = db.ExecuteQuery<cidade>(sSql);
-                return query.ToList();
-                //return bd.TabelaCidade.ToList(); 
+                return query.ToList();                
             }
         }
-
     }
 }

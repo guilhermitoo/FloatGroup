@@ -4,28 +4,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using BackEnd.Data;
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Data.Linq;
 
 namespace BackEnd.Model
 {
     public class PacienteModel
     {
-        private string sConexao;
-        public PacienteModel(string sConexao)
+        public PacienteModel() { }
+
+        public bool InserirAtualizar(paciente d)
         {
-            this.sConexao = sConexao;
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+
+            try
+            {
+                Table<paciente> tabelaPaciente = db.GetTable<paciente>();
+                if (d.pessoa.id == 0)
+                {
+                    db.cadPaciente(d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
+                                   d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
+                                   d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.convenio_id);
+                    tabelaPaciente.Context.SubmitChanges();
+                }
+                else
+                {
+                    db.alteraPaciente(d.pessoa.id, d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
+                                      d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
+                                      d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.convenio_id);
+                    tabelaPaciente.Context.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public bool Inserir(Paciente paciente)
+        public bool Excluir(paciente paciente)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 try
                 {
-                    bd.TabelaPaciente.InsertOnSubmit(paciente);
-                    bd.SubmitChanges();
+                    Table<paciente> tabelaPaciente = db.GetTable<paciente>();
+                    tabelaPaciente.DeleteOnSubmit(tabelaPaciente.First(p => p.pessoa.id == paciente.pessoa.id));
+                    db.SubmitChanges();
                     return true;
                 }
                 catch
@@ -35,78 +60,35 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Paciente paciente)
+        public paciente Obter(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    var query = from pac in bd.TabelaPaciente
-                                where pac.Id == paciente.Id
-                                select pac;
-                    foreach (Paciente pac in query)
-                    {
-
-                        pac.Nome = paciente.Nome;
-                        pac.Cpf = paciente.Cpf;
-                        pac.Rg = paciente.Rg;
-                        pac.Nascimento = paciente.Nascimento;
-                        pac.Telefone1 = paciente.Telefone1;
-                        pac.Telefone2 = paciente.Telefone2;
-                        pac.Sexo = paciente.Sexo;
-                        pac.Endereco = paciente.Endereco;
-                        pac.Usuario = paciente.Usuario;
-                        pac.Senha = paciente.Senha;
-                        pac.Status = paciente.Status;
-                        pac.Obs = paciente.Obs;
-                        pac.TipoUsuario = paciente.TipoUsuario;
-                        pac.Cidade = paciente.Cidade;
-                        pac.Convenio = paciente.Convenio;
-
-                    }
-
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<paciente> tabelaPaciente = db.GetTable<paciente>();
+                return tabelaPaciente.First(p => p.pessoa.id == id);
             }
         }
 
-        public bool Excluir(Paciente paciente)
+        public List<paciente> Listar()
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaPaciente.DeleteOnSubmit(bd.TabelaPaciente.First(p => p.Id == paciente.Id));
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
-
-        public Paciente Obter(int id)
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaPaciente.First(p => p.Id == id);
-            }
-        }
-
-        public List<Paciente> Listar()
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaPaciente.ToList();
+                Table<paciente> tabelaPaciente = db.GetTable<paciente>();
+                return tabelaPaciente.ToList();
             }
 
         }
-    }
+
+        public bool Verifica(int id)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select * from pacientes where pessoa_id = " + id;
+                var query = db.ExecuteQuery<paciente>(sSql);
+                return (query.ToList().Count > 0);
+            }
+
+        }
+
+    }// final
 }

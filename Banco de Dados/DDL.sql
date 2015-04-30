@@ -42,14 +42,15 @@ create table pessoas
 	nascimento	date,
 	telefone1	varchar(15),
 	telefone2	varchar(15),
-	sexo		char(1),
-	endereco	varchar(100),
+	sexo		char(1), -- 'M' masculino, 'F' feminino
+	endereco	varchar(50),
+	cep		varchar(10),
 	usuario		varchar(20),
 	senha		varchar(50),
 	status		int check (status in (1,2)) not null, -- 1 = ativo, 2 = inativo
 	obs		varchar(200),
 	tipoUsuario int check(tipoUsuario in (1,2)), -- 1 = normal, 2 = administrador
-	cidade_id	int			not null	references cidades -- relacionamento	
+	cidade_id	int references cidades -- relacionamento	
 )
 go
 

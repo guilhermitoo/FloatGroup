@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="agenda.aspx.cs" Inherits="FrontEnd.agenda" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
 
 <h2>AGENDAR</h2>
 <h5>
@@ -48,16 +48,16 @@ Faça o agendamento de seus atendimentos
 aria-hidden="true">
 <div class="modal-dialog">
     <div class="modal-content">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">
-            &times;
-        </span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">
-        Agendar
-        </h4>
-    </div>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">                    
+                    &times;
+                </span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+            Agendar
+            </h4>
+        </div>
     <div class="modal-body">
         <a class="btn btn-primary" data-toggle="collapse" href="#atendimento" aria-expanded="false" aria-controls="atendimento">
             Atendimento

@@ -12,10 +12,9 @@ namespace FrontEnd
     public partial class listaMedicamentos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
+        {            
 
-            MedicamentoModel model = new MedicamentoModel(sConexao);
+            MedicamentoModel model = new MedicamentoModel();
 
             // asp:repeater
             rlistaMedicamentos.DataSource = model.Listar();
@@ -28,9 +27,8 @@ namespace FrontEnd
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-            MedicamentoModel model = new MedicamentoModel(sConexao);
+        {            
+            MedicamentoModel model = new MedicamentoModel();
 
             rlistaMedicamentos.DataSource = model.ListarPorNome(txtNomeMedicamento.Text);
             rlistaMedicamentos.DataBind();

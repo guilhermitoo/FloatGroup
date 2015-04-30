@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="listaConvenios.aspx.cs" Inherits="FrontEnd.listaConvenios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">    
+<asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">    
     <h1>Lista de Convenios</h1>
     <br />  
     <br />        
@@ -29,14 +29,14 @@
 
         <ItemTemplate>
             <tr>
-                <td><%# DataBinder.Eval(Container.DataItem,"Id") %></td>
-                <td><%# DataBinder.Eval(Container.DataItem,"RazaoSocial") %></td>
-                <td><%# DataBinder.Eval(Container.DataItem,"NomeFantasia") %></td>                    
-                <td><%# DataBinder.Eval(Container.DataItem,"Cnpj") %></td>
-                <td><%# DataBinder.Eval(Container.DataItem,"Ie") %></td>
+                <td><%# DataBinder.Eval(Container.DataItem,"id") %></td>
+                <td><%# DataBinder.Eval(Container.DataItem,"razao_social") %></td>
+                <td><%# DataBinder.Eval(Container.DataItem,"nome_fantasia") %></td>                    
+                <td><%# DataBinder.Eval(Container.DataItem,"cnpj") %></td>
+                <td><%# DataBinder.Eval(Container.DataItem,"ie") %></td>
                 <td>            
                     <asp:HyperLink ID="btnEditar" runat="server" CssClass="btn btn-info" 
-                            NavigateUrl='<%# DataBinder.Eval(Container.DataItem, "Id", "convenios.aspx?ID={0}") %>'>Editar</asp:HyperLink>
+                            NavigateUrl='<%# DataBinder.Eval(Container.DataItem, "id", "convenios.aspx?ID={0}") %>'>Editar</asp:HyperLink>
                 </td>
             </tr>
         </ItemTemplate>

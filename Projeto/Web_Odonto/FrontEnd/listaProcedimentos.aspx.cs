@@ -15,7 +15,7 @@ namespace FrontEnd
         {
             string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
 
-            ProcedimentoModel model = new ProcedimentoModel(sConexao);
+            ProcedimentoModel model = new ProcedimentoModel();
 
             // asp:repeater
             rListaProcedimentos.DataSource = model.Listar();
@@ -28,9 +28,8 @@ namespace FrontEnd
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-            ProcedimentoModel model = new ProcedimentoModel(sConexao);
+        {            
+            ProcedimentoModel model = new ProcedimentoModel();
 
             rListaProcedimentos.DataSource = model.ListarPorDescricao(txtDescricaoProcedimento.Text);
             rListaProcedimentos.DataBind();

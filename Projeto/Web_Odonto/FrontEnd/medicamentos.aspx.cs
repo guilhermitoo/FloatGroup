@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Configuration;
 using BackEnd.Model;
 
@@ -16,50 +16,41 @@ namespace FrontEnd
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["ID"] != null && !IsPostBack)
-            {
-                // recupera a string de conexão
-                string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
+            {                        
                 //recupera o id
                 int id = int.Parse(Request.QueryString["ID"]);
                 // declara o objeto model
-                MedicamentoModel model = new MedicamentoModel(sConexao);
+                MedicamentoModel model = new MedicamentoModel();
                 //recupera o produto do id informado
-                Medicamento medicamento = model.Obter(id);
+                medicamento medicamento = model.Obter(id);
 
                 //preencher caixas de texto com valores de produto
-                txtNome.Text = medicamento.Nome;
-                txtClasseTerapeutica.Text = medicamento.ClasseTerapeutica;
-                txtTarja.Text = medicamento.Tarja;
-                txtUnidade.Text = medicamento.Unidade;
-                txtPosologia.InnerText = medicamento.Posologia;
+                txtNome.Text = medicamento.nome;
+                txtClasseTerapeutica.Text = medicamento.classe_terapeutica;
+                txtTarja.Text = medicamento.tarja;
+                txtUnidade.Text = medicamento.unidade;
+                txtPosologia.InnerText = medicamento.posologia;
                 
             }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Medicamento medicamento = new Medicamento();
-            medicamento.Nome = txtNome.Text;
-            medicamento.ClasseTerapeutica = txtClasseTerapeutica.Text;
-            medicamento.Tarja = txtTarja.Text;
-            medicamento.Posologia = txtPosologia.InnerText;
-            medicamento.Unidade = txtUnidade.Text;
+            medicamento medicamento = new medicamento();
+            medicamento.nome = txtNome.Text;
+            medicamento.classe_terapeutica = txtClasseTerapeutica.Text;
+            medicamento.tarja = txtTarja.Text;
+            medicamento.posologia = txtPosologia.InnerText;
+            medicamento.unidade = txtUnidade.Text;            
 
-            string sConexao = ConfigurationManager.ConnectionStrings["sConexao"].ConnectionString;
-
-            MedicamentoModel model = new MedicamentoModel(sConexao);
+            MedicamentoModel model = new MedicamentoModel();
 
             //se existir ID então faz a edição, se não existir ID, é uma inserção
-            if (Request.QueryString["ID"] != null)
-            {
-                medicamento.Id = int.Parse(Request.QueryString["ID"]);
-                model.Editar(medicamento);
-            }
-            else
-            {
-                model.Inserir(medicamento);
-            }
-            Response.Redirect("medicamentos.aspx");  
+            if (Request.QueryString["ID"] != null)            
+                medicamento.id = int.Parse(Request.QueryString["ID"]);
+            // faz a inserção ou atualização do cadastro da cidade
+            if (model.InserirAtualizar(medicamento))   
+                Response.Redirect("medicamentos.aspx");  
         }
 
         protected void btnLimpar_Click(object sender, EventArgs e)

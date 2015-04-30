@@ -4,28 +4,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using BackEnd.Data;
-using BackEnd.Entity;
+using BackEnd.EntityData;
 using System.Data.Linq;
 
 namespace BackEnd.Model
 {
     public class FuncionarioModel
     {
-        private string sConexao;
-        public FuncionarioModel(string sConexao)
+        public FuncionarioModel() { }
+
+        public bool InserirAtualizar(funcionario d)
         {
-            this.sConexao = sConexao;
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+
+            try
+            {
+                Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
+                if (d.pessoa.id == 0)
+                {
+                    db.cadFuncionario(d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
+                                   d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
+                                   d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.salario, d.cargo);
+                    tabelaFuncionario.Context.SubmitChanges();
+                }
+                else
+                {
+                    db.alteraFuncionario(d.pessoa.id, d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
+                                      d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
+                                      d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.salario, d.cargo);
+                    tabelaFuncionario.Context.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public bool Inserir(Funcionario funcionario)
+        public bool Excluir(funcionario funcionario)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 try
                 {
-                    bd.TabelaFuncionario.InsertOnSubmit(funcionario);
-                    bd.SubmitChanges();
+                    Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
+                    tabelaFuncionario.DeleteOnSubmit(tabelaFuncionario.First(p => p.pessoa.id == funcionario.pessoa.id));
+                    db.SubmitChanges();
                     return true;
                 }
                 catch
@@ -35,76 +60,32 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Editar(Funcionario funcionario)
+        public funcionario Obter(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    var query = from f in bd.TabelaFuncionario
-                                where f.Id == funcionario.Id
-                                select f;
-                    foreach (Funcionario f in query)
-                    {
-
-                        f.Nome = funcionario.Nome;
-                        f.Cpf = funcionario.Cpf;
-                        f.Rg = funcionario.Rg;
-                        f.Nascimento = funcionario.Nascimento;
-                        f.Telefone1 = funcionario.Telefone1;
-                        f.Telefone2 = funcionario.Telefone2;
-                        f.Sexo = funcionario.Sexo;
-                        f.Endereco = funcionario.Endereco;
-                        f.Usuario = funcionario.Usuario;
-                        f.Senha = funcionario.Senha;
-                        f.Status = funcionario.Status;
-                        f.Obs = funcionario.Obs;
-                        f.TipoUsuario = funcionario.TipoUsuario;
-                        f.Cidade = funcionario.Cidade;
-                        f.Salario = funcionario.Salario;
-                        f.Cargo = funcionario.Cargo;
-                    }
-
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
+                return tabelaFuncionario.First(p => p.pessoa.id == id);
             }
         }
 
-        public bool Excluir(Funcionario funcionario)
+        public List<funcionario> Listar()
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                try
-                {
-                    bd.TabelaFuncionario.DeleteOnSubmit(bd.TabelaFuncionario.First(p => p.Id == funcionario.Id));
-                    bd.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
+                return tabelaFuncionario.ToList();
             }
+
         }
 
-        public Funcionario Obter(int id)
+        public bool Verifica(int id)
         {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                return bd.TabelaFuncionario.First(p => p.Id == id);
-            }
-        }
-
-        public List<Funcionario> Listar()
-        {
-            using (WebOdontoContext bd = new WebOdontoContext(sConexao))
-            {
-                return bd.TabelaFuncionario.ToList();
+                String sSql = "select * from funcionarios where pessoa_id = " + id;
+                var query = db.ExecuteQuery<funcionario>(sSql);
+                return (query.ToList().Count > 0);
             }
 
         }

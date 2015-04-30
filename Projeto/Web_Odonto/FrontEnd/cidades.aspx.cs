@@ -75,7 +75,7 @@ namespace FrontEnd
             // verificar se deseja realmente excluir
             model.Excluir(cid);
 
-            Response.Redirect("index.aspx");
+            Response.Redirect("cidades.aspx");
         }
 
         

@@ -49,7 +49,7 @@ namespace FrontEnd
 
             // faz a inserção ou atualização do cadastro da cidade
             if ( model.InserirAtualizar(convenio) )
-                Response.Redirect("convenio.aspx");   
+                Response.Redirect("convenios.aspx");   
                             
         }
 

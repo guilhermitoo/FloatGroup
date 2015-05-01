@@ -41,10 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CidadeData.cs" />
-    <Compile Include="Data\Conexao.cs" />
-    <Compile Include="Data\MedicamentoData.cs" />
-    <Compile Include="Data\WebOdontoContext.cs" />
     <Compile Include="EntityData\WebOdontoClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

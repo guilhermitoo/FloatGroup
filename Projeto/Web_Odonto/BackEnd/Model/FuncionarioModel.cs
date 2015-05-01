@@ -20,18 +20,14 @@ namespace BackEnd.Model
             try
             {
                 Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
-                if (d.pessoa.id == 0)
-                {
-                    db.cadFuncionario(d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
-                                   d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
-                                   d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.salario, d.cargo);
+                if (Verifica(d.pessoa.id))
+                {// ATUALIZA SE EXISTIR
+                    db.alteraFuncionario(d.pessoa.id, d.salario, d.cargo);
                     tabelaFuncionario.Context.SubmitChanges();
                 }
                 else
-                {
-                    db.alteraFuncionario(d.pessoa.id, d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
-                                      d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
-                                      d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.salario, d.cargo);
+                {// SE NÃO CADASTRA
+                    db.cadFuncionario(d.pessoa.id, d.salario, d.cargo);
                     tabelaFuncionario.Context.SubmitChanges();
                 }
                 return true;

@@ -74,8 +74,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                 <label for="descricao">
                 Observação:
                 </label>
-                <textarea class="form-control" rows="5" ID="txtObs" runat="server">
-                </textarea>
+                <asp:TextBox CssClass="form-control" ID="txtObs" runat="server" Height="57px" TextMode="MultiLine" />                
                 <br />
                 <!-- Funcionário e Dentista -->
                 <div id="dTipoUsuario" runat="server" js="TipoUsuario">
@@ -95,7 +94,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                 </div>
                 <div id="dSenha" runat="server" js="Senha">
                     <label id="lblSenha" runat="server">Senha</label>
-                    <asp:TextBox id="txtSenha" runat="server" CssClass="form-control" TextMode="Password" />
+                    <asp:TextBox id="txtSenha" runat="server" CssClass="form-control" />
                     <br />
                 </div>
                 <!-- Dentista -->
@@ -135,7 +134,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     <!-- Botões -->    
     <div class="col-md-offset-3">
     
-        <div class="form-group">            
+        <div class="form-group">
             <asp:Button js="Salvar" ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
             <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" />
             <asp:Button ID="btnLimpar" runat="server" Text="Limpar" CssClass="btn btn-success" OnClick="btnLimpar_Click" />
@@ -145,7 +144,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     </div>
     
     <!-- modal -->    
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div runat="server" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">

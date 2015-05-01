@@ -238,280 +238,10 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadTratamento")]
-		public void cadTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> avaliacao_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> total)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraAtendimento")]
+		public int alteraAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, total);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadReceita")]
-		public int cadReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao, atendimento_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadProcedimento")]
-		public int cadProcedimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadPaciente")]
-		public int cadPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string rg, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> convenio)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id, convenio);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadMedicamento")]
-		public int cadMedicamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string classe_terapeutica, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tarja, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string posologia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string unidade)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, classe_terapeutica, tarja, posologia, unidade);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemTratamento")]
-		public int cadItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> valor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id, qtd, valor, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemReceita")]
-		public int cadItemReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> receita_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> medicamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string dose, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string periodo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), receita_id, medicamento_id, dose, obs, periodo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemAtendimento")]
-		public int cadItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), atendimento_id, procedimento_id, qtd);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadImagem")]
-		public int cadImagem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarBinary(MAX)")] System.Data.Linq.Binary arquivo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), paciente_id, descricao, arquivo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadFuncionario")]
-		public int cadFuncionario(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string rg, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id, salario, cargo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadDentista")]
-		public int cadDentista(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(13)")] string rg, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cro, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id, cro, salario);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadConvenio")]
-		public int cadConvenio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cnpj, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string ie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string razao_social, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome_fantasia)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cnpj, ie, razao_social, nome_fantasia);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadCidade")]
-		public int cadCidade([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(2)")] string uf)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, uf);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadAvaliacao")]
-		public int cadAvaliacao([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, dentista_id, paciente_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadAtendimento")]
-		public int cadAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, status, dentista_id, tratamento_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraTratamento")]
-		public int alteraTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> avaliacao_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> total)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, total);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraReceita")]
-		public int alteraReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, descricao, atendimento_id);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraProcedimento")]
-		public int alteraProcedimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, descricao);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraPaciente")]
-		public int alteraPaciente(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string rg, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> convenio)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id, convenio);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraMedicamento")]
-		public int alteraMedicamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string classe_terapeutica, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tarja, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string posologia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string unidade)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, classe_terapeutica, tarja, posologia, unidade);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemTratamento")]
-		public int alteraItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> valor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id, qtd, valor, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemReceita")]
-		public int alteraItemReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> receita_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> medicamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string dose, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string periodo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), receita_id, medicamento_id, dose, obs, periodo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemAtendimento")]
-		public int alteraItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), atendimento_id, procedimento_id, qtd);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraImagem")]
-		public int alteraImagem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarBinary(MAX)")] System.Data.Linq.Binary arquivo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, paciente_id, descricao, arquivo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraFuncionario")]
-		public int alteraFuncionario(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string rg, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id, salario, cargo);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraDentista")]
-		public int alteraDentista(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(13)")] string rg, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cro, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id, cro, salario);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraConvenio")]
-		public int alteraConvenio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cnpj, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string ie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string razao_social, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome_fantasia)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, cnpj, ie, razao_social, nome_fantasia);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraCidade")]
-		public int alteraCidade([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(2)")] string uf)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, uf);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, data, status, dentista_id, tratamento_id);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -522,10 +252,213 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraAtendimento")]
-		public int alteraAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraCidade")]
+		public int alteraCidade([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(2)")] string uf)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, data, status, dentista_id, tratamento_id);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, uf);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraConvenio")]
+		public int alteraConvenio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cnpj, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string ie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string razao_social, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome_fantasia)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, cnpj, ie, razao_social, nome_fantasia);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraDentista")]
+		public int alteraDentista([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pessoa_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cro, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pessoa_id, cro, salario);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraFuncionario")]
+		public int alteraFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pessoa_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pessoa_id, salario, cargo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraImagem")]
+		public int alteraImagem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarBinary(MAX)")] System.Data.Linq.Binary arquivo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, paciente_id, descricao, arquivo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemAtendimento")]
+		public int alteraItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), atendimento_id, procedimento_id, qtd);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemReceita")]
+		public int alteraItemReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> receita_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> medicamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string dose, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string periodo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), receita_id, medicamento_id, dose, obs, periodo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemTratamento")]
+		public int alteraItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> valor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id, qtd, valor, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraMedicamento")]
+		public int alteraMedicamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string classe_terapeutica, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tarja, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string posologia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string unidade)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, classe_terapeutica, tarja, posologia, unidade);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraPaciente")]
+		public int alteraPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pessoa_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> convenio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pessoa_id, convenio);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraPessoa")]
+		public int alteraPessoa([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string rg, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraProcedimento")]
+		public int alteraProcedimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, descricao);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraReceita")]
+		public int alteraReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, descricao, atendimento_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraTratamento")]
+		public int alteraTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> avaliacao_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, dataInicial, dataFinal, total);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadAtendimento")]
+		public int cadAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, status, dentista_id, tratamento_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadAvaliacao")]
+		public int cadAvaliacao([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, dentista_id, paciente_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadCidade")]
+		public int cadCidade([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(2)")] string uf)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, uf);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadConvenio")]
+		public int cadConvenio([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cnpj, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string ie, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string razao_social, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome_fantasia)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cnpj, ie, razao_social, nome_fantasia);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadDentista")]
+		public int cadDentista([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pessoa_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string cro, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pessoa_id, cro, salario);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadFuncionario")]
+		public int cadFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pessoa_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> salario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string cargo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pessoa_id, salario, cargo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadImagem")]
+		public int cadImagem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarBinary(MAX)")] System.Data.Linq.Binary arquivo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), paciente_id, descricao, arquivo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemAtendimento")]
+		public int cadItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), atendimento_id, procedimento_id, qtd);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemReceita")]
+		public int cadItemReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> receita_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> medicamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string dose, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string periodo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), receita_id, medicamento_id, dose, obs, periodo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemTratamento")]
+		public int cadItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> valor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id, qtd, valor, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadMedicamento")]
+		public int cadMedicamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string classe_terapeutica, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tarja, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string posologia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string unidade)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, classe_terapeutica, tarja, posologia, unidade);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadPaciente")]
+		public int cadPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pessoa_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> convenio)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pessoa_id, convenio);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadPessoa")]
+		public int cadPessoa([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string cpf, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(12)")] string rg, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> nascimento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string telefone2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(1)")] System.Nullable<char> sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string endereco, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string senha, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tipoUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> cidade_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, cpf, rg, nascimento, telefone1, telefone2, sexo, endereco, usuario, senha, status, obs, tipoUsuario, cidade_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadProcedimento")]
+		public int cadProcedimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadReceita")]
+		public int cadReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao, atendimento_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadTratamento")]
+		public int cadTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> avaliacao_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, dataInicial, dataFinal, total);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -3071,7 +3004,7 @@ namespace BackEnd.EntityData
 		
 		private System.Nullable<int> _tipoUsuario;
 		
-		private int _cidade_id;
+		private System.Nullable<int> _cidade_id;
 		
 		private EntityRef<dentista> _dentista;
 		
@@ -3113,7 +3046,7 @@ namespace BackEnd.EntityData
     partial void OnobsChanged();
     partial void OntipoUsuarioChanging(System.Nullable<int> value);
     partial void OntipoUsuarioChanged();
-    partial void Oncidade_idChanging(int value);
+    partial void Oncidade_idChanging(System.Nullable<int> value);
     partial void Oncidade_idChanged();
     #endregion
 		
@@ -3286,7 +3219,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endereco", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endereco", DbType="VarChar(50)")]
 		public string endereco
 		{
 			get
@@ -3406,8 +3339,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cidade_id", DbType="Int NOT NULL")]
-		public int cidade_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cidade_id", DbType="Int")]
+		public System.Nullable<int> cidade_id
 		{
 			get
 			{
@@ -3544,7 +3477,7 @@ namespace BackEnd.EntityData
 					}
 					else
 					{
-						this._cidade_id = default(int);
+						this._cidade_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("cidade");
 				}
@@ -3903,11 +3836,11 @@ namespace BackEnd.EntityData
 		
 		private int _status;
 		
-		private System.Nullable<decimal> _total;
-		
 		private System.Nullable<System.DateTime> _dataInicial;
 		
 		private System.Nullable<System.DateTime> _dataFinal;
+		
+		private System.Nullable<decimal> _total;
 		
 		private EntitySet<atendimento> _atendimentos;
 		
@@ -3923,12 +3856,12 @@ namespace BackEnd.EntityData
     partial void Onavaliacao_idChanged();
     partial void OnstatusChanging(int value);
     partial void OnstatusChanged();
-    partial void OntotalChanging(System.Nullable<decimal> value);
-    partial void OntotalChanged();
     partial void OndataInicialChanging(System.Nullable<System.DateTime> value);
     partial void OndataInicialChanged();
     partial void OndataFinalChanging(System.Nullable<System.DateTime> value);
     partial void OndataFinalChanged();
+    partial void OntotalChanging(System.Nullable<decimal> value);
+    partial void OntotalChanged();
     #endregion
 		
 		public tratamento()
@@ -3983,26 +3916,6 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> total
-		{
-			get
-			{
-				return this._total;
-			}
-			set
-			{
-				if ((this._total != value))
-				{
-					this.OntotalChanging(value);
-					this.SendPropertyChanging();
-					this._total = value;
-					this.SendPropertyChanged("total");
-					this.OntotalChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dataInicial", DbType="Date")]
 		public System.Nullable<System.DateTime> dataInicial
 		{
@@ -4039,6 +3952,26 @@ namespace BackEnd.EntityData
 					this._dataFinal = value;
 					this.SendPropertyChanged("dataFinal");
 					this.OndataFinalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> total
+		{
+			get
+			{
+				return this._total;
+			}
+			set
+			{
+				if ((this._total != value))
+				{
+					this.OntotalChanging(value);
+					this.SendPropertyChanging();
+					this._total = value;
+					this.SendPropertyChanged("total");
+					this.OntotalChanged();
 				}
 			}
 		}

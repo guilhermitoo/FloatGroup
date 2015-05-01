@@ -70,7 +70,7 @@ namespace FrontEnd
                 txtEndereco.Text = pessoa.endereco;                
                 txtTelefone1.Text = pessoa.telefone1;
                 txtTelefone2.Text = pessoa.telefone2;
-                txtObs.InnerText = pessoa.obs;
+                txtObs.Text = pessoa.obs;
                 ddTipoUsuario.Items.FindByValue(pessoa.tipoUsuario.ToString());
                 txtUsuario.Text = pessoa.usuario;
                 txtSenha.Text = pessoa.senha;
@@ -93,8 +93,7 @@ namespace FrontEnd
             // deve verificar quais opções no tipo de pessoa estão marcadas (PACIENTE, FUNCIONARIO, DENTISTA)
             // e deve inserir/atualizar os cadastros que estiverem marcados
 
-            pessoa pessoa = new pessoa();
-            PessoaModel pessoaModel = new PessoaModel();
+            pessoa pessoa = new pessoa();            
             
             // DADOS DE PESSOA
             pessoa.nome = txtNome.Text;
@@ -107,70 +106,58 @@ namespace FrontEnd
             pessoa.endereco = txtEndereco.Text;
             pessoa.telefone1 = txtTelefone1.Text;
             pessoa.telefone2 = txtTelefone2.Text;
-            pessoa.obs = txtObs.InnerText;
+            pessoa.obs = txtObs.Text;
             pessoa.tipoUsuario = Int32.Parse(ddTipoUsuario.SelectedValue);
             pessoa.usuario = txtUsuario.Text;
             pessoa.senha = txtSenha.Text;
 
+            PessoaModel pessoaModel = new PessoaModel();
             bool bNovo = true;
+            // se existir pessoa cadastrada com esse ID, atualiza os cadastros
             if (Request.QueryString["ID"] != null)
-            {
-                pessoa.id = int.Parse(Request.QueryString["ID"]);
+            {                                
+                pessoa.id = int.Parse(Request.QueryString["ID"]);               
                 bNovo = false; 
             }
-            // verificar os tipos
-            if (cbTipoPessoa.Items.FindByValue("P").Selected) 
+            // insere ou atualiza o cadastro da pessoa
+            if (pessoaModel.InserirAtualizar(pessoa))
             {
-                paciente paciente = new paciente();
-                paciente.convenio_id = Int32.Parse(ddConvenio.SelectedValue);
-                paciente.pessoa = pessoa;
-                PacienteModel pModel = new PacienteModel();
-                // tenta inserir ou atualizar o cadastro
-                if (pModel.InserirAtualizar(paciente))
-                {                    
-                    if (bNovo)
-                    {   // se for um cadastro novo busca pelo cpf que foi inserido e volta o id novo para o objeto pessoa
-                        // evitando que ele faça 3 cadastros
-                        pessoa.id = (pessoaModel.ObterCPF(pessoa.cpf)).id;
-                        bNovo = false;
-                    }
+                if (bNovo) // se é cadastro novo retorna o id para a pessoa              
+                    pessoa.id = pessoaModel.ObterCPF(pessoa.cpf);
+
+                // verificar os tipos
+                if (cbTipoPessoa.Items.FindByValue("P").Selected)
+                {
+                    paciente paciente = new paciente();
+                    paciente.convenio_id = Int32.Parse(ddConvenio.SelectedValue);
+                    paciente.pessoa = pessoa;
+                    PacienteModel pModel = new PacienteModel();
+                    // tenta inserir ou atualizar o cadastro
+                    pModel.InserirAtualizar(paciente);
+                }
+                if (cbTipoPessoa.Items.FindByValue("D").Selected)
+                {
+                    dentista dentista = new dentista();
+                    dentista.cro = txtCro.Text;
+                    dentista.salario = Decimal.Parse(txtSalario.Text);
+                    dentista.pessoa = pessoa;
+                    DentistaModel dModel = new DentistaModel();
+                    // tenta inserir ou atualizar o cadastro
+                    dModel.InserirAtualizar(dentista);
+                }
+                if (cbTipoPessoa.Items.FindByValue("F").Selected)
+                {
+                    funcionario funcionario = new funcionario();
+                    funcionario.cargo = txtCargo.Text;
+                    funcionario.salario = Decimal.Parse(txtSalario.Text);
+                    funcionario.pessoa = pessoa;
+                    FuncionarioModel fModel = new FuncionarioModel();
+                    // tenta inserir ou atualizar o cadastro
+                    fModel.InserirAtualizar(funcionario);
                 }
             }
-            if (cbTipoPessoa.Items.FindByValue("D").Selected)
-            {
-                dentista dentista = new dentista();
-                dentista.cro = txtCro.Text;
-                dentista.salario = Decimal.Parse(txtSalario.Text);
-                dentista.pessoa = pessoa;
-                DentistaModel dModel = new DentistaModel();
-                // tenta inserir ou atualizar o cadastro
-                if (dModel.InserirAtualizar(dentista))
-                {
-                    if (bNovo)
-                    {   // se for um cadastro novo busca pelo cpf que foi inserido e volta o id novo para o objeto pessoa
-                        // evitando que ele faça 3 cadastros
-                        pessoa.id = (pessoaModel.ObterCPF(pessoa.cpf)).id;
-                        bNovo = false;
-                    }
-                }
-            }
-            if (cbTipoPessoa.Items.FindByValue("F").Selected)
-            {
-                funcionario funcionario = new funcionario();
-                funcionario.cargo = txtCargo.Text;
-                funcionario.salario = Decimal.Parse(txtSalario.Text);
-                funcionario.pessoa = pessoa;
-                FuncionarioModel fModel = new FuncionarioModel();               
-                // tenta inserir ou atualizar o cadastro
-                if (fModel.InserirAtualizar(funcionario))
-                {
-                    if (bNovo)
-                    {   // se for um cadastro novo busca pelo cpf que foi inserido e volta o id novo para o objeto pessoa
-                        // evitando que ele faça 3 cadastros
-                        pessoa.id = (pessoaModel.ObterCPF(pessoa.cpf)).id;
-                        bNovo = false;
-                    }
-                }
+            else
+            {                 
             }
             Response.Redirect("pessoas.aspx");           
         }
@@ -181,6 +168,11 @@ namespace FrontEnd
             PessoaModel p = new PessoaModel();
 
             return p.ValidaCPF(cpf);
+        }
+
+        protected void btnListar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("listaPessoas.aspx");
         }
     }
 }

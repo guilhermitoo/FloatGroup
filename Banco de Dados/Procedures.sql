@@ -40,9 +40,9 @@ begin
 end
 go
 
-create procedure cadPaciente
+create procedure cadPessoa
 (
-	@nome		varchar(100),
+    @nome		varchar(100),
 	@cpf		varchar(15),
 	@rg 		varchar(12),
 	@nascimento	date,
@@ -55,68 +55,46 @@ create procedure cadPaciente
 	@status		int,
 	@obs		varchar(200),
 	@tipoUsuario int,	
-	@cidade_id	int,
-	@convenio   int
+	@cidade_id	int
 )
 as
 begin
 	insert into pessoas values (@nome,@cpf,@rg,@nascimento,@telefone1,@telefone2,@sexo,@endereco,@usuario,
 											@senha,@status,@obs,@tipoUsuario,@cidade_id);
-	insert into pacientes values (@@IDENTITY,@convenio);
+end
+
+create procedure cadPaciente
+(
+	@pessoa_id  int,
+	@convenio   int
+)
+as
+begin
+	insert into pacientes values (@pessoa_id,@convenio);
 end
 go
 
 create procedure cadFuncionario
 (
-	@nome		varchar(100),
-	@cpf		varchar(15),
-	@rg 		varchar(12),
-	@nascimento	date,
-	@telefone1  varchar(15),
-	@telefone2	varchar(15),
-	@sexo		char(1),
-	@endereco	varchar(100),
-	@usuario	varchar(20),
-	@senha		varchar(50),
-	@status		int,
-	@obs		varchar(200),	
-	@tipoUsuario int,
-	@cidade_id	int,
+	@pessoa_id  int,
 	@salario	decimal(15,2),
 	@cargo		varchar(50)
 )
 as
-begin
-	insert into pessoas values (@nome,@cpf,@rg,@nascimento,@telefone1,@telefone2,@sexo,@endereco,
-							@usuario,@senha,@status,@obs,@tipoUsuario,@cidade_id);
-	insert into funcionarios values(@@IDENTITY,@salario,@cargo);
+begin	
+	insert into funcionarios values(@pessoa_id,@salario,@cargo);
 end
 go
 
 create procedure cadDentista
 (
-	@nome		varchar(100),
-	@cpf		varchar(15),
-	@rg 		varchar(13),  
-	@nascimento	date,
-	@telefone1  varchar(15),
-	@telefone2	varchar(15),
-	@sexo		char(1),
-	@endereco	varchar(100),
-	@usuario	varchar(20),
-	@senha		varchar(50),
-	@status		int,
-	@obs		varchar(200),	
-	@tipoUsuario int,
-	@cidade_id	int,
+	@pessoa_id  int,
 	@cro		varchar(20),
 	@salario	decimal(15,2)
 )
 as
 begin
-	insert into pessoas values (@nome,@cpf,@rg,@nascimento,@telefone1,@telefone2,@sexo,@endereco,
-							@usuario,@senha,@status,@obs,@tipoUsuario,@cidade_id);
-	insert into dentistas values (@@IDENTITY,@cro,@salario);
+	insert into dentistas values (@pessoa_id,@cro,@salario);
 end
 go
 
@@ -281,7 +259,7 @@ begin
 end
 go
 
-create procedure alteraPaciente
+create procedure alteraPessoa
 (
 	@id			int,
 	@nome		varchar(100),
@@ -297,76 +275,48 @@ create procedure alteraPaciente
 	@status		int,
 	@obs		varchar(200),
 	@tipoUsuario int,	
-	@cidade_id	int,
-	@convenio   int
+	@cidade_id	int
 )
 as
 begin
 	update pessoas set nome = @nome, cpf = @cpf, nascimento = @nascimento, telefone1 = @telefone1, telefone2 = @telefone2,
 	sexo = @sexo, endereco = @endereco, usuario = @usuario, senha = @senha, status = @status, obs = @obs, tipoUsuario = @tipoUsuario,
 	cidade_id = @cidade_id where ( id = @id );
+end
+go
 
-	update pacientes set convenio_id = @convenio where ( pessoa_id = @id );
+create procedure alteraPaciente
+(
+	@pessoa_id	int,
+	@convenio   int
+)
+as
+begin
+	update pacientes set convenio_id = @convenio where ( pessoa_id = @pessoa_id );
 end
 go
 
 create procedure alteraFuncionario
 (
-	@id			int,
-	@nome		varchar(100),
-	@cpf		varchar(15),
-	@rg 		varchar(12),
-	@nascimento	date,
-	@telefone1  varchar(15),
-	@telefone2	varchar(15),
-	@sexo		char(1),
-	@endereco	varchar(100),
-	@usuario	varchar(20),
-	@senha		varchar(50),
-	@status		int,
-	@obs		varchar(200),	
-	@tipoUsuario int,
-	@cidade_id	int,
+	@pessoa_id	int,
 	@salario	decimal(15,2),
 	@cargo		varchar(50)
 )
 as
 begin
-	update pessoas set nome = @nome, cpf = @cpf, nascimento = @nascimento, telefone1 = @telefone1, telefone2 = @telefone2,
-	sexo = @sexo, endereco = @endereco, usuario = @usuario, senha = @senha, status = @status, obs = @obs, tipoUsuario = @tipoUsuario,
-	cidade_id = @cidade_id where ( id = @id );
-
-	update funcionarios set salario = @salario , cargo = @cargo where ( pessoa_id = @id );
+	update funcionarios set salario = @salario , cargo = @cargo where ( pessoa_id = @pessoa_id );
 end
 go
 
 create procedure alteraDentista
 (
-	@id			int,
-	@nome		varchar(100),
-	@cpf		varchar(15),
-	@rg 		varchar(13),  
-	@nascimento	date,
-	@telefone1  varchar(15),
-	@telefone2	varchar(15),
-	@sexo		char(1),
-	@endereco	varchar(100),
-	@usuario	varchar(20),
-	@senha		varchar(50),
-	@status		int,
-	@obs		varchar(200),	
-	@tipoUsuario int,
-	@cidade_id	int,
+	@pessoa_id	int,
 	@cro		varchar(20),
 	@salario	decimal(15,2)
 )
 as
 begin
-	update pessoas set nome = @nome, cpf = @cpf, nascimento = @nascimento, telefone1 = @telefone1, telefone2 = @telefone2,
-	sexo = @sexo, endereco = @endereco, usuario = @usuario, senha = @senha, status = @status, obs = @obs, tipoUsuario = @tipoUsuario,
-	cidade_id = @cidade_id where ( id = @id );
-
-	update dentistas set cro = @cro, salario = @salario where ( pessoa_id = @id );
+	update dentistas set cro = @cro, salario = @salario where ( pessoa_id = @pessoa_id );
 end
 go
 

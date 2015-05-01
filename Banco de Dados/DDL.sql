@@ -33,6 +33,8 @@ create table convenios
 )
 go
 
+
+
 create table pessoas
 (
 	id		int not null primary key identity,
@@ -43,8 +45,7 @@ create table pessoas
 	telefone1	varchar(15),
 	telefone2	varchar(15),
 	sexo		char(1), -- 'M' masculino, 'F' feminino
-	endereco	varchar(50),
-	cep		varchar(10),
+	endereco	varchar(50),	
 	usuario		varchar(20),
 	senha		varchar(50),
 	status		int check (status in (1,2)) not null, -- 1 = ativo, 2 = inativo

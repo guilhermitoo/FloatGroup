@@ -20,18 +20,17 @@ namespace BackEnd.Model
             try
             {
                 Table<dentista> tabelaDentista = db.GetTable<dentista>();
-                if (d.pessoa.id == 0)
-                {
-                    db.cadDentista(d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
-                                   d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
-                                   d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.cro, d.salario);
+                // verifica se tem dentista com essa ID
+                // se sim, atualiza
+                // se não, cadastra
+                if (Verifica(d.pessoa.id))
+                {// ATUALIZA
+                    db.alteraDentista(d.pessoa.id, d.cro, d.salario);
                     tabelaDentista.Context.SubmitChanges();
                 }
                 else
-                {
-                    db.alteraDentista(d.pessoa.id,d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
-                                      d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
-                                      d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.cro, d.salario);
+                {// CADASTRA
+                    db.cadDentista(d.pessoa.id, d.cro, d.salario);
                     tabelaDentista.Context.SubmitChanges();
                 }
                 return true;
@@ -85,6 +84,7 @@ namespace BackEnd.Model
             {
                 String sSql = "select * from dentistas where pessoa_id = " + id;
                 var query = db.ExecuteQuery<dentista>(sSql);
+                // retorna true se achou algum dentista com esse id
                 return (query.ToList().Count > 0);                                 
             }
            

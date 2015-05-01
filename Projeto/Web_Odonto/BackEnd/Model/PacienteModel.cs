@@ -20,18 +20,14 @@ namespace BackEnd.Model
             try
             {
                 Table<paciente> tabelaPaciente = db.GetTable<paciente>();
-                if (d.pessoa.id == 0)
-                {
-                    db.cadPaciente(d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
-                                   d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
-                                   d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.convenio_id);
+                if (Verifica(d.pessoa.id))
+                {// SE EXISTIR ATUALIZA
+                    db.alteraPaciente(d.pessoa.id, d.convenio_id);
                     tabelaPaciente.Context.SubmitChanges();
                 }
                 else
-                {
-                    db.alteraPaciente(d.pessoa.id, d.pessoa.nome, d.pessoa.cpf, d.pessoa.rg, d.pessoa.nascimento, d.pessoa.telefone1, d.pessoa.telefone2,
-                                      d.pessoa.sexo, d.pessoa.endereco, d.pessoa.usuario, d.pessoa.senha, d.pessoa.status, d.pessoa.obs,
-                                      d.pessoa.tipoUsuario, d.pessoa.cidade_id, d.convenio_id);
+                {// SE NÃO CADASTRA
+                    db.cadPaciente(d.pessoa.id, d.convenio_id);
                     tabelaPaciente.Context.SubmitChanges();
                 }
                 return true;

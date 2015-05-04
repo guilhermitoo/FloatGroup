@@ -17,15 +17,14 @@ Faça cadastro de Funcionário, Paciente, e Dentista
         <div class="row">
         <div class="col-md-6">    
             <!--<asp:ScriptManager ID="sm1" runat="server" EnablePageMethods="true"></asp:ScriptManager>-->
-                <label>CPF</label>
-            <label id="lblNotificaCPF" runat="server"></label>    
+                <label>CPF</label>              
             <div class="input-group">
-                    <asp:TextBox ID="txtCpf" CssClass="form-control" runat="server"/>
-                    <span class="input-group-btn" >
-                        <button runat="server" js="vCpf" type="button" id="btnVerifica" class="btn btn-default" 
-                            data-toggle="modal" data-target="#myModal">Verifica</button>
-                    </span>                                        
-                </div>
+                <asp:TextBox ID="txtCpf" CssClass="form-control" runat="server"/>
+                <span class="input-group-btn" >
+                    <asp:Button runat="server" id="btnBuscar" CssClass="btn btn-default" Text="Buscar" OnClick="btnBuscar_Click" />
+                </span>                                        
+            </div>
+            <asp:Label id="lblAlertaCPF" runat="server" />
                 <br />              
                 <label>
                 Escolha o tipo de cadastro
@@ -136,9 +135,8 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     
         <div class="form-group">
             <asp:Button js="Salvar" ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
-            <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" />
-            <asp:Button ID="btnLimpar" runat="server" Text="Limpar" CssClass="btn btn-success" OnClick="btnLimpar_Click" />
-            <asp:Button ID="btnExcluir" runat="server" Text="Excluir" CssClass="btn btn-danger" />
+            <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" OnClick="btnListar_Click" />
+            <asp:Button ID="btnLimpar" runat="server" Text="Limpar" CssClass="btn btn-success" OnClick="btnLimpar_Click" />            
             <asp:Button ID="btnSair" runat="server" Text="Sair" CssClass="btn btn-warning" OnClick="btnSair_Click" />
         </div>    
     </div>
@@ -170,23 +168,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
         $(document).ready(function () {
             // executa a função quando a página está pronta e carregada
             ModificaCampos();
-        });
-
-        function VerificaCPF() {
-            alert("ta funfando");            
-            PageMethods.Verifica();
-            function onSuccess(result) {
-                if (!result) {
-                    //exibir a mensagem que existe cpf cadastrado e pergunta se deseja buscar o cadastro                    
-                }
-                else {
-                    //exibe uma mensagem que o cpf está livre para cadastro
-                }
-            }
-            function onError(result) {
-                alert("erro");
-            }
-        }
+        });        
 
         function ModificaCampos() {            
             // oculta os campos para depois verificar quais serão exibidos

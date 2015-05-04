@@ -114,7 +114,11 @@
     </form>
 
     <!-- scripts do bootstrap -->
-                                    
+                                    -
+-           <!-- JQUERY SCRIPTS -->
+-            <script src="assets/js/jquery-1.10.2.js">
+-                        
+-            </script>
             <!-- BOOTSTRAP SCRIPTS -->
             <script src="assets/js/bootstrap.min.js">
                         
@@ -145,8 +149,11 @@
    </script>
 
    <script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">
+   </script>
 
-   </script>        
+   <script type="text/javascript">  
+             //<script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">;   
+   </script>       
 
    <script type="text/javascript">
   

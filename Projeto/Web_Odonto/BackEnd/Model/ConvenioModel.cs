@@ -86,5 +86,27 @@ namespace BackEnd.Model
                 return query.ToList();
             }
         }
+
+        public bool ValidaCNPJ(string cnpj)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+
+                String sSql = "select C.id from convenios C where C.cnpj = '" + cnpj + "' ";
+                var query = db.ExecuteQuery<convenio>(sSql);
+                return (query.Count() < 1);
+            }
+        }
+
+        public int ObterCNPJ(string cnpj)
+        {
+            // pelo CPF retorna o ID
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select C.id from convenios C where C.cnpj = '" + cnpj + "' ";
+                var query = db.ExecuteQuery<convenio>(sSql);
+                return (query.First()).id;
+            }
+        }
     }
 }

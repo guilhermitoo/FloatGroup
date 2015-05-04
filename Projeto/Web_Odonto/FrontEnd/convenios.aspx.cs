@@ -67,5 +67,20 @@ namespace FrontEnd
         {
             Response.Redirect("listaConvenios.aspx");
         }
+
+        protected void btnProcuraCNPJ_Click(object sender, EventArgs e)
+        {
+            ConvenioModel m = new ConvenioModel();
+
+            // incompleto
+            if (m.ValidaCNPJ(txtCNPJ.Text))
+            {
+                lblAlertaCNPJ.Text = "CNPJ não cadastrado";
+            }
+            else
+            {
+                Response.Redirect("convenios.aspx?ID="+(m.ObterCNPJ(txtCNPJ.Text)).ToString());
+            }
+        }
     }
 }

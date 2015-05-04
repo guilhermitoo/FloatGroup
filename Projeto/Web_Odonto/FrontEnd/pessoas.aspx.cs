@@ -174,5 +174,20 @@ namespace FrontEnd
         {
             Response.Redirect("listaPessoas.aspx");
         }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            PessoaModel p = new PessoaModel();
+
+            // incompleto
+            if (p.ValidaCPF(txtCpf.Text))
+            {
+                lblAlertaCPF.Text = "CPF não cadastrado";
+            }
+            else
+            {
+                Response.Redirect("pessoas.aspx?ID=" + (p.ObterCPF(txtCpf.Text)).ToString());
+            }
+        }
     }
 }

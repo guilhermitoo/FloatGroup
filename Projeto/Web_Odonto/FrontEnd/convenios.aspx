@@ -20,16 +20,14 @@
                     <div class="form-group">
                         <label>
                             CNPJ
-                        </label>
-                        <div class="input-group">
-                                                    
+                        </label>                                               
+                        <div class="input-group">                                                    
                             <asp:TextBox CssClass="form-control" placeholder="Digite a CNPJ" ID="txtCNPJ" runat="server"></asp:TextBox>
                             <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    Procurar
-                                </button>
+                                <asp:Button CssClass="btn btn-default" id="btnProcuraCNPJ" runat="server" Text="Buscar" OnClick="btnProcuraCNPJ_Click" />                                
                             </span>
                         </div>
+                        <asp:Label ID="lblAlertaCNPJ" runat="server" Font-Size="8pt" ForeColor="#00CC00" />
                         <br />
                         <label>
                             Razão Social

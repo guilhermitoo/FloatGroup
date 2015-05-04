@@ -68,7 +68,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 
-                String sSql = "select id from pessoas P where P.cpf like '%"+cpf+"%' ";
+                String sSql = "select P.id from pessoas P where P.cpf = '"+cpf+"' ";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return (query.Count() < 1);
             }           
@@ -79,7 +79,7 @@ namespace BackEnd.Model
             // pelo CPF retorna o ID
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select id from pessoas P where P.cpf = '" + cpf + "' ";
+                String sSql = "select P.id from pessoas P where P.cpf = '" + cpf + "' ";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return (query.First()).id;
             }

@@ -22,15 +22,6 @@ namespace FrontEnd {
         protected global::System.Web.UI.ScriptManager sm1;
         
         /// <summary>
-        /// lblNotificaCPF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblNotificaCPF;
-        
-        /// <summary>
         /// txtCpf control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,22 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtCpf;
         
         /// <summary>
-        /// btnVerifica control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnVerifica;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        
+        /// <summary>
+        /// lblAlertaCPF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAlertaCPF;
         
         /// <summary>
         /// cbTipoPessoa control.
@@ -362,15 +362,6 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLimpar;
-        
-        /// <summary>
-        /// btnExcluir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExcluir;
         
         /// <summary>
         /// btnSair control.

@@ -29,7 +29,7 @@ namespace FrontEnd
             rListaPessoas.DataBind();
         }
 
-        protected void tbnSair_Click(object sender, EventArgs e)
+        protected void btnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("pessoas.aspx");
         }

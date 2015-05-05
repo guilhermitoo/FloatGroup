@@ -21,17 +21,17 @@ namespace FrontEnd
             rlistaMedicamentos.DataBind();
         }
 
-        protected void tbnSair_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("medicamentos.aspx");
-        }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {            
             MedicamentoModel model = new MedicamentoModel();
 
             rlistaMedicamentos.DataSource = model.ListarPorNome(txtNomeMedicamento.Text);
             rlistaMedicamentos.DataBind();
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("medicamentos.aspx");
         }
     }
 }

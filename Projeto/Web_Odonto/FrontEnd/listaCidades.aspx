@@ -11,7 +11,7 @@
     </div>
     <div class="col-md-2">
         <asp:Button ID="btnBuscarCidade" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscarCidade_Click"/>
-        <asp:Button ID="tbnSair" runat="server" CssClass="btn btn-danger" Text="Sair" OnClick="tbnSair_Click"/>
+        <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-warning" Text="Voltar" OnClick="btnVoltar_Click" />
     </div>
     <br />
     <br />

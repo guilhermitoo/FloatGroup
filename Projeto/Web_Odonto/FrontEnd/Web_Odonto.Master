@@ -6,8 +6,7 @@
 <head runat="server">
     <title> WebOdonto </title>
     <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
        
         <!-- JQUERY SCRIPTS -->
         <script src="assets/js/jquery-1.10.2.js"></script>
@@ -23,14 +22,13 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'
         type='text/css' />
         <!-- DATEPICKER -->
-        <link href="assets/js/Bootstrap-Datepicker/css/datepicker.css" rel="stylesheet">
+        <link href="assets/js/Bootstrap-Datepicker/css/datepicker.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
         
     </asp:ContentPlaceHolder>
 </head>
-<body id="wrapper">
-    
+<body id="wrapper">    
     <div>
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -115,10 +113,10 @@
 
     <!-- scripts do bootstrap -->
                                     -
--           <!-- JQUERY SCRIPTS -->
--            <script src="assets/js/jquery-1.10.2.js">
--                        
--            </script>
+            <!-- JQUERY SCRIPTS -->
+            <script src="assets/js/jquery-1.10.2.js">
+                        
+            </script>
             <!-- BOOTSTRAP SCRIPTS -->
             <script src="assets/js/bootstrap.min.js">
                         
@@ -137,8 +135,7 @@
             <!-- CUSTOM SCRIPTS -->
             <script src="assets/js/custom.js">
                         
-            </script>
-        
+            </script>        
             <!-- DATEPICKER -->
    <script src="assets/js/datepicker/jquery.js">
 
@@ -164,9 +161,7 @@
            todayHighlight: true
        }); 
 
-   </script> 
-
-   </script>
+   </script>    
 
 </body>
 </html>

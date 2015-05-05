@@ -20,17 +20,17 @@ namespace FrontEnd
             rlistaCidades.DataBind();
         }
 
-        protected void tbnSair_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("cidades.aspx");
-        }
-
         protected void btnBuscarCidade_Click(object sender, EventArgs e)
         {            
             CidadeModel model = new CidadeModel();
 
             rlistaCidades.DataSource = model.ListarPorNome(txtNomeCidade.Text);
             rlistaCidades.DataBind();
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cidades.aspx");
         }
 
     }

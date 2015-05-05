@@ -74,7 +74,7 @@ namespace FrontEnd
 
             // incompleto
             if (m.ValidaCNPJ(txtCNPJ.Text))
-            {
+            {                
                 lblAlertaCNPJ.Text = "CNPJ não cadastrado";
             }
             else

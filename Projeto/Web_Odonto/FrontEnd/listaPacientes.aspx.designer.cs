@@ -31,13 +31,13 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// tbnSair control.
+        /// btnVoltar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button tbnSair;
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
         
         /// <summary>
         /// rListaPacientes control.

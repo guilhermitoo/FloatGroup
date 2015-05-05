@@ -92,7 +92,7 @@ namespace FrontEnd
             // salva o cadastro da pessoa
             // deve verificar quais opções no tipo de pessoa estão marcadas (PACIENTE, FUNCIONARIO, DENTISTA)
             // e deve inserir/atualizar os cadastros que estiverem marcados
-
+            
             pessoa pessoa = new pessoa();            
             
             // DADOS DE PESSOA
@@ -181,7 +181,7 @@ namespace FrontEnd
 
             // incompleto
             if (p.ValidaCPF(txtCpf.Text))
-            {
+            {                
                 lblAlertaCPF.Text = "CPF não cadastrado";
             }
             else

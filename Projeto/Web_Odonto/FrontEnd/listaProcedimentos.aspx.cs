@@ -21,18 +21,18 @@ namespace FrontEnd
             rListaProcedimentos.DataSource = model.Listar();
             rListaProcedimentos.DataBind();
         }
-
-        protected void tbnSair_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("procedimentos.aspx");
-        }
-
+        
         protected void btnBuscar_Click(object sender, EventArgs e)
         {            
             ProcedimentoModel model = new ProcedimentoModel();
 
             rListaProcedimentos.DataSource = model.ListarPorDescricao(txtDescricaoProcedimento.Text);
             rListaProcedimentos.DataBind();
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("procedimentos.aspx");
         }
     }
 }

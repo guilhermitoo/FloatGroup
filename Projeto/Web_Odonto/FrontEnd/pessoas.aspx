@@ -24,7 +24,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                     <asp:Button runat="server" id="btnBuscar" CssClass="btn btn-default" Text="Buscar" OnClick="btnBuscar_Click" />
                 </span>                                        
             </div>
-            <asp:Label id="lblAlertaCPF" runat="server" />
+            <asp:Label id="lblAlertaCPF" runat="server" Font-Size="8pt" ForeColor="#00CC66" />
                 <br />              
                 <label>
                 Escolha o tipo de cadastro

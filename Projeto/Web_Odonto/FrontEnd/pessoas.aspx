@@ -110,7 +110,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                 </div>
                 <div id="dSalario" runat="server" js="Salario"> 
                     <label id="lblSalario" runat="server">Salário</label>
-                    <asp:TextBox ID="txtSalario" runat="server" CssClass="form-control" TextMode="Number" />
+                    <asp:TextBox ID="txtSalario" runat="server" CssClass="form-control" TextMode="SingleLine" />
                     <br />
                 </div>
                 <!-- Paciente -->

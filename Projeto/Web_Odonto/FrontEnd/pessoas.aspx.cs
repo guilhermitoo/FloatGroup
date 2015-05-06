@@ -43,10 +43,12 @@ namespace FrontEnd
                 pessoa pessoa = Model.Obter(id);       
         
                 // verifica se é dentista, funcionário ou paciente 
+                // se for algum deles atribui o valor
                 if ( dModel.Verifica(pessoa.id) ) {
                     dentista dentista = dModel.Obter(id);
                     cbTipoPessoa.Items.FindByValue("D").Selected = true;
                     txtCro.Text = dentista.cro;
+                    txtSalario.Text = dentista.salario.ToString();
                 }
                 if ( fModel.Verifica(pessoa.id) ) {
                     funcionario funcionario = fModel.Obter(id);

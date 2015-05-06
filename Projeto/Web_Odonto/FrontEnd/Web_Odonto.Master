@@ -58,10 +58,10 @@
                         
                         
                         <li>
-                            <a class="active-menu" href="index.aspx"><i class="fa fa-qrcode fa-3x"></i> Início </a>
+                            <a class="active-menu" href="index.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/inicio_1.png" /></i> Início </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-3x"></i> Cadastros <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/cadastro_1.png" /></i> Cadastros <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="pessoas.aspx">Pessoa</a>
@@ -82,13 +82,13 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="agenda.aspx"><i class="fa fa-desktop fa-3x"></i> Agenda</a>
+                            <a href="agenda.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/agenda_1.png" /></i> Agenda</a>
                         </li>
                         <li>
-                            <a href="atendimento.aspx"><i class="fa fa-bar-chart-o fa-3x"></i> Atendimento</a>
+                            <a href="atendimento.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/atendimento_1.png" /></i> Atendimento</a>
                         </li>
                         <li>
-                            <a href="relatorios.aspx"><i class="fa fa-qrcode fa-3x"></i> Relatórios</a>
+                            <a href="relatorios.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/relatorio_1.png" /></i> Relatórios</a>
                         </li>
                        
                     </ul>

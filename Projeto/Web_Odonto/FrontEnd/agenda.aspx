@@ -3,45 +3,32 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
 
-<h2>AGENDAR</h2>
+<h2>AGENDA</h2>
 <h5>
 Faça o agendamento de seus atendimentos
 </h5>
-              
-              
-<!-- BOTÃO AGENDAR -->
-<div class="btn-group" role="group">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agendar</button>
-
+                            
 <!-- ESCOLHA DE DENTISTA-->
-<div class="btn-group" role="group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    Dentistas
-    <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu">
-    <li><a href="#">João</a></li>
-    <li><a href="#">Thiago</a></li>
-    <li><a href="#">Lucas</a></li>
-    <li><a href="#">Pedro</a></li>
-    </ul>
-<!-- FIM - ESCOLHA DENTISTA-->
-                  
+<div class="col-md-4">    
+    <asp:Label ID="lblDentistas" Text="Dentistas" runat="server"/>
+    <asp:DropDownList ID="ddDentistas" runat="server" CssClass="form-control">
+    </asp:DropDownList> 
+</div>                  
 <!-- MODO DE EXIBIÇÃO-->
-<div class="btn-group" role="group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    Modo de Exibição
-    <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Dia</a></li>
-    <li><a href="#">Semanal</a></li>
-    <li><a href="#">Mês</a></li>
-    <li><a href="#">Ano</a></li>
-    </ul>
-<!-- FIM - MODO DE EXIBIÇÃO-->
-
-</div></div>
+<div class="col-md-2" >    
+    <asp:Label ID="lblModo" Text="Modo de Exibição" runat="server"/>
+    <asp:DropDownList ID="ddModoExibicao" runat="server" CssClass="form-control">
+        <asp:ListItem Text="Diário" Value="D" />
+        <asp:ListItem Text="Semanal" Value="S"/>
+        <asp:ListItem Text="Mensal" Value="M"/>
+        <asp:ListItem Text="Anal" Value="A" />
+    </asp:DropDownList>
+</div>
+<!-- BOTÃO AGENDAR -->
+<div class="col-md-1">
+    <br />
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agendar</button>
+</div>
 
 <!-- CONTEUDO BOTÃO AGENDAR-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

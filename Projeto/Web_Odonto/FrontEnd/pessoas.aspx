@@ -50,11 +50,11 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                     <asp:ListItem Value="F"                 >Feminino</asp:ListItem>
                 </asp:RadioButtonList>                                
                 <br />                
-                <label>Data de Nascimento:</label> CHAMAR A FUNÇÃO DO DATEPICKER NO ONCLICK DO INPUT DA DATA DE NASCIMENTO
-                <input class="form-control" id="txtNasc" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
+                <label>Data de Nascimento:</label>
+                <input class="form-control" id="txtNasc" js="data" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
                 <br />
                 <label>RG</label>
-                <asp:TextBox ID="txtRg" CssClass="form-control" runat="server" />
+                <input id="txtRg" class="form-control" runat="server" onkeyup="formataRG(this,event);" maxlength="12"/>
                 <br />
 
                 <label>Cidade</label>
@@ -65,10 +65,10 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                 <asp:TextBox ID="txtEndereco" CssClass="form-control" runat="server"/>
                 <br />
                 <label>Telefone</label>
-                <asp:TextBox ID="txtTelefone1" CssClass="form-control" runat="server"/>
+                <input id="txtTelefone1" class="form-control" runat="server" onkeyup="formataTelefone(this,event);" />
                 <br />
                 <label>Celular</label>
-                <asp:TextBox ID="txtTelefone2" CssClass="form-control" runat="server"/>
+                <input id="txtTelefone2" class="form-control" runat="server" onkeyup="formataTelefone(this,event);"/>
                 <br />
                 <label for="descricao">
                 Observação:
@@ -135,7 +135,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     <div class="col-md-offset-3">    
         <div class="form-group">
             <asp:Button js="Salvar" ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
-            <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" OnClick="btnListar_Click" />
+            <asp:Button ID="btnListar" runat="server" Text="Consultar" CssClass="btn btn-primary" OnClick="btnListar_Click" />
             <asp:Button ID="btnLimpar" runat="server" Text="Limpar" CssClass="btn btn-success" OnClick="btnLimpar_Click" />            
             <asp:Button ID="btnSair" runat="server" Text="Sair" CssClass="btn btn-warning" OnClick="btnSair_Click" />
         </div>    
@@ -168,6 +168,14 @@ Faça cadastro de Funcionário, Paciente, e Dentista
         $(document).ready(function () {
             // executa a função quando a página está pronta e carregada
             ModificaCampos();
+
+            $('input[js="data"]').datepicker({
+                format: "dd/mm/yyyy",
+                language: "pt-BR",
+                calendarWeeks: true,
+                todayHighlight: true
+            });
+
         });        
 
         function ModificaCampos() {            
@@ -198,13 +206,13 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                 $('div[js="Senha"]').show();
                 $('div[js="Usuario"]').show();                    
             }
-        }                   
+        }                           
+
 
         // ao modificar o conteúdo do select[js="TipoPessoa"] irá executar o ModificaCampos
         $('table[js="TipoPessoa"]').on('change', function () {            
             ModificaCampos();
         });
-
 
     </script>
     

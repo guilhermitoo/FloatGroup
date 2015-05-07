@@ -7,8 +7,7 @@
     <title> WebOdonto </title>
     <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <script src="assets/js/mascara.js"></script>
+                
         <!-- JQUERY SCRIPTS -->
         <script src="assets/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP STYLES-->
@@ -112,57 +111,39 @@
     </div>
     </form>
 
-    <!-- scripts do bootstrap -->    
-    
+    <!-- scripts do bootstrap -->        
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js">
+    <!--<script src="assets/js/jquery-1.10.2.js"></script>-->
+    <script src="assets/js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
                         
+    <!--JQUERY UI SCRIPTS -->    
+    <script src="assets/js/jquery-ui-1.11.4.custom/jquery-ui.js">
     </script>
+    <script src="assets/js/jquery-ui-1.11.4.custom/jquery-ui.min.js">
+    </script>
+    <link href="assets/js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" />
+
     <!-- BOOTSTRAP SCRIPTS -->
-    <script src="assets/js/bootstrap.min.js">
-                        
+    <script src="assets/js/bootstrap.min.js">                        
     </script>
     <!-- METISMENU SCRIPTS -->
-    <script src="assets/js/jquery.metisMenu.js">
-                        
+    <script src="assets/js/jquery.metisMenu.js">                        
     </script>
     <!-- MORRIS CHART SCRIPTS -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js">
-                        
+    <script src="assets/js/morris/raphael-2.1.0.min.js">                        
     </script>
-    <script src="assets/js/morris/morris.js">
-                        
+    <script src="assets/js/morris/morris.js">                        
     </script>
     <!-- CUSTOM SCRIPTS -->
-    <script src="assets/js/custom.js">
-                        
+    <script src="assets/js/custom.js">                        
     </script>        
-    <!-- DATEPICKER -->
-   <script src="assets/js/datepicker/jquery.js">
+    <!-- DATEPICKER -->      
+    <script src="assets/js/datepicker/js/bootstrap-datepicker.js">
+    </script>   
 
-   </script>
-   
-   <script src="assets/js/datepicker/jquery-ui.js">
-
-   </script>
-
-   <script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">
-   </script>
-
-   <script type="text/javascript">  
-             //<script src="assets/js/Bootstrap-Datepicker/js/bootstrap-datepicker.js">;   
-   </script>       
-   <script src="assets/js/mascara.js"></script>
-   <script type="text/javascript">
-  
-       $('#datepicker').datepicker({
-           format: "dd/mm/yyyy",
-           language: "pt-BR",
-           calendarWeeks: true,
-           todayHighlight: true
-       }); 
-
-   </script>    
+    <!-- MÁSCARAS -->
+    <script src="assets/js/mascara.js">
+    </script>
 
 </body>
 </html>

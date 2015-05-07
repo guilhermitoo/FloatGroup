@@ -100,7 +100,7 @@ namespace FrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRg;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtRg;
         
         /// <summary>
         /// ddCidade control.
@@ -127,7 +127,7 @@ namespace FrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefone1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefone1;
         
         /// <summary>
         /// txtTelefone2 control.
@@ -136,7 +136,7 @@ namespace FrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefone2;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefone2;
         
         /// <summary>
         /// txtObs control.

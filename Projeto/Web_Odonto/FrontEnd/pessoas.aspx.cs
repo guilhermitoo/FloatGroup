@@ -66,12 +66,12 @@ namespace FrontEnd
                 txtNome.Text = pessoa.nome;
                 rdSexo.Items.FindByValue(pessoa.sexo.ToString());
                 txtNasc.Value = pessoa.nascimento.ToString();
-                txtRg.Text = pessoa.rg;
+                txtRg.Value = pessoa.rg;
                 txtCpf.Value = pessoa.cpf;
                 ddCidade.Items.FindByValue(pessoa.cidade_id.ToString());
                 txtEndereco.Text = pessoa.endereco;                
-                txtTelefone1.Text = pessoa.telefone1;
-                txtTelefone2.Text = pessoa.telefone2;
+                txtTelefone1.Value = pessoa.telefone1;
+                txtTelefone2.Value = pessoa.telefone2;
                 txtObs.Text = pessoa.obs;
                 ddTipoUsuario.Items.FindByValue(pessoa.tipoUsuario.ToString());
                 txtUsuario.Text = pessoa.usuario;
@@ -95,35 +95,35 @@ namespace FrontEnd
             // deve verificar quais opções no tipo de pessoa estão marcadas (PACIENTE, FUNCIONARIO, DENTISTA)
             // e deve inserir/atualizar os cadastros que estiverem marcados
             
-
             pessoa pessoa = new pessoa();
             PessoaModel pessoaModel = new PessoaModel();
-            if (pessoaModel.ValidaCPF(txtCpf.Value))
+
+            bool bNovo = true;
+            // se existir pessoa cadastrada com esse ID, atualiza os cadastros
+            if (Request.QueryString["ID"] != null)
+            {
+                pessoa.id = int.Parse(Request.QueryString["ID"]);
+                bNovo = false;
+            }
+
+            if (pessoaModel.ValidaCPF(txtCpf.Value) || (! bNovo) )
             {
                 // DADOS DE PESSOA
                 pessoa.nome = txtNome.Text;
                 pessoa.status = Int32.Parse(rdStatus.SelectedValue);
                 pessoa.sexo = Char.Parse(rdSexo.SelectedValue);
                 pessoa.nascimento = DateTime.Parse(txtNasc.Value);
-                pessoa.rg = txtRg.Text;
+                pessoa.rg = txtRg.Value;
                 pessoa.cpf = txtCpf.Value;
                 pessoa.cidade_id = Int32.Parse(ddCidade.SelectedValue);
                 pessoa.endereco = txtEndereco.Text;
-                pessoa.telefone1 = txtTelefone1.Text;
-                pessoa.telefone2 = txtTelefone2.Text;
+                pessoa.telefone1 = txtTelefone1.Value;
+                pessoa.telefone2 = txtTelefone2.Value;
                 pessoa.obs = txtObs.Text;
                 pessoa.tipoUsuario = Int32.Parse(ddTipoUsuario.SelectedValue);
                 pessoa.usuario = txtUsuario.Text;
                 pessoa.senha = txtSenha.Text;
-
                 
-                bool bNovo = true;
-                // se existir pessoa cadastrada com esse ID, atualiza os cadastros
-                if (Request.QueryString["ID"] != null)
-                {
-                    pessoa.id = int.Parse(Request.QueryString["ID"]);
-                    bNovo = false;
-                }
                 // insere ou atualiza o cadastro da pessoa
                 if (pessoaModel.InserirAtualizar(pessoa))
                 {

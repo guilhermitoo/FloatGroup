@@ -27,7 +27,7 @@ namespace FrontEnd
                 //preencher caixas de texto com valores de produto
                 txtRazao.Text = convenio.razao_social;
                 txtNomeFantasia.Text = convenio.nome_fantasia;
-                txtCNPJ.Text = convenio.cnpj;
+                txtCNPJ.Value = convenio.cnpj;
                 txtIe.Text = convenio.ie;
             }
         }
@@ -35,22 +35,23 @@ namespace FrontEnd
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             convenio convenio = new convenio();
-
-            convenio.cnpj = txtCNPJ.Text;
-            convenio.ie = txtIe.Text;
-            convenio.razao_social= txtRazao.Text;
-            convenio.nome_fantasia = txtNomeFantasia.Text;            
-
             ConvenioModel model = new ConvenioModel();
 
-            //se existir ID então faz a edição, se não existir ID, é uma inserção
-            if (Request.QueryString["ID"] != null)
-                convenio.id = int.Parse(Request.QueryString["ID"]);
+            if (model.ValidaCNPJ(txtCNPJ.Value))
+            {
+                convenio.cnpj = txtCNPJ.Value;
+                convenio.ie = txtIe.Text;
+                convenio.razao_social = txtRazao.Text;
+                convenio.nome_fantasia = txtNomeFantasia.Text;
 
-            // faz a inserção ou atualização do cadastro da cidade
-            if ( model.InserirAtualizar(convenio) )
-                Response.Redirect("convenios.aspx");   
-                            
+                //se existir ID então faz a edição, se não existir ID, é uma inserção
+                if (Request.QueryString["ID"] != null)
+                    convenio.id = int.Parse(Request.QueryString["ID"]);
+
+                // faz a inserção ou atualização do cadastro da cidade
+                if (model.InserirAtualizar(convenio))
+                    Response.Redirect("convenios.aspx");
+            }            
         }
 
         protected void btnSair_Click(object sender, EventArgs e)
@@ -73,13 +74,13 @@ namespace FrontEnd
             ConvenioModel m = new ConvenioModel();
 
             // incompleto
-            if (m.ValidaCNPJ(txtCNPJ.Text))
+            if (m.ValidaCNPJ(txtCNPJ.Value))
             {                
                 lblAlertaCNPJ.Text = "CNPJ não cadastrado";
             }
             else
             {
-                Response.Redirect("convenios.aspx?ID="+(m.ObterCNPJ(txtCNPJ.Text)).ToString());
+                Response.Redirect("convenios.aspx?ID="+(m.ObterCNPJ(txtCNPJ.Value)).ToString());
             }
         }
     }

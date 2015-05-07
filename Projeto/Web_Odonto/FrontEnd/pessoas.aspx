@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
-
+     
 <h2>
 CADASTRO BÁSICO
 </h2>    
@@ -19,7 +19,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
             <!--<asp:ScriptManager ID="sm1" runat="server" EnablePageMethods="true"></asp:ScriptManager>-->
                 <label>CPF</label>              
             <div class="input-group">
-                <asp:TextBox ID="txtCpf" CssClass="form-control" runat="server"/>
+                <input id="txtCpf" class="form-control" runat="server" onkeyup="formataCPF(this,event);" maxlength="14" />
                 <span class="input-group-btn" >
                     <asp:Button runat="server" id="btnBuscar" CssClass="btn btn-default" Text="Buscar" OnClick="btnBuscar_Click" />
                 </span>                                        
@@ -50,8 +50,8 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                     <asp:ListItem Value="F"                 >Feminino</asp:ListItem>
                 </asp:RadioButtonList>                                
                 <br />                
-                <label>Data de Nascimento:</label>
-                <input class="form-control" id="datepicker" runat="server"/>
+                <label>Data de Nascimento:</label> CHAMAR A FUNÇÃO DO DATEPICKER NO ONCLICK DO INPUT DA DATA DE NASCIMENTO
+                <input class="form-control" id="txtNasc" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
                 <br />
                 <label>RG</label>
                 <asp:TextBox ID="txtRg" CssClass="form-control" runat="server" />
@@ -109,8 +109,9 @@ Faça cadastro de Funcionário, Paciente, e Dentista
                     <br />
                 </div>
                 <div id="dSalario" runat="server" js="Salario"> 
-                    <label id="lblSalario" runat="server">Salário</label>
-                    <asp:TextBox ID="txtSalario" runat="server" CssClass="form-control" TextMode="SingleLine" />
+                    <label id="lblSalario" runat="server">Salário</label>                    
+                    <input id="txtSalario" runat="server"  class="form-control" 
+                        style="text-align:right" onkeyup="formataValor(this,event);" />                    
                     <br />
                 </div>
                 <!-- Paciente -->
@@ -131,8 +132,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     </div>
     <!-- col-md-12 -->
     <!-- Botões -->    
-    <div class="col-md-offset-3">
-    
+    <div class="col-md-offset-3">    
         <div class="form-group">
             <asp:Button js="Salvar" ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" />
             <asp:Button ID="btnListar" runat="server" Text="Listar" CssClass="btn btn-primary" OnClick="btnListar_Click" />
@@ -204,6 +204,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
         $('table[js="TipoPessoa"]').on('change', function () {            
             ModificaCampos();
         });
+
 
     </script>
     

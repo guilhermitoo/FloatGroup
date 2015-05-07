@@ -97,7 +97,7 @@
     <Content Include="assets\js\dataTables\jquery.dataTables.js" />
     <Content Include="assets\js\jquery-1.10.2.js" />
     <Content Include="assets\js\jquery.metisMenu.js" />
-    <Content Include="assets\js\Mascara.js" />
+    <Content Include="assets\js\mascara.js" />
     <Content Include="assets\js\morris\morris-0.4.3.min.css" />
     <Content Include="assets\js\morris\morris.js" />
     <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
@@ -114,7 +114,9 @@
     <Content Include="medicamentos.aspx" />
     <Content Include="procedimentos.aspx" />
     <Content Include="relatorios.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="agenda.aspx.cs">

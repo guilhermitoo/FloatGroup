@@ -22,7 +22,8 @@
                             CNPJ
                         </label>                                               
                         <div class="input-group">                                                    
-                            <asp:TextBox CssClass="form-control" placeholder="Digite a CNPJ" ID="txtCNPJ" runat="server"></asp:TextBox>
+                            <input class="form-control" placeholder="Digite a CNPJ" id="txtCNPJ" 
+                                runat="server" onkeyup="formataCNPJ(this,event);" maxlength="18"/>
                             <span class="input-group-btn">
                                 <asp:Button CssClass="btn btn-default" id="btnProcuraCNPJ" runat="server" Text="Buscar" OnClick="btnProcuraCNPJ_Click" />                                
                             </span>

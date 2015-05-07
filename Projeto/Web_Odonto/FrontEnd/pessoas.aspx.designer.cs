@@ -28,7 +28,7 @@ namespace FrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCpf;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCpf;
         
         /// <summary>
         /// btnBuscar control.
@@ -85,13 +85,13 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.RadioButtonList rdSexo;
         
         /// <summary>
-        /// datepicker control.
+        /// txtNasc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datepicker;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNasc;
         
         /// <summary>
         /// txtRg control.
@@ -307,7 +307,7 @@ namespace FrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSalario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSalario;
         
         /// <summary>
         /// dConvenio control.

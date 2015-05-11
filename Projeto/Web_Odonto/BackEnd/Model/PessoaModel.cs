@@ -117,5 +117,15 @@ namespace BackEnd.Model
             }
         }
 
+        public List<pessoa> ListarPacientes()
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select p.id,p.nome from pacientes d join pessoas p on (d.pessoa_id = p.id)";
+                var query = db.ExecuteQuery<pessoa>(sSql);
+                return query.ToList();
+            }
+        }
+
     }
 }

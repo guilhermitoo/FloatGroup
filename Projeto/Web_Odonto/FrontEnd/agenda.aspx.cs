@@ -21,6 +21,13 @@ namespace FrontEnd
             ddDentistas.DataTextField = "nome";
             ddDentistas.DataBind();
             ddDentistas.SelectedIndex = 0;
+            
+            // atribui uma lista de dentistas para o DropDown
+            ddPacientes.DataSource = p.ListarPacientes();
+            ddPacientes.DataValueField = "id";
+            ddPacientes.DataTextField = "nome";
+            ddPacientes.DataBind();
+            ddPacientes.SelectedIndex = 0;
 
         }
     }

@@ -207,6 +207,7 @@
     <Content Include="listaPacientes.aspx" />
     <Content Include="listaPessoas.aspx" />
     <Content Include="listaProcedimentos.aspx" />
+    <Content Include="LoginControl.ascx" />
     <Content Include="medicamentos.aspx" />
     <Content Include="procedimentos.aspx" />
     <Content Include="relatorios.aspx" />
@@ -291,6 +292,13 @@
     </Compile>
     <Compile Include="listaProcedimentos.aspx.designer.cs">
       <DependentUpon>listaProcedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl.ascx.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl.ascx.designer.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="medicamentos.aspx.cs">
       <DependentUpon>medicamentos.aspx</DependentUpon>

@@ -83,7 +83,7 @@ create table imagens
 	id				int			   not null identity,
 	paciente_id		int			   not null	references pacientes,
 	descricao		varchar(50),	
-	arquivo			varbinary(max) not null,
+	arquivo			varchar(max) not null,
 	primary key		(id,paciente_id)
 )
 go

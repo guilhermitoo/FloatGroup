@@ -102,7 +102,7 @@ create procedure cadImagem
 (
 	@paciente_id int,
 	@descricao varchar(50),
-	@arquivo varbinary(max)
+	@arquivo varchar(max)
 )
 as
 begin
@@ -325,7 +325,7 @@ create procedure alteraImagem
 	@id int,
 	@paciente_id int,
 	@descricao varchar(50),
-	@arquivo varbinary(max)
+	@arquivo varchar(max)
 )
 as
 begin

@@ -127,5 +127,14 @@ namespace BackEnd.Model
             }
         }
 
+        public pessoa ObterUsuario(string usuario, string senha)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            var pessoa = (from p in db.GetTable<pessoa>()
+                          where p.usuario == usuario && p.senha == senha
+                          select p).SingleOrDefault();
+            return pessoa;
+        }
+
     }
 }

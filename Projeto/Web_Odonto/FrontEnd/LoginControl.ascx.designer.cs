@@ -10,87 +10,87 @@
 namespace FrontEnd {
     
     
-    public partial class agenda {
+    public partial class LoginControl {
         
         /// <summary>
-        /// lblDentistas control.
+        /// painelLogado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDentistas;
+        protected global::System.Web.UI.WebControls.Panel painelLogado;
         
         /// <summary>
-        /// ddDentistas control.
+        /// btnSair control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddDentistas;
+        protected global::System.Web.UI.WebControls.Button btnSair;
         
         /// <summary>
-        /// lblModo control.
+        /// painelNaoLogado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModo;
+        protected global::System.Web.UI.WebControls.Panel painelNaoLogado;
         
         /// <summary>
-        /// ddModoExibicao control.
+        /// lblUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddModoExibicao;
+        protected global::System.Web.UI.WebControls.Label lblUsuario;
         
         /// <summary>
-        /// ddPacientes control.
+        /// txtUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddPacientes;
+        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
         
         /// <summary>
-        /// txtNumeroTratamento control.
+        /// lblSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroTratamento;
+        protected global::System.Web.UI.WebControls.Label lblSenha;
         
         /// <summary>
-        /// txtStatusTratamento control.
+        /// txtSenha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStatusTratamento;
+        protected global::System.Web.UI.WebControls.TextBox txtSenha;
         
         /// <summary>
-        /// rListaProcedimentos control.
+        /// lblErro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rListaProcedimentos;
+        protected global::System.Web.UI.WebControls.Label lblErro;
         
         /// <summary>
-        /// txtDataAval control.
+        /// btnEntrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDataAval;
+        protected global::System.Web.UI.WebControls.Button btnEntrar;
     }
 }

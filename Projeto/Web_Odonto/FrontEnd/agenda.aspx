@@ -12,7 +12,7 @@
         </asp:DropDownList>
     </div>
     <!-- MODO DE EXIBIÇÃO-->
-    <div class="col-md-2" >
+    <div class="col-md-2">
         <asp:Label ID="lblModo" Text="Modo de Exibição" runat="server"/>
         <asp:DropDownList ID="ddModoExibicao" runat="server" CssClass="form-control">
             <asp:ListItem Text="Diário" Value="D" />
@@ -41,73 +41,69 @@
                         Agendar
                     </h4>
                 </div>
-                <div class="modal-body">                    
-                    <a class="btn btn-primary" data-toggle="collapse" href="#atendimento" aria-expanded="false" aria-controls="atendimento">
+                <div class="modal-body">                      
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" aria-expanded="false" onclick="ExibeAtend()">
                     Atendimento
-                    </a>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    </button>                                                                  
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" aria-expanded="false" onclick="ExibeAval()">
                     Avaliação
-                    </button>
+                    </button>                    
                     <!-- CONTEUDO ATENDIMENTO-->
-                    <div id="atendimento" class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="col-md-12">
-                                <label>Paciente</label>                            
-                                <asp:DropDownList ID="ddPacientes" CssClass="form-control" runat="server">
-                                </asp:DropDownList>
-                            </div>                                           
-                        
-                        <!-- NUMERO E STATUS-->
-                        
-                            <div class="col-md-6">
-                                <label>Numero do Tratamento</label>
-                                <asp:TextBox id="txtNumeroTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>
+                    <div class="collapse" id="pnlAtendimento">
+                        <div class="panel panel-default"> 
+                            <div class="panel-body">                                                   
+                                <div class="col-md-12">
+                                    <label>Paciente</label>                            
+                                    <asp:DropDownList ID="ddPacientes" CssClass="form-control" runat="server">
+                                    </asp:DropDownList>
+                                </div>                                           
+                                <div class="col-md-6">
+                                    <label>Numero do Tratamento</label>
+                                    <asp:TextBox id="txtNumeroTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Status do Tratamento</label>
+                                    <asp:TextBox id="txtStatusTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <label>Status do Tratamento</label>
-                                <asp:TextBox id="txtStatusTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>
-                            </div>
-                        </div>
-                        <div class="panel-footer">                            
-                            <div class="well">
-                                <asp:Repeater ID="rListaProcedimentos" runat="server">     
-                                    <HeaderTemplate>
-                                        <table class="table table-hover">
+                                <div class="panel-footer">
+                                    <asp:Repeater ID="rListaProcedimentos" runat="server">     
+                                        <HeaderTemplate>
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Nome</th>
+                                                    <th>Qtd</th>                        
+                                                    <th>Status</th>
+                                                </tr>                
+                                        </HeaderTemplate>
+
+                                        <ItemTemplate>
                                             <tr>
-                                                <th></th>
-                                                <th>Nome</th>
-                                                <th>Qtd</th>                        
-                                                <th>Status</th>
-                                            </tr>                
-                                    </HeaderTemplate>
+                                                <td><input type="checkbox" runat="server" /></td>
+                                                <td><%# DataBinder.Eval(Container.DataItem,"Nome") %></td>
+                                                <td><%# DataBinder.Eval(Container.DataItem,"Qtd") %></td>
+                                                <td><%# DataBinder.Eval(Container.DataItem,"Status") %></td>                    
+                                            </tr>
+                                        </ItemTemplate>
 
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td><input type="checkbox" runat="server" /></td>
-                                            <td><%# DataBinder.Eval(Container.DataItem,"Nome") %></td>
-                                            <td><%# DataBinder.Eval(Container.DataItem,"Qtd") %></td>
-                                            <td><%# DataBinder.Eval(Container.DataItem,"Status") %></td>                    
-                                        </tr>
-                                    </ItemTemplate>
-
-                                    <FooterTemplate>
+                                        <FooterTemplate>
                 
-                                        </table>
-                                    </FooterTemplate>
-                                </asp:Repeater>
-                         
-                            </div>
+                                            </table>
+                                        </FooterTemplate>
+                                    </asp:Repeater>                                                     
+                                </div>                            
                         </div>
                     </div>
                     <!-- FIM CONTEUDO ATENDIMENTO -->
                     <!-- CONTEUDO AVALIAÇÃO-->
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse" id="pnlAvaliacao">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <label>
                                 Data Avaliação
                                 </label>
-                                <input type="text" class="form-control" id="datepicker" />
+                                <input class="form-control" id="txtDataAval" js="data" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
                                 <br />
                                 <label>
                                 Paciente
@@ -219,5 +215,30 @@
                 </table>
             </div>
         </div>
-    </div>    
+    </div>   
+    
+    
+    <script type="text/javascript"> 
+
+        $(document).ready(function () {
+            // executa a função quando a página está pronta e carregada
+            $('input[js="data"]').datepicker({
+                format: "dd/mm/yyyy",
+                language: "pt-BR",
+                calendarWeeks: true,
+                todayHighlight: true
+            });
+        });
+
+        function ExibeAval() {
+            $('#pnlAtendimento').fadeOut(300);
+            $('#pnlAvaliacao').delay(300).fadeIn(300);
+        }
+
+        function ExibeAtend() {
+            $('#pnlAvaliacao').fadeOut(300);
+            $('#pnlAtendimento').delay(300).fadeIn(300);
+        }
+
+    </script>
 </asp:Content>

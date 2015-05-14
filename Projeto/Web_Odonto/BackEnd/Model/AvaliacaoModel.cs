@@ -58,18 +58,20 @@ namespace BackEnd.Model
             }
         }
 
-        public List<avaliacao> ListarPorDentista(int pId)
+        /*public List<avaliacao> ListarPorPaciente(int pId)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
-                String sSql = "select A.* "+ 
-                              " from avaliacoes A "+
-                              " join pacientes P on ( A.id = P.pessoa_id ) "+
-                              " where A.paciente_id = "+pId;
-                var query = db.ExecuteQuery<avaliacao>(sSql);
+                String sSql = "select T.*"+
+                              " from tratamentos T"+
+                              " join avaliacoes A on ( T.avaliacao_id = A.id )"+
+                              " join pacientes P on ( A.paciente_id = P.pessoa_id )"+
+                              " where P.pessoa_id = " + pId.ToString() +
+                              " and T.status = 2 ";
+                var query = db.ExecuteQuery<tratamento>(sSql);
                 return query.ToList();
             }
-        }
+        }*/
     }
 }

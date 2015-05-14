@@ -84,5 +84,19 @@ namespace BackEnd.Model
                 return query.ToList();                
             }
         }
+
+        public List<procedimento> ListarPorTratamento(int idTratamento)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+
+                String sSql = "select P.*,IT.* from procedimentos P "+
+                              " join itensTratamento IT on (P.id = IT.procedimento_id ) "+
+                              " join tratamentos T on ( IT.tratamento_id = T.avaliacao_id ) "+
+                              " where T.avaliacao_id =" + idTratamento.ToString();
+                var query = db.ExecuteQuery<procedimento>(sSql);
+                return query.ToList();
+            }
+        }
     }
 }

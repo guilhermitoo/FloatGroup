@@ -8,7 +8,7 @@
     <!-- ESCOLHA DE DENTISTA-->
     <div class="col-md-4">
         <asp:Label ID="lblDentistas" Text="Dentistas" runat="server"/>
-        <asp:DropDownList ID="ddDentistas" runat="server" CssClass="form-control">
+        <asp:DropDownList ID="ddDentistas" runat="server" CssClass="form-control dropdown-toggle">
         </asp:DropDownList>
     </div>
     <!-- MODO DE EXIBIÇÃO-->
@@ -26,7 +26,7 @@
         <br />
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agendar</button>
     </div>
-    <!-- CONTEUDO BOTÃO AGENDAR-->
+    <!-- CONTEUDO BOTÃO AGENDAR-->    
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -52,22 +52,28 @@
                     <div class="collapse" id="pnlAtendimento">
                         <div class="panel panel-default"> 
                             <div class="panel-body">                                                   
-                                <div class="col-md-12">
-                                    <label>Paciente</label>                            
-                                    <asp:DropDownList ID="ddPacientes" CssClass="form-control" runat="server">
-                                    </asp:DropDownList>
-                                </div>                                           
+                                <div class="col-md-12"><label>Paciente</label></div>
+                                <div class="col-md-8">                                              
+                                    <asp:DropDownList ID="ddPaciente" CssClass="form-control" runat="server">
+                                    </asp:DropDownList>                                    
+                                </div>                 
+                                <div class="col-md-4">     
+                         
+                                    <asp:Button ID="btnBuscaTratamento" runat="server" Text="Buscar Tratamento" CssClass="btn btn-primary" OnClick="BuscaTratamento"/>
+                                    <br />
+                                </div>                                                                                              
                                 <div class="col-md-6">
                                     <label>Numero do Tratamento</label>
-                                    <asp:TextBox id="txtNumeroTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>
+                                    <asp:TextBox id="txtNumeroTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>                                    
                                 </div>
                                 <div class="col-md-6">
                                     <label>Status do Tratamento</label>
-                                    <asp:TextBox id="txtStatusTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>
+                                    <asp:TextBox id="txtStatusTratamento" ReadOnly="true" CssClass="form-control" runat="server"/>                                    
                                 </div>
+                                <br />
                             </div>
                                 <div class="panel-footer">
-                                    <asp:Repeater ID="rListaProcedimentos" runat="server">     
+                                    <%--<asp:Repeater ID="rListaProcedimentos" runat="server">     
                                         <HeaderTemplate>
                                             <table class="table table-hover">
                                                 <tr>
@@ -91,44 +97,38 @@
                 
                                             </table>
                                         </FooterTemplate>
-                                    </asp:Repeater>                                                     
-                                </div>                            
+                                    </asp:Repeater>  --%>                                       
+                                    <asp:GridView runat="server" ID="gvItensAtendimento">
+                                    <Columns>
+                  
+                                    </Columns>
+                                    </asp:GridView>                                           
+                             </div>                            
                         </div>
                     </div>
                     <!-- FIM CONTEUDO ATENDIMENTO -->
                     <!-- CONTEUDO AVALIAÇÃO-->
-                    <div class="collapse" id="pnlAvaliacao">
+                    <div class="collapse" id="pnlAvaliacao" >
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <label>
-                                Data Avaliação
-                                </label>
-                                <input class="form-control" id="txtDataAval" js="data" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
-                                <br />
-                                <label>
-                                Paciente
-                                </label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Digite a sua busca"
-                                        />
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                    Busca
-                                    </button>
-                                    </span>
-                                </div>
-                                <br />
-                                <label>
-                                Dentista
-                                </label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Digite a sua busca"
-                                        />
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                    Busca
-                                    </button>
-                                    </span>
+                                <div class="col-md-12">
+                                    <label>
+                                    Data Avaliação
+                                    </label>
+                                    <input class="form-control" id="txtDataAval" js="data" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
+                                    <br />
+                                </div>                                
+                                <div class="col-md-12">
+                                    <asp:Label ID="lblPacienteAv" Text="Paciente" runat="server"/>
+                                    <asp:DropDownList ID="ddPacienteAv" runat="server" CssClass="form-control dropdown-toggle">
+                                    </asp:DropDownList>
+                                    <br />
+                                </div>                                
+                                <div class="col-md-12">
+                                    <asp:Label ID="lblDentistaAv" Text="Dentista" runat="server"/>
+                                    <asp:DropDownList ID="ddDentistaAv" runat="server" CssClass="form-control dropdown-toggle">
+                                    </asp:DropDownList>
+                                    <br />
                                 </div>
                             </div>
                         </div>
@@ -137,17 +137,16 @@
                     <br />
                     <br />
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer">                                        
                     <button type="button" class="btn btn-default" data-dismiss="modal">
                     Fechar
                     </button>
-                    <button type="button" class="btn btn-primary">
-                    Finalizar Agendamento
-                    </button>
+                    <asp:Button js="btaten" id="btnFinalizaAgendamento" runat="server" CssClass="btn btn-primary" OnClick="btnFinalizaAgendamento_Click" Text="Finalizar Agendamento" />                                            
+                    <asp:Button js="btaval" id="btnFinalizaAgendamento2" runat="server" CssClass="btn btn-primary" OnClick="CadAvaliacao" Text="Finalizar Agendamento"/>                        
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
     <!-- FIM CONTEUDO AGENDAR-->    
     <!-- Fechamento das div class="btn-group" role="group" -->
     <div class="col-md-12">
@@ -215,30 +214,45 @@
                 </table>
             </div>
         </div>
-    </div>   
-    
-    
+    </div>      
+
     <script type="text/javascript"> 
 
         $(document).ready(function () {
-            // executa a função quando a página está pronta e carregada
+             //executa a função quando a página está pronta e carregada            
             $('input[js="data"]').datepicker({
                 format: "dd/mm/yyyy",
                 language: "pt-BR",
                 calendarWeeks: true,
-                todayHighlight: true
+                todayHighlight: true,                               
             });
+
+            ExibeAtend();
         });
 
         function ExibeAval() {
             $('#pnlAtendimento').fadeOut(300);
             $('#pnlAvaliacao').delay(300).fadeIn(300);
+            $('button[js="btaten"]').hide();
+            $('button[js="btaval"]').show();
         }
 
         function ExibeAtend() {
             $('#pnlAvaliacao').fadeOut(300);
             $('#pnlAtendimento').delay(300).fadeIn(300);
+            $('input[js="btaten"]').show();
+            $('input[js="btaval"]').hide();
         }
 
+        function Busca() {
+            //$ajax({
+            //    url: 'agenda.aspx/BuscaTratamento',
+            //    type: 'POST',
+            //    success: function (retorno) {
+            //        alert("deu certo");
+            //    }
+            //});
+            PageMethods.BuscaTratamento();
+        }
     </script>
 </asp:Content>

@@ -58,7 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agenda.aspx" />
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\font-awesome.css" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
@@ -90,6 +93,7 @@
     <Content Include="assets\img\icones png\ícones_3\cadastro_3.png" />
     <Content Include="assets\img\icones png\ícones_3\inicio_3.png" />
     <Content Include="assets\img\icones png\ícones_3\relatorio_3.png" />
+    <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\datepicker\css\bootstrap-datepicker.css" />
     <Content Include="assets\js\datepicker\css\bootstrap-datepicker.min.css" />
     <Content Include="assets\js\datepicker\css\bootstrap-datepicker.standalone.css" />
@@ -167,7 +171,53 @@
     <Content Include="assets\js\dataTables\dataTables.bootstrap.css" />
     <Content Include="assets\js\dataTables\dataTables.bootstrap.js" />
     <Content Include="assets\js\dataTables\jquery.dataTables.js" />
-    <Content Include="assets\js\jquery-1.10.2.js" />
+    <Content Include="assets\js\datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="assets\js\datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\js\datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="assets\js\datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ar.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ee.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ko.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.no.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="assets\js\datetimepicker\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="assets\js\jquery-1.8.3.min.js" />
     <Content Include="assets\js\jquery-ui-1.11.4.custom\external\jquery\jquery.js" />
     <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
@@ -193,6 +243,7 @@
     <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
     <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
     <Content Include="assets\js\jquery.metisMenu.js" />
+    <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\mascara.js" />
     <Content Include="assets\js\morris\morris-0.4.3.min.css" />
     <Content Include="assets\js\morris\morris.js" />
@@ -362,6 +413,7 @@
       <Name>BackEnd</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

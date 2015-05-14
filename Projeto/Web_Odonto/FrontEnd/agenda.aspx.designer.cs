@@ -49,13 +49,22 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.DropDownList ddModoExibicao;
         
         /// <summary>
-        /// ddPacientes control.
+        /// ddPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddPacientes;
+        protected global::System.Web.UI.WebControls.DropDownList ddPaciente;
+        
+        /// <summary>
+        /// btnBuscaTratamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscaTratamento;
         
         /// <summary>
         /// txtNumeroTratamento control.
@@ -76,13 +85,13 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtStatusTratamento;
         
         /// <summary>
-        /// rListaProcedimentos control.
+        /// gvItensAtendimento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rListaProcedimentos;
+        protected global::System.Web.UI.WebControls.GridView gvItensAtendimento;
         
         /// <summary>
         /// txtDataAval control.
@@ -92,5 +101,59 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtDataAval;
+        
+        /// <summary>
+        /// lblPacienteAv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPacienteAv;
+        
+        /// <summary>
+        /// ddPacienteAv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddPacienteAv;
+        
+        /// <summary>
+        /// lblDentistaAv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDentistaAv;
+        
+        /// <summary>
+        /// ddDentistaAv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddDentistaAv;
+        
+        /// <summary>
+        /// btnFinalizaAgendamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFinalizaAgendamento;
+        
+        /// <summary>
+        /// btnFinalizaAgendamento2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFinalizaAgendamento2;
     }
 }

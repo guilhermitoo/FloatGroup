@@ -28,7 +28,7 @@ namespace BackEnd.Model
                 }
                 else
                 {
-                    db.alteraAvaliacao(a.id,a.data, a.dentista_id, a.paciente_id);
+                    db.alteraAvaliacao(a.id, a.data, a.dentista_id, a.paciente_id);
                     tabelaAvaliacao.Context.SubmitChanges();
                 }
                 return true;
@@ -58,20 +58,18 @@ namespace BackEnd.Model
             }
         }
 
-        /*public List<avaliacao> ListarPorPaciente(int pId)
+        public List<avaliacao> ListarPorDentista(int pId)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
-                String sSql = "select T.*"+
-                              " from tratamentos T"+
-                              " join avaliacoes A on ( T.avaliacao_id = A.id )"+
-                              " join pacientes P on ( A.paciente_id = P.pessoa_id )"+
-                              " where P.pessoa_id = " + pId.ToString() +
-                              " and T.status = 2 ";
-                var query = db.ExecuteQuery<tratamento>(sSql);
+                String sSql = "select A.* " +
+                              " from avaliacoes A " +
+                              " join pacientes P on ( A.id = P.pessoa_id ) " +
+                              " where A.paciente_id = " + pId;
+                var query = db.ExecuteQuery<avaliacao>(sSql);
                 return query.ToList();
             }
-        }*/
+        }
     }
 }

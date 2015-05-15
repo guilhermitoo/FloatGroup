@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agenda.aspx" />
+    <Content Include="agendamento.aspx" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\font-awesome.css" />
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="agenda.aspx.designer.cs">
       <DependentUpon>agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agendamento.aspx.cs">
+      <DependentUpon>agendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agendamento.aspx.designer.cs">
+      <DependentUpon>agendamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="atendimento.aspx.cs">
       <DependentUpon>atendimento.aspx</DependentUpon>

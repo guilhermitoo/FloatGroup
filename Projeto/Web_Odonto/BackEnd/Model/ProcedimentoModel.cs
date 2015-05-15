@@ -11,12 +11,12 @@ using System.Data.Linq;
 namespace BackEnd.Model
 {
     public class ProcedimentoModel
-    {        
+    {
         public ProcedimentoModel() { }
 
         public bool InserirAtualizar(procedimento p)
         {
-            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();            
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
             try
             {
                 Table<procedimento> tabelaProcedimento = db.GetTable<procedimento>();
@@ -27,7 +27,7 @@ namespace BackEnd.Model
                 }
                 else
                 {
-                    db.alteraProcedimento(p.id,p.descricao);
+                    db.alteraProcedimento(p.id, p.descricao);
                     tabelaProcedimento.Context.SubmitChanges();
                 }
                 return true;
@@ -35,7 +35,7 @@ namespace BackEnd.Model
             catch
             {
                 return false;
-            }            
+            }
         }
 
         public bool Excluir(procedimento procedimento)
@@ -78,10 +78,24 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                
-                String sSql = "select * from procedimentos P where P.descricao like '%"+Descricao+"%' ";
+
+                String sSql = "select * from procedimentos P where P.descricao like '%" + Descricao + "%' ";
                 var query = db.ExecuteQuery<procedimento>(sSql);
-                return query.ToList();                
+                return query.ToList();
+            }
+        }
+
+        public List<procedimento> ListarPorTratamento(int idTratamento)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+
+                String sSql = "select P.*,IT.* from procedimentos P " +
+                              " join itensTratamento IT on (P.id = IT.procedimento_id ) " +
+                              " join tratamentos T on ( IT.tratamento_id = T.avaliacao_id ) " +
+                              " where T.avaliacao_id =" + idTratamento.ToString();
+                var query = db.ExecuteQuery<procedimento>(sSql);
+                return query.ToList();
             }
         }
     }

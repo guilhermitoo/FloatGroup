@@ -5,9 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-using BackEnd.EntityData;
 using BackEnd.Model;
-using System.Web.Services;
+using BackEnd.EntityData;
 
 namespace FrontEnd
 {
@@ -49,7 +48,6 @@ namespace FrontEnd
             avaliacao.data = DateTime.Parse(txtDataConsulta.Value);
             avaliacao.dentista_id = Int32.Parse(ddDentista.SelectedValue);
             avaliacao.paciente_id = Int32.Parse(ddPaciente.SelectedValue);
-
 
             //se existir ID então faz a edição, se não existir ID, é uma inserção
             if (Request.QueryString["ID"] != null)
@@ -93,7 +91,30 @@ namespace FrontEnd
 
         protected void btnFinalizaAgendamento_Click(object sender, EventArgs e)
         {
-            //
+            // faz o agendamento do atendimento
+            // antes verifica se o horário do dentista está disponível
+            // depois se o horário do dentista estiver livre, cadastra o atendimento
+            BackEnd.EntityData.atendimento at = new BackEnd.EntityData.atendimento();
+            AtendimentoModel atModel = new AtendimentoModel();
+
+            at.dentista_id = Int32.Parse(ddDentista.SelectedValue);
+            at.tratamento_id = Int32.Parse(txtNumeroTratamento.Text);
+            at.status = 1;
+            at.data = DateTime.Parse(txtDataConsulta.Value);
+
+            // depois de atribuir os dados do atendimento, tenta salvar
+            if (atModel.InserirAtualizar(at))
+            {
+                
+                //se inserir normalmente o atendimento, irá inserir os itens atendimento
+                itemAtendimento ia = new itemAtendimento();
+                for ( int i = 0; i < gvItensAtendimento.Rows.Count ;i++ )
+                {
+                    
+                }
+            }
+
+            
         }
 
         private void ControlaCampos(Boolean b)

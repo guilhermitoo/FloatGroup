@@ -62,6 +62,7 @@
     <Compile Include="Entity\Procedimento.cs" />
     <Compile Include="Entity\Receita.cs" />
     <Compile Include="Entity\Tratamento.cs" />
+    <Compile Include="Model\AtendimentoModel.cs" />
     <Compile Include="Model\AvaliacaoModel.cs" />
     <Compile Include="Model\CidadeModel.cs" />
     <Compile Include="Model\ConvenioModel.cs" />

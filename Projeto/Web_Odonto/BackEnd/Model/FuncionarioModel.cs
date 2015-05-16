@@ -72,7 +72,6 @@ namespace BackEnd.Model
                 Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
                 return tabelaFuncionario.ToList();
             }
-
         }
 
         public bool Verifica(int id)

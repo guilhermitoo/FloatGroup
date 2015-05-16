@@ -1,9 +1,11 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web_Odonto.master.cs" Inherits="FrontEnd.Web_Odonto" %>
 
+<%@ Register TagPrefix="lwc" TagName="LoginControl" Src="~/LoginControl.ascx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head runat="server">    
     <title> WebOdonto </title>
     <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +33,22 @@
     </asp:ContentPlaceHolder>
 </head>
 <body id="wrapper">    
-    <div>
+    <%         
+        if (Session["pessoa"] == null)
+        {
+        %>
+        <form id="form2" runat="server">
+            <lwc:LoginControl runat="server" ID="LoginControl1" />
+        </form>
+    
+        <%
+        }
+        else
+        {
+        %>
+     
+    
+    <div>        
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -97,12 +114,12 @@
                 </div>
             </nav>
         </div>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server">        
     <div>
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12">                        
                         <asp:ContentPlaceHolder ID="p" runat="server">
         
                         </asp:ContentPlaceHolder>
@@ -112,6 +129,9 @@
         </div>
     </div>
     </form>
+    <%
+    } 
+    %>
 
     <!-- scripts do bootstrap -->        
     <!-- JQUERY SCRIPTS -->

@@ -7,7 +7,7 @@
     <title> WebOdonto </title>
     <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                
+    <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />        
         <!-- JQUERY SCRIPTS -->
         <script src="assets/js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP STYLES-->
@@ -21,9 +21,11 @@
         <!-- GOOGLE FONTS-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'
         type='text/css' />
-        <!-- DATEPICKER -->
-        <link href="assets/js/Bootstrap-Datepicker/css/datepicker.css" rel="stylesheet" />
-
+        <link href="assets/js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" />
+        <!-- DATEPICKER -->        
+        <link href="assets/js/datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+        <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
         
     </asp:ContentPlaceHolder>
@@ -121,8 +123,7 @@
     </script>
     <script src="assets/js/jquery-ui-1.11.4.custom/jquery-ui.min.js">
     </script>
-    <link href="assets/js/jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet" />
-
+    
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.min.js">                        
     </script>
@@ -139,11 +140,13 @@
     </script>        
     <!-- DATEPICKER -->      
     <script src="assets/js/datepicker/js/bootstrap-datepicker.js">
-    </script>   
-
+    </script>
     <!-- MÁSCARAS -->
     <script src="assets/js/mascara.js">
     </script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/pt-br.js"></script>   
+    <script src="assets/js/bootstrap-datetimepicker.js"></script>            
 
 </body>
 </html>

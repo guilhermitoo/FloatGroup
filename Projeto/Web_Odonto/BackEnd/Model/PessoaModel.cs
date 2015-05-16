@@ -101,7 +101,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
-                String sSql = "select P.* from pessoas P where P.nome like '%" + Nome + "%' ";
+                String sSql = "select P.* from pessoas P where P.nome like '%" + Nome + "%' order by P.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();
             }
@@ -111,7 +111,8 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select p.id,p.nome from dentistas d join pessoas p on (d.pessoa_id = p.id)";
+                String sSql = "select p.id,p.nome from dentistas d join pessoas p "+
+                              " on (d.pessoa_id = p.id) order by p.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();
             }
@@ -121,7 +122,8 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select p.id,p.nome from pacientes d join pessoas p on (d.pessoa_id = p.id)";
+                String sSql = "select p.id,p.nome from pacientes d join pessoas p "+
+                              " on (d.pessoa_id = p.id) order by p.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();
             }

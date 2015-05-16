@@ -73,5 +73,27 @@ namespace BackEnd.Model
                 return query.ToList();
             }
         }
+
+        public String GetStatus(int iStatus)
+        {
+            String sStatus;
+            // 1 = Em Orçameto, 2 = Em Andamento, 3 = Concluído
+            switch (iStatus)
+            {
+                case 1:
+                    sStatus = "Em Orçamento";
+                    break;
+                case 2:
+                    sStatus = "Em Andamento";
+                    break;
+                case 3:
+                    sStatus = "Concluído";
+                    break;
+                default:
+                    sStatus = "Nenhum";
+                    break;
+            }
+            return sStatus;
+        }
     }
 }

@@ -46,8 +46,9 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select i.* from v_itensTratamento i " +
-                              " where i.[Código Tratamento] = " + idTratamento.ToString();
+                String sSql = "select I.* " +
+                              " from v_itensTratamento I " +
+                              " where I.[Código Tratamento] = "+ idTratamento.ToString();
                 var query = db.ExecuteQuery<v_itensTratamento>(sSql);
                 return query.ToList();
             }

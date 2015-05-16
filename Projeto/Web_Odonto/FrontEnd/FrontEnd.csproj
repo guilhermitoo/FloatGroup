@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="agenda.aspx" />
     <Content Include="agendamento.aspx" />
+    <Content Include="assets\css\bootstrap-datetimepicker.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\font-awesome.css" />
@@ -91,6 +92,7 @@
     <Content Include="assets\img\icones png\ícones_3\cadastro_3.png" />
     <Content Include="assets\img\icones png\ícones_3\inicio_3.png" />
     <Content Include="assets\img\icones png\ícones_3\relatorio_3.png" />
+    <Content Include="assets\js\bootstrap-datetimepicker.js" />
     <Content Include="assets\js\datepicker\css\bootstrap-datepicker.css" />
     <Content Include="assets\js\datepicker\css\bootstrap-datepicker.min.css" />
     <Content Include="assets\js\datepicker\css\bootstrap-datepicker.standalone.css" />
@@ -195,9 +197,11 @@
     <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
     <Content Include="assets\js\jquery.metisMenu.js" />
     <Content Include="assets\js\mascara.js" />
+    <Content Include="assets\js\moment.js" />
     <Content Include="assets\js\morris\morris-0.4.3.min.css" />
     <Content Include="assets\js\morris\morris.js" />
     <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="assets\js\pt-br.js" />
     <Content Include="atendimento.aspx" />
     <Content Include="cidades.aspx" />
     <Content Include="convenios.aspx" />

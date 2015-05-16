@@ -31,10 +31,6 @@ namespace FrontEnd
 
         protected void btnFinalizaAgendamento_Click(object sender, EventArgs e)
         {
-            /*if ( cbVerificaAval.)
-            {
-                CadAvaliacao();
-            }*/
         }
 
         protected void btnAgendar_Click(object sender, EventArgs e)

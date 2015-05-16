@@ -19,11 +19,11 @@ namespace FrontEnd
             {
                 PessoaModel p = new PessoaModel();
 
-                ddDentistaAv.DataSource = p.ListarDentistas();
-                ddDentistaAv.DataValueField = "id";
-                ddDentistaAv.DataTextField = "nome";
-                ddDentistaAv.DataBind();
-                ddDentistaAv.SelectedIndex = 0;
+                ddDentista.DataSource = p.ListarDentistas();
+                ddDentista.DataValueField = "id";
+                ddDentista.DataTextField = "nome";
+                ddDentista.DataBind();
+                ddDentista.SelectedIndex = 0;
 
                 // atribui uma lista de dentistas para o DropDown
                 ddPaciente.DataSource = p.ListarPacientes();
@@ -46,9 +46,9 @@ namespace FrontEnd
             avaliacao avaliacao = new avaliacao();
             AvaliacaoModel model = new AvaliacaoModel();
 
-            avaliacao.data = DateTime.Parse(txtDataAval.Value);
-            avaliacao.dentista_id = Int32.Parse(ddDentistaAv.SelectedValue);
-            avaliacao.paciente_id = Int32.Parse(ddPacienteAv.SelectedValue);
+            avaliacao.data = DateTime.Parse(txtDataConsulta.Value);
+            avaliacao.dentista_id = Int32.Parse(ddDentista.SelectedValue);
+            avaliacao.paciente_id = Int32.Parse(ddPaciente.SelectedValue);
 
 
             //se existir ID então faz a edição, se não existir ID, é uma inserção
@@ -70,16 +70,20 @@ namespace FrontEnd
             try
             {
                 tratamento tratamento = new tratamento();
+                TratamentoModel tModel = new TratamentoModel();
                 tratamento = (tratModel.ListarPorPaciente(Int32.Parse(ddPaciente.SelectedValue))).First();
-                int idTrat = tratamento.avaliacao_id;
-                int statusTrat = tratamento.status;
-
+                int idTrat = tratamento.avaliacao_id;                
+                // exibe o número do tratamento e o status
                 txtNumeroTratamento.Text = idTrat.ToString();
-                txtStatusTratamento.Text = statusTrat.ToString();
+                txtStatusTratamento.Text = tModel.GetStatus(tratamento.status);
+                // lista os procedimentos do tratamento no GridView
                 gvItensAtendimento.DataSource = itModel.ListarPorTratamento(idTrat);
                 gvItensAtendimento.DataBind();
+                ControlaCampos(true);
             }
-            catch { }
+            catch {
+                ControlaCampos(false);
+            }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
@@ -89,7 +93,16 @@ namespace FrontEnd
 
         protected void btnFinalizaAgendamento_Click(object sender, EventArgs e)
         {
-
+            //
         }
+
+        private void ControlaCampos(Boolean b)
+        {
+            lblNumeroTrat.Visible = b;
+            lblStatusTrat.Visible = b;
+            txtNumeroTratamento.Visible = b;
+            txtStatusTratamento.Visible = b;            
+        }
+        
     }
 }

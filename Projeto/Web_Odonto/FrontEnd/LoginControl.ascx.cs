@@ -15,9 +15,18 @@ namespace FrontEnd
         protected void Page_Load(object sender, EventArgs e)
         {
             pessoa pessoa = Session["pessoa"] as pessoa;
-
-            painelLogado.Visible = (pessoa != null);
-            painelNaoLogado.Visible = !painelLogado.Visible;
+            
+            if (pessoa != null)
+            {
+                pnlLogado.Visible = true;
+                pnlNaoLogado.Visible = false;
+                lblNomeUsuario.Text = pessoa.nome;
+            }
+            else
+            {
+                pnlNaoLogado.Visible = true;
+                pnlLogado.Visible = false;
+            }
         }
 
         protected void btnEntrar_Click(object sender, EventArgs e)
@@ -27,12 +36,23 @@ namespace FrontEnd
 
             if (pessoa != null)
             {
-                Session["pessoa"] = pessoa;
+                Session["pessoa"] = pessoa;                
                 Response.Redirect("index.aspx");
             }
             else
             {
                 lblErro.Text = "Usuário ou senha inválidos!";
+            }
+        }
+
+        protected void btnSairLogado_Click(object sender, EventArgs e)
+        {
+            pessoa pessoa = Session["pessoa"] as pessoa;
+
+            if (pessoa != null)
+            {
+                Session.Remove("pessoa");
+                Response.Redirect("index.aspx");
             }
         }
     }

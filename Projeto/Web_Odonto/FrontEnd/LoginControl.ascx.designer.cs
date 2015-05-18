@@ -13,31 +13,40 @@ namespace FrontEnd {
     public partial class LoginControl {
         
         /// <summary>
-        /// painelLogado control.
+        /// pnlLogado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel painelLogado;
+        protected global::System.Web.UI.WebControls.Panel pnlLogado;
         
         /// <summary>
-        /// btnSair control.
+        /// lblNomeUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSair;
+        protected global::System.Web.UI.WebControls.Label lblNomeUsuario;
         
         /// <summary>
-        /// painelNaoLogado control.
+        /// btnSairLogado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel painelNaoLogado;
+        protected global::System.Web.UI.WebControls.Button btnSairLogado;
+        
+        /// <summary>
+        /// pnlNaoLogado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNaoLogado;
         
         /// <summary>
         /// lblUsuario control.

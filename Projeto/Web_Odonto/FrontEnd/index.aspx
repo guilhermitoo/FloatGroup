@@ -3,10 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
 
-    <h2>
-        Bom dia
+    <h2>        
         <i>
-            "Nome do Usuário"
+            <asp:Label id="lblNomeUsuarioPrincipal" runat="server"/>
         </i>
     </h2>
     <h5>
@@ -16,8 +15,7 @@
     <hr />
     <!-- FORMULÁRIO PARA PROCURAR USUÁRIO E OUTRAS AÇÕES -->
     <div class="col-md-9">
-    <div class="col-md-offset-4">
-        <form role="form">
+    <div class="col-md-offset-4">        
             <div class="form-group">
                 <br />
                 <div class="input-group">
@@ -35,8 +33,7 @@
                 </div>
                 <br />
                 <!-- BOTÕES QUE LEVA A PÁGINA CADASTRAR -->
-            </div>
-        </form>
+            </div>        
     </div>
     </div>
     <!-- /. PAGE INNER -->

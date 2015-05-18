@@ -19,8 +19,8 @@ namespace BackEnd.Model
 
             try
             {
-                Table<pessoa> tabelaDentista = db.GetTable<pessoa>();
-                // verifica se tem dentista com essa ID
+                Table<pessoa> tbPessoa = db.GetTable<pessoa>();
+                // verifica se tem pessoa com essa ID
                 // se sim, atualiza
                 // se não, cadastra
                 if (Verifica(d.id))
@@ -28,14 +28,14 @@ namespace BackEnd.Model
                     db.alteraPessoa(d.id ,d.nome, d.cpf, d.rg, d.nascimento, d.telefone1, d.telefone2,
                                    d.sexo, d.endereco, d.usuario, d.senha, d.status, d.obs,
                                    d.tipoUsuario, d.cidade_id);
-                    tabelaDentista.Context.SubmitChanges();
+                    tbPessoa.Context.SubmitChanges();
                 }
                 else
                 {// CADASTRA
                     db.cadPessoa(d.nome, d.cpf, d.rg, d.nascimento, d.telefone1, d.telefone2,
                                    d.sexo, d.endereco, d.usuario, d.senha, d.status, d.obs,
                                    d.tipoUsuario, d.cidade_id);
-                    tabelaDentista.Context.SubmitChanges();
+                    tbPessoa.Context.SubmitChanges();
                 }
                 return true;
             }
@@ -89,8 +89,8 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select * from dentistas where pessoa_id = " + id;
-                var query = db.ExecuteQuery<dentista>(sSql);
+                String sSql = "select * from pessoas where id = " + id;
+                var query = db.ExecuteQuery<pessoa>(sSql);
                 // retorna true se achou algum dentista com esse id
                 return (query.ToList().Count > 0);
             }

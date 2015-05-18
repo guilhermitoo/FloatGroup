@@ -26,7 +26,7 @@ namespace BackEnd.Model
                     tabelaFuncionario.Context.SubmitChanges();
                 }
                 else
-                {// SE NÃO CADASTRA
+                {// SE NÃO EXISTIR, CADASTRA
                     db.cadFuncionario(d.pessoa.id, d.salario, d.cargo);
                     tabelaFuncionario.Context.SubmitChanges();
                 }

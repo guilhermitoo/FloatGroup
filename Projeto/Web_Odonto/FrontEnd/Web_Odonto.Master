@@ -32,10 +32,10 @@
         
     </asp:ContentPlaceHolder>
 </head>
-<body runat="server"> 
+<body runat="server" id="wrapper"> 
     
     <form id="form1" runat="server">        
-    <div  id="wrapper">    
+    <div  >    
         <div>                                
             <lwc:LoginControl runat="server" ID="LoginControl1" />                                   
             <%         

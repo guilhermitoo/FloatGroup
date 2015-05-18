@@ -34,17 +34,23 @@
             </nav>
         </asp:Panel>
 			<asp:Panel id="pnlNaoLogado" runat="server">
-                <div class="container">
+                <div class="container" style="color: white">
+                    <br /><br />
+                    <img src="assets/img/float.png" />
+                    <br /><br /><br />
 			    <div class="row">
-				    <div class="col-lg-6">													
-					    <div class="form-group" >
+				    <div class="col-lg-8">													
+					    <div class="col-md-4" >
                             <asp:Label ID="lblUsuario" runat="server" Text="Usuário"></asp:Label>
                             <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox><br />
+                        </div>
+                        <div class="col-md-4">
                             <asp:Label ID="lblSenha" runat="server" Text="Senha"></asp:Label>
                             <asp:TextBox ID="txtSenha" runat="server" TextMode="Password" CssClass="form-control" ></asp:TextBox><br />
                             <asp:Label ID="lblErro" runat="server" ForeColor="Red"></asp:Label><br />
-                            <asp:Button id="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" CssClass="btn btn-primary"/>
-                        	</div>					  							
+                        </div>	
+                        <br />
+                        <asp:Button id="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" CssClass="btn btn-primary"/>                        				  							
 				    </div>			
 			    </div>
             </div>		

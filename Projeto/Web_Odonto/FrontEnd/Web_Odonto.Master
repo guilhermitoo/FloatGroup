@@ -34,9 +34,7 @@
 </head>
 <body runat="server" id="wrapper"> 
     
-    <form id="form1" runat="server">        
-    <div  >    
-        <div>                                
+    <form id="form1" runat="server">                                       
             <lwc:LoginControl runat="server" ID="LoginControl1" />                                   
             <%         
             if (Session["pessoa"] != null)
@@ -84,8 +82,7 @@
                        
                     </ul>
                 </div>
-            </nav>
-        </div>        
+            </nav>               
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
@@ -99,8 +96,7 @@
             <%
             } 
             %>
-        </div>   
-    </div> 
+        </div>       
 </form>
    
     <!-- scripts do bootstrap -->        

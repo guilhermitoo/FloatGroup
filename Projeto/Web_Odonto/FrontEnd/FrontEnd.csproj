@@ -63,6 +63,8 @@
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\fundo.css" />
+    <Content Include="assets\css\sb-admin-2.css" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\img\1.png" />
@@ -73,6 +75,7 @@
     <Content Include="assets\img\find_user.png" />
     <Content Include="assets\img\float.png" />
     <Content Include="assets\img\lixo.png" />
+    <Content Include="assets\img\main-bg.png" />
     <Content Include="assets\img\novo.png" />
     <Content Include="assets\img\pendente.png" />
     <Content Include="assets\img\pendente2.png" />

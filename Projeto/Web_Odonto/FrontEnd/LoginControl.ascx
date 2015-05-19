@@ -8,8 +8,11 @@
     <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- SB ADMIN 2 -->
     
-    <div id="header">        
+
+<link href="assets/css/fundo.css" rel="stylesheet" />
+    <div>        
 		
         <asp:Panel id="pnlLogado" runat="server" HorizontalAlign="Right">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
@@ -33,26 +36,31 @@
                 </div>
             </nav>
         </asp:Panel>
-			<asp:Panel id="pnlNaoLogado" runat="server">
-                <div class="container" style="color: white">
-                    <br /><br />
-                    <img src="assets/img/float.png" />
-                    <br /><br /><br />
-			    <div class="row">
-				    <div class="col-lg-8">													
-					    <div class="col-md-4" >
-                            <asp:Label ID="lblUsuario" runat="server" Text="Usuário"></asp:Label>
-                            <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox><br />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:Label ID="lblSenha" runat="server" Text="Senha"></asp:Label>
-                            <asp:TextBox ID="txtSenha" runat="server" TextMode="Password" CssClass="form-control" ></asp:TextBox><br />
-                            <asp:Label ID="lblErro" runat="server" ForeColor="Red"></asp:Label><br />
-                        </div>	
-                        <br />
-                        <asp:Button id="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" CssClass="btn btn-primary"/>                        				  							
-				    </div>			
-			    </div>
-            </div>		
+			<asp:Panel id="pnlNaoLogado" runat="server">                
+                    <div class="navbar-fixed-bottom" >                    
+                        <br />                    
+                        <img src="assets/img/float.png" />
+                        <br /> <br /> 
+                    </div>
+			        <div class="fundoLogin" style="color: white">
+                        <asp:Label runat="server" CssClass="col-md-12 textoTitulo" Text="Web Odonto" />
+                        <div >
+				            <div class="col-sm-8">													
+					            <div class="col-md-4" >
+                                    <asp:Label ID="lblUsuario" runat="server" Text="Usuário"></asp:Label>
+                                    <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                </div>
+                                <div class="col-md-4">
+                                    <asp:Label ID="lblSenha" runat="server" Text="Senha"></asp:Label>
+                                    <asp:TextBox ID="txtSenha" runat="server" TextMode="Password" CssClass="form-control" ></asp:TextBox><br />
+                                    <asp:Label ID="lblErro" runat="server" ForeColor="Red"></asp:Label><br />
+                                </div>
+                                <div class="col-md-2">
+                                    <br />
+                                    <asp:Button id="btnEntrar" runat="server" Text="Entrar" OnClick="btnEntrar_Click" CssClass="btn btn-primary"/>                        				  							
+                                </div>	
+				            </div>	
+                        </div>		
+			        </div>            		                
         </asp:Panel>										
 	</div>

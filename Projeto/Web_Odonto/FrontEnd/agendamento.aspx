@@ -60,19 +60,24 @@
                                 <div class="col-lg-12">  
                                     <br />                                                                                                        
                                     <asp:GridView runat="server" ID="gvItensAtendimento" CssClass="table table-bordered table-striped" 
-                                        GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" >
+                                        GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Código_Procedimento">
                                     <Columns>
                                     <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Selecione">
                                         <ItemTemplate >
-                                            <asp:CheckBox id="cbProcAtend" runat="server"/>
+                                            <asp:CheckBox id="cbProc" runat="server"/>
                                         </ItemTemplate>                              
                                     </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="ID"  HeaderStyle-Width="35">
+                                        <ItemTemplate>
+                                            <%#Eval("Código_Procedimento") %>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>                                    
                                     <asp:TemplateField HeaderText="Descrição Procedimento">
                                         <ItemTemplate>
                                             <%#Eval("Descrição") %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Quantidade">
+                                    <asp:TemplateField HeaderText="Qtd" HeaderStyle-Width="50">
                                         <ItemTemplate>
                                             <%#Eval("Quantidade") %>
                                         </ItemTemplate>
@@ -111,6 +116,7 @@
                                     <asp:Label ID="lblPacienteAv" Text="Paciente" runat="server"/>
                                     <asp:DropDownList ID="ddPacienteAv" runat="server" CssClass="form-control dropdown-toggle">
                                     </asp:DropDownList>
+                                    <asp:Label ID="lblErroAval" runat="server" Font-Size="8pt" ForeColor="#00CC66"/>
                                     <br />
                                 </div>                                                                
                             </div>
@@ -129,9 +135,7 @@
             //executa a função quando a página está pronta e carregada                        
             $('input[js="data"]').datetimepicker({
                 locale: 'pt-BR',                
-            });
-
-            ExibeAtend();
+            });            
         });
 
         function ExibeAval() {

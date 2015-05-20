@@ -162,7 +162,7 @@ go
 
 create procedure cadAtendimento
 (
-	@data date,
+	@data datetime,
 	@status int,
 	@dentista_id int,
 	@tratamento_id int
@@ -389,7 +389,7 @@ go
 create procedure alteraAtendimento
 (
 	@id int,
-	@data date,
+	@data datetime,
 	@status int,
 	@dentista_id int,
 	@tratamento_id int

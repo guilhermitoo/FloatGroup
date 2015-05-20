@@ -15,23 +15,16 @@ namespace BackEnd.Model
     {
         public AtendimentoModel() { }
 
-        public bool InserirAtualizar(atendimento a)
+        public bool Inserir(atendimento a)
         {
             WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
 
             try
             {
-                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
-                if (a.id == 0)
-                {
-                    db.cadAtendimento(a.data, a.status, a.dentista_id, a.tratamento_id);
-                    tabelaAtendimento.Context.SubmitChanges();
-                }
-                else
-                {
-                    db.alteraAtendimento(a.id,a.data, a.status, a.dentista_id, a.tratamento_id);
-                    tabelaAtendimento.Context.SubmitChanges();                   
-                }
+                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();                                                
+                tabelaAtendimento.InsertOnSubmit(a);                    
+                tabelaAtendimento.Context.SubmitChanges();
+
                 return true;
             }
             catch
@@ -56,6 +49,29 @@ namespace BackEnd.Model
             {
                 Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
                 return tabelaAtendimento.ToList();
+            }
+        }
+
+        public bool InserirItem(itemAtendimento a)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {
+                Table<itemAtendimento> tbItemAtendimento = db.GetTable<itemAtendimento>();
+                if (a != null)
+                {
+                    db.cadItemAtendimento(a.atendimento_id, a.procedimento_id, a.qtd);
+                    tbItemAtendimento.Context.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }

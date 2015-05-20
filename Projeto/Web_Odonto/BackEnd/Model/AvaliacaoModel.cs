@@ -14,23 +14,16 @@ namespace BackEnd.Model
     {
         public AvaliacaoModel() { }
 
-        public bool InserirAtualizar(avaliacao a)
+        public bool Inserir(avaliacao a)
         {
             WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
 
             try
             {
-                Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();
-                if (a.id == 0)
-                {
-                    db.cadAvaliacao(a.data, a.dentista_id, a.paciente_id);
-                    tabelaAvaliacao.Context.SubmitChanges();
-                }
-                else
-                {
-                    db.alteraAvaliacao(a.id, a.data, a.dentista_id, a.paciente_id);
-                    tabelaAvaliacao.Context.SubmitChanges();
-                }
+                Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();                                
+                db.cadAvaliacao(a.data, a.dentista_id, a.paciente_id);
+                tabelaAvaliacao.Context.SubmitChanges();
+                
                 return true;
             }
             catch

@@ -128,7 +128,7 @@ go
 create table atendimentos
 (
 	id int not null primary key identity,
-	data date not null,
+	data datetime not null,
 	status int check(status in (1,2,3)) not null, -- 1 = Pendente, 2 = Cancelado, 3 = Concluído
 	dentista_id int not null references dentistas,
 	tratamento_id int not null references tratamentos

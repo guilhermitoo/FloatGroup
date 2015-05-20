@@ -95,5 +95,60 @@ namespace BackEnd.Model
             }
             return sStatus;
         }
+
+        public bool InserirItem(itemTratamento p)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {
+                Table<itemTratamento> tbItemTratamento = db.GetTable<itemTratamento>();
+                if (p != null)
+                {
+                    db.cadItemTratamento(p.tratamento_id, p.procedimento_id, p.qtd, p.valor, p.status);
+                    tbItemTratamento.Context.SubmitChanges();
+                    return true;
+                }                
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public List<v_itensTratamento> ListarItens(int idTratamento)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select I.* " +
+                              " from v_itensTratamento I " +
+                              " where I.[Código Tratamento] = " + idTratamento.ToString();
+                var query = db.ExecuteQuery<v_itensTratamento>(sSql);
+                return query.ToList();
+            }
+        }
+
+        public String GetItemStatus(int iStatus)
+        {
+            String sStatus;
+            // 1 = Pendente, 2 = Concluído,
+            switch (iStatus)
+            {
+                case 1:
+                    sStatus = "Pendente";
+                    break;
+                case 2:
+                    sStatus = "Concluído";
+                    break;                
+                default:
+                    sStatus = "Nenhum";
+                    break;
+            }
+            return sStatus;
+        }
+       
     }
 }

@@ -54,15 +54,22 @@ namespace FrontEnd
                 avaliacao.id = int.Parse(Request.QueryString["ID"]);
 
             // faz a inserção ou atualização do cadastro da cidade
-            if (model.InserirAtualizar(avaliacao))
-                Response.Redirect("agenda.aspx");
+
+            TratamentoModel tratModel = new TratamentoModel();
+            if ((tratModel.ListarPorPaciente(avaliacao.paciente_id)).Count() > 0)
+            {
+                lblErroAval.Text = "O paciente já está vinculado a um tratamento!";
+            }
+            else
+            {
+                if (model.Inserir(avaliacao))
+                    Response.Redirect("agenda.aspx");
+            }
         }
 
         protected void BuscaTratamento(object sender, EventArgs e)
         {
-            TratamentoModel tratModel = new TratamentoModel();
-
-            ItemTratamentoModel itModel = new ItemTratamentoModel();
+            TratamentoModel tratModel = new TratamentoModel();            
 
             // obtem o id do tratamento em aberto do paciente selecionado
             try
@@ -75,7 +82,7 @@ namespace FrontEnd
                 txtNumeroTratamento.Text = idTrat.ToString();
                 txtStatusTratamento.Text = tModel.GetStatus(tratamento.status);
                 // lista os procedimentos do tratamento no GridView
-                gvItensAtendimento.DataSource = itModel.ListarPorTratamento(idTrat);
+                gvItensAtendimento.DataSource = tratModel.ListarItens(idTrat);
                 gvItensAtendimento.DataBind();
                 ControlaCampos(true);
             }
@@ -103,15 +110,26 @@ namespace FrontEnd
             at.data = DateTime.Parse(txtDataConsulta.Value);
 
             // depois de atribuir os dados do atendimento, tenta salvar
-            if (atModel.InserirAtualizar(at))
-            {
-                
-                //se inserir normalmente o atendimento, irá inserir os itens atendimento
-                itemAtendimento ia = new itemAtendimento();
-                for ( int i = 0; i < gvItensAtendimento.Rows.Count ;i++ )
-                {
-                    
+            if (atModel.Inserir(at))
+            {                
+                //se inserir normalmente o atendimento, irá inserir os itens atendimento                                
+                // declara o item do atendimento
+                itemAtendimento item = new itemAtendimento();
+                for (int i = 0;i < gvItensAtendimento.Rows.Count; i++)
+                {                    
+                    // percorre o grid
+                    CheckBox cb = (CheckBox)gvItensAtendimento.Rows[i].Cells[0].FindControl("cbProc");
+                    if (cb.Checked)
+                    {            
+                        // preenche o objeto item
+                        item.atendimento_id = at.id;
+                        item.procedimento_id = Int32.Parse(gvItensAtendimento.DataKeys[i].Value.ToString());
+                        item.qtd = 1;            
+                        // adiciona o item do atendimento
+                        atModel.InserirItem(item);
+                    }                    
                 }
+                Response.Redirect("agenda.aspx");
             }
 
             

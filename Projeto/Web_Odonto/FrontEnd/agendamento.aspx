@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
     
                 <div class="panel-heading">
-                    <h2>AGENDAMENTO</h2>
+                    <h2><label id="lbTitulo"></label></h2>
                     <hr />                    
                 </div>
                 <div class="panel-body">
@@ -37,7 +37,7 @@
                                 <%--<div class="col-md-12"></div> --%>
                                 <div class="col-md-8">  
                                     <label>Paciente</label>                                            
-                                    <asp:DropDownList ID="ddPaciente" CssClass="form-control" runat="server">
+                                    <asp:DropDownList ID="ddPaciente" CssClass="form-control dropdown-toggle" runat="server">
                                     </asp:DropDownList>                                    
                                 </div>                                                                                     
                                 <div class="col-md-4">    
@@ -115,10 +115,9 @@
                                 <div class="col-md-12">
                                     <asp:Label ID="lblPacienteAv" Text="Paciente" runat="server"/>
                                     <asp:DropDownList ID="ddPacienteAv" runat="server" CssClass="form-control dropdown-toggle">
-                                    </asp:DropDownList>
-                                    <asp:Label ID="lblErroAval" runat="server" Font-Size="8pt" ForeColor="#00CC66"/>
+                                    </asp:DropDownList>                                    
                                     <br />
-                                </div>                                                                
+                                </div>                                               
                             </div>
                         </div>
                     </div>
@@ -135,7 +134,9 @@
             //executa a função quando a página está pronta e carregada                        
             $('input[js="data"]').datetimepicker({
                 locale: 'pt-BR',                
-            });            
+            });
+
+            ExibeAtend();
         });
 
         function ExibeAval() {
@@ -143,6 +144,7 @@
             $('#pnlAvaliacao').delay(300).fadeIn(300);
             $('input[js="btaten"]').hide();
             $('input[js="btaval"]').show();
+            $('#lbTitulo').text('AGENDAR AVALIAÇÃO');
         }
 
         function ExibeAtend() {
@@ -150,6 +152,7 @@
             $('#pnlAtendimento').delay(300).fadeIn(300);
             $('input[js="btaval"]').hide();
             $('input[js="btaten"]').show();
+            $('#lbTitulo').text('AGENDAR ATENDIMENTO');
         }
 
     </script>

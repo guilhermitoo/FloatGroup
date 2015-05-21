@@ -121,15 +121,6 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.DropDownList ddPacienteAv;
         
         /// <summary>
-        /// lblErroAval control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErroAval;
-        
-        /// <summary>
         /// btnVoltar control.
         /// </summary>
         /// <remarks>

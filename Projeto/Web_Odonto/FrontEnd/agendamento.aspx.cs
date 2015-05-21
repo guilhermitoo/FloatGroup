@@ -47,23 +47,19 @@ namespace FrontEnd
 
             avaliacao.data = DateTime.Parse(txtDataConsulta.Value);
             avaliacao.dentista_id = Int32.Parse(ddDentista.SelectedValue);
-            avaliacao.paciente_id = Int32.Parse(ddPaciente.SelectedValue);
+            avaliacao.paciente_id = Int32.Parse(ddPacienteAv.SelectedValue);
 
-            //se existir ID então faz a edição, se não existir ID, é uma inserção
-            if (Request.QueryString["ID"] != null)
-                avaliacao.id = int.Parse(Request.QueryString["ID"]);
-
-            // faz a inserção ou atualização do cadastro da cidade
-
+            // faz a inserção da avaliação somente se o paciente selecionado
+            // não tiver um tratamento em andamento
             TratamentoModel tratModel = new TratamentoModel();
-            if ((tratModel.ListarPorPaciente(avaliacao.paciente_id)).Count() > 0)
+            if ((tratModel.ListarPorPaciente(avaliacao.paciente_id)).Count() < 1)            
             {
-                lblErroAval.Text = "O paciente já está vinculado a um tratamento!";
-            }
-            else
-            {
-                if (model.Inserir(avaliacao))
-                    Response.Redirect("agenda.aspx");
+                // verifica se não tem alguma avaliacão agendada depois da data atual
+                if ((model.ListarPorPaciente(avaliacao.paciente_id)).Count() < 1) 
+                {
+                    if (model.Inserir(avaliacao))
+                        Response.Redirect("agenda.aspx");
+                }
             }
         }
 

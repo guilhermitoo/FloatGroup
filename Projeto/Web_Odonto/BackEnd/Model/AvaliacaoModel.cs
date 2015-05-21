@@ -51,16 +51,19 @@ namespace BackEnd.Model
             }
         }
 
-        public List<avaliacao> ListarPorDentista(int pId)
+        public List<avaliacao> ListarPorPaciente(int pIdPaciente)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
                 String sSql = "select A.* " +
                               " from avaliacoes A " +
-                              " join pacientes P on ( A.id = P.pessoa_id ) " +
-                              " where A.paciente_id = " + pId;
+                              " left join pacientes P on ( A.id = P.pessoa_id ) " +
+                              " where A.paciente_id = " + pIdPaciente.ToString() +
+                              " and A.data >= GETDATE() " +
+                              " order by A.data desc ";
                 var query = db.ExecuteQuery<avaliacao>(sSql);
+                
                 return query.ToList();
             }
         }

@@ -27,8 +27,6 @@
         <br />
         <asp:Button CssClass="btn btn-primary" id="btnAgendar" Text="Agendar" runat="server" OnClick="btnAgendar_Click" />
     </div>
-    <!-- CONTEUDO BOTÃO AGENDAR-->    
-    <!-- FIM CONTEUDO AGENDAR-->    
     <!-- Fechamento das div class="btn-group" role="group" -->
     <div class="col-md-12">
         <div class="panel-body">

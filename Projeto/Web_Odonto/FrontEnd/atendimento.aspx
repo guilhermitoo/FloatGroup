@@ -8,111 +8,67 @@
     <h5>
     Inicie seus tratamentos
     </h5>
-    <div class="col-md-12">
-    <div class="panel panel-default">
-        <div class="panel-body">
-        <div class="row">
-            <div class="col-md-6">            
-                <div class="form-group">
-                <label>
-                    Data Avaliação
-                </label>
-                <input type="text" class="form-control" id="datepicker" />
-
-                            
-                <br />
-                <label>
-                    Paciente
-                </label>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Digite a sua busca"
-                    />
-                    <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                        Busca
-                    </button>
-                    </span>
-                </div>
-                <br />
-                <label>
-                    Dentista
-                </label>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Digite a sua busca"
-                    />
-                    <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">
-                        Busca
-                    </button>
-                    </span>
-                </div>
-                <br />
-                <button type="submit" class="btn btn-info">
-                    Iniciar Tratamento
-                </button>
-                </div>
-            
+    <div class="col-lg-12">
+        <div class="panel panel-default">          
+                <div class="panel-body">
+                    <div class="col-md-4">  
+                        <asp:Label Text="Paciente" runat="server"/>
+                        <asp:DropDownList ID="ddPacienteAvaliacao" CssClass="form-control dropdown-toggle" runat="server" >
+                        </asp:DropDownList>                                    
+                    </div>     
+                    <div class="col-md-2">    
+                        <br />                          
+                        <asp:Button ID="btnBuscaAval" runat="server" Text="Buscar Avaliação" CssClass="btn btn-primary" OnClick="btnBuscaAval_Click"/>                                    
+                    </div>                     
+                    <div class="col-md-2">                        
+                        <asp:Label id="lblNumeroAval" Text="Numero da Avaliação" runat="server" />
+                        <asp:TextBox id="txtNumeroAvaliacao" ReadOnly="true" CssClass="form-control" runat="server"/>                                    
+                    </div>        
+                    </div>
             </div>
-        </div>
-        </div>
-    </div>
-    </div>
+            <div class="panel panel-default">
+                <div class="panel-body">               
+                    <div class="col-md-4">
+                        <asp:Label ID="lblProc" Text="Procedimento" runat="server"/>
+                        <asp:DropDownList runat="server" ID="ddProcedimento" CssClass="form-control">
+                        </asp:DropDownList>       
+                    </div>
+                    <div class="col-md-1">
+                        <asp:Label ID="lblQtd" Text="Quantid." runat="server"/>
+                        <asp:TextBox ID="txtQtdProc" TextMode="Number" runat="server" CssClass="form-control"/>
+                    </div>
+                    <div class="col-md-2">
+                        <asp:Label ID="Label1" Text="Valor" runat="server"/>
+                        <input id="txtValor" runat="server" class="form-control"/>
+                    </div>
+                    <div class="col-md-2">
+                        <br />
+                        <asp:Button ID="btnAddProcedimento" runat="server" CssClass="btn btn-primary" Text="Adicionar"/>
+                    </div>
+                    <asp:GridView runat="server" ID="gvItensAtendimento" CssClass="table table-bordered table-striped" 
+                        GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="procedimento_id">
+                    <Columns>
+                    <asp:BoundField DataField="Procedimento.id" />  
+                    <asp:BoundField DataField="Procedimento.descricao" />                     
+                    <asp:BoundField DataField="Quantidade" />
+                    <asp:BoundField DataField="Preco" />
+                    <asp:ButtonField ButtonType="Image" CommandName="Apagar" ImageUrl="assets/img/lixo.png" />
+                    </Columns>                            
+                    </asp:GridView>                                 
+                </div>                                                                                                                                                         
+            </div>
     <div class="col-md-12">
     <div class="panel panel-default">
         <div class="table-responsive">
         <table class="table">
-            <thead>
-            <tr>
-                <th>
-                Procedimento
-                </th>
-                <th>
-                QtdID
-                </th>
-                <th>
-                Valor
-                </th>
-                <th>
-                Status
-                </th>
-            </tr>
-            </thead>
+            
             <tbody>
             <tr>
                 <td>
-                Limpeza
-                </td>
-                <td>
-                1
-                </td>
-                <td>
-                R$100,00
-                </td>
-                <td>
-                Pendente
-                </td>
-                <td>
-                <img src="assets/img/lixo.png" class="img-responsive" alt="Responsive image">
+                <img src="assets/img/lixo.png" class="img-responsive" alt="Responsive image"/>
                 </td>
             </tr>
-            <tr>
-                <td>
-                ---
-                </td>
-                <td>
-                ---
-                </td>
-                <td>
-                ---
-                </td>
-                <td>
-                ---
-                </td>
-                <td>
-                <img src="assets/img/novo.png" class="img-responsive" alt="Responsive image"/>
-                </td>
-            </tr>
-            </tbody>
+                        </tbody>
         </table>
         </div>
     </div>
@@ -133,7 +89,7 @@
     
     </div>
 <!-- /. ROW -->
-<hr />
+
 
 
 </asp:Content>

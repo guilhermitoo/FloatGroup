@@ -14,21 +14,24 @@ namespace FrontEnd
     public partial class pessoas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
-            // carrega todas as cidades e lista no DropDown Cidades            
-            CidadeModel cidModel = new CidadeModel();
-            // atribui uma lista de cidades para o DropDown
-            ddCidade.DataSource = cidModel.Listar();
-            ddCidade.DataValueField = "id";
-            ddCidade.DataTextField = "nome";
-            ddCidade.DataBind();
+        {
+            if (!IsPostBack)
+            {
+                // carrega todas as cidades e lista no DropDown Cidades            
+                CidadeModel cidModel = new CidadeModel();
+                // atribui uma lista de cidades para o DropDown
+                ddCidade.DataSource = cidModel.Listar();
+                ddCidade.DataValueField = "id";
+                ddCidade.DataTextField = "nome";
+                ddCidade.DataBind();
 
-            // carrega todos os convenios e lista no DropDown Convenios
-            ConvenioModel conModel = new ConvenioModel();
-            ddConvenio.DataSource = conModel.Listar();
-            ddConvenio.DataValueField = "id";
-            ddConvenio.DataTextField = "razao_social";            
-            ddConvenio.DataBind();
+                // carrega todos os convenios e lista no DropDown Convenios
+                ConvenioModel conModel = new ConvenioModel();
+                ddConvenio.DataSource = conModel.Listar();
+                ddConvenio.DataValueField = "id";
+                ddConvenio.DataTextField = "razao_social";
+                ddConvenio.DataBind();
+            }
 
             if (Request.QueryString["ID"] != null && !IsPostBack)
             {

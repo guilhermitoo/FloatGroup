@@ -74,6 +74,7 @@ namespace FrontEnd
 
             gvItensAtendimento.DataSource = aval.Values;
             gvItensAtendimento.DataBind();
+            CalculaTotal();
         }
 
         protected void btnAddProcedimento_Click(object sender, EventArgs e)
@@ -134,11 +135,51 @@ namespace FrontEnd
             Session.Remove("avaliacao");
             gvItensAtendimento.DataSource = null;
             gvItensAtendimento.DataBind();
+            pnlTotal.Visible = false;
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             // salva o tratamento com status 1 (em orçamento)
+            TratamentoModel tratModel = new TratamentoModel();
+            tratamento trat = new tratamento();
+            Dictionary<int, v_itensTratamento> aval =
+                        Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
+            itemTratamento item = new itemTratamento();
+
+            trat.avaliacao_id = Int32.Parse(txtNumeroAvaliacao.Value);            
+            trat.status = 1;
+            trat.total = Decimal.Parse(txtTotal.Text);
+            if (tratModel.Inserir(trat))
+            {
+                foreach (v_itensTratamento v_item in aval.Values)
+                {
+                    // preenche os dados do item
+                    item.procedimento_id = v_item.Código_Procedimento;
+                    item.tratamento_id = trat.avaliacao_id;
+                    item.qtd = v_item.Quantidade;
+                    item.status = 1;
+                    item.valor = v_item.Valor;
+                    // insere o item do tratamento
+                    tratModel.InserirItem(item);
+                }                
+            }
+        }
+
+        private void CalculaTotal()
+        {
+            // recupera o dicionário que está armazenado na sessão
+            Dictionary<int, v_itensTratamento> aval =
+                Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
+            // percorre o dicionário somando os valores
+            Decimal total = 0;
+            foreach (v_itensTratamento item in aval.Values)
+            {                
+                total += item.Quantidade * Decimal.Parse(item.Valor.ToString());
+            }
+            // exibe o total
+            pnlTotal.Visible = true;
+            txtTotal.Text = total.ToString();
         }
     }
 }

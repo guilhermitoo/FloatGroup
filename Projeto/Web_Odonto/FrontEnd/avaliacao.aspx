@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="atendimento.aspx.cs" Inherits="FrontEnd.atendimento" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="avaliacao.aspx.cs" Inherits="FrontEnd.atendimento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
@@ -21,14 +21,14 @@
                         <asp:Button ID="btnBuscaAval" runat="server" Text="Buscar Avaliação" CssClass="btn btn-primary" OnClick="btnBuscaAval_Click"/>                                    
                     </div>                     
                     <div class="col-md-2">                        
-                        <asp:Label id="lblNumeroAval" Text="Numero da Avaliação" runat="server" />
+                        <asp:Label id="lblNumeroAval" Text="Número da Avaliação" runat="server" />
                         <input id="txtNumeroAvaliacao" readonly="true" class="form-control" runat="server"/>                                    
                     </div>        
                     </div>
             </div>
             <asp:Panel class="panel panel-default" id="pnlProc" runat="server" Visible="false">
                 <div class="panel-body">               
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <asp:Label ID="lblProc" Text="Procedimento" runat="server"/>
                         <asp:DropDownList runat="server" ID="ddProcedimento" CssClass="form-control">
                         </asp:DropDownList>       
@@ -72,7 +72,11 @@
                         </asp:TemplateField>
                         <asp:ButtonField HeaderStyle-Width="50" ButtonType="Image" CommandName="Apagar" ImageUrl="assets/img/lixo.png" />
                         </Columns>                            
-                        </asp:GridView>                                 
+                        </asp:GridView>                                                         
+                        <asp:Panel runat="server" CssClass="pull-right col-md-2" ID="pnlTotal">
+                            <asp:Label Text="Valor Total" ID="lblTotal" runat="server"/>
+                            <asp:TextBox ID="txtTotal" runat="server" CssClass="form-control" ReadOnly="true" />
+                        </asp:Panel>
                     </div>
                 </div>                                                                                                                                                         
             </asp:Panel>    

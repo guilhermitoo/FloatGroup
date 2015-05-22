@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="listaPessoas.aspx.cs" Inherits="FrontEnd.listaPessoas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="listaDentistas.aspx.cs" Inherits="FrontEnd.listaDentistas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
+
     
-    <h1><asp:Label ID="lbTitulo" runat="server" Text="Lista de Pessoas"/></h1>
+    <h1>Lista de Dentistas</h1>
     <br />  
     <br />        
     <div class="col-md-5">
@@ -16,7 +17,7 @@
     <br />
     <br />
     <br />
-    <asp:Repeater ID="rListaPessoas" runat="server">     
+    <asp:Repeater ID="rListaDentistas" runat="server">     
         <HeaderTemplate>
             <table class="table table-hover">
                 <tr>
@@ -24,7 +25,7 @@
                     <th>Nome</th>
                     <th>CPF</th>       
                     <th>RG</th>                 
-                    <th>Status</th>
+                    <th>Status</th>                    
                 </tr>                
         </HeaderTemplate>
 
@@ -34,7 +35,7 @@
                 <td><%# DataBinder.Eval(Container.DataItem,"nome") %></td>
                 <td><%# DataBinder.Eval(Container.DataItem,"cpf") %></td>                    
                 <td><%# DataBinder.Eval(Container.DataItem,"rg") %></td>                    
-                <td><%# DataBinder.Eval(Container.DataItem,"status") %></td>                    
+                <td><%# DataBinder.Eval(Container.DataItem,"status") %></td>                                    
                 <td>            
                     <asp:HyperLink ID="btnEditar" runat="server" CssClass="btn btn-info" 
                             NavigateUrl='<%# DataBinder.Eval(Container.DataItem, "id", "pessoas.aspx?ID={0}") %>'>Editar</asp:HyperLink>

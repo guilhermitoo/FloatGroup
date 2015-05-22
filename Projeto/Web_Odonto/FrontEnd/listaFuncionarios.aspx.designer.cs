@@ -10,16 +10,7 @@
 namespace FrontEnd {
     
     
-    public partial class listaPessoas {
-        
-        /// <summary>
-        /// lbTitulo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTitulo;
+    public partial class listaFuncionarios {
         
         /// <summary>
         /// txtNome control.
@@ -49,12 +40,12 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Button btnVoltar;
         
         /// <summary>
-        /// rListaPessoas control.
+        /// rListaFuncionarios control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rListaPessoas;
+        protected global::System.Web.UI.WebControls.Repeater rListaFuncionarios;
     }
 }

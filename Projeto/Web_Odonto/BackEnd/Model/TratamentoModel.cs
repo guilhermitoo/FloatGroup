@@ -14,23 +14,16 @@ namespace BackEnd.Model
     {
         public TratamentoModel() { }
 
-        public bool InserirAtualizar(tratamento t)
+        public bool Inserir(tratamento t)
         {
             WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
 
             try
             {
-                Table<tratamento> tabelaTratamento = db.GetTable<tratamento>();
-                if (t.avaliacao_id == 0)
-                {
-                    db.cadTratamento(t.avaliacao_id, t.status, t.dataInicial, t.dataFinal, t.total);
-                    tabelaTratamento.Context.SubmitChanges();
-                }
-                else
-                {
-                    db.alteraTratamento(t.avaliacao_id, t.status, t.dataInicial, t.dataFinal, t.total);
-                    tabelaTratamento.Context.SubmitChanges();
-                }
+                Table<tratamento> tabelaTratamento = db.GetTable<tratamento>();               
+                tabelaTratamento.InsertOnSubmit(t);
+                tabelaTratamento.Context.SubmitChanges();
+                
                 return true;
             }
             catch

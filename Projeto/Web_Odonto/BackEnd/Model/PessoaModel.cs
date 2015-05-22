@@ -96,14 +96,43 @@ namespace BackEnd.Model
             }
         }
 
-        public List<pessoa> ListarPorNome(string Nome)
+        public List<pessoa> ListarPorNome(string Nome,char Tipo)
         {
+            // variável Tipo:
+            // T = PESSOAS
+            // P = PACIENTES
+            // D = DENTISTAS
+            // F = FUNCIONARIOS
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-
-                String sSql = "select P.* from pessoas P where P.nome like '%" + Nome + "%' order by P.nome";
+                String sSql = "";
+                if (Tipo == 'T')
+                {
+                    sSql = "select P.* from pessoas P where P.nome like '%" + Nome + "%' order by P.nome";
+                }
+                else 
+                {
+                    if (Tipo == 'P')
+                    { // PACIENTES
+                        sSql = "select p.*,d.* from pacientes ";
+                        
+                    }
+                    else if (Tipo == 'D')
+                    { // DENTISTAS
+                        sSql = "select p.*,d.* from dentistas ";
+                        
+                    }
+                    else
+                    { // FUNCIONARIOS
+                        sSql = "select p.*,d.* from funcionarios ";                        
+                    }
+                    sSql = sSql + " d join pessoas p " +
+                                 " on (d.pessoa_id = p.id) " +
+                                 " where p.nome like '%" + Nome + "%' " +
+                                 " order by p.nome";
+                }
                 var query = db.ExecuteQuery<pessoa>(sSql);
-                return query.ToList();
+                return query.ToList();                
             }
         }
 
@@ -123,6 +152,17 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 String sSql = "select p.id,p.nome from pacientes d join pessoas p "+
+                              " on (d.pessoa_id = p.id) order by p.nome";
+                var query = db.ExecuteQuery<pessoa>(sSql);
+                return query.ToList();
+            }
+        }
+
+        public List<pessoa> ListarFuncionarios()
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select p.id,p.nome,p.cpf,p.rg,p.status,d.cargo from funcionarios d join pessoas p " +
                               " on (d.pessoa_id = p.id) order by p.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();

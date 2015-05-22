@@ -205,9 +205,11 @@
     <Content Include="assets\js\morris\morris.js" />
     <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
     <Content Include="assets\js\pt-br.js" />
-    <Content Include="atendimento.aspx" />
+    <Content Include="avaliacao.aspx" />
     <Content Include="cidades.aspx" />
     <Content Include="convenios.aspx" />
+    <Content Include="listaDentistas.aspx" />
+    <Content Include="listaFuncionarios.aspx" />
     <Content Include="index.aspx" />
     <Content Include="listaCidades.aspx" />
     <Content Include="listaConvenios.aspx" />
@@ -238,12 +240,12 @@
     <Compile Include="agendamento.aspx.designer.cs">
       <DependentUpon>agendamento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="atendimento.aspx.cs">
-      <DependentUpon>atendimento.aspx</DependentUpon>
+    <Compile Include="avaliacao.aspx.cs">
+      <DependentUpon>avaliacao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="atendimento.aspx.designer.cs">
-      <DependentUpon>atendimento.aspx</DependentUpon>
+    <Compile Include="avaliacao.aspx.designer.cs">
+      <DependentUpon>avaliacao.aspx</DependentUpon>
     </Compile>
     <Compile Include="cidades.aspx.cs">
       <DependentUpon>cidades.aspx</DependentUpon>
@@ -258,6 +260,20 @@
     </Compile>
     <Compile Include="convenios.aspx.designer.cs">
       <DependentUpon>convenios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaDentistas.aspx.cs">
+      <DependentUpon>listaDentistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaDentistas.aspx.designer.cs">
+      <DependentUpon>listaDentistas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaFuncionarios.aspx.cs">
+      <DependentUpon>listaFuncionarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaFuncionarios.aspx.designer.cs">
+      <DependentUpon>listaFuncionarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

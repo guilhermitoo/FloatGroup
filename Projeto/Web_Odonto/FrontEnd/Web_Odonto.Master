@@ -74,7 +74,7 @@
                             <a href="agenda.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/agenda_1.png" /></i> Agenda</a>
                         </li>
                         <li>
-                            <a href="atendimento.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/atendimento_1.png" /></i> Atendimento</a>
+                            <a href="avaliacao.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/atendimento_1.png" /></i> Avaliação</a>
                         </li>
                         <li>
                             <a href="relatorios.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/relatorio_1.png" /></i> Relatórios</a>

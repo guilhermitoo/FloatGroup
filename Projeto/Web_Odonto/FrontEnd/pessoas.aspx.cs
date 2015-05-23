@@ -184,20 +184,17 @@ namespace FrontEnd
             char tipo = 'T';
             if (cbTipoPessoa.Items.FindByValue("P").Selected)
             {
-                tipo = 'P';
-                //Response.Redirect("listaPacientes.aspx");
+                tipo = 'P';                
             }
             else if (cbTipoPessoa.Items.FindByValue("F").Selected)
             {
-                tipo = 'F';
-                //Response.Redirect("listaFuncionarios.aspx");
+                tipo = 'F';                
             }
             else if (cbTipoPessoa.Items.FindByValue("D").Selected)
             {
-                tipo = 'D';
-                //Response.Redirect("listaDentistas.aspx");
+                tipo = 'D';                
             }            
-                Response.Redirect("listaPessoas.aspx?TP="+tipo);            
+            Response.Redirect("listaPessoas.aspx?TP="+tipo);            
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)

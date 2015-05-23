@@ -8,10 +8,8 @@
     <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
-    <!-- SB ADMIN 2 -->
-    
-
-<link href="assets/css/fundo.css" rel="stylesheet" />
+    <!-- SB ADMIN 2 -->    
+    <link href="assets/css/fundo.css" rel="stylesheet" />
     <div>        
 		
         <asp:Panel id="pnlLogado" runat="server" HorizontalAlign="Right">
@@ -36,15 +34,11 @@
                 </div>
             </nav>
         </asp:Panel>
-			<asp:Panel id="pnlNaoLogado" runat="server">                
-                    <div class="navbar-fixed-bottom" >                    
-                        <br />                    
-                        <img src="assets/img/float.png" />
-                        <br /> <br /> 
-                    </div>
-			        <div class="fundoLogin" style="color: white">
+			<asp:Panel id="pnlNaoLogado" runat="server">                                    
+			        <div class="fundoLogin" style="color: white">                        
+                        <!--<img src="assets/img/float.png" />-->
                         <asp:Label runat="server" CssClass="col-md-12 textoTitulo" Text="Web Odonto" />
-                        <div >
+                        <div>
 				            <div class="col-sm-8">													
 					            <div class="col-md-4" >
                                     <asp:Label ID="lblUsuario" runat="server" Text="Usuário"></asp:Label>

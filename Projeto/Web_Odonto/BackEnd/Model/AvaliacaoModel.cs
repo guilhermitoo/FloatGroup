@@ -32,6 +32,24 @@ namespace BackEnd.Model
             }
         }
 
+        public bool MudarStatus(int id,int status)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+
+            try
+            {
+                Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();
+                String sSql = " update avaliacoes set status = " + status.ToString() +
+                                " where id = " + id.ToString();
+                var query = db.ExecuteCommand(sSql);
+
+                return true;                
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public avaliacao Obter(int id)
         {
@@ -60,7 +78,7 @@ namespace BackEnd.Model
                               " from avaliacoes A " +
                               " left join pacientes P on ( A.id = P.pessoa_id ) " +
                               " where A.paciente_id = " + pIdPaciente.ToString() +
-                              " and A.data >= GETDATE() " +
+                              " and A.status = 1 " +
                               " order by A.data desc ";
                 var query = db.ExecuteQuery<avaliacao>(sSql);
                 

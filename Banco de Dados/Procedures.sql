@@ -114,11 +114,12 @@ create procedure cadAvaliacao
 (
 	@data datetime,
 	@dentista_id int,
-	@paciente_id int
+	@paciente_id int,
+	@status int
 )
 as
 begin
-	insert into avaliacoes values(@data,@dentista_id,@paciente_id);
+	insert into avaliacoes values(@data,@dentista_id,@paciente_id,@status);
 end
 go
 
@@ -338,11 +339,12 @@ create procedure alteraAvaliacao
 	@id int,
 	@data datetime,
 	@dentista_id int,
-	@paciente_id int
+	@paciente_id int,
+	@status int
 )
 as
 begin
-	update avaliacoes set data = @data, dentista_id = @dentista_id, paciente_id = @paciente_id where ( id = @id );	
+	update avaliacoes set data = @data, dentista_id = @dentista_id, paciente_id = @paciente_id, status = @status where ( id = @id );	
 end
 go
 

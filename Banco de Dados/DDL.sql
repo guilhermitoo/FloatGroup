@@ -93,7 +93,8 @@ create table avaliacoes
 	id			int	not null	primary key	identity,
 	data		datetime 	not null,
 	dentista_id	int		not null	references dentistas,
-	paciente_id int		 	not null	references pacientes
+	paciente_id int		 	not null	references pacientes,
+	status		int not null -- 1 = Pendente, 2 = Cancelado, 3 = Concluído
 )
 go
 

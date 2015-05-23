@@ -23,7 +23,6 @@ namespace BackEnd.Model
                 Table<tratamento> tabelaTratamento = db.GetTable<tratamento>();               
                 tabelaTratamento.InsertOnSubmit(t);
                 tabelaTratamento.Context.SubmitChanges();
-                
                 return true;
             }
             catch
@@ -141,6 +140,23 @@ namespace BackEnd.Model
                     break;
             }
             return sStatus;
+        }
+
+        public bool Iniciar(int idTrat)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try 
+            {
+                Table<tratamento> tbTratamento = db.GetTable<tratamento>();
+                // INICIA O TRATAMENTO
+                String sSql = " update tratamentos set status = 2 where id = " + idTrat.ToString();
+                var query = db.ExecuteCommand(sSql);
+                //após iniciar o tratamento, o status da avaliação deve ser modificado para concluído
+                AvaliacaoModel avalModel = new AvaliacaoModel();
+                avalModel.MudarStatus(idTrat, 2);
+                return true;
+            }
+            catch { return false; }
         }
        
     }

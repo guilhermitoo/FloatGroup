@@ -47,16 +47,24 @@ namespace FrontEnd
                 {
                     txtNumeroAvaliacao.Value = a.id.ToString();
                     pnlProc.Visible = true;
+                    txtDataAval.Value = a.data.ToString();
+                    TratamentoModel tratModel = new TratamentoModel();
+                    if (tratModel.Obter(a.id) != null)                    
+                    {
+                        CarregarTratamento(a.id);
+                    }
                 }
                 else
                 {
                     txtNumeroAvaliacao.Value = "Nenhum";
+                    txtDataAval.Value = "";
                     pnlProc.Visible = false;
                     LimpaGrid();
                 }
             }
             catch {
                 txtNumeroAvaliacao.Value = "Nenhum";
+                txtDataAval.Value = "";
                 pnlProc.Visible = false;
                 LimpaGrid();
             }
@@ -131,7 +139,7 @@ namespace FrontEnd
         }
 
         private void LimpaGrid()
-        {
+        { // limpa os dados do grid e remove a sessão
             Session.Remove("avaliacao");
             gvItensAtendimento.DataSource = null;
             gvItensAtendimento.DataBind();
@@ -180,6 +188,29 @@ namespace FrontEnd
             // exibe o total
             pnlTotal.Visible = true;
             txtTotal.Text = total.ToString();
+        }
+
+        private void CarregarTratamento(int idTrat)
+        { // carrega o tratamento vinculado a avaliação
+            TratamentoModel tratModel = new TratamentoModel();
+            // declara o dicionário do tipo específico
+            Dictionary<int, v_itensTratamento> aval = Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
+            // instancia o Dictionary
+            if (aval == null)
+            {
+                // instancia o Dictionary
+                aval = new Dictionary<int, v_itensTratamento>();
+                // adiciona uma variável na sessão
+                // e atribui o dictionary a variável
+                Session["avaliacao"] = aval;
+            }
+            
+            foreach (v_itensTratamento item in tratModel.ListarItens(idTrat))
+            {                
+                aval.Add(item.Código_Procedimento, item);
+                // limpa os campos
+                AtualizaGrid();               
+            }
         }
     }
 }

@@ -27,16 +27,17 @@
         <!-- DATEPICKER -->        
         <link href="assets/js/datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
         <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
-    
+        <link href="assets/css/fundo.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
         
     </asp:ContentPlaceHolder>
 </head>
-<body runat="server" id="wrapper"> 
-    
+    <body runat="server" id="wrapper"> 
+
     <form id="form1" runat="server">                                       
             <lwc:LoginControl runat="server" ID="LoginControl1" />                                   
-            <%         
+            <%                    
             if (Session["pessoa"] != null)
             {
             %>                                              

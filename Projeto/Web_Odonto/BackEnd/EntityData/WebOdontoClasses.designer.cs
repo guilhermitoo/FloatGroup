@@ -557,7 +557,12 @@ namespace BackEnd.EntityData
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, dataInicial, dataFinal, total);
 			return ((int)(result.ReturnValue));
 		}
-	}
+
+        internal object ExecuteQuery(string sSql)
+        {
+            throw new NotImplementedException();
+        }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.atendimentos")]
 	public partial class atendimento : INotifyPropertyChanging, INotifyPropertyChanged

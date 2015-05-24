@@ -13,15 +13,6 @@ namespace FrontEnd {
     public partial class pessoas {
         
         /// <summary>
-        /// sm1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager sm1;
-        
-        /// <summary>
         /// txtCpf control.
         /// </summary>
         /// <remarks>
@@ -380,5 +371,17 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl myModal;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new FrontEnd.Web_Odonto Master {
+            get {
+                return ((FrontEnd.Web_Odonto)(base.Master));
+            }
+        }
     }
 }

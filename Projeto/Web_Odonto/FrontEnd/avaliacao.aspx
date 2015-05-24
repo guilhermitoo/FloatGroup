@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="avaliacao.aspx.cs" Inherits="FrontEnd.atendimento" meta:resourcekey="PageResource1" %>
+<%@ MasterType VirtualPath="~/Web_Odonto.master"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
@@ -100,7 +101,8 @@
         </div>    
     </div>
     <div class="pull-right">
-        <asp:Button id="btnIniciarTratamento" CssClass="btn btn-primary" runat="server" Text="Iniciar Tratamento" meta:resourcekey="btnIniciarTratamentoResource1" />
+        <asp:Button id="btnIniciarTratamento" CssClass="btn btn-primary" runat="server" Text="Iniciar Tratamento" 
+                      OnClick="btnIniciarTratamento_Click"  meta:resourcekey="btnIniciarTratamentoResource1" />
     </div>
 </div>
 <!-- /. ROW -->

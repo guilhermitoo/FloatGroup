@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="pessoas.aspx.cs" Inherits="FrontEnd.pessoas" %>
+<%@ MasterType VirtualPath="~/Web_Odonto.master"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
@@ -15,8 +16,7 @@ Faça cadastro de Funcionário, Paciente, e Dentista
     <div class="panel panel-default">
     <div class="panel-body">
         <div class="row">
-        <div class="col-md-6">    
-            <!--<asp:ScriptManager ID="sm1" runat="server" EnablePageMethods="true"></asp:ScriptManager>-->
+        <div class="col-md-6">                
                 <label>CPF</label>              
             <div class="input-group">
                 <input id="txtCpf" class="form-control" runat="server" onkeyup="formataCPF(this,event);" maxlength="14" />

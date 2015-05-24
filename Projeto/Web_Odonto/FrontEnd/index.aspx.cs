@@ -18,6 +18,7 @@ namespace FrontEnd
 
             if (pessoa != null)
             {
+                Master.Status("logado com sucesso!");
                 lblNomeUsuarioPrincipal.Text = "Bem Vindo(a), " + pessoa.nome;
             }
         }

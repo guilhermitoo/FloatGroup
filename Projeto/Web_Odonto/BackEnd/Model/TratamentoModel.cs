@@ -149,7 +149,7 @@ namespace BackEnd.Model
             {
                 Table<tratamento> tbTratamento = db.GetTable<tratamento>();
                 // INICIA O TRATAMENTO
-                String sSql = " update tratamentos set status = 2 where id = " + idTrat.ToString();
+                String sSql = " update tratamentos set status = 2, dataInicial = GETDATE() where avaliacao_id = " + idTrat.ToString();
                 var query = db.ExecuteCommand(sSql);
                 //após iniciar o tratamento, o status da avaliação deve ser modificado para concluído
                 AvaliacaoModel avalModel = new AvaliacaoModel();

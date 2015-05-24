@@ -212,5 +212,24 @@ namespace FrontEnd
                 AtualizaGrid();               
             }
         }
+
+        protected void btnIniciarTratamento_Click(object sender, EventArgs e)
+        {// inicia o tratamento            
+            int idTrat;
+            // verifica se o valor dentro do txtNumeroAvaliacao é um número
+            if (Int32.TryParse(txtNumeroAvaliacao.Value.ToString(),out idTrat))
+            {
+                TratamentoModel tratModel = new TratamentoModel();
+                // instancia a sessão e verifica se está vazia
+                Dictionary<int, v_itensTratamento> aval = Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
+                if (aval != null)
+                { // só então é que inicia o tratamento, modificando o status para 2
+                    if (tratModel.Iniciar(idTrat))
+                    {
+                        Response.Redirect("index.aspx");
+                    }
+                }
+            }
+        }
     }
 }

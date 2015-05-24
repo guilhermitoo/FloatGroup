@@ -85,6 +85,8 @@
                 </div>
             </nav>               
         <div id="page-wrapper">
+            <asp:ScriptManager id="Script1" runat="server"></asp:ScriptManager>            
+            <asp:Label ID="lblStatus" runat="server" Text="" ForeColor="Green" Font-Size="10"/>            
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">                        

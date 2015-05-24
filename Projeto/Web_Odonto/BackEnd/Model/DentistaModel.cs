@@ -86,8 +86,28 @@ namespace BackEnd.Model
                 var query = db.ExecuteQuery<dentista>(sSql);
                 // retorna true se achou algum dentista com esse id
                 return (query.ToList().Count > 0);                                 
+            }           
+        }
+
+        public bool VerificaHorario(DateTime horario,int idDentista)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql;
+                sSql = " select A.* from avaliacoes A" +
+                " where A.dentista_id = " + idDentista.ToString() +
+                " and A.data = '" + horario.ToString() + "' ";
+                var queryAval = db.ExecuteQuery<avaliacao>(sSql);
+
+                sSql = " select AT.* from atendimentos AT " +
+                " where AT.dentista_id = " + idDentista.ToString() +
+                " and AT.data = '" + horario.ToString() + "' ";
+
+                var queryAtend = db.ExecuteQuery<avaliacao>(sSql);
+                // retorna true se não encontrar avaliacoes/atendimentos nesse horario para esse dentista,
+                // ou seja, o horário dele está livre
+                return ( (queryAval.ToList().Count < 1) && (queryAtend.ToList().Count < 1) );
             }
-           
         }
     }//final
 }

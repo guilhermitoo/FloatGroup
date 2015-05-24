@@ -21,7 +21,7 @@ namespace BackEnd.Model
             try
             {
                 Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();                                
-                db.cadAvaliacao(a.data, a.dentista_id, a.paciente_id);
+                db.cadAvaliacao(a.data, a.dentista_id, a.paciente_id,a.status);
                 tabelaAvaliacao.Context.SubmitChanges();
                 
                 return true;

@@ -7,21 +7,10 @@
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="dentista_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="tratamento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="atendimento_itensAtendimento" Member="itemAtendimentos" ThisKey="id" OtherKey="atendimento_id" Type="itemAtendimento" />
+      <Association Name="atendimento_itemAtendimento" Member="itemAtendimentos" ThisKey="id" OtherKey="atendimento_id" Type="itemAtendimento" />
       <Association Name="atendimento_receita" Member="receitas" ThisKey="id" OtherKey="atendimento_id" Type="receita" />
       <Association Name="dentista_atendimento" Member="dentista" ThisKey="dentista_id" OtherKey="pessoa_id" Type="dentista" IsForeignKey="true" />
       <Association Name="tratamento_atendimento" Member="tratamento" ThisKey="tratamento_id" OtherKey="avaliacao_id" Type="tratamento" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.avaliacoes" Member="avaliacaos">
-    <Type Name="avaliacao">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="dentista_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="paciente_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="avaliacoe_tratamento" Member="tratamento" ThisKey="id" OtherKey="avaliacao_id" Type="tratamento" Cardinality="One" />
-      <Association Name="dentista_avaliacoe" Member="dentista" ThisKey="dentista_id" OtherKey="pessoa_id" Type="dentista" IsForeignKey="true" />
-      <Association Name="paciente_avaliacoe" Member="paciente" ThisKey="paciente_id" OtherKey="pessoa_id" Type="paciente" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.cidades" Member="cidades">
@@ -48,7 +37,7 @@
       <Column Name="cro" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="salario" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
       <Association Name="dentista_atendimento" Member="atendimentos" ThisKey="pessoa_id" OtherKey="dentista_id" Type="atendimento" />
-      <Association Name="dentista_avaliacoe" Member="avaliacaos" ThisKey="pessoa_id" OtherKey="dentista_id" Type="avaliacao" />
+      <Association Name="dentista_avaliacao" Member="avaliacaos" ThisKey="pessoa_id" OtherKey="dentista_id" Type="avaliacao" />
       <Association Name="pessoa_dentista" Member="pessoa" ThisKey="pessoa_id" OtherKey="id" Type="pessoa" IsForeignKey="true" />
     </Type>
   </Table>
@@ -66,7 +55,7 @@
       <Column Name="paciente_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="arquivo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="paciente_imagen" Member="paciente" ThisKey="paciente_id" OtherKey="pessoa_id" Type="paciente" IsForeignKey="true" />
+      <Association Name="paciente_imagem" Member="paciente" ThisKey="paciente_id" OtherKey="pessoa_id" Type="paciente" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.itensAtendimento" Member="itemAtendimentos">
@@ -74,8 +63,8 @@
       <Column Name="atendimento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="procedimento_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="atendimento_itensAtendimento" Member="atendimento" ThisKey="atendimento_id" OtherKey="id" Type="atendimento" IsForeignKey="true" />
-      <Association Name="procedimento_itensAtendimento" Member="procedimento" ThisKey="procedimento_id" OtherKey="id" Type="procedimento" IsForeignKey="true" />
+      <Association Name="atendimento_itemAtendimento" Member="atendimento" ThisKey="atendimento_id" OtherKey="id" Type="atendimento" IsForeignKey="true" />
+      <Association Name="procedimento_itemAtendimento" Member="procedimento" ThisKey="procedimento_id" OtherKey="id" Type="procedimento" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.itensReceita" Member="itemReceitas">
@@ -85,8 +74,8 @@
       <Column Name="dose" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="obs" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="periodo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="medicamento_itensReceita" Member="medicamento" ThisKey="medicamento_id" OtherKey="id" Type="medicamento" IsForeignKey="true" />
-      <Association Name="receita_itensReceita" Member="receita" ThisKey="receita_id" OtherKey="id" Type="receita" IsForeignKey="true" />
+      <Association Name="medicamento_itemReceita" Member="medicamento" ThisKey="medicamento_id" OtherKey="id" Type="medicamento" IsForeignKey="true" />
+      <Association Name="receita_itemReceita" Member="receita" ThisKey="receita_id" OtherKey="id" Type="receita" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.itensTratamento" Member="itemTratamentos">
@@ -96,8 +85,8 @@
       <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="valor" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="procedimento_itensTratamento" Member="procedimento" ThisKey="procedimento_id" OtherKey="id" Type="procedimento" IsForeignKey="true" />
-      <Association Name="tratamento_itensTratamento" Member="tratamento" ThisKey="tratamento_id" OtherKey="avaliacao_id" Type="tratamento" IsForeignKey="true" />
+      <Association Name="procedimento_itemTratamento" Member="procedimento" ThisKey="procedimento_id" OtherKey="id" Type="procedimento" IsForeignKey="true" />
+      <Association Name="tratamento_itemTratamento" Member="tratamento" ThisKey="tratamento_id" OtherKey="avaliacao_id" Type="tratamento" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.medicamentos" Member="medicamentos">
@@ -108,15 +97,15 @@
       <Column Name="tarja" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="posologia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="unidade" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="medicamento_itensReceita" Member="itemReceitas" ThisKey="id" OtherKey="medicamento_id" Type="itemReceita" />
+      <Association Name="medicamento_itemReceita" Member="itemReceitas" ThisKey="id" OtherKey="medicamento_id" Type="itemReceita" />
     </Type>
   </Table>
   <Table Name="dbo.pacientes" Member="pacientes">
     <Type Name="paciente">
       <Column Name="pessoa_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="convenio_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="paciente_avaliacoe" Member="avaliacaos" ThisKey="pessoa_id" OtherKey="paciente_id" Type="avaliacao" />
-      <Association Name="paciente_imagen" Member="imagems" ThisKey="pessoa_id" OtherKey="paciente_id" Type="imagem" />
+      <Association Name="paciente_imagem" Member="imagems" ThisKey="pessoa_id" OtherKey="paciente_id" Type="imagem" />
+      <Association Name="paciente_avaliacao" Member="avaliacaos" ThisKey="pessoa_id" OtherKey="paciente_id" Type="avaliacao" />
       <Association Name="convenio_paciente" Member="convenio" ThisKey="convenio_id" OtherKey="id" Type="convenio" IsForeignKey="true" />
       <Association Name="pessoa_paciente" Member="pessoa" ThisKey="pessoa_id" OtherKey="id" Type="pessoa" IsForeignKey="true" />
     </Type>
@@ -148,8 +137,8 @@
     <Type Name="procedimento">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Association Name="procedimento_itensAtendimento" Member="itemAtendimentos" ThisKey="id" OtherKey="procedimento_id" Type="itemAtendimento" />
-      <Association Name="procedimento_itensTratamento" Member="itemTratamentos" ThisKey="id" OtherKey="procedimento_id" Type="itemTratamento" />
+      <Association Name="procedimento_itemAtendimento" Member="itemAtendimentos" ThisKey="id" OtherKey="procedimento_id" Type="itemAtendimento" />
+      <Association Name="procedimento_itemTratamento" Member="itemTratamentos" ThisKey="id" OtherKey="procedimento_id" Type="itemTratamento" />
     </Type>
   </Table>
   <Table Name="dbo.receitas" Member="receitas">
@@ -157,7 +146,7 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="atendimento_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="receita_itensReceita" Member="itemReceitas" ThisKey="id" OtherKey="receita_id" Type="itemReceita" />
+      <Association Name="receita_itemReceita" Member="itemReceitas" ThisKey="id" OtherKey="receita_id" Type="itemReceita" />
       <Association Name="atendimento_receita" Member="atendimento" ThisKey="atendimento_id" OtherKey="id" Type="atendimento" IsForeignKey="true" />
     </Type>
   </Table>
@@ -169,8 +158,8 @@
       <Column Name="dataFinal" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="total" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
       <Association Name="tratamento_atendimento" Member="atendimentos" ThisKey="avaliacao_id" OtherKey="tratamento_id" Type="atendimento" />
-      <Association Name="tratamento_itensTratamento" Member="itemTratamentos" ThisKey="avaliacao_id" OtherKey="tratamento_id" Type="itemTratamento" />
-      <Association Name="avaliacoe_tratamento" Member="avaliacao" ThisKey="avaliacao_id" OtherKey="id" Type="avaliacao" IsForeignKey="true" />
+      <Association Name="tratamento_itemTratamento" Member="itemTratamentos" ThisKey="avaliacao_id" OtherKey="tratamento_id" Type="itemTratamento" />
+      <Association Name="avaliacao_tratamento" Member="avaliacao" ThisKey="avaliacao_id" OtherKey="id" Type="avaliacao" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.v_avaliacoes" Member="v_avaliacoes">
@@ -316,19 +305,35 @@
       <Column Name="Total" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.avaliacoes" Member="avaliacaos">
+    <Type Name="avaliacao">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dentista_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paciente_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="avaliacao_tratamento" Member="tratamento" ThisKey="id" OtherKey="avaliacao_id" Type="tratamento" Cardinality="One" />
+      <Association Name="dentista_avaliacao" Member="dentista" ThisKey="dentista_id" OtherKey="pessoa_id" Type="dentista" IsForeignKey="true" />
+      <Association Name="paciente_avaliacao" Member="paciente" ThisKey="paciente_id" OtherKey="pessoa_id" Type="paciente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_agenda" Member="v_agendas">
+    <Type Name="v_agenda">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dentista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Nome Dentista]" Member="Nome_Dentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Paciente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Nome Paciente]" Member="Nome_Paciente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.alteraAtendimento" Method="alteraAtendimento">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="status" Type="System.Int32" DbType="Int" />
     <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
     <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.alteraAvaliacao" Method="alteraAvaliacao">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.alteraCidade" Method="alteraCidade">
@@ -444,12 +449,6 @@
     <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.cadAvaliacao" Method="cadAvaliacao">
-    <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
-    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.cadCidade" Method="cadCidade">
     <Parameter Name="nome" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="uf" Type="System.String" DbType="Char(2)" />
@@ -547,6 +546,21 @@
     <Parameter Name="dataInicial" Type="System.DateTime" DbType="Date" />
     <Parameter Name="dataFinal" Type="System.DateTime" DbType="Date" />
     <Parameter Name="total" Type="System.Decimal" DbType="Decimal(15,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.alteraAvaliacao" Method="alteraAvaliacao">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.cadAvaliacao" Method="cadAvaliacao">
+    <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dentista_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="status" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

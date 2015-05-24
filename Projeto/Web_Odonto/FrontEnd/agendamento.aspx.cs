@@ -60,6 +60,7 @@ namespace FrontEnd
                     avaliacao.data = data;
                     avaliacao.dentista_id = idDent;
                     avaliacao.paciente_id = Int32.Parse(ddPacienteAv.SelectedValue);
+                    avaliacao.status = 1;
 
                     // faz a inserção da avaliação somente se o paciente selecionado
                     // não tiver um tratamento em andamento
@@ -73,6 +74,10 @@ namespace FrontEnd
                             {
                                 Master.Status("Avaliação agendada com sucesso");
                                 Response.Redirect("agenda.aspx");
+                            }
+                            else
+                            {
+                                Master.Status("Erro ao agendar a avaliação");
                             }
                         }
                         else

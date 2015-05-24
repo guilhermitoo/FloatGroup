@@ -109,5 +109,8 @@ namespace BackEnd.Model
                 return ( (queryAval.ToList().Count < 1) && (queryAtend.ToList().Count < 1) );
             }
         }
+
+        //public List<v_agenda> Agenda(
+        
     }//final
 }

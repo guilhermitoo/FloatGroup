@@ -393,6 +393,34 @@
       <Name>BackEnd</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\cidades.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\cidades.aspx.resx" />
+    <Content Include="App_LocalResources\convenios.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\convenios.aspx.resx" />
+    <Content Include="App_LocalResources\listaCidades.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaCidades.aspx.resx" />
+    <Content Include="App_LocalResources\listaConvenios.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaConvenios.aspx.resx" />
+    <Content Include="App_LocalResources\listaMedicamentos.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaMedicamentos.aspx.resx" />
+    <Content Include="App_LocalResources\listaPacientes.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaPacientes.aspx.resx" />
+    <Content Include="App_LocalResources\listaPessoas.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaPessoas.aspx.resx" />
+    <Content Include="App_LocalResources\listaProcedimentos.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaProcedimentos.aspx.resx" />
+    <Content Include="App_LocalResources\LoginControl.ascx.en-US.resx" />
+    <Content Include="App_LocalResources\LoginControl.ascx.resx" />
+    <Content Include="App_LocalResources\medicamentos.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\medicamentos.aspx.resx" />
+    <Content Include="App_LocalResources\pessoas.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\pessoas.aspx.resx" />
+    <Content Include="App_LocalResources\procedimentos.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\procedimentos.aspx.resx" />
+    <Content Include="App_LocalResources\Web_Odonto.Master.en-US.resx" />
+    <Content Include="App_LocalResources\Web_Odonto.Master.resx" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

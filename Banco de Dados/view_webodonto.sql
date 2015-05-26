@@ -203,7 +203,6 @@ as
 	join pessoas d on ( d.id = a.dentista_id )
 	join pessoas p on ( p.id = a.paciente_id )
 
-
 	union	
 
 	select	at.id ID,

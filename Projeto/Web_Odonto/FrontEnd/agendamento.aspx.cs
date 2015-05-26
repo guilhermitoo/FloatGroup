@@ -118,7 +118,7 @@ namespace FrontEnd
                 txtNumeroTratamento.Text = idTrat.ToString();
                 txtStatusTratamento.Text = tModel.GetStatus(tratamento.status);
                 // lista os procedimentos do tratamento no GridView
-                gvItensAtendimento.DataSource = tratModel.ListarItens(idTrat);
+                gvItensAtendimento.DataSource = tratModel.ListarItensPendentes(idTrat);
                 gvItensAtendimento.DataBind();
                 ControlaCampos(true);
             }

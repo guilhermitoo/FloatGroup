@@ -67,6 +67,9 @@
     <Content Include="assets\css\sb-admin-2.css" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\full_calendar\css\fullcalendar.css" />
+    <Content Include="assets\full_calendar\js\fullcalendar.min.js" />
+    <Content Include="assets\full_calendar\css\fullcalendar.print.css" />
     <Content Include="assets\img\1.png" />
     <Content Include="assets\img\2.png" />
     <Content Include="assets\img\3.png" />
@@ -221,6 +224,7 @@
     <Content Include="medicamentos.aspx" />
     <Content Include="procedimentos.aspx" />
     <Content Include="relatorios.aspx" />
+    <Content Include="statusTratamento.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -359,6 +363,13 @@
     </Compile>
     <Compile Include="relatorios.aspx.designer.cs">
       <DependentUpon>relatorios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="statusTratamento.aspx.cs">
+      <DependentUpon>statusTratamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="statusTratamento.aspx.designer.cs">
+      <DependentUpon>statusTratamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="Web_Odonto.Master.cs">

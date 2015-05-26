@@ -37,7 +37,14 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 Table<tratamento> tabelaTratamento = db.GetTable<tratamento>();
-                return tabelaTratamento.First(p => p.avaliacao_id == id);
+                try
+                {
+                    return tabelaTratamento.First(p => p.avaliacao_id == id);
+                }
+                catch
+                {
+                    return null;
+                }
             }
         }
 
@@ -123,6 +130,33 @@ namespace BackEnd.Model
             }
         }
 
+        public List<v_itensTratamento> ListarItensPendentes(int idTratamento)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select I.* " +
+                              " from v_itensTratamento I " +
+                              " where I.[Código Tratamento] = " + idTratamento.ToString() +
+                              " and I.Status = 1 ";
+                var query = db.ExecuteQuery<v_itensTratamento>(sSql);
+                return query.ToList();
+            }
+        }
+
+        public List<v_itensTratamento> ListarItensConcluidos(int idTratamento)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select I.* " +
+                              " from v_itensTratamento I " +
+                              " where I.[Código Tratamento] = " + idTratamento.ToString() +
+                              " and I.Status = 2 ";
+                var query = db.ExecuteQuery<v_itensTratamento>(sSql);
+                return query.ToList();
+            }
+        }
+
+
         public String GetItemStatus(int iStatus)
         {
             String sStatus;
@@ -157,6 +191,33 @@ namespace BackEnd.Model
                 return true;
             }
             catch { return false; }
+        }
+
+        public Int32 PorcentagemConcluida(int idTrat)
+        { // FUNÇÃO QUE RECEBE O ID DO TRATAMENTO E RETORNA 
+          // A PORCENTAGEM CONCLUÍDA DO TRATAMENTO
+            Int32 perc;
+            
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {
+                Table<itemTratamento> tbItemTrat = db.GetTable<itemTratamento>();
+                String sSql = " select coalesce((( " +
+                " select SUM(I.qtd) from itensTratamento I" +
+                " where I.status = 2" +
+                " and I.tratamento_id = " + idTrat.ToString() +
+                " ) * 100) / ("+
+                " select SUM(I.qtd) from itensTratamento I"+
+                " where I.tratamento_id = " + idTrat.ToString() +
+                " ),0) as perc";
+
+                perc = db.ExecuteQuery<Int32>(sSql).First();
+                //perc = int.Parse(txt);                
+            }
+            catch {
+                perc = 0;
+            }
+            return perc;
         }
        
     }

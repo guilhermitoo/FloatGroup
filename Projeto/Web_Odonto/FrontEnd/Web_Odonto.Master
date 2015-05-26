@@ -78,9 +78,13 @@
                             <a href="avaliacao.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/atendimento_1.png" /></i> Avaliação</a>
                         </li>
                         <li>
-                            <a href="relatorios.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/relatorio_1.png" /></i> Relatórios</a>
+                            <a href="#"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/relatorio_1.png" /></i> Relatórios <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="statusTratamento.aspx">Status Tratamento</a>
+                                </li>
+                            </ul>
                         </li>
-                       
                     </ul>
                 </div>
             </nav>               

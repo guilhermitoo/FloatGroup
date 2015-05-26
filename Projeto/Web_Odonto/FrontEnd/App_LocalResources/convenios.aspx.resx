@@ -192,4 +192,7 @@
   <data name="titulo" xml:space="preserve">
     <value>CADASTRO CONVÊNIO</value>
   </data>
+  <data name="cnpjnaocadastrado" xml:space="preserve">
+    <value>CNPJ não cadastrado</value>
+  </data>
 </root>

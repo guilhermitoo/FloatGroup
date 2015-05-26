@@ -327,4 +327,7 @@
   <data name="titulo" xml:space="preserve">
     <value>CADASTRO DE CIDADE</value>
   </data>
+  <data name="txtdigite" xml:space="preserve">
+    <value>Digite o nome da Cidade</value>
+  </data>
 </root>

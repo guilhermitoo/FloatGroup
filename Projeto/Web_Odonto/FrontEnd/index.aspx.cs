@@ -17,9 +17,9 @@ namespace FrontEnd
             pessoa pessoa = Session["pessoa"] as pessoa;
 
             if (pessoa != null)
-            {
-                Master.Status("logado com sucesso!");
-                lblNomeUsuarioPrincipal.Text = "Bem Vindo(a), " + pessoa.nome;
+            {                
+                string txt = (string)GetLocalResourceObject("bemvindo");
+                lblNomeUsuarioPrincipal.Text = txt + " " + pessoa.nome;
             }
         }
     }

@@ -36,17 +36,20 @@ namespace FrontEnd
         {
             convenio convenio = new convenio();
             ConvenioModel model = new ConvenioModel();
+            bool bNovo = true;
+            //se existir ID então faz a edição, se não existir ID, é uma inserção
+            if (Request.QueryString["ID"] != null)
+            {
+                convenio.id = int.Parse(Request.QueryString["ID"]);
+                bNovo = false;
+            }
 
-            if (model.ValidaCNPJ(txtCNPJ.Value))
+            if (model.ValidaCNPJ(txtCNPJ.Value) || !bNovo)
             {
                 convenio.cnpj = txtCNPJ.Value;
                 convenio.ie = txtIe.Text;
                 convenio.razao_social = txtRazao.Text;
-                convenio.nome_fantasia = txtNomeFantasia.Text;
-
-                //se existir ID então faz a edição, se não existir ID, é uma inserção
-                if (Request.QueryString["ID"] != null)
-                    convenio.id = int.Parse(Request.QueryString["ID"]);
+                convenio.nome_fantasia = txtNomeFantasia.Text;                
 
                 // faz a inserção ou atualização do cadastro da cidade
                 if (model.InserirAtualizar(convenio))
@@ -75,8 +78,9 @@ namespace FrontEnd
 
             // incompleto
             if (m.ValidaCNPJ(txtCNPJ.Value))
-            {                
-                lblAlertaCNPJ.Text = "CNPJ não cadastrado";
+            {
+                string txt = (string)GetLocalResourceObject("cnpjnaocadastrado");
+                lblAlertaCNPJ.Text = txt;
             }
             else
             {

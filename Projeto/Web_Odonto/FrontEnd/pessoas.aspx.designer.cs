@@ -13,6 +13,33 @@ namespace FrontEnd {
     public partial class pessoas {
         
         /// <summary>
+        /// lt00 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt00;
+        
+        /// <summary>
+        /// lt01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt01;
+        
+        /// <summary>
+        /// lt02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt02;
+        
+        /// <summary>
         /// txtCpf control.
         /// </summary>
         /// <remarks>
@@ -40,6 +67,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Label lblAlertaCPF;
         
         /// <summary>
+        /// lt03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt03;
+        
+        /// <summary>
         /// cbTipoPessoa control.
         /// </summary>
         /// <remarks>
@@ -47,6 +83,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList cbTipoPessoa;
+        
+        /// <summary>
+        /// lt04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt04;
         
         /// <summary>
         /// rdStatus control.
@@ -58,6 +103,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.RadioButtonList rdStatus;
         
         /// <summary>
+        /// lt05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt05;
+        
+        /// <summary>
         /// txtNome control.
         /// </summary>
         /// <remarks>
@@ -65,6 +119,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNome;
+        
+        /// <summary>
+        /// lt06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt06;
         
         /// <summary>
         /// rdSexo control.
@@ -76,6 +139,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.RadioButtonList rdSexo;
         
         /// <summary>
+        /// lt07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt07;
+        
+        /// <summary>
         /// txtNasc control.
         /// </summary>
         /// <remarks>
@@ -83,6 +155,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtNasc;
+        
+        /// <summary>
+        /// lt08 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt08;
         
         /// <summary>
         /// txtRg control.
@@ -94,6 +175,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtRg;
         
         /// <summary>
+        /// lt09 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt09;
+        
+        /// <summary>
         /// ddCidade control.
         /// </summary>
         /// <remarks>
@@ -101,6 +191,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddCidade;
+        
+        /// <summary>
+        /// lt10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt10;
         
         /// <summary>
         /// txtEndereco control.
@@ -112,6 +211,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtEndereco;
         
         /// <summary>
+        /// lt11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt11;
+        
+        /// <summary>
         /// txtTelefone1 control.
         /// </summary>
         /// <remarks>
@@ -121,6 +229,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefone1;
         
         /// <summary>
+        /// lt12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt12;
+        
+        /// <summary>
         /// txtTelefone2 control.
         /// </summary>
         /// <remarks>
@@ -128,6 +245,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtTelefone2;
+        
+        /// <summary>
+        /// lt13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt13;
         
         /// <summary>
         /// txtObs control.
@@ -157,6 +283,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTipoUsuario;
         
         /// <summary>
+        /// lt14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt14;
+        
+        /// <summary>
         /// ddTipoUsuario control.
         /// </summary>
         /// <remarks>
@@ -182,6 +317,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblUsuario;
+        
+        /// <summary>
+        /// lt15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt15;
         
         /// <summary>
         /// txtUsuario control.
@@ -211,6 +355,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSenha;
         
         /// <summary>
+        /// lt16 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt16;
+        
+        /// <summary>
         /// txtSenha control.
         /// </summary>
         /// <remarks>
@@ -236,6 +389,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblCro;
+        
+        /// <summary>
+        /// lt17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt17;
         
         /// <summary>
         /// txtCro control.
@@ -265,6 +427,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblCargo;
         
         /// <summary>
+        /// lt18 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt18;
+        
+        /// <summary>
         /// txtCargo control.
         /// </summary>
         /// <remarks>
@@ -292,6 +463,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblSalario;
         
         /// <summary>
+        /// lt19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt19;
+        
+        /// <summary>
         /// txtSalario control.
         /// </summary>
         /// <remarks>
@@ -317,6 +497,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblConvenio;
+        
+        /// <summary>
+        /// lt20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt20;
         
         /// <summary>
         /// ddConvenio control.
@@ -362,15 +551,6 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSair;
-        
-        /// <summary>
-        /// myModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl myModal;
         
         /// <summary>
         /// Master property.

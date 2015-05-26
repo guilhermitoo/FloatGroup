@@ -327,4 +327,7 @@
   <data name="titulo" xml:space="preserve">
     <value>CITY REGISTRATION</value>
   </data>
+  <data name="txtdigite" xml:space="preserve">
+    <value>Enter the name of the City</value>
+  </data>
 </root>

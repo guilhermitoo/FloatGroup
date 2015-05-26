@@ -13,6 +13,15 @@ namespace FrontEnd {
     public partial class listaConvenios {
         
         /// <summary>
+        /// lt01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt01;
+        
+        /// <summary>
         /// txtConvenio control.
         /// </summary>
         /// <remarks>

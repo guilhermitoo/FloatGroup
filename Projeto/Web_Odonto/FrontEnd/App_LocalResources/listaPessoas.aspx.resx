@@ -159,7 +159,16 @@
   <data name="status" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="titulo" xml:space="preserve">
-    <value>Lista de Pessoa</value>
+  <data name="tituloPessoa" xml:space="preserve">
+    <value>Lista de Pessoas</value>
+  </data>
+  <data name="tituloDentista" xml:space="preserve">
+    <value>Lista de Dentistas</value>
+  </data>
+  <data name="tituloFuncionario" xml:space="preserve">
+    <value>Lista de Funcionários</value>
+  </data>
+  <data name="tituloPaciente" xml:space="preserve">
+    <value>Lista de Pacientes</value>
   </data>
 </root>

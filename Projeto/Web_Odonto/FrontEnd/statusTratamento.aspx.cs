@@ -23,7 +23,9 @@ namespace FrontEnd
                 ddPaciente.DataBind();
                 ddPaciente.SelectedIndex = 0;
                 pnlTratamento.Visible = false;
-            }
+                // atribui o valor 0 para a barra de progresso.
+                bd.Value = "0";
+            }           
         }
 
         protected void btnBuscaTratamento_Click(object sender, EventArgs e)
@@ -46,7 +48,8 @@ namespace FrontEnd
                 txtDataIni.Text = tratamento.dataInicial.ToString();
                 txtDataFin.Text = tratamento.dataFinal.ToString();
                 // atribui os valores da barra de progresso
-                pbProgresso.Style.Value = "width: "+tModel.PorcentagemConcluida(idTrat).ToString()+"%";
+                //pbProgresso.Style.Value = "width: "+tModel.PorcentagemConcluida(idTrat).ToString()+"%";
+                bd.Value = tModel.PorcentagemConcluida(idTrat).ToString();
                 pbProgresso.InnerText = tModel.PorcentagemConcluida(idTrat).ToString() + "% Concluído";                
                 // lista os procedimentos do tratamento no GridView
                 gvProcPendentes.DataSource = tratModel.ListarItensPendentes(idTrat);

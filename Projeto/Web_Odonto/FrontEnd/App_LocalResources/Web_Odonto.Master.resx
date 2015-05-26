@@ -120,8 +120,8 @@
   <data name="agenda" xml:space="preserve">
     <value>Agenda</value>
   </data>
-  <data name="atendimento" xml:space="preserve">
-    <value>Atendimento</value>
+  <data name="avaliacao" xml:space="preserve">
+    <value>Avaliação</value>
   </data>
   <data name="cadastro" xml:space="preserve">
     <value>Cadastro</value>
@@ -146,5 +146,8 @@
   </data>
   <data name="relatorio" xml:space="preserve">
     <value>Relatório</value>
+  </data>
+  <data name="statusTratamento" xml:space="preserve">
+    <value>Status Tratamento</value>
   </data>
 </root>

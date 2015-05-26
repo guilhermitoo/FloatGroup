@@ -159,4 +159,7 @@
   <data name="titulo" xml:space="preserve">
     <value>List of Agreement</value>
   </data>
+  <data name="id" xml:space="preserve">
+    <value>ID</value>
+  </data>
 </root>

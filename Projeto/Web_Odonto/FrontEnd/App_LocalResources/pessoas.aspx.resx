@@ -342,4 +342,7 @@
   <data name="verifica" xml:space="preserve">
     <value>Verificar CPF</value>
   </data>
+  <data name="cpfnaocadastrado" xml:space="preserve">
+    <value>CPF não cadastrado</value>
+  </data>
 </root>

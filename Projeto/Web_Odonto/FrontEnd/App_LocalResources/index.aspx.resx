@@ -117,37 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="agenda" xml:space="preserve">
-    <value>Schedule</value>
+  <data name="lblNomeUsuarioPrincipalResource1.Text" xml:space="preserve">
+    <value />
   </data>
-  <data name="avaliacao" xml:space="preserve">
-    <value>Evaluation</value>
+  <data name="lblNomeUsuarioPrincipalResource1.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="cadastro" xml:space="preserve">
-    <value>Register</value>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>WebOdonto</value>
   </data>
-  <data name="cidade" xml:space="preserve">
-    <value>City</value>
+  <data name="atencao" xml:space="preserve">
+    <value>Fique atento as notificações.</value>
   </data>
-  <data name="convenio" xml:space="preserve">
-    <value>Convenant</value>
+  <data name="cadusuario" xml:space="preserve">
+    <value>Cadastrar Usuário</value>
   </data>
-  <data name="inicio" xml:space="preserve">
-    <value>Home</value>
+  <data name="digite1" xml:space="preserve">
+    <value>Digite sua busca</value>
   </data>
-  <data name="medicamentos" xml:space="preserve">
-    <value>Medicine</value>
+  <data name="procurar" xml:space="preserve">
+    <value>Procurar</value>
   </data>
-  <data name="pessoa" xml:space="preserve">
-    <value>Person</value>
-  </data>
-  <data name="procedimento" xml:space="preserve">
-    <value>Procedure</value>
-  </data>
-  <data name="relatorio" xml:space="preserve">
-    <value>Report</value>
-  </data>
-  <data name="statusTratamento" xml:space="preserve">
-    <value>Treatment Status</value>
+  <data name="bemvindo" xml:space="preserve">
+    <value>Bem Vindo</value>
   </data>
 </root>

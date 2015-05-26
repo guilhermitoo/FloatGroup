@@ -409,6 +409,8 @@
     <Content Include="App_LocalResources\cidades.aspx.resx" />
     <Content Include="App_LocalResources\convenios.aspx.en-US.resx" />
     <Content Include="App_LocalResources\convenios.aspx.resx" />
+    <Content Include="App_LocalResources\index.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\index.aspx.resx" />
     <Content Include="App_LocalResources\listaCidades.aspx.en-US.resx" />
     <Content Include="App_LocalResources\listaCidades.aspx.resx" />
     <Content Include="App_LocalResources\listaConvenios.aspx.en-US.resx" />

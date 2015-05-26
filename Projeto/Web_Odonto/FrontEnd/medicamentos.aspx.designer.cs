@@ -13,6 +13,33 @@ namespace FrontEnd {
     public partial class medicamentos {
         
         /// <summary>
+        /// lt00 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt00;
+        
+        /// <summary>
+        /// lt01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt01;
+        
+        /// <summary>
+        /// lt02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt02;
+        
+        /// <summary>
         /// txtNome control.
         /// </summary>
         /// <remarks>
@@ -20,6 +47,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNome;
+        
+        /// <summary>
+        /// lt03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt03;
         
         /// <summary>
         /// txtTarja control.
@@ -31,6 +67,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtTarja;
         
         /// <summary>
+        /// lt04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt04;
+        
+        /// <summary>
         /// txtClasseTerapeutica control.
         /// </summary>
         /// <remarks>
@@ -40,6 +85,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtClasseTerapeutica;
         
         /// <summary>
+        /// lt05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt05;
+        
+        /// <summary>
         /// txtUnidade control.
         /// </summary>
         /// <remarks>
@@ -47,6 +101,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUnidade;
+        
+        /// <summary>
+        /// lt06 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt06;
         
         /// <summary>
         /// txtPosologia control.

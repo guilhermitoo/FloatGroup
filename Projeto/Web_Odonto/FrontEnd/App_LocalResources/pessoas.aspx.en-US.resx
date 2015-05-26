@@ -136,7 +136,7 @@
     <value />
   </data>
   <data name="btnSairResource1.Text" xml:space="preserve">
-    <value>Leave</value>
+    <value>Exit</value>
   </data>
   <data name="btnSairResource1.ToolTip" xml:space="preserve">
     <value />
@@ -340,6 +340,9 @@
     <value>User</value>
   </data>
   <data name="verifica" xml:space="preserve">
-    <value>Check CPF</value>
+    <value>Check Register Individual</value>
+  </data>
+  <data name="cpfnaocadastrado" xml:space="preserve">
+    <value>Not registered Register Individual</value>
   </data>
 </root>

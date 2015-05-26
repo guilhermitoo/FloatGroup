@@ -5,10 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
     
     <div class="panel-heading">
-        <h2><label id="lbTitulo">Buscar Tratamento</label></h2>                                                                                                                         
-        <hr />    
-    </div>
-    
+        <h2><label id="lbTitulo">Buscar Tratamento</label></h2>                  
+        <input type="hidden" class="prog" runat="server" id="bd" value="0"/>                                                                                                       
+        <hr />            
+    </div>        
+
     <div class="panel-body">
         <div class="col-md-6">  
             <label>Paciente</label> 
@@ -23,7 +24,7 @@
         <asp:Panel id="pnlTratamento" runat="server">
             <div class="col-md-3">
                 <asp:Label ID="lbNumTrat" runat="server" Text="Número do Tratamento" />
-                <asp:TextBox ID="txtNumTrat" runat="server" ReadOnly="true" CssClass="form-control"/>
+                <asp:TextBox ID="txtNumTrat" runat="server" ReadOnly="true" CssClass="form-control numTrat"/>
             </div>
             <div class="col-md-3">
                 <asp:Label ID="lbStatus" runat="server" Text="Status" />
@@ -41,8 +42,7 @@
             <div class="col-lg-12">                              
                 <asp:Label runat="server" Text="Progresso do Tratamento: "></asp:Label>
                 <div class="progress progress-striped active">
-                    <div id="pbProgresso" runat="server" class="progress-bar progress-bar-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                        style="width: 10%;">                         
+                    <div id="pbProgresso" runat="server" class="progress-bar progress-bar-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100">                         
                     </div>
                 </div>
             </div>
@@ -94,10 +94,10 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#pbProgresso').width(<%# Session["percTratamento"] %>);
+        $(document).ready(function () {            
+            var p = $('.prog').val();               
+            $('.progress-bar').width(p + "%");            
         });
-
 
     </script>
 </asp:Content>

@@ -203,8 +203,9 @@ namespace FrontEnd
 
             // incompleto
             if (p.ValidaCPF(txtCpf.Value))
-            {                
-                lblAlertaCPF.Text = "CPF não cadastrado";
+            {
+                string txt = (string)GetLocalResourceObject("cpfnaocadastrado");
+                lblAlertaCPF.Text = txt;
             }
             else
             {

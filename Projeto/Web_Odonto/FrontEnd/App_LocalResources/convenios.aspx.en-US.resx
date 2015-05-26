@@ -192,4 +192,7 @@
   <data name="titulo" xml:space="preserve">
     <value>REGISTRATION AGREEMENT</value>
   </data>
+  <data name="cnpjnaocadastrado" xml:space="preserve">
+    <value>Not registered RNLP</value>
+  </data>
 </root>

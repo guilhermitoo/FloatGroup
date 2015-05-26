@@ -13,6 +13,33 @@ namespace FrontEnd {
     public partial class convenios {
         
         /// <summary>
+        /// lt00 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt00;
+        
+        /// <summary>
+        /// lt01 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt01;
+        
+        /// <summary>
+        /// lt02 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt02;
+        
+        /// <summary>
         /// txtCNPJ control.
         /// </summary>
         /// <remarks>
@@ -40,6 +67,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Label lblAlertaCNPJ;
         
         /// <summary>
+        /// lt03 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt03;
+        
+        /// <summary>
         /// txtRazao control.
         /// </summary>
         /// <remarks>
@@ -49,6 +85,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtRazao;
         
         /// <summary>
+        /// lt04 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt04;
+        
+        /// <summary>
         /// txtNomeFantasia control.
         /// </summary>
         /// <remarks>
@@ -56,6 +101,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeFantasia;
+        
+        /// <summary>
+        /// lt05 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt05;
         
         /// <summary>
         /// txtIe control.

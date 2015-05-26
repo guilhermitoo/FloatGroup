@@ -20,22 +20,24 @@ namespace FrontEnd
             if (Request.QueryString["TP"] != null)
             {
                 tipo = Char.Parse(Request.QueryString["TP"]);
+                string txt;
                 if (tipo == 'P')
                 {
-                    lbTitulo.Text = "Lista de Pacientes";
+                    txt = (string)GetLocalResourceObject("tituloPaciente");                    
                 }
                 else if (tipo == 'F')
                 {
-                    lbTitulo.Text = "Lista de Funcionários";
+                    txt = (string)GetLocalResourceObject("tituloFuncionario"); 
                 }
                 else if (tipo == 'D')
                 {
-                    lbTitulo.Text = "Lista de Dentistas";
+                    txt = (string)GetLocalResourceObject("tituloDentista"); 
                 }
                 else
                 {
-                    lbTitulo.Text = "Lista de Pessoas";
+                    txt = (string)GetLocalResourceObject("tituloPessoa"); 
                 }
+                lbTitulo.Text = txt;
             }
             // asp:repeater
             rListaPessoas.DataSource = model.ListarPorNome("", tipo);

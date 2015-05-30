@@ -27,7 +27,9 @@
         <!-- DATEPICKER -->        
         <link href="assets/js/datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
         <link href="assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
-        <link href="assets/css/fundo.css" rel="stylesheet" />
+        <link href="assets/css/fundo.css" rel="stylesheet" />        
+        
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
         
@@ -108,8 +110,7 @@
 </form>
    
     <!-- scripts do bootstrap -->        
-    <!-- JQUERY SCRIPTS -->
-    <!--<script src="assets/js/jquery-1.10.2.js"></script>-->
+    <!-- JQUERY SCRIPTS -->    
     <script src="assets/js/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
                         
     <!--JQUERY UI SCRIPTS -->    
@@ -137,8 +138,9 @@
     <script src="assets/js/mascara.js">
     </script>
     <script src="assets/js/moment.js"></script>
+        
     <script src="assets/js/pt-br.js"></script>   
-    <script src="assets/js/bootstrap-datetimepicker.js"></script>            
+    <script src="assets/js/bootstrap-datetimepicker.js"></script>   
 
 </body>
 

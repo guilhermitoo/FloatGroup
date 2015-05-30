@@ -151,7 +151,7 @@
 
             $('input[js="data"]').datepicker({
                 format: "dd/mm/yyyy",
-                language: "pt-BR",
+                lang: 'pt-BR',
                 calendarWeeks: true,
                 todayHighlight: true
             });

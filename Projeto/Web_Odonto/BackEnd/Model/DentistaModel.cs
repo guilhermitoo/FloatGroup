@@ -110,7 +110,19 @@ namespace BackEnd.Model
             }
         }
 
-        //public List<v_agenda> Agenda(
+        public List<v_agenda> Agenda(int idDentista, DateTime data)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                string sSql;
+                sSql =  " select * from v_agenda where dentista = " + idDentista.ToString() +
+                        " and data between '" + data.ToShortDateString() + "' and '" + (data.AddDays(1)).ToShortDateString() + "' "+
+                        " order by data";
+                var query = db.ExecuteQuery<v_agenda>(sSql);
+
+                return query.ToList();
+            }
+        }
         
     }//final
 }

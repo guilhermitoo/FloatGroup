@@ -6031,132 +6031,150 @@ namespace BackEnd.EntityData
 	public partial class v_agenda
 	{
 		
-		private int _ID;
+		private string _tipo;
 		
-		private System.DateTime _Data;
+		private int _id;
 		
-		private int _Dentista;
+		private System.DateTime _data;
 		
-		private string _Nome_Dentista;
+		private int _dentista;
 		
-		private int _Paciente;
+		private string _nomeDentista;
 		
-		private string _Nome_Paciente;
+		private int _paciente;
 		
-		private int _Status;
+		private string _nomePaciente;
+		
+		private int _status;
 		
 		public v_agenda()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string tipo
 		{
 			get
 			{
-				return this._ID;
+				return this._tipo;
 			}
 			set
 			{
-				if ((this._ID != value))
+				if ((this._tipo != value))
 				{
-					this._ID = value;
+					this._tipo = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
-		public System.DateTime Data
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
 		{
 			get
 			{
-				return this._Data;
+				return this._id;
 			}
 			set
 			{
-				if ((this._Data != value))
+				if ((this._id != value))
 				{
-					this._Data = value;
+					this._id = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dentista", DbType="Int NOT NULL")]
-		public int Dentista
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
+		public System.DateTime data
 		{
 			get
 			{
-				return this._Dentista;
+				return this._data;
 			}
 			set
 			{
-				if ((this._Dentista != value))
+				if ((this._data != value))
 				{
-					this._Dentista = value;
+					this._data = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nome Dentista]", Storage="_Nome_Dentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nome_Dentista
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista", DbType="Int NOT NULL")]
+		public int dentista
 		{
 			get
 			{
-				return this._Nome_Dentista;
+				return this._dentista;
 			}
 			set
 			{
-				if ((this._Nome_Dentista != value))
+				if ((this._dentista != value))
 				{
-					this._Nome_Dentista = value;
+					this._dentista = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paciente", DbType="Int NOT NULL")]
-		public int Paciente
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomeDentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nomeDentista
 		{
 			get
 			{
-				return this._Paciente;
+				return this._nomeDentista;
 			}
 			set
 			{
-				if ((this._Paciente != value))
+				if ((this._nomeDentista != value))
 				{
-					this._Paciente = value;
+					this._nomeDentista = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nome Paciente]", Storage="_Nome_Paciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nome_Paciente
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente", DbType="Int NOT NULL")]
+		public int paciente
 		{
 			get
 			{
-				return this._Nome_Paciente;
+				return this._paciente;
 			}
 			set
 			{
-				if ((this._Nome_Paciente != value))
+				if ((this._paciente != value))
 				{
-					this._Nome_Paciente = value;
+					this._paciente = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomePaciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nomePaciente
 		{
 			get
 			{
-				return this._Status;
+				return this._nomePaciente;
 			}
 			set
 			{
-				if ((this._Status != value))
+				if ((this._nomePaciente != value))
 				{
-					this._Status = value;
+					this._nomePaciente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
 				}
 			}
 		}

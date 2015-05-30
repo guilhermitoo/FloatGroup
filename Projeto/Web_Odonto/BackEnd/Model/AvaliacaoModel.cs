@@ -38,7 +38,7 @@ namespace BackEnd.Model
 
             try
             {
-                Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();
+                //Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();
                 String sSql = " update avaliacoes set status = " + status.ToString() +
                                 " where id = " + id.ToString();
                 var query = db.ExecuteCommand(sSql);

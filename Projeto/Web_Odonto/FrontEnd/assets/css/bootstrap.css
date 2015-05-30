@@ -5827,4 +5827,10 @@ button.close {
     display: none !important;
   }
 }
+
+.dt {
+    width: auto; 
+    text-align: center;    
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

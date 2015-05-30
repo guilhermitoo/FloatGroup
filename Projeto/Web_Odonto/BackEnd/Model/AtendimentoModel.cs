@@ -21,8 +21,8 @@ namespace BackEnd.Model
 
             try
             {
-                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();                                                
-                tabelaAtendimento.InsertOnSubmit(a);                    
+                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
+                tabelaAtendimento.InsertOnSubmit(a);
                 tabelaAtendimento.Context.SubmitChanges();
 
                 return true;
@@ -73,6 +73,39 @@ namespace BackEnd.Model
             {
                 return false;
             }
+        }
+
+        public bool MudarStatus(int id, int status)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+
+            try
+            {
+                //                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
+                String sSql = " update atendimentos set status = " + status.ToString() +
+                                " where id = " + id.ToString();
+                var query = db.ExecuteCommand(sSql);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public v_agenda AgendamentoObter(int id, String tipo)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql =   "select * from v_agenda where id = " + id.ToString() +
+                                " and tipo = '"+ tipo +"' ";
+
+                var query = db.ExecuteQuery<v_agenda>(sSql);
+
+                return query.ToList().First();
+            }
+
         }
     }
 }

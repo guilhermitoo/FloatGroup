@@ -5,11 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
     
                 <div class="panel-heading">
-                    <h2><label id="lbTitulo"></label></h2>
-                    <hr />                    
-                </div>
-                <div class="panel-body">
-                    <div class="col-md-3">
+                    <div class="col-md-12">
                         <br />
                         <button class="btn btn-primary" type="button" data-toggle="collapse" onclick="ExibeAtend()">
                         Atendimento
@@ -18,7 +14,12 @@
                         <button class="btn btn-primary" type="button" data-toggle="collapse" onclick="ExibeAval()">
                         Avaliação
                         </button>
-                    </div>
+                    </div>                                        
+                </div>
+                <div class="panel-body">
+                    
+                    <h2><label id="lbTitulo"></label></h2>
+                    <hr />
                     <div class="col-md-4">
                         <asp:Label ID="lblDentista" Text="Dentista" runat="server"/>
                         <asp:DropDownList ID="ddDentista" runat="server" CssClass="form-control dropdown-toggle">

@@ -31,6 +31,16 @@ namespace FrontEnd
                 ddConvenio.DataValueField = "id";
                 ddConvenio.DataTextField = "razao_social";
                 ddConvenio.DataBind();
+
+                // recupera a pessoa que está logada
+                pessoa p = Session["pessoa"] as pessoa;
+
+                // verifica se o tipoUsuario == 1(padrao)
+                if (p.tipoUsuario == 1)
+                {
+                    cbTipoPessoa.Enabled = false;
+                    cbTipoPessoa.Items.FindByValue("P").Selected = true;
+                }
             }
 
             if (Request.QueryString["ID"] != null && !IsPostBack)

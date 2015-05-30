@@ -192,26 +192,26 @@ select * from v_itensReceita
 -- view da agenda
 create view v_agenda
 as
-	select	a.id ID,
-			a.data Data,
-			a.dentista_id Dentista,		
-			d.nome 'Nome Dentista',
-			a.paciente_id Paciente,
-			p.nome 'Nome Paciente',
-			a.status Status
+select	a.id,
+		a.data,
+		a.dentista_id dentista,		
+		d.nome nomeDentista,
+		a.paciente_id paciente,
+		p.nome nomePaciente,
+		a.status
 	from avaliacoes a
 	join pessoas d on ( d.id = a.dentista_id )
 	join pessoas p on ( p.id = a.paciente_id )
 
 	union	
 
-	select	at.id ID,
-			at.data Data,
-			at.dentista_id Dentista,
-			d.nome 'Nome Dentista',
-			av.paciente_id Paciente,
-			p.nome 'Nome Paciente',
-			at.status Status
+	select	at.id,
+			at.data,
+			at.dentista_id dentista,
+			d.nome nomeDentista,
+			av.paciente_id paciente,
+			p.nome nomePaciente,
+			at.status
 	from atendimentos at
 	join avaliacoes av on (av.id = at.id)
 	join pessoas d on ( d.id = at.dentista_id )

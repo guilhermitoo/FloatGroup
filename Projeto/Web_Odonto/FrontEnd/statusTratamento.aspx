@@ -12,7 +12,7 @@
 
     <div class="panel-body">
         <div class="col-md-6">  
-            <label>Paciente</label> 
+            <asp:Label id="lbPaciente" runat="server" Text="Paciente"/>
             <asp:DropDownList ID="ddPaciente" CssClass="form-control dropdown-toggle" runat="server">
             </asp:DropDownList>                                    
         </div>                                                                                     

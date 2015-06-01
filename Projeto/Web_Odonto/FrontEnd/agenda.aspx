@@ -80,7 +80,7 @@
                     <ItemTemplate>
                         <%#Eval("nomePaciente") %>
                     </ItemTemplate>
-                </asp:TemplateField>                  
+                </asp:TemplateField>                                  
                 <asp:ButtonField CommandName="Confirmar" HeaderStyle-Width="20" >
                     <ControlStyle CssClass="btn btn-xs btn-primary fa fa-check" />                                    
                 </asp:ButtonField>

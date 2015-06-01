@@ -6,8 +6,7 @@ as
 		   c.nome Cidade,
 		   c.uf   UF
 	from cidades c
-
-select * from v_cidades
+go
 
 create view v_convenios
 as
@@ -17,9 +16,7 @@ as
 		   c.razao_social  'Razão Social',
 		   c.nome_fantasia 'Nome Fantasia'
 	from convenios c
-
-select * from v_convenios
-
+go
 
 create view v_pessoas
 as	
@@ -38,8 +35,7 @@ as
 		   p.obs		 Obs,
 		   p.tipousuario 'Tipo Usuário'
 	from pessoas p
-
-select * from v_pessoas
+go
 
 create view v_pacientes
 as
@@ -48,8 +44,7 @@ as
 	from pacientes pa
 	join v_pessoas p on (p.Código = pa.pessoa_id)
 	left join convenios c on (pa.convenio_id = c.id)
-
-select * from v_pacientes
+go
 
 create view v_funcionarios
 as
@@ -58,8 +53,7 @@ as
 		   pf.cargo   Cargo
 	from funcionarios pf
 	join v_pessoas p on (p.Código = pf.pessoa_id)
-
-select * from v_funcionarios
+go
 	
 create view v_dentistas
 as
@@ -67,33 +61,7 @@ as
 		   pd.cro  CRO
 	from dentistas pd
 	join v_pessoas p on (p.Código = pd.pessoa_id)
-
-select * from v_dentistas
-
-create view v_medicamentos
-as
-	select m.id                  Código,
-		   m.nome                Medicamento,
-		   m.classe_terapeutica  'Classe Terapeutica',
-		   m.tarja               Tarja,
-		   m.posologia           Posologia,
-		   m.unidade             Unidade
-	from medicamentos m	
-
-select * from v_medicamentos
-
-
-create view v_imagens
-as
-	select i.id        Código,
-		   p.Nome      Paciente,
-		   i.descricao Descrição,
-		   i.arquivo   Arquivo
-	from imagens i
-	join v_pacientes p on (i.paciente_id = p.Código)
-	
- 
-select * from v_imagens		    
+go	    
 
 create view v_avaliacoes
 as
@@ -104,8 +72,7 @@ as
 	from avaliacoes a
 	join v_dentistas d on (a.dentista_id = d.Código)
 	join v_pacientes p on (a.paciente_id = p.Código)
-
-select * from v_avaliacoes
+go
 
 create view v_tratamentos
 as
@@ -116,29 +83,27 @@ as
 		   t.total  Total
 	from tratamentos t
 	join v_avaliacoes a on (t.avaliacao_id = a.Código)
-
-select * from v_tratamentos
+go
 
 create view v_procedimentos
 as
 	select p.id		   Código,
 		   p.descricao Descrição
 	from procedimentos p
-
-select * from v_procedimentos
+go
 
 create view v_itensTratamento
 as
 	select t.Código  'Código Tratamento',
 		   p.Código  'Código Procedimento',
+		   p.Descrição,
 		   it.qtd    Quantidade,
 		   it.status Status,
 		   it.valor  Valor
 	from itensTratamento it
 	join v_tratamentos   t on (it.tratamento_id   = t.Código)
 	join v_procedimentos p on (it.procedimento_id = p.Código)
-
-select * from v_itensTratamento
+go
 
 create view v_atendimento
 as
@@ -150,8 +115,7 @@ as
 	from atendimentos a
 	join v_dentistas   d on (a.dentista_id = d.Código)
 	join v_tratamentos t on (a.tratamento_id = t.Código)
-
-select * from v_atendimento
+go
 
 create view v_itensAtendimento
 as
@@ -161,38 +125,16 @@ as
 	from itensAtendimento ia
 	join v_atendimento   a on (ia.atendimento_id = a.Código)
 	join v_procedimentos p on (ia.procedimento_id = p.Código)
+go
 
-select * from v_itensAtendimento
-
-create view v_receitas
-as
-	select r.id                  Código,
-		   r.descricao           Descrição,
-		   a.[Código Tratamento] 'Código Tratamento'
-	from receitas r
-	join v_atendimento a on (r.atendimento_id = a.Código)
-
-select * from receitas
-
-create view v_itensReceita
-as
-	select r.Código      'Código receita',
-		   m.Medicamento,
-		   ir.dose       Dose,
-		   ir.periodo    Período,
-		   ir.obs        Observação
-	from itensReceita ir
-	join v_receitas     r on (ir.receita_id = r.Código)
-	join v_medicamentos m on (ir.medicamento_id = m.Código)
-
-select * from v_itensReceita
 
 --View de Junções
 
 -- view da agenda
 create view v_agenda
 as
-select	a.id,
+select	'AV' tipo,
+		a.id,
 		a.data,
 		a.dentista_id dentista,		
 		d.nome nomeDentista,
@@ -205,7 +147,8 @@ select	a.id,
 
 	union	
 
-	select	at.id,
+	select	'AT' tipo,
+			at.id,
 			at.data,
 			at.dentista_id dentista,
 			d.nome nomeDentista,
@@ -213,6 +156,7 @@ select	a.id,
 			p.nome nomePaciente,
 			at.status
 	from atendimentos at
-	join avaliacoes av on (av.id = at.id)
+	join avaliacoes av on (av.id = at.tratamento_id)
 	join pessoas d on ( d.id = at.dentista_id )
 	join pessoas p on ( p.id = av.paciente_id )
+go

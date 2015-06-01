@@ -64,6 +64,7 @@
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\font-awesome.css" />
     <Content Include="assets\css\fundo.css" />
+    <Content Include="assets\css\opensans.css" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\full_calendar\css\bootstrap-fullcalendar.css" />
@@ -215,12 +216,10 @@
     <Content Include="index.aspx" />
     <Content Include="listaCidades.aspx" />
     <Content Include="listaConvenios.aspx" />
-    <Content Include="listaMedicamentos.aspx" />
     <Content Include="listaPacientes.aspx" />
     <Content Include="listaPessoas.aspx" />
     <Content Include="listaProcedimentos.aspx" />
     <Content Include="LoginControl.ascx" />
-    <Content Include="medicamentos.aspx" />
     <Content Include="procedimentos.aspx" />
     <Content Include="relatorios.aspx" />
     <Content Include="statusTratamento.aspx" />
@@ -299,13 +298,6 @@
     <Compile Include="listaConvenios.aspx.designer.cs">
       <DependentUpon>listaConvenios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="listaMedicamentos.aspx.cs">
-      <DependentUpon>listaMedicamentos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="listaMedicamentos.aspx.designer.cs">
-      <DependentUpon>listaMedicamentos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="listaPacientes.aspx.cs">
       <DependentUpon>listaPacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -333,13 +325,6 @@
     </Compile>
     <Compile Include="LoginControl.ascx.designer.cs">
       <DependentUpon>LoginControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="medicamentos.aspx.cs">
-      <DependentUpon>medicamentos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="medicamentos.aspx.designer.cs">
-      <DependentUpon>medicamentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="procedimentos.aspx.cs">
       <DependentUpon>procedimentos.aspx</DependentUpon>

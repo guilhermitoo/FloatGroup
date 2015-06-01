@@ -12,17 +12,6 @@ create table cidades
 )
 go
 
-create table medicamentos
-(
-	id				   int          not null primary key identity,
-	nome           	   varchar(100) not null,
-	classe_terapeutica varchar(50),
-	tarja              varchar(50),
-	posologia          varchar(50),
-	unidade			   varchar(10)
-)
-go
-
 create table convenios
 (
 	id		int not null primary key identity,
@@ -41,7 +30,7 @@ create table pessoas
 	nome		varchar(100) not null,
 	cpf		varchar(15) not null unique,
 	rg 		varchar(12),
-	nascimento	date,
+	nascimento	date not null,
 	telefone1	varchar(15),
 	telefone2	varchar(15),
 	sexo		char(1), -- 'M' masculino, 'F' feminino
@@ -51,7 +40,7 @@ create table pessoas
 	status		int check (status in (1,2)) not null, -- 1 = ativo, 2 = inativo
 	obs		varchar(200),
 	tipoUsuario int check(tipoUsuario in (1,2)), -- 1 = normal, 2 = administrador
-	cidade_id	int references cidades -- relacionamento	
+	cidade_id	int not null references cidades -- relacionamento	
 )
 go
 
@@ -78,23 +67,13 @@ create table dentistas
 )
 go
 
-create table imagens
-(
-	id				int			   not null identity,
-	paciente_id		int			   not null	references pacientes,
-	descricao		varchar(50),	
-	arquivo			varchar(max) not null,
-	primary key		(id,paciente_id)
-)
-go
-
 create table avaliacoes
 (
 	id			int	not null	primary key	identity,
 	data		datetime 	not null,
 	dentista_id	int		not null	references dentistas,
 	paciente_id int		 	not null	references pacientes,
-	status		int not null -- 1 = Pendente, 2 = Cancelado, 3 = Concluído
+	status int check(status in (1,2,3)) not null -- 1 = Pendente, 2 = Cancelado, 3 = Concluído
 )
 go
 
@@ -142,25 +121,6 @@ create table itensAtendimento
 	procedimento_id int not null references procedimentos,
 	qtd int not null,
 	primary key(atendimento_id,procedimento_id)
-)
-go
-
-create table receitas
-(
-	id int not null primary key identity,
-	descricao varchar(200) not null,
-	atendimento_id int not null references atendimentos
-)
-go
-
-create table itensReceita
-(
-	receita_id int not null references receitas,
-	medicamento_id int not null references medicamentos,
-	dose varchar(10) not null,
-	obs varchar(100),
-	periodo varchar(50),
-	primary key (receita_id,medicamento_id)
 )
 go
 

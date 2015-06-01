@@ -33,6 +33,9 @@ namespace BackEnd.EntityData
     partial void Insertatendimento(atendimento instance);
     partial void Updateatendimento(atendimento instance);
     partial void Deleteatendimento(atendimento instance);
+    partial void Insertavaliacao(avaliacao instance);
+    partial void Updateavaliacao(avaliacao instance);
+    partial void Deleteavaliacao(avaliacao instance);
     partial void Insertcidade(cidade instance);
     partial void Updatecidade(cidade instance);
     partial void Deletecidade(cidade instance);
@@ -45,21 +48,12 @@ namespace BackEnd.EntityData
     partial void Insertfuncionario(funcionario instance);
     partial void Updatefuncionario(funcionario instance);
     partial void Deletefuncionario(funcionario instance);
-    partial void Insertimagem(imagem instance);
-    partial void Updateimagem(imagem instance);
-    partial void Deleteimagem(imagem instance);
     partial void InsertitemAtendimento(itemAtendimento instance);
     partial void UpdateitemAtendimento(itemAtendimento instance);
     partial void DeleteitemAtendimento(itemAtendimento instance);
-    partial void InsertitemReceita(itemReceita instance);
-    partial void UpdateitemReceita(itemReceita instance);
-    partial void DeleteitemReceita(itemReceita instance);
     partial void InsertitemTratamento(itemTratamento instance);
     partial void UpdateitemTratamento(itemTratamento instance);
     partial void DeleteitemTratamento(itemTratamento instance);
-    partial void Insertmedicamento(medicamento instance);
-    partial void Updatemedicamento(medicamento instance);
-    partial void Deletemedicamento(medicamento instance);
     partial void Insertpaciente(paciente instance);
     partial void Updatepaciente(paciente instance);
     partial void Deletepaciente(paciente instance);
@@ -69,15 +63,9 @@ namespace BackEnd.EntityData
     partial void Insertprocedimento(procedimento instance);
     partial void Updateprocedimento(procedimento instance);
     partial void Deleteprocedimento(procedimento instance);
-    partial void Insertreceita(receita instance);
-    partial void Updatereceita(receita instance);
-    partial void Deletereceita(receita instance);
     partial void Inserttratamento(tratamento instance);
     partial void Updatetratamento(tratamento instance);
     partial void Deletetratamento(tratamento instance);
-    partial void Insertavaliacao(avaliacao instance);
-    partial void Updateavaliacao(avaliacao instance);
-    partial void Deleteavaliacao(avaliacao instance);
     #endregion
 		
 		public WebOdontoClassesDataContext() : 
@@ -118,6 +106,14 @@ namespace BackEnd.EntityData
 			}
 		}
 		
+		public System.Data.Linq.Table<avaliacao> avaliacaos
+		{
+			get
+			{
+				return this.GetTable<avaliacao>();
+			}
+		}
+		
 		public System.Data.Linq.Table<cidade> cidades
 		{
 			get
@@ -150,14 +146,6 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<imagem> imagems
-		{
-			get
-			{
-				return this.GetTable<imagem>();
-			}
-		}
-		
 		public System.Data.Linq.Table<itemAtendimento> itemAtendimentos
 		{
 			get
@@ -166,27 +154,11 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<itemReceita> itemReceitas
-		{
-			get
-			{
-				return this.GetTable<itemReceita>();
-			}
-		}
-		
 		public System.Data.Linq.Table<itemTratamento> itemTratamentos
 		{
 			get
 			{
 				return this.GetTable<itemTratamento>();
-			}
-		}
-		
-		public System.Data.Linq.Table<medicamento> medicamentos
-		{
-			get
-			{
-				return this.GetTable<medicamento>();
 			}
 		}
 		
@@ -214,19 +186,27 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<receita> receitas
-		{
-			get
-			{
-				return this.GetTable<receita>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tratamento> tratamentos
 		{
 			get
 			{
 				return this.GetTable<tratamento>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_agenda> v_agendas
+		{
+			get
+			{
+				return this.GetTable<v_agenda>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_atendimento> v_atendimentos
+		{
+			get
+			{
+				return this.GetTable<v_atendimento>();
 			}
 		}
 		
@@ -270,27 +250,11 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<v_imagen> v_imagens
+		public System.Data.Linq.Table<v_itensAtendimento> v_itensAtendimentos
 		{
 			get
 			{
-				return this.GetTable<v_imagen>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_itensTratamento> v_itensTratamentos
-		{
-			get
-			{
-				return this.GetTable<v_itensTratamento>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_medicamento> v_medicamentos
-		{
-			get
-			{
-				return this.GetTable<v_medicamento>();
+				return this.GetTable<v_itensAtendimento>();
 			}
 		}
 		
@@ -326,19 +290,11 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<avaliacao> avaliacaos
+		public System.Data.Linq.Table<v_itensTratamento> v_itensTratamentos
 		{
 			get
 			{
-				return this.GetTable<avaliacao>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_agenda> v_agendas
-		{
-			get
-			{
-				return this.GetTable<v_agenda>();
+				return this.GetTable<v_itensTratamento>();
 			}
 		}
 		
@@ -346,6 +302,13 @@ namespace BackEnd.EntityData
 		public int alteraAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, data, status, dentista_id, tratamento_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraAvaliacao")]
+		public int alteraAvaliacao([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, data, dentista_id, paciente_id, status);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -377,13 +340,6 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraImagem")]
-		public int alteraImagem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string arquivo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, paciente_id, descricao, arquivo);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemAtendimento")]
 		public int alteraItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd)
 		{
@@ -391,24 +347,10 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemReceita")]
-		public int alteraItemReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> receita_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> medicamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string dose, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string periodo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), receita_id, medicamento_id, dose, obs, periodo);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraItemTratamento")]
 		public int alteraItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> valor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id, qtd, valor, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraMedicamento")]
-		public int alteraMedicamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string classe_terapeutica, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tarja, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string posologia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string unidade)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, nome, classe_terapeutica, tarja, posologia, unidade);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -433,13 +375,6 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraReceita")]
-		public int alteraReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, descricao, atendimento_id);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraTratamento")]
 		public int alteraTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> avaliacao_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> total)
 		{
@@ -451,6 +386,13 @@ namespace BackEnd.EntityData
 		public int cadAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, status, dentista_id, tratamento_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadAvaliacao")]
+		public int cadAvaliacao([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, dentista_id, paciente_id, status);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -482,13 +424,6 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadImagem")]
-		public int cadImagem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string arquivo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), paciente_id, descricao, arquivo);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemAtendimento")]
 		public int cadItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd)
 		{
@@ -496,24 +431,10 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemReceita")]
-		public int cadItemReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> receita_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> medicamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string dose, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string periodo)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), receita_id, medicamento_id, dose, obs, periodo);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadItemTratamento")]
 		public int cadItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> qtd, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> valor, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id, qtd, valor, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadMedicamento")]
-		public int cadMedicamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string classe_terapeutica, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tarja, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string posologia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string unidade)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, classe_terapeutica, tarja, posologia, unidade);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -538,31 +459,10 @@ namespace BackEnd.EntityData
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadReceita")]
-		public int cadReceita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao, atendimento_id);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadTratamento")]
 		public int cadTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> avaliacao_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataInicial, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(15,2)")] System.Nullable<decimal> total)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, dataInicial, dataFinal, total);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraAvaliacao")]
-		public int alteraAvaliacao([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, data, dentista_id, paciente_id, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cadAvaliacao")]
-		public int cadAvaliacao([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> paciente_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), data, dentista_id, paciente_id, status);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -584,8 +484,6 @@ namespace BackEnd.EntityData
 		private int _tratamento_id;
 		
 		private EntitySet<itemAtendimento> _itemAtendimentos;
-		
-		private EntitySet<receita> _receitas;
 		
 		private EntityRef<dentista> _dentista;
 		
@@ -610,7 +508,6 @@ namespace BackEnd.EntityData
 		public atendimento()
 		{
 			this._itemAtendimentos = new EntitySet<itemAtendimento>(new Action<itemAtendimento>(this.attach_itemAtendimentos), new Action<itemAtendimento>(this.detach_itemAtendimentos));
-			this._receitas = new EntitySet<receita>(new Action<receita>(this.attach_receitas), new Action<receita>(this.detach_receitas));
 			this._dentista = default(EntityRef<dentista>);
 			this._tratamento = default(EntityRef<tratamento>);
 			OnCreated();
@@ -724,7 +621,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itemAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="atendimento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itensAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="atendimento_id")]
 		public EntitySet<itemAtendimento> itemAtendimentos
 		{
 			get
@@ -734,19 +631,6 @@ namespace BackEnd.EntityData
 			set
 			{
 				this._itemAtendimentos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_receita", Storage="_receitas", ThisKey="id", OtherKey="atendimento_id")]
-		public EntitySet<receita> receitas
-		{
-			get
-			{
-				return this._receitas;
-			}
-			set
-			{
-				this._receitas.Assign(value);
 			}
 		}
 		
@@ -849,17 +733,277 @@ namespace BackEnd.EntityData
 			this.SendPropertyChanging();
 			entity.atendimento = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.avaliacoes")]
+	public partial class avaliacao : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_receitas(receita entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.DateTime _data;
+		
+		private int _dentista_id;
+		
+		private int _paciente_id;
+		
+		private int _status;
+		
+		private EntityRef<tratamento> _tratamento;
+		
+		private EntityRef<dentista> _dentista;
+		
+		private EntityRef<paciente> _paciente;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OndataChanging(System.DateTime value);
+    partial void OndataChanged();
+    partial void Ondentista_idChanging(int value);
+    partial void Ondentista_idChanged();
+    partial void Onpaciente_idChanging(int value);
+    partial void Onpaciente_idChanged();
+    partial void OnstatusChanging(int value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public avaliacao()
 		{
-			this.SendPropertyChanging();
-			entity.atendimento = this;
+			this._tratamento = default(EntityRef<tratamento>);
+			this._dentista = default(EntityRef<dentista>);
+			this._paciente = default(EntityRef<paciente>);
+			OnCreated();
 		}
 		
-		private void detach_receitas(receita entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
-			this.SendPropertyChanging();
-			entity.atendimento = null;
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
+		public System.DateTime data
+		{
+			get
+			{
+				return this._data;
+			}
+			set
+			{
+				if ((this._data != value))
+				{
+					this.OndataChanging(value);
+					this.SendPropertyChanging();
+					this._data = value;
+					this.SendPropertyChanged("data");
+					this.OndataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista_id", DbType="Int NOT NULL")]
+		public int dentista_id
+		{
+			get
+			{
+				return this._dentista_id;
+			}
+			set
+			{
+				if ((this._dentista_id != value))
+				{
+					if (this._dentista.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ondentista_idChanging(value);
+					this.SendPropertyChanging();
+					this._dentista_id = value;
+					this.SendPropertyChanged("dentista_id");
+					this.Ondentista_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente_id", DbType="Int NOT NULL")]
+		public int paciente_id
+		{
+			get
+			{
+				return this._paciente_id;
+			}
+			set
+			{
+				if ((this._paciente_id != value))
+				{
+					if (this._paciente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onpaciente_idChanging(value);
+					this.SendPropertyChanging();
+					this._paciente_id = value;
+					this.SendPropertyChanged("paciente_id");
+					this.Onpaciente_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacoe_tratamento", Storage="_tratamento", ThisKey="id", OtherKey="avaliacao_id", IsUnique=true, IsForeignKey=false)]
+		public tratamento tratamento
+		{
+			get
+			{
+				return this._tratamento.Entity;
+			}
+			set
+			{
+				tratamento previousValue = this._tratamento.Entity;
+				if (((previousValue != value) 
+							|| (this._tratamento.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tratamento.Entity = null;
+						previousValue.avaliacao = null;
+					}
+					this._tratamento.Entity = value;
+					if ((value != null))
+					{
+						value.avaliacao = this;
+					}
+					this.SendPropertyChanged("tratamento");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacoe", Storage="_dentista", ThisKey="dentista_id", OtherKey="pessoa_id", IsForeignKey=true)]
+		public dentista dentista
+		{
+			get
+			{
+				return this._dentista.Entity;
+			}
+			set
+			{
+				dentista previousValue = this._dentista.Entity;
+				if (((previousValue != value) 
+							|| (this._dentista.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._dentista.Entity = null;
+						previousValue.avaliacaos.Remove(this);
+					}
+					this._dentista.Entity = value;
+					if ((value != null))
+					{
+						value.avaliacaos.Add(this);
+						this._dentista_id = value.pessoa_id;
+					}
+					else
+					{
+						this._dentista_id = default(int);
+					}
+					this.SendPropertyChanged("dentista");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacoe", Storage="_paciente", ThisKey="paciente_id", OtherKey="pessoa_id", IsForeignKey=true)]
+		public paciente paciente
+		{
+			get
+			{
+				return this._paciente.Entity;
+			}
+			set
+			{
+				paciente previousValue = this._paciente.Entity;
+				if (((previousValue != value) 
+							|| (this._paciente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._paciente.Entity = null;
+						previousValue.avaliacaos.Remove(this);
+					}
+					this._paciente.Entity = value;
+					if ((value != null))
+					{
+						value.avaliacaos.Add(this);
+						this._paciente_id = value.pessoa_id;
+					}
+					else
+					{
+						this._paciente_id = default(int);
+					}
+					this.SendPropertyChanged("paciente");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1302,7 +1446,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacao", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="dentista_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacoe", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="dentista_id")]
 		public EntitySet<avaliacao> avaliacaos
 		{
 			get
@@ -1545,181 +1689,6 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.imagens")]
-	public partial class imagem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private int _paciente_id;
-		
-		private string _descricao;
-		
-		private string _arquivo;
-		
-		private EntityRef<paciente> _paciente;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onpaciente_idChanging(int value);
-    partial void Onpaciente_idChanged();
-    partial void OndescricaoChanging(string value);
-    partial void OndescricaoChanged();
-    partial void OnarquivoChanging(string value);
-    partial void OnarquivoChanged();
-    #endregion
-		
-		public imagem()
-		{
-			this._paciente = default(EntityRef<paciente>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int paciente_id
-		{
-			get
-			{
-				return this._paciente_id;
-			}
-			set
-			{
-				if ((this._paciente_id != value))
-				{
-					if (this._paciente.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onpaciente_idChanging(value);
-					this.SendPropertyChanging();
-					this._paciente_id = value;
-					this.SendPropertyChanged("paciente_id");
-					this.Onpaciente_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(50)")]
-		public string descricao
-		{
-			get
-			{
-				return this._descricao;
-			}
-			set
-			{
-				if ((this._descricao != value))
-				{
-					this.OndescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._descricao = value;
-					this.SendPropertyChanged("descricao");
-					this.OndescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_arquivo", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string arquivo
-		{
-			get
-			{
-				return this._arquivo;
-			}
-			set
-			{
-				if ((this._arquivo != value))
-				{
-					this.OnarquivoChanging(value);
-					this.SendPropertyChanging();
-					this._arquivo = value;
-					this.SendPropertyChanged("arquivo");
-					this.OnarquivoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_imagem", Storage="_paciente", ThisKey="paciente_id", OtherKey="pessoa_id", IsForeignKey=true)]
-		public paciente paciente
-		{
-			get
-			{
-				return this._paciente.Entity;
-			}
-			set
-			{
-				paciente previousValue = this._paciente.Entity;
-				if (((previousValue != value) 
-							|| (this._paciente.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._paciente.Entity = null;
-						previousValue.imagems.Remove(this);
-					}
-					this._paciente.Entity = value;
-					if ((value != null))
-					{
-						value.imagems.Add(this);
-						this._paciente_id = value.pessoa_id;
-					}
-					else
-					{
-						this._paciente_id = default(int);
-					}
-					this.SendPropertyChanged("paciente");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.itensAtendimento")]
 	public partial class itemAtendimento : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1823,7 +1792,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itemAtendimento", Storage="_atendimento", ThisKey="atendimento_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itensAtendimento", Storage="_atendimento", ThisKey="atendimento_id", OtherKey="id", IsForeignKey=true)]
 		public atendimento atendimento
 		{
 			get
@@ -1857,7 +1826,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemAtendimento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensAtendimento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
 		public procedimento procedimento
 		{
 			get
@@ -1887,246 +1856,6 @@ namespace BackEnd.EntityData
 						this._procedimento_id = default(int);
 					}
 					this.SendPropertyChanged("procedimento");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.itensReceita")]
-	public partial class itemReceita : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _receita_id;
-		
-		private int _medicamento_id;
-		
-		private string _dose;
-		
-		private string _obs;
-		
-		private string _periodo;
-		
-		private EntityRef<medicamento> _medicamento;
-		
-		private EntityRef<receita> _receita;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onreceita_idChanging(int value);
-    partial void Onreceita_idChanged();
-    partial void Onmedicamento_idChanging(int value);
-    partial void Onmedicamento_idChanged();
-    partial void OndoseChanging(string value);
-    partial void OndoseChanged();
-    partial void OnobsChanging(string value);
-    partial void OnobsChanged();
-    partial void OnperiodoChanging(string value);
-    partial void OnperiodoChanged();
-    #endregion
-		
-		public itemReceita()
-		{
-			this._medicamento = default(EntityRef<medicamento>);
-			this._receita = default(EntityRef<receita>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_receita_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int receita_id
-		{
-			get
-			{
-				return this._receita_id;
-			}
-			set
-			{
-				if ((this._receita_id != value))
-				{
-					if (this._receita.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onreceita_idChanging(value);
-					this.SendPropertyChanging();
-					this._receita_id = value;
-					this.SendPropertyChanged("receita_id");
-					this.Onreceita_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_medicamento_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int medicamento_id
-		{
-			get
-			{
-				return this._medicamento_id;
-			}
-			set
-			{
-				if ((this._medicamento_id != value))
-				{
-					if (this._medicamento.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onmedicamento_idChanging(value);
-					this.SendPropertyChanging();
-					this._medicamento_id = value;
-					this.SendPropertyChanged("medicamento_id");
-					this.Onmedicamento_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dose", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string dose
-		{
-			get
-			{
-				return this._dose;
-			}
-			set
-			{
-				if ((this._dose != value))
-				{
-					this.OndoseChanging(value);
-					this.SendPropertyChanging();
-					this._dose = value;
-					this.SendPropertyChanged("dose");
-					this.OndoseChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(100)")]
-		public string obs
-		{
-			get
-			{
-				return this._obs;
-			}
-			set
-			{
-				if ((this._obs != value))
-				{
-					this.OnobsChanging(value);
-					this.SendPropertyChanging();
-					this._obs = value;
-					this.SendPropertyChanged("obs");
-					this.OnobsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_periodo", DbType="VarChar(50)")]
-		public string periodo
-		{
-			get
-			{
-				return this._periodo;
-			}
-			set
-			{
-				if ((this._periodo != value))
-				{
-					this.OnperiodoChanging(value);
-					this.SendPropertyChanging();
-					this._periodo = value;
-					this.SendPropertyChanged("periodo");
-					this.OnperiodoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="medicamento_itemReceita", Storage="_medicamento", ThisKey="medicamento_id", OtherKey="id", IsForeignKey=true)]
-		public medicamento medicamento
-		{
-			get
-			{
-				return this._medicamento.Entity;
-			}
-			set
-			{
-				medicamento previousValue = this._medicamento.Entity;
-				if (((previousValue != value) 
-							|| (this._medicamento.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._medicamento.Entity = null;
-						previousValue.itemReceitas.Remove(this);
-					}
-					this._medicamento.Entity = value;
-					if ((value != null))
-					{
-						value.itemReceitas.Add(this);
-						this._medicamento_id = value.id;
-					}
-					else
-					{
-						this._medicamento_id = default(int);
-					}
-					this.SendPropertyChanged("medicamento");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="receita_itemReceita", Storage="_receita", ThisKey="receita_id", OtherKey="id", IsForeignKey=true)]
-		public receita receita
-		{
-			get
-			{
-				return this._receita.Entity;
-			}
-			set
-			{
-				receita previousValue = this._receita.Entity;
-				if (((previousValue != value) 
-							|| (this._receita.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._receita.Entity = null;
-						previousValue.itemReceitas.Remove(this);
-					}
-					this._receita.Entity = value;
-					if ((value != null))
-					{
-						value.itemReceitas.Add(this);
-						this._receita_id = value.id;
-					}
-					else
-					{
-						this._receita_id = default(int);
-					}
-					this.SendPropertyChanged("receita");
 				}
 			}
 		}
@@ -2303,7 +2032,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemTratamento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensTratamento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
 		public procedimento procedimento
 		{
 			get
@@ -2337,7 +2066,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itemTratamento", Storage="_tratamento", ThisKey="tratamento_id", OtherKey="avaliacao_id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itensTratamento", Storage="_tratamento", ThisKey="tratamento_id", OtherKey="avaliacao_id", IsForeignKey=true)]
 		public tratamento tratamento
 		{
 			get
@@ -2392,216 +2121,6 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.medicamentos")]
-	public partial class medicamento : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _nome;
-		
-		private string _classe_terapeutica;
-		
-		private string _tarja;
-		
-		private string _posologia;
-		
-		private string _unidade;
-		
-		private EntitySet<itemReceita> _itemReceitas;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnnomeChanging(string value);
-    partial void OnnomeChanged();
-    partial void Onclasse_terapeuticaChanging(string value);
-    partial void Onclasse_terapeuticaChanged();
-    partial void OntarjaChanging(string value);
-    partial void OntarjaChanged();
-    partial void OnposologiaChanging(string value);
-    partial void OnposologiaChanged();
-    partial void OnunidadeChanging(string value);
-    partial void OnunidadeChanged();
-    #endregion
-		
-		public medicamento()
-		{
-			this._itemReceitas = new EntitySet<itemReceita>(new Action<itemReceita>(this.attach_itemReceitas), new Action<itemReceita>(this.detach_itemReceitas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string nome
-		{
-			get
-			{
-				return this._nome;
-			}
-			set
-			{
-				if ((this._nome != value))
-				{
-					this.OnnomeChanging(value);
-					this.SendPropertyChanging();
-					this._nome = value;
-					this.SendPropertyChanged("nome");
-					this.OnnomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_classe_terapeutica", DbType="VarChar(50)")]
-		public string classe_terapeutica
-		{
-			get
-			{
-				return this._classe_terapeutica;
-			}
-			set
-			{
-				if ((this._classe_terapeutica != value))
-				{
-					this.Onclasse_terapeuticaChanging(value);
-					this.SendPropertyChanging();
-					this._classe_terapeutica = value;
-					this.SendPropertyChanged("classe_terapeutica");
-					this.Onclasse_terapeuticaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tarja", DbType="VarChar(50)")]
-		public string tarja
-		{
-			get
-			{
-				return this._tarja;
-			}
-			set
-			{
-				if ((this._tarja != value))
-				{
-					this.OntarjaChanging(value);
-					this.SendPropertyChanging();
-					this._tarja = value;
-					this.SendPropertyChanged("tarja");
-					this.OntarjaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posologia", DbType="VarChar(50)")]
-		public string posologia
-		{
-			get
-			{
-				return this._posologia;
-			}
-			set
-			{
-				if ((this._posologia != value))
-				{
-					this.OnposologiaChanging(value);
-					this.SendPropertyChanging();
-					this._posologia = value;
-					this.SendPropertyChanged("posologia");
-					this.OnposologiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidade", DbType="VarChar(10)")]
-		public string unidade
-		{
-			get
-			{
-				return this._unidade;
-			}
-			set
-			{
-				if ((this._unidade != value))
-				{
-					this.OnunidadeChanging(value);
-					this.SendPropertyChanging();
-					this._unidade = value;
-					this.SendPropertyChanged("unidade");
-					this.OnunidadeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="medicamento_itemReceita", Storage="_itemReceitas", ThisKey="id", OtherKey="medicamento_id")]
-		public EntitySet<itemReceita> itemReceitas
-		{
-			get
-			{
-				return this._itemReceitas;
-			}
-			set
-			{
-				this._itemReceitas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_itemReceitas(itemReceita entity)
-		{
-			this.SendPropertyChanging();
-			entity.medicamento = this;
-		}
-		
-		private void detach_itemReceitas(itemReceita entity)
-		{
-			this.SendPropertyChanging();
-			entity.medicamento = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.pacientes")]
 	public partial class paciente : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2611,8 +2130,6 @@ namespace BackEnd.EntityData
 		private int _pessoa_id;
 		
 		private System.Nullable<int> _convenio_id;
-		
-		private EntitySet<imagem> _imagems;
 		
 		private EntitySet<avaliacao> _avaliacaos;
 		
@@ -2632,7 +2149,6 @@ namespace BackEnd.EntityData
 		
 		public paciente()
 		{
-			this._imagems = new EntitySet<imagem>(new Action<imagem>(this.attach_imagems), new Action<imagem>(this.detach_imagems));
 			this._avaliacaos = new EntitySet<avaliacao>(new Action<avaliacao>(this.attach_avaliacaos), new Action<avaliacao>(this.detach_avaliacaos));
 			this._convenio = default(EntityRef<convenio>);
 			this._pessoa = default(EntityRef<pessoa>);
@@ -2687,20 +2203,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_imagem", Storage="_imagems", ThisKey="pessoa_id", OtherKey="paciente_id")]
-		public EntitySet<imagem> imagems
-		{
-			get
-			{
-				return this._imagems;
-			}
-			set
-			{
-				this._imagems.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacao", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="paciente_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacoe", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="paciente_id")]
 		public EntitySet<avaliacao> avaliacaos
 		{
 			get
@@ -2801,18 +2304,6 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		private void attach_imagems(imagem entity)
-		{
-			this.SendPropertyChanging();
-			entity.paciente = this;
-		}
-		
-		private void detach_imagems(imagem entity)
-		{
-			this.SendPropertyChanging();
-			entity.paciente = null;
-		}
-		
 		private void attach_avaliacaos(avaliacao entity)
 		{
 			this.SendPropertyChanging();
@@ -2840,7 +2331,7 @@ namespace BackEnd.EntityData
 		
 		private string _rg;
 		
-		private System.Nullable<System.DateTime> _nascimento;
+		private System.DateTime _nascimento;
 		
 		private string _telefone1;
 		
@@ -2860,7 +2351,7 @@ namespace BackEnd.EntityData
 		
 		private System.Nullable<int> _tipoUsuario;
 		
-		private System.Nullable<int> _cidade_id;
+		private int _cidade_id;
 		
 		private EntityRef<dentista> _dentista;
 		
@@ -2882,7 +2373,7 @@ namespace BackEnd.EntityData
     partial void OncpfChanged();
     partial void OnrgChanging(string value);
     partial void OnrgChanged();
-    partial void OnnascimentoChanging(System.Nullable<System.DateTime> value);
+    partial void OnnascimentoChanging(System.DateTime value);
     partial void OnnascimentoChanged();
     partial void Ontelefone1Changing(string value);
     partial void Ontelefone1Changed();
@@ -2902,7 +2393,7 @@ namespace BackEnd.EntityData
     partial void OnobsChanged();
     partial void OntipoUsuarioChanging(System.Nullable<int> value);
     partial void OntipoUsuarioChanged();
-    partial void Oncidade_idChanging(System.Nullable<int> value);
+    partial void Oncidade_idChanging(int value);
     partial void Oncidade_idChanged();
     #endregion
 		
@@ -2995,8 +2486,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nascimento", DbType="Date")]
-		public System.Nullable<System.DateTime> nascimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nascimento", DbType="Date NOT NULL")]
+		public System.DateTime nascimento
 		{
 			get
 			{
@@ -3195,8 +2686,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cidade_id", DbType="Int")]
-		public System.Nullable<int> cidade_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cidade_id", DbType="Int NOT NULL")]
+		public int cidade_id
 		{
 			get
 			{
@@ -3333,7 +2824,7 @@ namespace BackEnd.EntityData
 					}
 					else
 					{
-						this._cidade_id = default(Nullable<int>);
+						this._cidade_id = default(int);
 					}
 					this.SendPropertyChanged("cidade");
 				}
@@ -3432,7 +2923,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="procedimento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="procedimento_id")]
 		public EntitySet<itemAtendimento> itemAtendimentos
 		{
 			get
@@ -3445,7 +2936,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemTratamento", Storage="_itemTratamentos", ThisKey="id", OtherKey="procedimento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensTratamento", Storage="_itemTratamentos", ThisKey="id", OtherKey="procedimento_id")]
 		public EntitySet<itemTratamento> itemTratamentos
 		{
 			get
@@ -3500,185 +2991,6 @@ namespace BackEnd.EntityData
 		{
 			this.SendPropertyChanging();
 			entity.procedimento = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.receitas")]
-	public partial class receita : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _descricao;
-		
-		private int _atendimento_id;
-		
-		private EntitySet<itemReceita> _itemReceitas;
-		
-		private EntityRef<atendimento> _atendimento;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OndescricaoChanging(string value);
-    partial void OndescricaoChanged();
-    partial void Onatendimento_idChanging(int value);
-    partial void Onatendimento_idChanged();
-    #endregion
-		
-		public receita()
-		{
-			this._itemReceitas = new EntitySet<itemReceita>(new Action<itemReceita>(this.attach_itemReceitas), new Action<itemReceita>(this.detach_itemReceitas));
-			this._atendimento = default(EntityRef<atendimento>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string descricao
-		{
-			get
-			{
-				return this._descricao;
-			}
-			set
-			{
-				if ((this._descricao != value))
-				{
-					this.OndescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._descricao = value;
-					this.SendPropertyChanged("descricao");
-					this.OndescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_atendimento_id", DbType="Int NOT NULL")]
-		public int atendimento_id
-		{
-			get
-			{
-				return this._atendimento_id;
-			}
-			set
-			{
-				if ((this._atendimento_id != value))
-				{
-					if (this._atendimento.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onatendimento_idChanging(value);
-					this.SendPropertyChanging();
-					this._atendimento_id = value;
-					this.SendPropertyChanged("atendimento_id");
-					this.Onatendimento_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="receita_itemReceita", Storage="_itemReceitas", ThisKey="id", OtherKey="receita_id")]
-		public EntitySet<itemReceita> itemReceitas
-		{
-			get
-			{
-				return this._itemReceitas;
-			}
-			set
-			{
-				this._itemReceitas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_receita", Storage="_atendimento", ThisKey="atendimento_id", OtherKey="id", IsForeignKey=true)]
-		public atendimento atendimento
-		{
-			get
-			{
-				return this._atendimento.Entity;
-			}
-			set
-			{
-				atendimento previousValue = this._atendimento.Entity;
-				if (((previousValue != value) 
-							|| (this._atendimento.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._atendimento.Entity = null;
-						previousValue.receitas.Remove(this);
-					}
-					this._atendimento.Entity = value;
-					if ((value != null))
-					{
-						value.receitas.Add(this);
-						this._atendimento_id = value.id;
-					}
-					else
-					{
-						this._atendimento_id = default(int);
-					}
-					this.SendPropertyChanged("atendimento");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_itemReceitas(itemReceita entity)
-		{
-			this.SendPropertyChanging();
-			entity.receita = this;
-		}
-		
-		private void detach_itemReceitas(itemReceita entity)
-		{
-			this.SendPropertyChanging();
-			entity.receita = null;
 		}
 	}
 	
@@ -3845,7 +3157,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itemTratamento", Storage="_itemTratamentos", ThisKey="avaliacao_id", OtherKey="tratamento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itensTratamento", Storage="_itemTratamentos", ThisKey="avaliacao_id", OtherKey="tratamento_id")]
 		public EntitySet<itemTratamento> itemTratamentos
 		{
 			get
@@ -3858,7 +3170,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacao_tratamento", Storage="_avaliacao", ThisKey="avaliacao_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacoe_tratamento", Storage="_avaliacao", ThisKey="avaliacao_id", OtherKey="id", IsForeignKey=true)]
 		public avaliacao avaliacao
 		{
 			get
@@ -3934,6 +3246,258 @@ namespace BackEnd.EntityData
 		{
 			this.SendPropertyChanging();
 			entity.tratamento = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_agenda")]
+	public partial class v_agenda
+	{
+		
+		private string _tipo;
+		
+		private int _id;
+		
+		private System.DateTime _data;
+		
+		private int _dentista;
+		
+		private string _nomeDentista;
+		
+		private int _paciente;
+		
+		private string _nomePaciente;
+		
+		private int _status;
+		
+		public v_agenda()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string tipo
+		{
+			get
+			{
+				return this._tipo;
+			}
+			set
+			{
+				if ((this._tipo != value))
+				{
+					this._tipo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
+		public System.DateTime data
+		{
+			get
+			{
+				return this._data;
+			}
+			set
+			{
+				if ((this._data != value))
+				{
+					this._data = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista", DbType="Int NOT NULL")]
+		public int dentista
+		{
+			get
+			{
+				return this._dentista;
+			}
+			set
+			{
+				if ((this._dentista != value))
+				{
+					this._dentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomeDentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nomeDentista
+		{
+			get
+			{
+				return this._nomeDentista;
+			}
+			set
+			{
+				if ((this._nomeDentista != value))
+				{
+					this._nomeDentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente", DbType="Int NOT NULL")]
+		public int paciente
+		{
+			get
+			{
+				return this._paciente;
+			}
+			set
+			{
+				if ((this._paciente != value))
+				{
+					this._paciente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomePaciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nomePaciente
+		{
+			get
+			{
+				return this._nomePaciente;
+			}
+			set
+			{
+				if ((this._nomePaciente != value))
+				{
+					this._nomePaciente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_atendimento")]
+	public partial class v_atendimento
+	{
+		
+		private int _Código;
+		
+		private System.DateTime _Data;
+		
+		private int _Status;
+		
+		private string _Dentista;
+		
+		private int _Código_Tratamento;
+		
+		public v_atendimento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
+		public System.DateTime Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this._Data = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Dentista
+		{
+			get
+			{
+				return this._Dentista;
+			}
+			set
+			{
+				if ((this._Dentista != value))
+				{
+					this._Dentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
+		public int Código_Tratamento
+		{
+			get
+			{
+				return this._Código_Tratamento;
+			}
+			set
+			{
+				if ((this._Código_Tratamento != value))
+				{
+					this._Código_Tratamento = value;
+				}
+			}
 		}
 	}
 	
@@ -4192,7 +3756,7 @@ namespace BackEnd.EntityData
 		
 		private string _RG;
 		
-		private System.Nullable<System.DateTime> _Data_de_Nascimento;
+		private System.DateTime _Data_de_Nascimento;
 		
 		private string _Telefone_1;
 		
@@ -4282,8 +3846,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date")]
-		public System.Nullable<System.DateTime> Data_de_Nascimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
+		public System.DateTime Data_de_Nascimento
 		{
 			get
 			{
@@ -4471,7 +4035,7 @@ namespace BackEnd.EntityData
 		
 		private string _RG;
 		
-		private System.Nullable<System.DateTime> _Data_de_Nascimento;
+		private System.DateTime _Data_de_Nascimento;
 		
 		private string _Telefone_1;
 		
@@ -4563,8 +4127,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date")]
-		public System.Nullable<System.DateTime> Data_de_Nascimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
+		public System.DateTime Data_de_Nascimento
 		{
 			get
 			{
@@ -4756,104 +4320,17 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_imagens")]
-	public partial class v_imagen
-	{
-		
-		private int _Código;
-		
-		private string _Paciente;
-		
-		private string _Descrição;
-		
-		private string _Arquivo;
-		
-		public v_imagen()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Paciente
-		{
-			get
-			{
-				return this._Paciente;
-			}
-			set
-			{
-				if ((this._Paciente != value))
-				{
-					this._Paciente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(50)")]
-		public string Descrição
-		{
-			get
-			{
-				return this._Descrição;
-			}
-			set
-			{
-				if ((this._Descrição != value))
-				{
-					this._Descrição = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Arquivo", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Arquivo
-		{
-			get
-			{
-				return this._Arquivo;
-			}
-			set
-			{
-				if ((this._Arquivo != value))
-				{
-					this._Arquivo = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensTratamento")]
-	public partial class v_itensTratamento
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensAtendimento")]
+	public partial class v_itensAtendimento
 	{
 		
 		private int _Código_Tratamento;
 		
-		private int _Código_Procedimento;
+		private string _Descrição_Procedimento;
 		
-		private string _Descrição;
+		private int _qtd;
 		
-		private int _Quantidade;
-		
-		private int _Status;
-		
-		private System.Nullable<decimal> _Valor;
-		
-		public v_itensTratamento()
+		public v_itensAtendimento()
 		{
 		}
 		
@@ -4873,199 +4350,34 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
-		public int Código_Procedimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Descrição Procedimento]", Storage="_Descrição_Procedimento", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição_Procedimento
 		{
 			get
 			{
-				return this._Código_Procedimento;
+				return this._Descrição_Procedimento;
 			}
 			set
 			{
-				if ((this._Código_Procedimento != value))
+				if ((this._Descrição_Procedimento != value))
 				{
-					this._Código_Procedimento = value;
+					this._Descrição_Procedimento = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Descrição
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qtd", DbType="Int NOT NULL")]
+		public int qtd
 		{
 			get
 			{
-				return this._Descrição;
+				return this._qtd;
 			}
 			set
 			{
-				if ((this._Descrição != value))
+				if ((this._qtd != value))
 				{
-					this._Descrição = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantidade", DbType="Int NOT NULL")]
-		public int Quantidade
-		{
-			get
-			{
-				return this._Quantidade;
-			}
-			set
-			{
-				if ((this._Quantidade != value))
-				{
-					this._Quantidade = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> Valor
-		{
-			get
-			{
-				return this._Valor;
-			}
-			set
-			{
-				if ((this._Valor != value))
-				{
-					this._Valor = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_medicamentos")]
-	public partial class v_medicamento
-	{
-		
-		private int _Código;
-		
-		private string _Medicamento;
-		
-		private string _Classe_Terapeutica;
-		
-		private string _Tarja;
-		
-		private string _Posologia;
-		
-		private string _Unidade;
-		
-		public v_medicamento()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Medicamento", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Medicamento
-		{
-			get
-			{
-				return this._Medicamento;
-			}
-			set
-			{
-				if ((this._Medicamento != value))
-				{
-					this._Medicamento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Classe Terapeutica]", Storage="_Classe_Terapeutica", DbType="VarChar(50)")]
-		public string Classe_Terapeutica
-		{
-			get
-			{
-				return this._Classe_Terapeutica;
-			}
-			set
-			{
-				if ((this._Classe_Terapeutica != value))
-				{
-					this._Classe_Terapeutica = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tarja", DbType="VarChar(50)")]
-		public string Tarja
-		{
-			get
-			{
-				return this._Tarja;
-			}
-			set
-			{
-				if ((this._Tarja != value))
-				{
-					this._Tarja = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Posologia", DbType="VarChar(50)")]
-		public string Posologia
-		{
-			get
-			{
-				return this._Posologia;
-			}
-			set
-			{
-				if ((this._Posologia != value))
-				{
-					this._Posologia = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unidade", DbType="VarChar(10)")]
-		public string Unidade
-		{
-			get
-			{
-				return this._Unidade;
-			}
-			set
-			{
-				if ((this._Unidade != value))
-				{
-					this._Unidade = value;
+					this._qtd = value;
 				}
 			}
 		}
@@ -5083,7 +4395,7 @@ namespace BackEnd.EntityData
 		
 		private string _RG;
 		
-		private System.Nullable<System.DateTime> _Data_de_Nascimento;
+		private System.DateTime _Data_de_Nascimento;
 		
 		private string _Telefone_1;
 		
@@ -5173,8 +4485,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date")]
-		public System.Nullable<System.DateTime> Data_de_Nascimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
+		public System.DateTime Data_de_Nascimento
 		{
 			get
 			{
@@ -5362,7 +4674,7 @@ namespace BackEnd.EntityData
 		
 		private string _RG;
 		
-		private System.Nullable<System.DateTime> _Data_de_Nascimento;
+		private System.DateTime _Data_de_Nascimento;
 		
 		private string _Telefone_1;
 		
@@ -5450,8 +4762,8 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date")]
-		public System.Nullable<System.DateTime> Data_de_Nascimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
+		public System.DateTime Data_de_Nascimento
 		{
 			get
 			{
@@ -5755,426 +5067,118 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.avaliacoes")]
-	public partial class avaliacao : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensTratamento")]
+	public partial class v_itensTratamento
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private int _Código_Tratamento;
 		
-		private int _id;
+		private int _Código_Procedimento;
 		
-		private System.DateTime _data;
+		private string _Descrição;
 		
-		private int _dentista_id;
+		private int _Quantidade;
 		
-		private int _paciente_id;
+		private int _Status;
 		
-		private int _status;
+		private System.Nullable<decimal> _Valor;
 		
-		private EntityRef<tratamento> _tratamento;
-		
-		private EntityRef<dentista> _dentista;
-		
-		private EntityRef<paciente> _paciente;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OndataChanging(System.DateTime value);
-    partial void OndataChanged();
-    partial void Ondentista_idChanging(int value);
-    partial void Ondentista_idChanged();
-    partial void Onpaciente_idChanging(int value);
-    partial void Onpaciente_idChanged();
-    partial void OnstatusChanging(int value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public avaliacao()
+		public v_itensTratamento()
 		{
-			this._tratamento = default(EntityRef<tratamento>);
-			this._dentista = default(EntityRef<dentista>);
-			this._paciente = default(EntityRef<paciente>);
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
+		public int Código_Tratamento
 		{
 			get
 			{
-				return this._id;
+				return this._Código_Tratamento;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._Código_Tratamento != value))
 				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._Código_Tratamento = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
-		public System.DateTime data
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
+		public int Código_Procedimento
 		{
 			get
 			{
-				return this._data;
+				return this._Código_Procedimento;
 			}
 			set
 			{
-				if ((this._data != value))
+				if ((this._Código_Procedimento != value))
 				{
-					this.OndataChanging(value);
-					this.SendPropertyChanging();
-					this._data = value;
-					this.SendPropertyChanged("data");
-					this.OndataChanged();
+					this._Código_Procedimento = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista_id", DbType="Int NOT NULL")]
-		public int dentista_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição
 		{
 			get
 			{
-				return this._dentista_id;
+				return this._Descrição;
 			}
 			set
 			{
-				if ((this._dentista_id != value))
+				if ((this._Descrição != value))
 				{
-					if (this._dentista.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Ondentista_idChanging(value);
-					this.SendPropertyChanging();
-					this._dentista_id = value;
-					this.SendPropertyChanged("dentista_id");
-					this.Ondentista_idChanged();
+					this._Descrição = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente_id", DbType="Int NOT NULL")]
-		public int paciente_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantidade", DbType="Int NOT NULL")]
+		public int Quantidade
 		{
 			get
 			{
-				return this._paciente_id;
+				return this._Quantidade;
 			}
 			set
 			{
-				if ((this._paciente_id != value))
+				if ((this._Quantidade != value))
 				{
-					if (this._paciente.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onpaciente_idChanging(value);
-					this.SendPropertyChanging();
-					this._paciente_id = value;
-					this.SendPropertyChanged("paciente_id");
-					this.Onpaciente_idChanged();
+					this._Quantidade = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
-		public int status
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
 		{
 			get
 			{
-				return this._status;
+				return this._Status;
 			}
 			set
 			{
-				if ((this._status != value))
+				if ((this._Status != value))
 				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
+					this._Status = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacao_tratamento", Storage="_tratamento", ThisKey="id", OtherKey="avaliacao_id", IsUnique=true, IsForeignKey=false)]
-		public tratamento tratamento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> Valor
 		{
 			get
 			{
-				return this._tratamento.Entity;
+				return this._Valor;
 			}
 			set
 			{
-				tratamento previousValue = this._tratamento.Entity;
-				if (((previousValue != value) 
-							|| (this._tratamento.HasLoadedOrAssignedValue == false)))
+				if ((this._Valor != value))
 				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tratamento.Entity = null;
-						previousValue.avaliacao = null;
-					}
-					this._tratamento.Entity = value;
-					if ((value != null))
-					{
-						value.avaliacao = this;
-					}
-					this.SendPropertyChanged("tratamento");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacao", Storage="_dentista", ThisKey="dentista_id", OtherKey="pessoa_id", IsForeignKey=true)]
-		public dentista dentista
-		{
-			get
-			{
-				return this._dentista.Entity;
-			}
-			set
-			{
-				dentista previousValue = this._dentista.Entity;
-				if (((previousValue != value) 
-							|| (this._dentista.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._dentista.Entity = null;
-						previousValue.avaliacaos.Remove(this);
-					}
-					this._dentista.Entity = value;
-					if ((value != null))
-					{
-						value.avaliacaos.Add(this);
-						this._dentista_id = value.pessoa_id;
-					}
-					else
-					{
-						this._dentista_id = default(int);
-					}
-					this.SendPropertyChanged("dentista");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacao", Storage="_paciente", ThisKey="paciente_id", OtherKey="pessoa_id", IsForeignKey=true)]
-		public paciente paciente
-		{
-			get
-			{
-				return this._paciente.Entity;
-			}
-			set
-			{
-				paciente previousValue = this._paciente.Entity;
-				if (((previousValue != value) 
-							|| (this._paciente.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._paciente.Entity = null;
-						previousValue.avaliacaos.Remove(this);
-					}
-					this._paciente.Entity = value;
-					if ((value != null))
-					{
-						value.avaliacaos.Add(this);
-						this._paciente_id = value.pessoa_id;
-					}
-					else
-					{
-						this._paciente_id = default(int);
-					}
-					this.SendPropertyChanged("paciente");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_agenda")]
-	public partial class v_agenda
-	{
-		
-		private string _tipo;
-		
-		private int _id;
-		
-		private System.DateTime _data;
-		
-		private int _dentista;
-		
-		private string _nomeDentista;
-		
-		private int _paciente;
-		
-		private string _nomePaciente;
-		
-		private int _status;
-		
-		public v_agenda()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
-		public string tipo
-		{
-			get
-			{
-				return this._tipo;
-			}
-			set
-			{
-				if ((this._tipo != value))
-				{
-					this._tipo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
-		public System.DateTime data
-		{
-			get
-			{
-				return this._data;
-			}
-			set
-			{
-				if ((this._data != value))
-				{
-					this._data = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista", DbType="Int NOT NULL")]
-		public int dentista
-		{
-			get
-			{
-				return this._dentista;
-			}
-			set
-			{
-				if ((this._dentista != value))
-				{
-					this._dentista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomeDentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string nomeDentista
-		{
-			get
-			{
-				return this._nomeDentista;
-			}
-			set
-			{
-				if ((this._nomeDentista != value))
-				{
-					this._nomeDentista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente", DbType="Int NOT NULL")]
-		public int paciente
-		{
-			get
-			{
-				return this._paciente;
-			}
-			set
-			{
-				if ((this._paciente != value))
-				{
-					this._paciente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomePaciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string nomePaciente
-		{
-			get
-			{
-				return this._nomePaciente;
-			}
-			set
-			{
-				if ((this._nomePaciente != value))
-				{
-					this._nomePaciente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
-		public int status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
+					this._Valor = value;
 				}
 			}
 		}

@@ -68,7 +68,6 @@
     <Compile Include="Model\ConvenioModel.cs" />
     <Compile Include="Model\DentistaModel.cs" />
     <Compile Include="Model\FuncionarioModel.cs" />
-    <Compile Include="Model\MedicamentoModel.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PessoaModel.cs" />
     <Compile Include="Model\ProcedimentoModel.cs" />

@@ -58,6 +58,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Literal lt00;
         
         /// <summary>
+        /// lt07 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt07;
+        
+        /// <summary>
         /// lt01 control.
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Literal lt06;
         
         /// <summary>
-        /// lt07 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lt07;
-        
-        /// <summary>
         /// lt08 control.
         /// </summary>
         /// <remarks>
@@ -119,6 +119,24 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lt08;
+        
+        /// <summary>
+        /// lt11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt11;
+        
+        /// <summary>
+        /// lt12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt12;
         
         /// <summary>
         /// lt09 control.

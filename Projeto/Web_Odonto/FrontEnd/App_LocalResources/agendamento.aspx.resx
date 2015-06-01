@@ -117,16 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnBuscarResource1.Text" xml:space="preserve">
-    <value>Buscar</value>
+  <data name="btnBuscaTratamentoResource1.Text" xml:space="preserve">
+    <value>Buscar Tratamento</value>
   </data>
-  <data name="btnBuscarResource1.ToolTip" xml:space="preserve">
+  <data name="btnBuscaTratamentoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="btnEditarResource1.Text" xml:space="preserve">
-    <value>Editar</value>
+  <data name="btnFinalizaAgendamento2Resource1.Text" xml:space="preserve">
+    <value>Agendar Avaliação</value>
   </data>
-  <data name="btnEditarResource1.ToolTip" xml:space="preserve">
+  <data name="btnFinalizaAgendamento2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnFinalizaAtendimentoResource1.Text" xml:space="preserve">
+    <value>Agendar Atendimento</value>
+  </data>
+  <data name="btnFinalizaAtendimentoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnVoltarResource1.Text" xml:space="preserve">
@@ -135,31 +141,163 @@
   <data name="btnVoltarResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="cbProcResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cbProcResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddDentistaResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddPacienteAvResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ddPacienteResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvItensAtendimentoResource1.Caption" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvItensAtendimentoResource1.EmptyDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gvItensAtendimentoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDentistaResource1.Text" xml:space="preserve">
+    <value>Dentista</value>
+  </data>
+  <data name="lblDentistaResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblNumeroTratResource1.Text" xml:space="preserve">
+    <value>Numero do Tratamento</value>
+  </data>
+  <data name="lblNumeroTratResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblPacienteAvResource1.Text" xml:space="preserve">
+    <value>Paciente</value>
+  </data>
+  <data name="lblPacienteAvResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblStatusTratResource1.Text" xml:space="preserve">
+    <value>Status do Tratamento</value>
+  </data>
+  <data name="lblStatusTratResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value>WebOdonto</value>
   </data>
-  <data name="txtNomeResource1.Text" xml:space="preserve">
+  <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
     <value />
   </data>
-  <data name="txtNomeResource1.ToolTip" xml:space="preserve">
+  <data name="TemplateFieldResource1.FooterText" xml:space="preserve">
     <value />
   </data>
-  <data name="cpf" xml:space="preserve">
-    <value>CPF</value>
+  <data name="TemplateFieldResource1.HeaderText" xml:space="preserve">
+    <value>Selecione</value>
   </data>
-  <data name="id" xml:space="preserve">
+  <data name="TemplateFieldResource2.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource2.HeaderText" xml:space="preserve">
     <value>ID</value>
   </data>
-  <data name="nome" xml:space="preserve">
-    <value>Nome</value>
+  <data name="TemplateFieldResource3.AccessibleHeaderText" xml:space="preserve">
+    <value />
   </data>
-  <data name="rg" xml:space="preserve">
-    <value>RG</value>
+  <data name="TemplateFieldResource3.FooterText" xml:space="preserve">
+    <value />
   </data>
-  <data name="status" xml:space="preserve">
+  <data name="TemplateFieldResource3.HeaderText" xml:space="preserve">
+    <value>Descrição Procedimento</value>
+  </data>
+  <data name="TemplateFieldResource4.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource4.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource4.HeaderText" xml:space="preserve">
+    <value>Qtd</value>
+  </data>
+  <data name="TemplateFieldResource5.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource5.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource5.HeaderText" xml:space="preserve">
     <value>Status</value>
   </data>
-  <data name="titulo" xml:space="preserve">
-    <value>Lista de Pacientes</value>
+  <data name="TemplateFieldResource6.AccessibleHeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource6.FooterText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TemplateFieldResource6.HeaderText" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="txtNumeroTratamentoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtNumeroTratamentoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStatusTratamentoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="txtStatusTratamentoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="atendimento" xml:space="preserve">
+    <value>Atendimento</value>
+  </data>
+  <data name="atendimentoagendadocomsucesso" xml:space="preserve">
+    <value>Atendimento agendado com sucesso.</value>
+  </data>
+  <data name="avaliacao" xml:space="preserve">
+    <value>Avaliação</value>
+  </data>
+  <data name="avaliacaoagendadacomsucesso" xml:space="preserve">
+    <value>Avaliação agendada com sucesso.</value>
+  </data>
+  <data name="dentistanaodisponivel" xml:space="preserve">
+    <value>O dentista selecionado não está disponível nesse horário.</value>
+  </data>
+  <data name="dtconsulta" xml:space="preserve">
+    <value>Data da Consulta</value>
+  </data>
+  <data name="erroaoagendaraavaliacao" xml:space="preserve">
+    <value>Erro ao agendar a avaliação.</value>
+  </data>
+  <data name="erroaoagendaroatendimento" xml:space="preserve">
+    <value>Erro ao agendar o atendimento.</value>
+  </data>
+  <data name="opacientejatemumaavaliacaoagendada" xml:space="preserve">
+    <value>O paciente já tem uma avaliação agendada.</value>
+  </data>
+  <data name="opacientejatemumtratamento" xml:space="preserve">
+    <value>O paciente já tem um tratamento em andamento.</value>
+  </data>
+  <data name="paciente" xml:space="preserve">
+    <value>Paciente</value>
+  </data>
+  <data name="pacientebusquetratamento" xml:space="preserve">
+    <value>Selecione o paciente e busque o tratamento.</value>
+  </data>
+  <data name="selecioneadata" xml:space="preserve">
+    <value>Selecione a data.</value>
+  </data>
+  <data name="tratamentonaoencontrado" xml:space="preserve">
+    <value>Tratamento não encontrado.</value>
   </data>
 </root>

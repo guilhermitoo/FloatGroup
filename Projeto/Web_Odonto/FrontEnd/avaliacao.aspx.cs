@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Resources;
 using BackEnd.EntityData;
 using BackEnd.Model;
 
@@ -47,6 +48,7 @@ namespace FrontEnd
                 {
                     txtNumeroAvaliacao.Value = a.id.ToString();
                     pnlProc.Visible = true;
+                    pnlBotoes.Visible = true;
                     txtDataAval.Value = a.data.ToString();
                     TratamentoModel tratModel = new TratamentoModel();
                     if (tratModel.Obter(a.id) != null)                    
@@ -59,6 +61,7 @@ namespace FrontEnd
                     txtNumeroAvaliacao.Value = "Nenhum";
                     txtDataAval.Value = "";
                     pnlProc.Visible = false;
+                    pnlBotoes.Visible = false;
                     LimpaGrid();
                 }
             }
@@ -66,6 +69,7 @@ namespace FrontEnd
                 txtNumeroAvaliacao.Value = "Nenhum";
                 txtDataAval.Value = "";
                 pnlProc.Visible = false;
+                pnlBotoes.Visible = false;
                 LimpaGrid();
             }
         }
@@ -80,8 +84,8 @@ namespace FrontEnd
             Dictionary<int, v_itensTratamento> aval =
                 Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
 
-            gvItensAtendimento.DataSource = aval.Values;
-            gvItensAtendimento.DataBind();
+            gvItensTratamento.DataSource = aval.Values;
+            gvItensTratamento.DataBind();
             CalculaTotal();
         }
 
@@ -121,12 +125,12 @@ namespace FrontEnd
             }
         }
 
-        protected void gvItensAtendimento_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvItensTratamento_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             // recupera a linha clicada no gridview
             int linha = Convert.ToInt32(e.CommandArgument);
             // recupera o id do procedimento na linha clicada
-            int id = (int)gvItensAtendimento.DataKeys[linha].Value;
+            int id = (int)gvItensTratamento.DataKeys[linha].Value;
 
             Dictionary<int, v_itensTratamento> aval =
                 Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
@@ -141,8 +145,8 @@ namespace FrontEnd
         private void LimpaGrid()
         { // limpa os dados do grid e remove a sessão
             Session.Remove("avaliacao");
-            gvItensAtendimento.DataSource = null;
-            gvItensAtendimento.DataBind();
+            gvItensTratamento.DataSource = null;
+            gvItensTratamento.DataBind();
             pnlTotal.Visible = false;
         }
 
@@ -158,8 +162,20 @@ namespace FrontEnd
             trat.avaliacao_id = Int32.Parse(txtNumeroAvaliacao.Value);            
             trat.status = 1;
             trat.total = Decimal.Parse(txtTotal.Text);
-            if (tratModel.Inserir(trat))
+
+            // verifica se o tratamento já está salvo no banco para poder comparar seus itens.
+            bool bNovo = false;
+            bNovo = (tratModel.Obter(trat.avaliacao_id) == null);            
+
+            if (tratModel.InserirAtualizar(trat))
             {
+                // se não for registro novo deve buscar os itens que já estão no tratamento e validar
+                if (!bNovo)
+                {
+                    // se não for registro novo, limpa os itens do banco para inserir novamente
+                    tratModel.RemoverTodosItens(trat.avaliacao_id);
+                }
+                
                 foreach (v_itensTratamento v_item in aval.Values)
                 {
                     // preenche os dados do item
@@ -170,7 +186,12 @@ namespace FrontEnd
                     item.valor = v_item.Valor;
                     // insere o item do tratamento
                     tratModel.InserirItem(item);
-                }                
+                }
+                pnlIniciar.Visible = true;
+            }
+            else
+            {
+                pnlIniciar.Visible = false;
             }
         }
 

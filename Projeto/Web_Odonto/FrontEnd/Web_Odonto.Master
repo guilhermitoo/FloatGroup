@@ -45,11 +45,12 @@
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
-                        &nbsp;
-                        
-                        
+                        &nbsp;                                                
                         <li>
                             <a class="active-menu" href="index.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/inicio_1.png" /></i> <asp:Literal ID="lt00" Text="<%$ resources: inicio %>" runat="server"/> </a>
+                        </li>
+                        <li>
+                            <a href="agenda.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/agenda_1.png" /></i> <asp:Literal ID="lt07" Text="<%$ resources: agenda %>" runat="server"/></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/cadastro_1.png" /></i><asp:Literal ID="lt01" Text="<%$ resources: cadastro %>" 
@@ -74,10 +75,15 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="agenda.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/agenda_1.png" /></i> <asp:Literal ID="lt07" Text="<%$ resources: agenda %>" runat="server"/></a>
-                        </li>
-                        <li>
-                            <a href="avaliacao.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/atendimento_1.png" /></i> <asp:Literal ID="lt08" Text="<%$ resources: avaliacao %>" runat="server"/></a>
+                            <a href="#"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/atendimento_1.png" /></i> <asp:Literal ID="lt08" Text="<%$ resources: consulta %>" runat="server"/> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="avaliacao.aspx"><asp:Literal ID="lt11" Text="<%$ resources: avaliacao %>" runat="server"/></a>
+                                </li>
+                                <li>
+                                    <a href="atendimento.aspx"><asp:Literal ID="lt12" Text="<%$ resources: atendimento %>" runat="server"/></a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/relatorio_1.png" /></i> <asp:Literal ID="lt09" Text="<%$ resources: relatorio %>" runat="server"/> <span class="fa arrow"></span></a>

@@ -139,13 +139,13 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Button btnAddProcedimento;
         
         /// <summary>
-        /// gvItensAtendimento control.
+        /// gvItensTratamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvItensAtendimento;
+        protected global::System.Web.UI.WebControls.GridView gvItensTratamento;
         
         /// <summary>
         /// pnlTotal control.
@@ -175,6 +175,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtTotal;
         
         /// <summary>
+        /// pnlBotoes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBotoes;
+        
+        /// <summary>
         /// btnSalvar control.
         /// </summary>
         /// <remarks>
@@ -182,6 +191,33 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
+        
+        /// <summary>
+        /// btnLimpar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpar;
+        
+        /// <summary>
+        /// btnSair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSair;
+        
+        /// <summary>
+        /// pnlIniciar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlIniciar;
         
         /// <summary>
         /// btnIniciarTratamento control.

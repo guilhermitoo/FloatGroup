@@ -124,13 +124,13 @@
     <value />
   </data>
   <data name="btnListarResource1.Text" xml:space="preserve">
-    <value>Consult</value>
+    <value>List</value>
   </data>
   <data name="btnListarResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnSairResource1.Text" xml:space="preserve">
-    <value>Leave</value>
+    <value>Exit</value>
   </data>
   <data name="btnSairResource1.ToolTip" xml:space="preserve">
     <value />
@@ -322,12 +322,12 @@
     <value>State</value>
   </data>
   <data name="subtitulo" xml:space="preserve">
-    <value>Make registration City / State</value>
+    <value>Do the city/state registration</value>
   </data>
   <data name="titulo" xml:space="preserve">
     <value>CITY REGISTRATION</value>
   </data>
   <data name="txtdigite" xml:space="preserve">
-    <value>Enter the name of the City</value>
+    <value>Enter the city name</value>
   </data>
 </root>

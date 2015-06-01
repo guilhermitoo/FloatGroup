@@ -124,7 +124,7 @@
     <value />
   </data>
   <data name="btnListarResource1.Text" xml:space="preserve">
-    <value>Consult</value>
+    <value>List</value>
   </data>
   <data name="btnListarResource1.ToolTip" xml:space="preserve">
     <value />
@@ -151,12 +151,12 @@
     <value />
   </data>
   <data name="descricao" xml:space="preserve">
-    <value>Full description of the process</value>
+    <value>Full description of the procedure</value>
   </data>
   <data name="subtitulo" xml:space="preserve">
-    <value>Make registration procedure</value>
+    <value>Do the procedure registration</value>
   </data>
   <data name="titulo" xml:space="preserve">
-    <value>REGISTRATION PROCEDURE</value>
+    <value>PROCEDURE REGISTRATION</value>
   </data>
 </root>

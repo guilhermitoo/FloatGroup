@@ -13,6 +13,15 @@ namespace FrontEnd {
     public partial class statusTratamento {
         
         /// <summary>
+        /// lt00 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lt00;
+        
+        /// <summary>
         /// bd control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.TextBox txtDataFin;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// pbProgresso control.
         /// </summary>
         /// <remarks>
@@ -139,6 +157,15 @@ namespace FrontEnd {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl pbProgresso;
         
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
         /// gvProcPendentes control.
         /// </summary>
         /// <remarks>
@@ -146,6 +173,15 @@ namespace FrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvProcPendentes;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// gvProcConcluidos control.

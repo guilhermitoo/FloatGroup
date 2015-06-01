@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using BackEnd.EntityData;
 using System.Configuration;
 using BackEnd.Model;
+using System.Resources;
 
 namespace FrontEnd
 {

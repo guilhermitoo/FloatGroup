@@ -120,6 +120,9 @@
   <data name="agenda" xml:space="preserve">
     <value>Schedule</value>
   </data>
+  <data name="atendimento" xml:space="preserve">
+    <value>Treatment Session</value>
+  </data>
   <data name="avaliacao" xml:space="preserve">
     <value>Evaluation</value>
   </data>
@@ -129,14 +132,14 @@
   <data name="cidade" xml:space="preserve">
     <value>City</value>
   </data>
+  <data name="consulta" xml:space="preserve">
+    <value>Appointment</value>
+  </data>
   <data name="convenio" xml:space="preserve">
     <value>Convenant</value>
   </data>
   <data name="inicio" xml:space="preserve">
     <value>Home</value>
-  </data>
-  <data name="medicamentos" xml:space="preserve">
-    <value>Medicine</value>
   </data>
   <data name="pessoa" xml:space="preserve">
     <value>Person</value>

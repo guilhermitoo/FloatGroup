@@ -250,14 +250,6 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<v_itensAtendimento> v_itensAtendimentos
-		{
-			get
-			{
-				return this.GetTable<v_itensAtendimento>();
-			}
-		}
-		
 		public System.Data.Linq.Table<v_paciente> v_pacientes
 		{
 			get
@@ -295,6 +287,14 @@ namespace BackEnd.EntityData
 			get
 			{
 				return this.GetTable<v_itensTratamento>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_itensAtendimento> v_itensAtendimentos
+		{
+			get
+			{
+				return this.GetTable<v_itensAtendimento>();
 			}
 		}
 		
@@ -465,6 +465,13 @@ namespace BackEnd.EntityData
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), avaliacao_id, status, dataInicial, dataFinal, total);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.removeItemTratamento")]
+		public int removeItemTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.atendimentos")]
@@ -621,7 +628,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itensAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="atendimento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itemAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="atendimento_id")]
 		public EntitySet<itemAtendimento> itemAtendimentos
 		{
 			get
@@ -889,7 +896,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacoe_tratamento", Storage="_tratamento", ThisKey="id", OtherKey="avaliacao_id", IsUnique=true, IsForeignKey=false)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacao_tratamento", Storage="_tratamento", ThisKey="id", OtherKey="avaliacao_id", IsUnique=true, IsForeignKey=false)]
 		public tratamento tratamento
 		{
 			get
@@ -918,7 +925,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacoe", Storage="_dentista", ThisKey="dentista_id", OtherKey="pessoa_id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacao", Storage="_dentista", ThisKey="dentista_id", OtherKey="pessoa_id", IsForeignKey=true)]
 		public dentista dentista
 		{
 			get
@@ -952,7 +959,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacoe", Storage="_paciente", ThisKey="paciente_id", OtherKey="pessoa_id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacao", Storage="_paciente", ThisKey="paciente_id", OtherKey="pessoa_id", IsForeignKey=true)]
 		public paciente paciente
 		{
 			get
@@ -1446,7 +1453,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacoe", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="dentista_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dentista_avaliacao", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="dentista_id")]
 		public EntitySet<avaliacao> avaliacaos
 		{
 			get
@@ -1792,7 +1799,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itensAtendimento", Storage="_atendimento", ThisKey="atendimento_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="atendimento_itemAtendimento", Storage="_atendimento", ThisKey="atendimento_id", OtherKey="id", IsForeignKey=true)]
 		public atendimento atendimento
 		{
 			get
@@ -1826,7 +1833,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensAtendimento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemAtendimento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
 		public procedimento procedimento
 		{
 			get
@@ -2032,7 +2039,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensTratamento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemTratamento", Storage="_procedimento", ThisKey="procedimento_id", OtherKey="id", IsForeignKey=true)]
 		public procedimento procedimento
 		{
 			get
@@ -2066,7 +2073,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itensTratamento", Storage="_tratamento", ThisKey="tratamento_id", OtherKey="avaliacao_id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itemTratamento", Storage="_tratamento", ThisKey="tratamento_id", OtherKey="avaliacao_id", IsForeignKey=true)]
 		public tratamento tratamento
 		{
 			get
@@ -2203,7 +2210,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacoe", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="paciente_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="paciente_avaliacao", Storage="_avaliacaos", ThisKey="pessoa_id", OtherKey="paciente_id")]
 		public EntitySet<avaliacao> avaliacaos
 		{
 			get
@@ -2923,7 +2930,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="procedimento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemAtendimento", Storage="_itemAtendimentos", ThisKey="id", OtherKey="procedimento_id")]
 		public EntitySet<itemAtendimento> itemAtendimentos
 		{
 			get
@@ -2936,7 +2943,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itensTratamento", Storage="_itemTratamentos", ThisKey="id", OtherKey="procedimento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="procedimento_itemTratamento", Storage="_itemTratamentos", ThisKey="id", OtherKey="procedimento_id")]
 		public EntitySet<itemTratamento> itemTratamentos
 		{
 			get
@@ -3157,7 +3164,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itensTratamento", Storage="_itemTratamentos", ThisKey="avaliacao_id", OtherKey="tratamento_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tratamento_itemTratamento", Storage="_itemTratamentos", ThisKey="avaliacao_id", OtherKey="tratamento_id")]
 		public EntitySet<itemTratamento> itemTratamentos
 		{
 			get
@@ -3170,7 +3177,7 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacoe_tratamento", Storage="_avaliacao", ThisKey="avaliacao_id", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="avaliacao_tratamento", Storage="_avaliacao", ThisKey="avaliacao_id", OtherKey="id", IsForeignKey=true)]
 		public avaliacao avaliacao
 		{
 			get
@@ -4320,69 +4327,6 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensAtendimento")]
-	public partial class v_itensAtendimento
-	{
-		
-		private int _Código_Tratamento;
-		
-		private string _Descrição_Procedimento;
-		
-		private int _qtd;
-		
-		public v_itensAtendimento()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
-		public int Código_Tratamento
-		{
-			get
-			{
-				return this._Código_Tratamento;
-			}
-			set
-			{
-				if ((this._Código_Tratamento != value))
-				{
-					this._Código_Tratamento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Descrição Procedimento]", Storage="_Descrição_Procedimento", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Descrição_Procedimento
-		{
-			get
-			{
-				return this._Descrição_Procedimento;
-			}
-			set
-			{
-				if ((this._Descrição_Procedimento != value))
-				{
-					this._Descrição_Procedimento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qtd", DbType="Int NOT NULL")]
-		public int qtd
-		{
-			get
-			{
-				return this._qtd;
-			}
-			set
-			{
-				if ((this._qtd != value))
-				{
-					this._qtd = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_pacientes")]
 	public partial class v_paciente
 	{
@@ -5179,6 +5123,87 @@ namespace BackEnd.EntityData
 				if ((this._Valor != value))
 				{
 					this._Valor = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensAtendimento")]
+	public partial class v_itensAtendimento
+	{
+		
+		private int _Código_Atendimento;
+		
+		private int _Código_Tratamento;
+		
+		private string _Descrição_Procedimento;
+		
+		private int _qtd;
+		
+		public v_itensAtendimento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Atendimento]", Storage="_Código_Atendimento", DbType="Int NOT NULL")]
+		public int Código_Atendimento
+		{
+			get
+			{
+				return this._Código_Atendimento;
+			}
+			set
+			{
+				if ((this._Código_Atendimento != value))
+				{
+					this._Código_Atendimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
+		public int Código_Tratamento
+		{
+			get
+			{
+				return this._Código_Tratamento;
+			}
+			set
+			{
+				if ((this._Código_Tratamento != value))
+				{
+					this._Código_Tratamento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Descrição Procedimento]", Storage="_Descrição_Procedimento", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição_Procedimento
+		{
+			get
+			{
+				return this._Descrição_Procedimento;
+			}
+			set
+			{
+				if ((this._Descrição_Procedimento != value))
+				{
+					this._Descrição_Procedimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qtd", DbType="Int NOT NULL")]
+		public int qtd
+		{
+			get
+			{
+				return this._qtd;
+			}
+			set
+			{
+				if ((this._qtd != value))
+				{
+					this._qtd = value;
 				}
 			}
 		}

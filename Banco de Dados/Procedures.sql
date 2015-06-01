@@ -136,6 +136,19 @@ begin
 end
 go
 
+create procedure removeItemTratamento
+(
+	@tratamento_id int,
+	@procedimento_id int
+)
+as 
+begin
+	delete from itensTratamento
+	where tratamento_id = @tratamento_id
+	and procedimento_id = @procedimento_id
+end
+go
+
 create procedure cadAtendimento
 (
 	@data datetime,

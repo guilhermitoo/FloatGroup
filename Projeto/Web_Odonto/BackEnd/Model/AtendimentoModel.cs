@@ -105,7 +105,31 @@ namespace BackEnd.Model
 
                 return query.ToList().First();
             }
+        }
 
+        public List<v_itensAtendimento> ListarItens(int idAtend)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select I.* " +
+                              " from v_itensAtendimento I " +
+                              " where I.[Código Atendimento] = " + idAtend.ToString();
+                var query = db.ExecuteQuery<v_itensAtendimento>(sSql);
+                return query.ToList();
+            }
+        }
+
+        public List<atendimento> ListarPorPaciente(int pId)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql =  " select a.* from atendimentos a " +
+                                " join avaliacoes av on ( av.id = a.tratamento_id ) " +
+                                " where av.paciente_id = " + pId.ToString() +
+                                " order by a.data ";
+                var query = db.ExecuteQuery<atendimento>(sSql);
+                return query.ToList();
+            }
         }
     }
 }

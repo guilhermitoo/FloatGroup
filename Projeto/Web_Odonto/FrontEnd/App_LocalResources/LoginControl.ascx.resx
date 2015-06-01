@@ -183,4 +183,7 @@
   <data name="txtUsuarioResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="acessonegado" xml:space="preserve">
+    <value>Usuário ou senha inválido!</value>
+  </data>
 </root>

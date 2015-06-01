@@ -124,7 +124,7 @@
     <value />
   </data>
   <data name="btnListarResource1.Text" xml:space="preserve">
-    <value>Consult</value>
+    <value>List</value>
   </data>
   <data name="btnListarResource1.ToolTip" xml:space="preserve">
     <value />
@@ -136,7 +136,7 @@
     <value />
   </data>
   <data name="btnSairResource1.Text" xml:space="preserve">
-    <value>Leave</value>
+    <value>Exit</value>
   </data>
   <data name="btnSairResource1.ToolTip" xml:space="preserve">
     <value />
@@ -175,7 +175,7 @@
     <value />
   </data>
   <data name="cnpj" xml:space="preserve">
-    <value>RNLP (Register National Legal Person)</value>
+    <value>NRLP National Registration for legal person</value>
   </data>
   <data name="ie" xml:space="preserve">
     <value>SR (State Registration)</value>
@@ -187,12 +187,12 @@
     <value>Company Name</value>
   </data>
   <data name="subtitulo" xml:space="preserve">
-    <value>Do covenant registration</value>
+    <value>Do the Agreement registration</value>
   </data>
   <data name="titulo" xml:space="preserve">
-    <value>REGISTRATION AGREEMENT</value>
+    <value>AGREEMENT REGISTRATION</value>
   </data>
   <data name="cnpjnaocadastrado" xml:space="preserve">
-    <value>Not registered RNLP</value>
+    <value>Not registered NRLP</value>
   </data>
 </root>

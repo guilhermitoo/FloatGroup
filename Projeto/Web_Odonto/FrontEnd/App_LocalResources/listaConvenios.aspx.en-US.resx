@@ -145,7 +145,7 @@
     <value>Agreement</value>
   </data>
   <data name="cnpj" xml:space="preserve">
-    <value>RNLP (register national legal person)</value>
+    <value>NRLP NationalRegistration for legal person</value>
   </data>
   <data name="ie" xml:space="preserve">
     <value>SR (State Registration)</value>
@@ -157,7 +157,7 @@
     <value>Company Name</value>
   </data>
   <data name="titulo" xml:space="preserve">
-    <value>List of Agreement</value>
+    <value>Agreement list</value>
   </data>
   <data name="id" xml:space="preserve">
     <value>ID</value>

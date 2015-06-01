@@ -127,10 +127,10 @@
     <value>WebOdonto</value>
   </data>
   <data name="atencao" xml:space="preserve">
-    <value>Stay alert notifications.</value>
+    <value>Keep aware about the notes.</value>
   </data>
   <data name="cadusuario" xml:space="preserve">
-    <value>Post User</value>
+    <value>Register User</value>
   </data>
   <data name="digite1" xml:space="preserve">
     <value>Enter your search</value>

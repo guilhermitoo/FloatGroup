@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using BackEnd.Model;
 using BackEnd.EntityData;
+using System.Resources;
 
 namespace FrontEnd
 {
@@ -61,7 +62,8 @@ namespace FrontEnd
             catch
             {
                 pnlTratamento.Visible = false;
-                Master.Status("Tratamento não encontrado");
+                string txt = (string)GetLocalResourceObject("tratamentonaoencontrado");
+                Master.Status(txt);
             }
         }
     }

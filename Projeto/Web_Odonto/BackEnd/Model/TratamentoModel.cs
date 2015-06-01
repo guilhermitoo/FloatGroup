@@ -14,15 +14,23 @@ namespace BackEnd.Model
     {
         public TratamentoModel() { }
 
-        public bool Inserir(tratamento t)
+        public bool InserirAtualizar(tratamento t)
         {
             WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
-
             try
             {
+                tratamento trat = Obter(t.avaliacao_id) as tratamento;
                 Table<tratamento> tabelaTratamento = db.GetTable<tratamento>();               
-                tabelaTratamento.InsertOnSubmit(t);
-                tabelaTratamento.Context.SubmitChanges();
+                if (trat == null)
+                {
+                    db.cadTratamento(t.avaliacao_id, t.status, t.dataInicial, t.dataFinal, t.total);
+                    tabelaTratamento.Context.SubmitChanges();
+                }
+                else
+                {
+                    db.alteraTratamento(t.avaliacao_id, t.status, t.dataInicial, t.dataFinal, t.total);
+                    tabelaTratamento.Context.SubmitChanges();
+                }                                             
                 return true;
             }
             catch
@@ -116,6 +124,42 @@ namespace BackEnd.Model
             {
                 return false;
             }
+        }
+
+        public bool RemoverItem(itemTratamento p)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {
+                Table<itemTratamento> tbItemTratamento = db.GetTable<itemTratamento>();
+                if (p != null)
+                {
+                    db.removeItemTratamento(p.tratamento_id, p.procedimento_id);
+                    tbItemTratamento.Context.SubmitChanges();
+                    return true;
+                }
+                else 
+                {
+                    return false;
+                }
+                
+            }
+            catch { return false; }
+        }
+
+        public bool RemoverTodosItens(int idTrat)
+        {
+
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {                
+                String sSql = " delete from itensTratamento where tratamento_id = " + idTrat.ToString();
+
+                db.ExecuteCommand(sSql);
+
+                return true;
+            }
+            catch { return false; }
         }
 
         public List<v_itensTratamento> ListarItens(int idTratamento)
@@ -219,6 +263,25 @@ namespace BackEnd.Model
             }
             return perc;
         }
+
+        public itemTratamento ObterItem(itemTratamento p)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {
+                itemTratamento it = new itemTratamento();
+                String sSql = " select * from itensTratamento " +
+                              " where tratamento_id = " + p.tratamento_id.ToString() +
+                              " and procedimento_id = " + p.procedimento_id.ToString();
+
+                var query = db.ExecuteQuery<itemTratamento>(sSql);
+
+                it = query.ToList().First();
+
+                return it;
+            }
+            catch { return null; }
+        }        
        
     }
 }

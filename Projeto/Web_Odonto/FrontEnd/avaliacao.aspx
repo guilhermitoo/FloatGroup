@@ -52,7 +52,7 @@
                     </div>
                     <div class="col-md-12">
                         <br />
-                        <asp:GridView runat="server" ID="gvItensAtendimento" CssClass="table table-bordered table-striped"  OnRowCommand="gvItensAtendimento_RowCommand" 
+                        <asp:GridView runat="server" ID="gvItensTratamento" CssClass="table table-bordered table-striped"  OnRowCommand="gvItensTratamento_RowCommand" 
                             GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Código_Procedimento" meta:resourcekey="gvItensAtendimentoResource1">
                         <Columns>
                         <asp:TemplateField HeaderText="ID" meta:resourcekey="TemplateFieldResource1">
@@ -91,19 +91,16 @@
             </asp:Panel>    
     <div class="col-md-4">
     
-        <div class="form-group">
-        <asp:Button id="btnSalvar" CssClass="btn btn-info" Text="Salvar" runat="server" OnClick="btnSalvar_Click" meta:resourcekey="btnSalvarResource1"/>
-        <button type="submit" class="btn btn-success">
-            Limpar</button>
-        <button type="submit" class="btn btn-warning">
-            Sair
-        </button>
-        </div>    
+        <asp:Panel class="form-group" ID="pnlBotoes" runat="server" Visible="false">
+            <asp:Button id="btnSalvar" CssClass="btn btn-info" Text="Salvar" runat="server" OnClick="btnSalvar_Click" meta:resourcekey="btnSalvarResource1"/>
+            <asp:Button id="btnLimpar" runat="server" CssClass="btn btn-success" Text="Limpar"/>
+            <asp:Button id="btnSair" runat="server" CssClass="btn btn-warning" Text="Sair"/>            
+        </asp:Panel>    
     </div>
-    <div class="pull-right">
+    <asp:Panel ID="pnlIniciar" runat="server" class="pull-right" Visible="false">
         <asp:Button id="btnIniciarTratamento" CssClass="btn btn-primary" runat="server" Text="Iniciar Tratamento" 
                       OnClick="btnIniciarTratamento_Click"  meta:resourcekey="btnIniciarTratamentoResource1" />
-    </div>
+    </asp:Panel>
 </div>
 <!-- /. ROW -->
 

@@ -119,7 +119,7 @@ go
 
 create view v_itensAtendimento
 as
-	select 	a.Código 'Código Atendimento',
+	select 	a.Código 'Código Procedimento',
 		a.[Código Tratamento],
 		p.Descrição           'Descrição Procedimento',
 		ia.qtd
@@ -127,7 +127,6 @@ as
 	join v_atendimento   a on (ia.atendimento_id = a.Código)
 	join v_procedimentos p on (ia.procedimento_id = p.Código)
 go
-
 
 --View de Junções
 

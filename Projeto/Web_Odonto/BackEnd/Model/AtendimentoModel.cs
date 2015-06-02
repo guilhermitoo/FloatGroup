@@ -113,21 +113,22 @@ namespace BackEnd.Model
             {
                 String sSql = "select I.* " +
                               " from v_itensAtendimento I " +
-                              " where I.[Código Atendimento] = " + idAtend.ToString();
+                              " where I.[Código Procedimento] = " + idAtend.ToString();
                 var query = db.ExecuteQuery<v_itensAtendimento>(sSql);
                 return query.ToList();
             }
         }
 
-        public List<atendimento> ListarPorPaciente(int pId)
+        public List<v_agenda> ListarPorPaciente(int pId)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql =  " select a.* from atendimentos a " +
-                                " join avaliacoes av on ( av.id = a.tratamento_id ) " +
-                                " where av.paciente_id = " + pId.ToString() +
-                                " order by a.data ";
-                var query = db.ExecuteQuery<atendimento>(sSql);
+                String sSql = " select id,data,nomeDentista,status "+
+                              " from v_agenda "+
+                              " where paciente = " + pId.ToString() + 
+                              " and tipo = 'AT' " +
+                              " order by data ";
+                var query = db.ExecuteQuery<v_agenda>(sSql);
                 return query.ToList();
             }
         }

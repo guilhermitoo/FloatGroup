@@ -5132,7 +5132,7 @@ namespace BackEnd.EntityData
 	public partial class v_itensAtendimento
 	{
 		
-		private int _Código_Atendimento;
+		private int _Código_Procedimento;
 		
 		private int _Código_Tratamento;
 		
@@ -5144,18 +5144,18 @@ namespace BackEnd.EntityData
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Atendimento]", Storage="_Código_Atendimento", DbType="Int NOT NULL")]
-		public int Código_Atendimento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
+		public int Código_Procedimento
 		{
 			get
 			{
-				return this._Código_Atendimento;
+				return this._Código_Procedimento;
 			}
 			set
 			{
-				if ((this._Código_Atendimento != value))
+				if ((this._Código_Procedimento != value))
 				{
-					this._Código_Atendimento = value;
+					this._Código_Procedimento = value;
 				}
 			}
 		}

@@ -280,7 +280,7 @@
   </Table>
   <Table Name="dbo.v_itensAtendimento" Member="v_itensAtendimentos">
     <Type Name="v_itensAtendimento">
-      <Column Name="[Código Atendimento]" Member="Código_Atendimento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Código Procedimento]" Member="Código_Procedimento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="[Código Tratamento]" Member="Código_Tratamento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="[Descrição Procedimento]" Member="Descrição_Procedimento" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

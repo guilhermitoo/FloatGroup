@@ -32,46 +32,30 @@ namespace FrontEnd
                 ddProcedimento.DataTextField = "descricao";
                 ddProcedimento.DataBind();
                 ddProcedimento.SelectedIndex = 0;
-            }
+                // se tiver um id vinculado com a requisição da página
+                if (Request.QueryString["ID"] != null)
+                { // pega o id e busca a avaliação
+                    int id = int.Parse(Request.QueryString["ID"]);
+                    BuscaAvaliacao(id);                 
+                }
+            }            
         }
 
         protected void btnBuscaAval_Click(object sender, EventArgs e)
-        {            
+        {
             try
-            {                
+            {
                 AvaliacaoModel avalModel = new AvaliacaoModel();
                 avaliacao a = new avaliacao();
                 // busca a avaliação referente ao paciente
                 a = (avalModel.ListarPorPaciente(Int32.Parse(ddPacienteAvaliacao.SelectedValue))).First();
-                // exibe o número da avaliação referente ao paciente            
+                // exibe o número da avaliação referente ao paciente  
                 if (a != null)
-                {
-                    txtNumeroAvaliacao.Value = a.id.ToString();
-                    pnlProc.Visible = true;
-                    pnlBotoes.Visible = true;
-                    txtDataAval.Value = a.data.ToString();
-                    TratamentoModel tratModel = new TratamentoModel();
-                    if (tratModel.Obter(a.id) != null)                    
-                    {
-                        CarregarTratamento(a.id);
-                    }
-                }
-                else
-                {
-                    txtNumeroAvaliacao.Value = "Nenhum";
-                    txtDataAval.Value = "";
-                    pnlProc.Visible = false;
-                    pnlBotoes.Visible = false;
-                    LimpaGrid();
+                { // somente busca a avaliação se tiver encontrado uma avaliação
+                    BuscaAvaliacao(a.id);
                 }
             }
-            catch {
-                txtNumeroAvaliacao.Value = "Nenhum";
-                txtDataAval.Value = "";
-                pnlProc.Visible = false;
-                pnlBotoes.Visible = false;
-                LimpaGrid();
-            }
+            catch { BuscaAvaliacao(0); }
         }
 
         public void AtualizaGrid()
@@ -87,6 +71,44 @@ namespace FrontEnd
             gvItensTratamento.DataSource = aval.Values;
             gvItensTratamento.DataBind();
             CalculaTotal();
+        }
+
+        private void BuscaAvaliacao(int id)
+        { 
+            try
+            {
+                AvaliacaoModel avModel = new AvaliacaoModel();
+                avaliacao a = avModel.Obter(id) as avaliacao;
+                if (a != null)
+                {
+                    txtNumeroAvaliacao.Value = a.id.ToString();
+                    pnlProc.Visible = true;
+                    pnlBotoes.Visible = true;
+                    txtDataAval.Value = a.data.ToString();
+                    ddPacienteAvaliacao.SelectedValue = a.paciente_id.ToString();
+                    TratamentoModel tratModel = new TratamentoModel();
+                    if (tratModel.Obter(a.id) != null)
+                    {
+                        CarregarTratamento(a.id);
+                    }
+                }
+                else
+                {
+                    txtNumeroAvaliacao.Value = "Nenhum";
+                    txtDataAval.Value = "";
+                    pnlProc.Visible = false;
+                    pnlBotoes.Visible = false;
+                    LimpaGrid();
+                }
+            }
+            catch
+            {
+                txtNumeroAvaliacao.Value = "Nenhum";
+                txtDataAval.Value = "";
+                pnlProc.Visible = false;
+                pnlBotoes.Visible = false;
+                LimpaGrid();
+            }
         }
 
         protected void btnAddProcedimento_Click(object sender, EventArgs e)

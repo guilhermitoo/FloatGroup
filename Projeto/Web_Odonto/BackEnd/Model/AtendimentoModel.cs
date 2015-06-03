@@ -132,5 +132,27 @@ namespace BackEnd.Model
                 return query.ToList();
             }
         }
+
+        public String GetStatus(int iStatus)
+        {
+            String sStatus;
+            // 1 = Em Orçameto, 2 = Em Andamento, 3 = Concluído
+            switch (iStatus)
+            {
+                case 1:
+                    sStatus = "Pendente";
+                    break;
+                case 2:
+                    sStatus = "Concluído";
+                    break;
+                case 3:
+                    sStatus = "Cancelado";
+                    break;
+                default:
+                    sStatus = "Nenhum";
+                    break;
+            }
+            return sStatus;
+        }
     }
 }

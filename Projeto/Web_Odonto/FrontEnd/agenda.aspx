@@ -63,7 +63,7 @@
                         
             <div class="panel-body">
             <% if (gvAgenda.Rows.Count > 0) { %>
-                <asp:GridView runat="server" ID="gvAgenda" CssClass="table table-bordered table-striped" 
+                <asp:GridView runat="server" ID="gvAgenda" CssClass="table table-bordered" 
                     GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id,tipo" OnRowCommand="gvAgenda_RowCommand" OnRowDataBound="gvAgenda_RowDataBound">
                 <Columns>                                
                 <asp:TemplateField HeaderText="Tipo"  HeaderStyle-Width="20">
@@ -81,11 +81,8 @@
                         <%#Eval("nomePaciente") %>
                     </ItemTemplate>
                 </asp:TemplateField>                                  
-                <asp:ButtonField CommandName="Confirmar" HeaderStyle-Width="20" >
-                    <ControlStyle CssClass="btn btn-xs btn-primary fa fa-check" />                                    
-                </asp:ButtonField>
-                <asp:ButtonField CommandName="Adiar" HeaderStyle-Width="20" >
-                    <ControlStyle CssClass="btn btn-xs btn-danger fa fa-times"  />                                    
+                <asp:ButtonField CommandName="Abrir" HeaderStyle-Width="40" Text="Abrir Registro">
+                    <ControlStyle CssClass="btn btn-xs btn-default"/>                                    
                 </asp:ButtonField>
                 </Columns>                            
                 </asp:GridView>                                 

@@ -59,15 +59,19 @@
                     <asp:Label id="Label2" Text="Data Atendimento" runat="server" meta:resourcekey="lblNumeroAvalResource1" />
                     <input id="txtDataAtendimento" readonly="true" class="form-control" runat="server"/>       
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <asp:Label id="Label3" Text="Dentista" runat="server" meta:resourcekey="lblNumeroAvalResource1" />
                     <asp:DropDownList ID="ddDentistaAtendimento" runat="server" CssClass="form-control dropdown-toggle">
                     </asp:DropDownList>
                 </div>
+                <div class="col-sm-2">
+                    <asp:Label ID="lbl4" Text="Status" runat="server" />
+                    <asp:TextBox ReadOnly="true" runat="server" ID="txtStatus" CssClass="form-control" />
+                </div>
                 <br /><br />
                 <div class="col-sm-12">
                     <br />
-                    <asp:GridView runat="server" ID="gvItensAtendimento" CssClass="table table-bordered table-striped"   
+                    <asp:GridView runat="server" ID="gvItensAtendimento" CssClass="table table-bordered table-stripped"   
                             GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Código_Procedimento" meta:resourcekey="gvItensAtendimentoResource1">
                         <Columns>
                             <asp:TemplateField HeaderText="ID" meta:resourcekey="TemplateFieldResource1">
@@ -90,11 +94,11 @@
                         </Columns>                            
                     </asp:GridView>       
                 </div>
-            </div>
+            </div>            
             <div class="panel-footer clearfix">
                 <div class="col-md-4 form-group">                    
-                    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="btn btn-primary"/>                  
-                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger"/>
+                    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="btn btn-primary" OnClick="btnConfirmar_Click"/>                  
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger" OnClick="btnCancelar_Click"/>
                 </div>
             </div>
             

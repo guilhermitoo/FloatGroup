@@ -91,33 +91,29 @@ namespace FrontEnd
             // recupera o id do procedimento na linha clicada
             Int32 id = (Int32)gvAgenda.DataKeys[linha].Value;
             String tipo = gvAgenda.DataKeys[linha][1].ToString();
-            
-            int status = 0;
-            // deve verificar se é avaliação ou atendimento e modificar o status
-            if (e.CommandName == "Adiar")
-            {// se for adiar, muda o status para 3
-                status = 3;
-            }
-            else if (e.CommandName == "Confirmar")
-            {// se for confirmar, muda o status para 2
-                status = 2; 
-            }
 
-            if (status > 0)
+            
+
+            // deve verificar se é avaliação ou atendimento e redirecionar para a tela específica
+            if (e.CommandName == "Abrir")
             {
-                AvaliacaoModel avm = new AvaliacaoModel();
-                AtendimentoModel atm = new AtendimentoModel();
+                AtendimentoModel atModel = new AtendimentoModel();
+                v_agenda a = new v_agenda();
+                // busca o registro para verificar o status SE for avaliação
+                // atendimentos ele exibe qualquer status
+                a = atModel.AgendamentoObter(id, tipo);
                 if (tipo == "AV")
                 {
-                    avm.MudarStatus(id, status);
+                    if (a.status == 1)
+                    {
+                        Response.Redirect("avaliacao.aspx?ID=" + id.ToString());
+                    }
                 }
                 else if (tipo == "AT")
                 {
-                    atm.MudarStatus(id, status);
+                    Response.Redirect("atendimento.aspx?ID=" + id.ToString());
                 }                
-            }
-            
-
+            }            
         }
                 
 

@@ -119,7 +119,8 @@ go
 
 create view v_itensAtendimento
 as
-	select 	a.Código 'Código Procedimento',
+	select 	p.Código 'Código Procedimento',
+		a.Código 'Código Atendimento',
 		a.[Código Tratamento],
 		p.Descrição           'Descrição Procedimento',
 		ia.qtd

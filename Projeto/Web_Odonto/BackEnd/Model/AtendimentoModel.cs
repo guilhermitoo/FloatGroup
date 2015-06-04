@@ -78,14 +78,16 @@ namespace BackEnd.Model
         public bool MudarStatus(int id, int status)
         {
             WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
-
             try
             {
-                //                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
                 String sSql = " update atendimentos set status = " + status.ToString() +
                                 " where id = " + id.ToString();
                 var query = db.ExecuteCommand(sSql);
-
+                
+                if (status == 2)
+                { // se o status foi modificado para 2, modifica o status dos itens que foram realizados                    
+                    
+                }
                 return true;
             }
             catch
@@ -113,7 +115,7 @@ namespace BackEnd.Model
             {
                 String sSql = "select I.* " +
                               " from v_itensAtendimento I " +
-                              " where I.[Código Procedimento] = " + idAtend.ToString();
+                              " where I.[Código Atendimento] = " + idAtend.ToString();
                 var query = db.ExecuteQuery<v_itensAtendimento>(sSql);
                 return query.ToList();
             }
@@ -153,6 +155,52 @@ namespace BackEnd.Model
                     break;
             }
             return sStatus;
+        }
+
+        public bool RemoveItem(itemAtendimento p)        
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try
+            {
+                Table<itemAtendimento> tbItemAtendimento = db.GetTable<itemAtendimento>();
+                if (p != null)
+                {
+                    db.removeItemAtendimento(p.atendimento_id, p.procedimento_id);
+                    tbItemAtendimento.Context.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch { return false; }
+        }
+
+        public bool ConfirmaAtendimento(atendimento at, List<itemAtendimento> itens)
+        {
+            WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
+            try 
+            {
+                if (MudarStatus(at.id, 2))
+                {
+                    foreach (itemAtendimento item in itens)
+                    {
+                        Table<itemAtendimento> tbItemAtendimento = db.GetTable<itemAtendimento>();
+                        db.verificaItemAtendimento(at.id, item.procedimento_id);
+                        tbItemAtendimento.Context.SubmitChanges();
+                    }
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch 
+            { 
+                return false; 
+            }
         }
     }
 }

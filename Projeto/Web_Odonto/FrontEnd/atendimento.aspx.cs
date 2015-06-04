@@ -127,13 +127,49 @@ namespace FrontEnd
 
                 if (at.status == 1)
                 {
-                    // se o status estiver marcado como 1 (pendente)
-                    // permite mudar o status do atendimento
-                    if (atModel.MudarStatus(id, iStatus))
+                    // se estiver tentando confirmar o atendimento irá percorrer o grid e listar os itens
+                    if (iStatus == 2)
                     {
-                        Response.Redirect("agenda.aspx");
-                    }
+                        // irá listar todos os itens do grid que foram marcados e enviar para o model
+                        // para executar a função(ou procedure) que irá verificar a quantidade e
+                        // se todos os itens estiverem sido realizados, modifica o status para 2(concluído)
+                        // na tabela ItensTratamento
+                        List<itemAtendimento> itens = new List<itemAtendimento>();
 
+                        itemAtendimento item = new itemAtendimento();
+
+                        for (int i = 0; i < gvItensAtendimento.Rows.Count; i++)
+                        {
+                            item.atendimento_id = id;
+                            item.procedimento_id = Int32.Parse(gvItensAtendimento.DataKeys[i].Value.ToString());
+                            item.qtd = 1;
+                            CheckBox cb = (CheckBox)gvItensAtendimento.Rows[i].Cells[0].FindControl("cbProcRealizado");
+                            if (cb.Checked)
+                            {
+                                itens.Add(item);
+                            }
+                            else
+                            {
+                                atModel.RemoveItem(item);
+                            }                            
+                        }
+                        //AGORA chama A FUNÇÃO PARA CONFIRMAR O ATENDIMENTO, PASSANDO COMO PARAMETRO O ID DO ATENDIMENTO
+                        //    E A LISTA DOS ITENS QUE FORAM REALIZADOS
+                        if (atModel.ConfirmaAtendimento(at, itens))
+                        {
+                            Response.Redirect("agenda.aspx");
+                        }
+                    }
+                    else
+                    {
+                        // se o status estiver marcado como 1 (pendente)
+                        // permite mudar o status do atendimento
+                        if (atModel.MudarStatus(id, iStatus))
+                        {
+                            Response.Redirect("agenda.aspx");
+                        }
+
+                    }
                 }
             }
         }

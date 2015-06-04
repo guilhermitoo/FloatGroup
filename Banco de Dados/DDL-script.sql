@@ -73,7 +73,7 @@ create table avaliacoes
 	data		datetime 	not null,
 	dentista_id	int		not null	references dentistas,
 	paciente_id int		 	not null	references pacientes,
-	status int check(status in (1,2,3)) not null -- 1 = Pendente, 2 = Cancelado, 3 = Concluído
+	status int check(status in (1,2,3)) not null -- 1 = Pendente, 2 = Concluído, 3 = Cancelado
 )
 go
 
@@ -109,7 +109,7 @@ create table atendimentos
 (
 	id int not null primary key identity,
 	data datetime not null,
-	status int check(status in (1,2,3)) not null, -- 1 = Pendente, 2 = Cancelado, 3 = Concluído
+	status int check(status in (1,2,3)) not null, -- 1 = Pendente, 2 = Concluído 3 = Cancelado
 	dentista_id int not null references dentistas,
 	tratamento_id int not null references tratamentos
 )

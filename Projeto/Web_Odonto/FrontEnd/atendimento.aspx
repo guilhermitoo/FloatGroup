@@ -90,7 +90,13 @@
                                     <%#Eval("qtd") %>
                                 </ItemTemplate>
                                 <HeaderStyle Width="50px" />
-                            </asp:TemplateField>                                                    
+                            </asp:TemplateField>            
+                            <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Realizado">
+                                <ItemTemplate >
+                                    <asp:CheckBox id="cbProcRealizado" runat="server" Checked="true" />
+                                </ItemTemplate> 
+                                <HeaderStyle Width="80px" />                             
+                            </asp:TemplateField>                                      
                         </Columns>                            
                     </asp:GridView>       
                 </div>

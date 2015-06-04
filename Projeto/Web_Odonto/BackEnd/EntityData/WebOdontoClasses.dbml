@@ -281,6 +281,7 @@
   <Table Name="dbo.v_itensAtendimento" Member="v_itensAtendimentos">
     <Type Name="v_itensAtendimento">
       <Column Name="[Código Procedimento]" Member="Código_Procedimento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Código Atendimento]" Member="Código_Atendimento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="[Código Tratamento]" Member="Código_Tratamento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="[Descrição Procedimento]" Member="Descrição_Procedimento" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -467,6 +468,16 @@
   <Function Name="dbo.removeItemTratamento" Method="removeItemTratamento">
     <Parameter Name="tratamento_id" Type="System.Int32" DbType="Int" />
     <Parameter Name="procedimento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.removeItemAtendimento" Method="removeItemAtendimento">
+    <Parameter Name="atendimento_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="procedimento_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.verificaItemAtendimento" Method="verificaItemAtendimento">
+    <Parameter Name="idAtendimento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idProcedimento" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

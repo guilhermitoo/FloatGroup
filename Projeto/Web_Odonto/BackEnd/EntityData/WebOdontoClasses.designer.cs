@@ -472,6 +472,20 @@ namespace BackEnd.EntityData
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tratamento_id, procedimento_id);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.removeItemAtendimento")]
+		public int removeItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> atendimento_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> procedimento_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), atendimento_id, procedimento_id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.verificaItemAtendimento")]
+		public int verificaItemAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idAtendimento, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idProcedimento)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAtendimento, idProcedimento);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.atendimentos")]
@@ -5134,6 +5148,8 @@ namespace BackEnd.EntityData
 		
 		private int _Código_Procedimento;
 		
+		private int _Código_Atendimento;
+		
 		private int _Código_Tratamento;
 		
 		private string _Descrição_Procedimento;
@@ -5156,6 +5172,22 @@ namespace BackEnd.EntityData
 				if ((this._Código_Procedimento != value))
 				{
 					this._Código_Procedimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Atendimento]", Storage="_Código_Atendimento", DbType="Int NOT NULL")]
+		public int Código_Atendimento
+		{
+			get
+			{
+				return this._Código_Atendimento;
+			}
+			set
+			{
+				if ((this._Código_Atendimento != value))
+				{
+					this._Código_Atendimento = value;
 				}
 			}
 		}

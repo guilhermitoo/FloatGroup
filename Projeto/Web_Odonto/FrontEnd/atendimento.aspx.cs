@@ -24,12 +24,6 @@ namespace FrontEnd
                 ddPacienteAtendimento.DataBind();
                 ddPacienteAtendimento.SelectedIndex = 0;
 
-                ddDentistaAtendimento.DataSource = pessoaModel.ListarDentistas();
-                ddDentistaAtendimento.DataValueField = "id";
-                ddDentistaAtendimento.DataTextField = "nome";
-                ddDentistaAtendimento.DataBind();
-                ddDentistaAtendimento.SelectedIndex = 0;
-
                 // se tiver um id vinculado com a requisição da página
                 if (Request.QueryString["ID"] != null)
                 { // pega o id e busca o atendimento
@@ -86,7 +80,11 @@ namespace FrontEnd
                 BackEnd.EntityData.atendimento atend = new BackEnd.EntityData.atendimento();
                 atend = atModel.Obter(idAtend);
                 txtDataAtendimento.Value = atend.data.ToString();
-                ddDentistaAtendimento.SelectedValue = atend.dentista_id.ToString();
+                // busca o nome do dentista
+                PessoaModel dModel = new PessoaModel();
+                pessoa d = new pessoa();
+                d = dModel.Obter(atend.dentista_id);
+                txtDentista.Value = d.id.ToString() + " - " + d.nome.ToString();
                 txtStatus.Text = atModel.GetStatus(atend.status);
 
                 // GAMBIARRA ON: 
@@ -123,8 +121,7 @@ namespace FrontEnd
                 int id = Int32.Parse(txtNumeroAtendimento.Value);
                 AtendimentoModel atModel = new AtendimentoModel();
                 BackEnd.EntityData.atendimento at = new BackEnd.EntityData.atendimento();
-                at = atModel.Obter(id);
-
+                at = atModel.Obter(id);                                                
                 if (at.status == 1)
                 {
                     // se estiver tentando confirmar o atendimento irá percorrer o grid e listar os itens
@@ -157,6 +154,12 @@ namespace FrontEnd
                         //    E A LISTA DOS ITENS QUE FORAM REALIZADOS
                         if (atModel.ConfirmaAtendimento(at, itens))
                         {
+                            // verifica o final do tratamento.
+                            TratamentoModel tModel = new TratamentoModel();
+                            tratamento t = new tratamento();
+                            t = tModel.Obter(at.tratamento_id);
+                            tModel.VerificaFinalTratamento(t);
+                            //
                             Response.Redirect("agenda.aspx");
                         }
                     }
@@ -168,8 +171,34 @@ namespace FrontEnd
                         {
                             Response.Redirect("agenda.aspx");
                         }
-
                     }
+                }
+            }
+        }
+
+        protected void gvListaAtendimentos_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                int linha = e.Row.RowIndex;
+                Int32 id = (Int32)gvListaAtendimentos.DataKeys[linha].Value;
+                BackEnd.EntityData.atendimento v = new BackEnd.EntityData.atendimento();
+                AtendimentoModel atendModel = new AtendimentoModel();
+                v = atendModel.Obter(id);
+
+                int status = v.status;
+                if (status == 2)
+                {
+                    e.Row.BackColor = System.Drawing.Color.LightGreen;
+                    //Int32 id = (Int32)gvAgenda.DataKeys(linha)("tipo");
+                }
+                else if (status == 3)
+                {
+                    e.Row.BackColor = System.Drawing.Color.LightPink;
+                }
+                else
+                {
+                    e.Row.BackColor = System.Drawing.Color.White;
                 }
             }
         }

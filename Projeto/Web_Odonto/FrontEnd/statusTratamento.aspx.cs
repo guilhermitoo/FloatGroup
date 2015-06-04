@@ -41,13 +41,23 @@ namespace FrontEnd
             {
                 tratamento tratamento = new tratamento();
                 TratamentoModel tModel = new TratamentoModel();
-                tratamento = (tratModel.ListarPorPaciente(Int32.Parse(ddPaciente.SelectedValue))).First();
+                tratamento = (tratModel.ListarPorPaciente(Int32.Parse(ddPaciente.SelectedValue),0)).First();
                 int idTrat = tratamento.avaliacao_id;
                 // exibe o número do tratamento e o status
                 txtNumTrat.Text = idTrat.ToString();
+                // verifica se o tratamento foi concluído, se sim, muda a cor do campo status para verde
+                if (tratamento.status == 3)
+                {
+                    txtStatus.BackColor = System.Drawing.Color.LightGreen;                    
+                }
+                else
+                {
+                    txtStatus.BackColor = txtNumTrat.BackColor;
+                }
                 txtStatus.Text = tModel.GetStatus(tratamento.status);
-                txtDataIni.Text = tratamento.dataInicial.ToString();
-                txtDataFin.Text = tratamento.dataFinal.ToString();
+                //
+                txtDataIni.Text = tratamento.dataInicial.Value.ToShortDateString();
+                txtDataFin.Text = tratamento.dataFinal.Value.ToShortDateString();
                 // atribui os valores da barra de progresso
                 //pbProgresso.Style.Value = "width: "+tModel.PorcentagemConcluida(idTrat).ToString()+"%";
                 bd.Value = tModel.PorcentagemConcluida(idTrat).ToString();

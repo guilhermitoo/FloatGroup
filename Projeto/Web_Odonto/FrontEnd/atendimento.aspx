@@ -25,7 +25,7 @@
         </div>
         <%--<asp:Panel ID="pnlListaAt" CssClass="panel panel-default" runat="server">--%>
             <asp:GridView runat="server" ID="gvListaAtendimentos" AutoGenerateColumns="false" OnRowCommand="gvListaAtendimentos_RowCommand"
-                  CssClass="table table-bordered table-striped" DataKeyNames="id" GridLines="Horizontal" AllowPaging="True" >
+                  OnRowDataBound="gvListaAtendimentos_RowDataBound" CssClass="table table-bordered" DataKeyNames="id" GridLines="Horizontal" AllowPaging="True" >
                 <Columns>
                     <asp:TemplateField HeaderText="ID" meta:resourcekey="TemplateFieldResource1">
                         <ItemTemplate>
@@ -60,9 +60,8 @@
                     <input id="txtDataAtendimento" readonly="true" class="form-control" runat="server"/>       
                 </div>
                 <div class="col-sm-4">
-                    <asp:Label id="Label3" Text="Dentista" runat="server" meta:resourcekey="lblNumeroAvalResource1" />
-                    <asp:DropDownList ID="ddDentistaAtendimento" runat="server" CssClass="form-control dropdown-toggle">
-                    </asp:DropDownList>
+                    <asp:Label id="Label3" Text="Dentista" runat="server" meta:resourcekey="lblNumeroAvalResource1" />                    
+                    <input id="txtDentista" readonly="true" class="form-control" runat="server"/>                           
                 </div>
                 <div class="col-sm-2">
                     <asp:Label ID="lbl4" Text="Status" runat="server" />

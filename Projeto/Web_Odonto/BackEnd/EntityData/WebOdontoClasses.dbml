@@ -480,4 +480,8 @@
     <Parameter Name="idProcedimento" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.verificaFinalTratamento" Method="verificaFinalTratamento">
+    <Parameter Name="idTratamento" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

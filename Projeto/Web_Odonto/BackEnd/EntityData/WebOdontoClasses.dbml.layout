@@ -202,7 +202,7 @@
         <classShapeMoniker Id="113f1776-6968-42a9-b989-626da635d7a3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 3.64067260742187); (8.54166666666667 : 3.64067260742187 : JumpStart); (8.70833333333333 : 3.64067260742187 : JumpEnd); (9 : 3.64067260742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 3.64067260742187); (9 : 3.64067260742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/WebOdontoClassesDataContext/paciente/paciente_avaliacao" />
       <nodes>
         <classShapeMoniker Id="4345ec03-8286-411b-867d-a5b68303ff9e" />

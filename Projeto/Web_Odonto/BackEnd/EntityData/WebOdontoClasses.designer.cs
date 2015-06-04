@@ -486,6 +486,13 @@ namespace BackEnd.EntityData
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idAtendimento, idProcedimento);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.verificaFinalTratamento")]
+		public int verificaFinalTratamento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idTratamento)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idTratamento);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.atendimentos")]

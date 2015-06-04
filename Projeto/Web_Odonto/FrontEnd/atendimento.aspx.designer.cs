@@ -103,13 +103,13 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// ddDentistaAtendimento control.
+        /// txtDentista control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddDentistaAtendimento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDentista;
         
         /// <summary>
         /// lbl4 control.

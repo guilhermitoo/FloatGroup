@@ -65,17 +65,18 @@ namespace BackEnd.Model
             }
         }
 
-        public List<tratamento> ListarPorPaciente(int pId)
+        public List<tratamento> ListarPorPaciente(int pId, int status = 2)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
-                String sSql = "select T.*"+
-                              " from tratamentos T"+
-                              " join avaliacoes A on ( T.avaliacao_id = A.id )"+
-                              " join pacientes P on ( A.paciente_id = P.pessoa_id )"+
-                              " where P.pessoa_id = " + pId.ToString() +
-                              " and T.status = 2 ";
+                String sSql = "select T.*" +
+                              " from tratamentos T" +
+                              " join avaliacoes A on ( T.avaliacao_id = A.id )" +
+                              " join pacientes P on ( A.paciente_id = P.pessoa_id )" +
+                              " where P.pessoa_id = " + pId.ToString();
+                if (status != 0)
+                    sSql = sSql + " and T.status = " + status.ToString();
                 var query = db.ExecuteQuery<tratamento>(sSql);
                 return query.ToList();
             }
@@ -281,7 +282,26 @@ namespace BackEnd.Model
                 return it;
             }
             catch { return null; }
-        }        
+        }
+
+        public bool VerificaFinalTratamento(tratamento t)
+        {
+            using ( WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                try 
+                {
+                    Table<tratamento> tabelaTratamento = db.GetTable<tratamento>();
+                    db.verificaFinalTratamento(t.avaliacao_id);
+                    tabelaTratamento.Context.SubmitChanges();
+                    return true;
+                }
+                catch 
+                {
+                    return false;
+                }
+            }
+        }
+
        
     }
 }

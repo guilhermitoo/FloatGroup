@@ -391,3 +391,31 @@ begin
 			where tratamento_id = @idTratamento
 			and procedimento_id = @idProcedimento
 end
+go
+
+
+create procedure verificaFinalTratamento
+(
+	@idTratamento int
+)
+as
+begin	
+-- recebe o id do tratamento e verifica se todos itens foram realizados, se sim, insere a dataFinal no tratamento
+-- e modifica o status para 3(Tratamento Concluído)
+	declare @qtdTotal int
+	declare @qtdConcluida int
+	declare @status int
+
+	set @qtdTotal = (select count(*) from itensTratamento where tratamento_id = @idTratamento)
+	set @qtdConcluida = (select count(*) from itenstratamento where tratamento_id = @idTratamento and status = 2)
+	set @status = (select status from tratamentos where avaliacao_id = @idTratamento)
+		
+	if @status = 2
+	begin
+		if @qtdTotal <= @qtdConcluida	
+		begin
+			update tratamentos set dataFinal = CURRENT_TIMESTAMP, status = 3 where avaliacao_id = @idTratamento
+		end
+	end
+end
+go

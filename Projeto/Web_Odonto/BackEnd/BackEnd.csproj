@@ -70,6 +70,7 @@
     <Compile Include="Model\FuncionarioModel.cs" />
     <Compile Include="Model\PacienteModel.cs" />
     <Compile Include="Model\PessoaModel.cs" />
+    <Compile Include="Model\PrintWeb.cs" />
     <Compile Include="Model\ProcedimentoModel.cs" />
     <Compile Include="Model\TratamentoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

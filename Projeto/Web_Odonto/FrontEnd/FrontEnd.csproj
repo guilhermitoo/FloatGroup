@@ -212,6 +212,7 @@
     <Content Include="avaliacao.aspx" />
     <Content Include="cidades.aspx" />
     <Content Include="convenios.aspx" />
+    <Content Include="Imprimir.aspx" />
     <Content Include="listaDentistas.aspx" />
     <Content Include="listaFuncionarios.aspx" />
     <Content Include="index.aspx" />
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="convenios.aspx.designer.cs">
       <DependentUpon>convenios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Imprimir.aspx.cs">
+      <DependentUpon>Imprimir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Imprimir.aspx.designer.cs">
+      <DependentUpon>Imprimir.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaDentistas.aspx.cs">
       <DependentUpon>listaDentistas.aspx</DependentUpon>

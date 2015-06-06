@@ -76,5 +76,12 @@ namespace FrontEnd
                 Master.Status(txt);
             }
         }
+
+        protected void btnPrint_Click(object sender, EventArgs e)
+        {
+             Session["ctrl"] = pnlTratamento;
+             ClientScript.RegisterStartupScript(this.GetType(), "onclick",
+            "<script language=javascript>window.open('Imprimir.aspx','Imprimir','height=300px,width=300px,scrollbars=1');</script>");
+        }
     }
 }

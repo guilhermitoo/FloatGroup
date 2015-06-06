@@ -99,6 +99,9 @@
                         </asp:GridView>
                     </div>                
                 </div>
+                <div class="panel-footer">
+                    <asp:Button id="btnPrint" runat="server" CssClass="btn btn-info" Text="Imprimir" OnClick="btnPrint_Click" />
+                </div>
             </div>
         </asp:Panel>
     </div>

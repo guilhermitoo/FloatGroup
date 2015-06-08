@@ -70,7 +70,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
-                String sSql = "select T.*" +
+                String sSql = "select T.*,P.nome" +
                               " from tratamentos T" +
                               " join avaliacoes A on ( T.avaliacao_id = A.id )" +
                               " join pacientes P on ( A.paciente_id = P.pessoa_id )" +
@@ -81,6 +81,20 @@ namespace BackEnd.Model
                 return query.ToList();
             }
         }
+
+        public List<v_detalhesTratamento> ListarPorPacienteDetalhado(int pId)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+
+                String sSql =   "select * from v_detalhesTratamento T "+
+                                " where T.[Código Paciente] = " + pId.ToString();
+                
+                var query = db.ExecuteQuery<v_detalhesTratamento>(sSql);
+                return query.ToList();
+            }
+        }
+
 
         public String GetStatus(int iStatus)
         {

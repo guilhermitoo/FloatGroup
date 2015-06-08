@@ -22,7 +22,31 @@
                     <asp:Button ID="btnBuscaTratamento" runat="server" Text="Buscar Tratamento" CssClass="btn btn-primary" OnClick="btnBuscaTratamento_Click" meta:resourcekey="btnBuscaTratamentoResource1"/>                                    
                 </div>        
             </div>
-        </div>      
+        </div>   
+        <asp:GridView runat="server" ID="gvListaTratamentos" AutoGenerateColumns="false" OnRowCommand="gvListraTratamentos_RowCommand"
+                CssClass="table table-bordered" DataKeyNames="Código" GridLines="Horizontal" AllowPaging="True" >
+            <Columns>
+                <asp:TemplateField HeaderText="Código Tratamento" >
+                    <ItemTemplate>
+                        <%#Eval("Código") %>
+                    </ItemTemplate>
+                    <HeaderStyle Width="35px" />
+                </asp:TemplateField>     
+                <asp:TemplateField HeaderText="Nome do Paciente">
+                    <ItemTemplate>
+                        <%#Eval("Nome") %>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Status">
+                    <ItemTemplate>
+                        <%#Eval("Status") %>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:ButtonField CommandName="Abrir" HeaderStyle-Width="20" Text="Abrir">
+                    <ControlStyle CssClass="btn btn-xs btn-info"/>                                    
+                </asp:ButtonField>
+            </Columns>
+        </asp:GridView>   
         <asp:Panel id="pnlTratamento" runat="server" meta:resourcekey="pnlTratamentoResource1">      
             <div class="panel panel-default">
                 <div class="panel-body">                 

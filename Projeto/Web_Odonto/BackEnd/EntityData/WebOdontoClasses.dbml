@@ -132,70 +132,6 @@
       <Association Name="avaliacao_tratamento" Member="avaliacao" ThisKey="avaliacao_id" OtherKey="id" Type="avaliacao" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.v_agenda" Member="v_agendas">
-    <Type Name="v_agenda">
-      <Column Name="tipo" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="dentista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="nomeDentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="paciente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="nomePaciente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_atendimento" Member="v_atendimentos">
-    <Type Name="v_atendimento">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Dentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="[Código Tratamento]" Member="Código_Tratamento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_avaliacoes" Member="v_avaliacoes">
-    <Type Name="v_avaliacoe">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Dentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Paciente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_cidades" Member="v_cidades">
-    <Type Name="v_cidade">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Cidade" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="UF" Type="System.String" DbType="Char(2)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_convenios" Member="v_convenios">
-    <Type Name="v_convenio">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CNPJ" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="IE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="[Razão Social]" Member="Razão_Social" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="[Nome Fantasia]" Member="Nome_Fantasia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_dentistas" Member="v_dentistas">
-    <Type Name="v_dentista">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="CPF" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="RG" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="[Data de Nascimento]" Member="Data_de_Nascimento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="[Telefone 1]" Member="Telefone_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="[Telefone 2]" Member="Telefone_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="Endereço" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Usuário" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="[Tipo Usuário]" Member="Tipo_Usuário" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CRO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.v_funcionarios" Member="v_funcionarios">
     <Type Name="v_funcionario">
       <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -214,6 +150,39 @@
       <Column Name="[Tipo Usuário]" Member="Tipo_Usuário" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Salário" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
       <Column Name="Cargo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_tratamentos" Member="v_tratamentos">
+    <Type Name="v_tratamento">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Data Inicial]" Member="Data_Inicial" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Data Final]" Member="Data_Final" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_procedimentos" Member="v_procedimentos">
+    <Type Name="v_procedimento">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descrição" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_pessoas" Member="v_pessoas">
+    <Type Name="v_pessoa">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[Data de Nascimento]" Member="Data_de_Nascimento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Telefone 1]" Member="Telefone_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Telefone 2]" Member="Telefone_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Endereço" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuário" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="[Tipo Usuário]" Member="Tipo_Usuário" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.v_pacientes" Member="v_pacientes">
@@ -235,39 +204,6 @@
       <Column Name="Convênio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.v_pessoas" Member="v_pessoas">
-    <Type Name="v_pessoa">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="CPF" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="RG" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="[Data de Nascimento]" Member="Data_de_Nascimento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="[Telefone 1]" Member="Telefone_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="[Telefone 2]" Member="Telefone_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="Endereço" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Usuário" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="[Tipo Usuário]" Member="Tipo_Usuário" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_procedimentos" Member="v_procedimentos">
-    <Type Name="v_procedimento">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Descrição" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.v_tratamentos" Member="v_tratamentos">
-    <Type Name="v_tratamento">
-      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="[Data Inicial]" Member="Data_Inicial" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="[Data Final]" Member="Data_Final" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Total" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.v_itensTratamento" Member="v_itensTratamentos">
     <Type Name="v_itensTratamento">
       <Column Name="[Código Tratamento]" Member="Código_Tratamento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -285,6 +221,101 @@
       <Column Name="[Código Tratamento]" Member="Código_Tratamento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="[Descrição Procedimento]" Member="Descrição_Procedimento" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_funcionarios" Member="v_funcionario1s">
+    <Type Name="v_funcionario1">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[Data de Nascimento]" Member="Data_de_Nascimento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Telefone 1]" Member="Telefone_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Telefone 2]" Member="Telefone_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Endereço" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuário" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="[Tipo Usuário]" Member="Tipo_Usuário" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Salário" Type="System.Decimal" DbType="Decimal(15,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_dentistas" Member="v_dentistas">
+    <Type Name="v_dentista">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="[Data de Nascimento]" Member="Data_de_Nascimento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Telefone 1]" Member="Telefone_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="[Telefone 2]" Member="Telefone_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Endereço" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuário" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="[Tipo Usuário]" Member="Tipo_Usuário" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CRO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_convenios" Member="v_convenios">
+    <Type Name="v_convenio">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="[Razão Social]" Member="Razão_Social" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="[Nome Fantasia]" Member="Nome_Fantasia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_cidades" Member="v_cidades">
+    <Type Name="v_cidade">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UF" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_avaliacoes" Member="v_avaliacoes">
+    <Type Name="v_avaliacoe">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_atendimento" Member="v_atendimentos">
+    <Type Name="v_atendimento">
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Código Tratamento]" Member="Código_Tratamento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_agenda" Member="v_agendas">
+    <Type Name="v_agenda">
+      <Column Name="tipo" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dentista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomeDentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="paciente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomePaciente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_detalhesTratamento" Member="v_detalhesTratamentos">
+    <Type Name="v_detalhesTratamento">
+      <Column Name="[Código Paciente]" Member="Código_Paciente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Código" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Data Inicial]" Member="Data_Inicial" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Data Final]" Member="Data_Final" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.alteraAtendimento" Method="alteraAtendimento">

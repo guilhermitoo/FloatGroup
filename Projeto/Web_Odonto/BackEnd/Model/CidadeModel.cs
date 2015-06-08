@@ -39,24 +39,6 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(cidade cidade)
-        {
-            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
-            {
-                try
-                {
-                    Table<cidade> tabelaCidade = db.GetTable<cidade>();
-                    tabelaCidade.DeleteOnSubmit(tabelaCidade.First(p => p.id == cidade.id));
-                    db.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
-
         public cidade Obter(int id)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())

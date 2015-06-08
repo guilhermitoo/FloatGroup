@@ -194,54 +194,6 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<v_agenda> v_agendas
-		{
-			get
-			{
-				return this.GetTable<v_agenda>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_atendimento> v_atendimentos
-		{
-			get
-			{
-				return this.GetTable<v_atendimento>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_avaliacoe> v_avaliacoes
-		{
-			get
-			{
-				return this.GetTable<v_avaliacoe>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_cidade> v_cidades
-		{
-			get
-			{
-				return this.GetTable<v_cidade>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_convenio> v_convenios
-		{
-			get
-			{
-				return this.GetTable<v_convenio>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_dentista> v_dentistas
-		{
-			get
-			{
-				return this.GetTable<v_dentista>();
-			}
-		}
-		
 		public System.Data.Linq.Table<v_funcionario> v_funcionarios
 		{
 			get
@@ -250,19 +202,11 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<v_paciente> v_pacientes
+		public System.Data.Linq.Table<v_tratamento> v_tratamentos
 		{
 			get
 			{
-				return this.GetTable<v_paciente>();
-			}
-		}
-		
-		public System.Data.Linq.Table<v_pessoa> v_pessoas
-		{
-			get
-			{
-				return this.GetTable<v_pessoa>();
+				return this.GetTable<v_tratamento>();
 			}
 		}
 		
@@ -274,11 +218,19 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		public System.Data.Linq.Table<v_tratamento> v_tratamentos
+		public System.Data.Linq.Table<v_pessoa> v_pessoas
 		{
 			get
 			{
-				return this.GetTable<v_tratamento>();
+				return this.GetTable<v_pessoa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_paciente> v_pacientes
+		{
+			get
+			{
+				return this.GetTable<v_paciente>();
 			}
 		}
 		
@@ -295,6 +247,70 @@ namespace BackEnd.EntityData
 			get
 			{
 				return this.GetTable<v_itensAtendimento>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_funcionario1> v_funcionario1s
+		{
+			get
+			{
+				return this.GetTable<v_funcionario1>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_dentista> v_dentistas
+		{
+			get
+			{
+				return this.GetTable<v_dentista>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_convenio> v_convenios
+		{
+			get
+			{
+				return this.GetTable<v_convenio>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_cidade> v_cidades
+		{
+			get
+			{
+				return this.GetTable<v_cidade>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_avaliacoe> v_avaliacoes
+		{
+			get
+			{
+				return this.GetTable<v_avaliacoe>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_atendimento> v_atendimentos
+		{
+			get
+			{
+				return this.GetTable<v_atendimento>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_agenda> v_agendas
+		{
+			get
+			{
+				return this.GetTable<v_agenda>();
+			}
+		}
+		
+		public System.Data.Linq.Table<v_detalhesTratamento> v_detalhesTratamentos
+		{
+			get
+			{
+				return this.GetTable<v_detalhesTratamento>();
 			}
 		}
 		
@@ -3277,780 +3293,6 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_agenda")]
-	public partial class v_agenda
-	{
-		
-		private string _tipo;
-		
-		private int _id;
-		
-		private System.DateTime _data;
-		
-		private int _dentista;
-		
-		private string _nomeDentista;
-		
-		private int _paciente;
-		
-		private string _nomePaciente;
-		
-		private int _status;
-		
-		public v_agenda()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
-		public string tipo
-		{
-			get
-			{
-				return this._tipo;
-			}
-			set
-			{
-				if ((this._tipo != value))
-				{
-					this._tipo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
-		public System.DateTime data
-		{
-			get
-			{
-				return this._data;
-			}
-			set
-			{
-				if ((this._data != value))
-				{
-					this._data = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista", DbType="Int NOT NULL")]
-		public int dentista
-		{
-			get
-			{
-				return this._dentista;
-			}
-			set
-			{
-				if ((this._dentista != value))
-				{
-					this._dentista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomeDentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string nomeDentista
-		{
-			get
-			{
-				return this._nomeDentista;
-			}
-			set
-			{
-				if ((this._nomeDentista != value))
-				{
-					this._nomeDentista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente", DbType="Int NOT NULL")]
-		public int paciente
-		{
-			get
-			{
-				return this._paciente;
-			}
-			set
-			{
-				if ((this._paciente != value))
-				{
-					this._paciente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomePaciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string nomePaciente
-		{
-			get
-			{
-				return this._nomePaciente;
-			}
-			set
-			{
-				if ((this._nomePaciente != value))
-				{
-					this._nomePaciente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
-		public int status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_atendimento")]
-	public partial class v_atendimento
-	{
-		
-		private int _Código;
-		
-		private System.DateTime _Data;
-		
-		private int _Status;
-		
-		private string _Dentista;
-		
-		private int _Código_Tratamento;
-		
-		public v_atendimento()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
-		public System.DateTime Data
-		{
-			get
-			{
-				return this._Data;
-			}
-			set
-			{
-				if ((this._Data != value))
-				{
-					this._Data = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Dentista
-		{
-			get
-			{
-				return this._Dentista;
-			}
-			set
-			{
-				if ((this._Dentista != value))
-				{
-					this._Dentista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
-		public int Código_Tratamento
-		{
-			get
-			{
-				return this._Código_Tratamento;
-			}
-			set
-			{
-				if ((this._Código_Tratamento != value))
-				{
-					this._Código_Tratamento = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_avaliacoes")]
-	public partial class v_avaliacoe
-	{
-		
-		private int _Código;
-		
-		private System.DateTime _Data;
-		
-		private string _Dentista;
-		
-		private string _Paciente;
-		
-		public v_avaliacoe()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
-		public System.DateTime Data
-		{
-			get
-			{
-				return this._Data;
-			}
-			set
-			{
-				if ((this._Data != value))
-				{
-					this._Data = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Dentista
-		{
-			get
-			{
-				return this._Dentista;
-			}
-			set
-			{
-				if ((this._Dentista != value))
-				{
-					this._Dentista = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Paciente
-		{
-			get
-			{
-				return this._Paciente;
-			}
-			set
-			{
-				if ((this._Paciente != value))
-				{
-					this._Paciente = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_cidades")]
-	public partial class v_cidade
-	{
-		
-		private int _Código;
-		
-		private string _Cidade;
-		
-		private string _UF;
-		
-		public v_cidade()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cidade", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Cidade
-		{
-			get
-			{
-				return this._Cidade;
-			}
-			set
-			{
-				if ((this._Cidade != value))
-				{
-					this._Cidade = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UF", DbType="Char(2)")]
-		public string UF
-		{
-			get
-			{
-				return this._UF;
-			}
-			set
-			{
-				if ((this._UF != value))
-				{
-					this._UF = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_convenios")]
-	public partial class v_convenio
-	{
-		
-		private int _Código;
-		
-		private string _CNPJ;
-		
-		private string _IE;
-		
-		private string _Razão_Social;
-		
-		private string _Nome_Fantasia;
-		
-		public v_convenio()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNPJ", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CNPJ
-		{
-			get
-			{
-				return this._CNPJ;
-			}
-			set
-			{
-				if ((this._CNPJ != value))
-				{
-					this._CNPJ = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IE", DbType="VarChar(20)")]
-		public string IE
-		{
-			get
-			{
-				return this._IE;
-			}
-			set
-			{
-				if ((this._IE != value))
-				{
-					this._IE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Razão Social]", Storage="_Razão_Social", DbType="VarChar(100)")]
-		public string Razão_Social
-		{
-			get
-			{
-				return this._Razão_Social;
-			}
-			set
-			{
-				if ((this._Razão_Social != value))
-				{
-					this._Razão_Social = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nome Fantasia]", Storage="_Nome_Fantasia", DbType="VarChar(100)")]
-		public string Nome_Fantasia
-		{
-			get
-			{
-				return this._Nome_Fantasia;
-			}
-			set
-			{
-				if ((this._Nome_Fantasia != value))
-				{
-					this._Nome_Fantasia = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_dentistas")]
-	public partial class v_dentista
-	{
-		
-		private int _Código;
-		
-		private string _Nome;
-		
-		private string _CPF;
-		
-		private string _RG;
-		
-		private System.DateTime _Data_de_Nascimento;
-		
-		private string _Telefone_1;
-		
-		private string _Telefone_2;
-		
-		private System.Nullable<char> _Sexo;
-		
-		private string _Endereço;
-		
-		private string _Usuário;
-		
-		private string _Senha;
-		
-		private int _Status;
-		
-		private string _Obs;
-		
-		private System.Nullable<int> _Tipo_Usuário;
-		
-		private string _CRO;
-		
-		public v_dentista()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
-		public int Código
-		{
-			get
-			{
-				return this._Código;
-			}
-			set
-			{
-				if ((this._Código != value))
-				{
-					this._Código = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this._Nome = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string CPF
-		{
-			get
-			{
-				return this._CPF;
-			}
-			set
-			{
-				if ((this._CPF != value))
-				{
-					this._CPF = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RG", DbType="VarChar(12)")]
-		public string RG
-		{
-			get
-			{
-				return this._RG;
-			}
-			set
-			{
-				if ((this._RG != value))
-				{
-					this._RG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
-		public System.DateTime Data_de_Nascimento
-		{
-			get
-			{
-				return this._Data_de_Nascimento;
-			}
-			set
-			{
-				if ((this._Data_de_Nascimento != value))
-				{
-					this._Data_de_Nascimento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Telefone 1]", Storage="_Telefone_1", DbType="VarChar(15)")]
-		public string Telefone_1
-		{
-			get
-			{
-				return this._Telefone_1;
-			}
-			set
-			{
-				if ((this._Telefone_1 != value))
-				{
-					this._Telefone_1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Telefone 2]", Storage="_Telefone_2", DbType="VarChar(15)")]
-		public string Telefone_2
-		{
-			get
-			{
-				return this._Telefone_2;
-			}
-			set
-			{
-				if ((this._Telefone_2 != value))
-				{
-					this._Telefone_2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="Char(1)")]
-		public System.Nullable<char> Sexo
-		{
-			get
-			{
-				return this._Sexo;
-			}
-			set
-			{
-				if ((this._Sexo != value))
-				{
-					this._Sexo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Endereço", DbType="VarChar(50)")]
-		public string Endereço
-		{
-			get
-			{
-				return this._Endereço;
-			}
-			set
-			{
-				if ((this._Endereço != value))
-				{
-					this._Endereço = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuário", DbType="VarChar(20)")]
-		public string Usuário
-		{
-			get
-			{
-				return this._Usuário;
-			}
-			set
-			{
-				if ((this._Usuário != value))
-				{
-					this._Usuário = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Senha", DbType="VarChar(50)")]
-		public string Senha
-		{
-			get
-			{
-				return this._Senha;
-			}
-			set
-			{
-				if ((this._Senha != value))
-				{
-					this._Senha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Obs", DbType="VarChar(200)")]
-		public string Obs
-		{
-			get
-			{
-				return this._Obs;
-			}
-			set
-			{
-				if ((this._Obs != value))
-				{
-					this._Obs = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tipo Usuário]", Storage="_Tipo_Usuário", DbType="Int")]
-		public System.Nullable<int> Tipo_Usuário
-		{
-			get
-			{
-				return this._Tipo_Usuário;
-			}
-			set
-			{
-				if ((this._Tipo_Usuário != value))
-				{
-					this._Tipo_Usuário = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRO", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string CRO
-		{
-			get
-			{
-				return this._CRO;
-			}
-			set
-			{
-				if ((this._CRO != value))
-				{
-					this._CRO = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_funcionarios")]
 	public partial class v_funcionario
 	{
@@ -4348,6 +3590,411 @@ namespace BackEnd.EntityData
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_tratamentos")]
+	public partial class v_tratamento
+	{
+		
+		private int _Código;
+		
+		private int _Status;
+		
+		private System.Nullable<System.DateTime> _Data_Inicial;
+		
+		private System.Nullable<System.DateTime> _Data_Final;
+		
+		private System.Nullable<decimal> _Total;
+		
+		public v_tratamento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data Inicial]", Storage="_Data_Inicial", DbType="Date")]
+		public System.Nullable<System.DateTime> Data_Inicial
+		{
+			get
+			{
+				return this._Data_Inicial;
+			}
+			set
+			{
+				if ((this._Data_Inicial != value))
+				{
+					this._Data_Inicial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data Final]", Storage="_Data_Final", DbType="Date")]
+		public System.Nullable<System.DateTime> Data_Final
+		{
+			get
+			{
+				return this._Data_Final;
+			}
+			set
+			{
+				if ((this._Data_Final != value))
+				{
+					this._Data_Final = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Total", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_procedimentos")]
+	public partial class v_procedimento
+	{
+		
+		private int _Código;
+		
+		private string _Descrição;
+		
+		public v_procedimento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição
+		{
+			get
+			{
+				return this._Descrição;
+			}
+			set
+			{
+				if ((this._Descrição != value))
+				{
+					this._Descrição = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_pessoas")]
+	public partial class v_pessoa
+	{
+		
+		private int _Código;
+		
+		private string _Nome;
+		
+		private string _CPF;
+		
+		private string _RG;
+		
+		private System.DateTime _Data_de_Nascimento;
+		
+		private string _Telefone_1;
+		
+		private string _Telefone_2;
+		
+		private System.Nullable<char> _Sexo;
+		
+		private string _Endereço;
+		
+		private string _Usuário;
+		
+		private string _Senha;
+		
+		private int _Status;
+		
+		private string _Obs;
+		
+		private System.Nullable<int> _Tipo_Usuário;
+		
+		public v_pessoa()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this._Nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CPF
+		{
+			get
+			{
+				return this._CPF;
+			}
+			set
+			{
+				if ((this._CPF != value))
+				{
+					this._CPF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RG", DbType="VarChar(12)")]
+		public string RG
+		{
+			get
+			{
+				return this._RG;
+			}
+			set
+			{
+				if ((this._RG != value))
+				{
+					this._RG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
+		public System.DateTime Data_de_Nascimento
+		{
+			get
+			{
+				return this._Data_de_Nascimento;
+			}
+			set
+			{
+				if ((this._Data_de_Nascimento != value))
+				{
+					this._Data_de_Nascimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Telefone 1]", Storage="_Telefone_1", DbType="VarChar(15)")]
+		public string Telefone_1
+		{
+			get
+			{
+				return this._Telefone_1;
+			}
+			set
+			{
+				if ((this._Telefone_1 != value))
+				{
+					this._Telefone_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Telefone 2]", Storage="_Telefone_2", DbType="VarChar(15)")]
+		public string Telefone_2
+		{
+			get
+			{
+				return this._Telefone_2;
+			}
+			set
+			{
+				if ((this._Telefone_2 != value))
+				{
+					this._Telefone_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="Char(1)")]
+		public System.Nullable<char> Sexo
+		{
+			get
+			{
+				return this._Sexo;
+			}
+			set
+			{
+				if ((this._Sexo != value))
+				{
+					this._Sexo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Endereço", DbType="VarChar(50)")]
+		public string Endereço
+		{
+			get
+			{
+				return this._Endereço;
+			}
+			set
+			{
+				if ((this._Endereço != value))
+				{
+					this._Endereço = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuário", DbType="VarChar(20)")]
+		public string Usuário
+		{
+			get
+			{
+				return this._Usuário;
+			}
+			set
+			{
+				if ((this._Usuário != value))
+				{
+					this._Usuário = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Senha", DbType="VarChar(50)")]
+		public string Senha
+		{
+			get
+			{
+				return this._Senha;
+			}
+			set
+			{
+				if ((this._Senha != value))
+				{
+					this._Senha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Obs", DbType="VarChar(200)")]
+		public string Obs
+		{
+			get
+			{
+				return this._Obs;
+			}
+			set
+			{
+				if ((this._Obs != value))
+				{
+					this._Obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tipo Usuário]", Storage="_Tipo_Usuário", DbType="Int")]
+		public System.Nullable<int> Tipo_Usuário
+		{
+			get
+			{
+				return this._Tipo_Usuário;
+			}
+			set
+			{
+				if ((this._Tipo_Usuário != value))
+				{
+					this._Tipo_Usuário = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_pacientes")]
 	public partial class v_paciente
 	{
@@ -4627,8 +4274,224 @@ namespace BackEnd.EntityData
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_pessoas")]
-	public partial class v_pessoa
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensTratamento")]
+	public partial class v_itensTratamento
+	{
+		
+		private int _Código_Tratamento;
+		
+		private int _Código_Procedimento;
+		
+		private string _Descrição;
+		
+		private int _Quantidade;
+		
+		private int _Status;
+		
+		private System.Nullable<decimal> _Valor;
+		
+		public v_itensTratamento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
+		public int Código_Tratamento
+		{
+			get
+			{
+				return this._Código_Tratamento;
+			}
+			set
+			{
+				if ((this._Código_Tratamento != value))
+				{
+					this._Código_Tratamento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
+		public int Código_Procedimento
+		{
+			get
+			{
+				return this._Código_Procedimento;
+			}
+			set
+			{
+				if ((this._Código_Procedimento != value))
+				{
+					this._Código_Procedimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição
+		{
+			get
+			{
+				return this._Descrição;
+			}
+			set
+			{
+				if ((this._Descrição != value))
+				{
+					this._Descrição = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantidade", DbType="Int NOT NULL")]
+		public int Quantidade
+		{
+			get
+			{
+				return this._Quantidade;
+			}
+			set
+			{
+				if ((this._Quantidade != value))
+				{
+					this._Quantidade = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Decimal(15,2)")]
+		public System.Nullable<decimal> Valor
+		{
+			get
+			{
+				return this._Valor;
+			}
+			set
+			{
+				if ((this._Valor != value))
+				{
+					this._Valor = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensAtendimento")]
+	public partial class v_itensAtendimento
+	{
+		
+		private int _Código_Procedimento;
+		
+		private int _Código_Atendimento;
+		
+		private int _Código_Tratamento;
+		
+		private string _Descrição_Procedimento;
+		
+		private int _qtd;
+		
+		public v_itensAtendimento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
+		public int Código_Procedimento
+		{
+			get
+			{
+				return this._Código_Procedimento;
+			}
+			set
+			{
+				if ((this._Código_Procedimento != value))
+				{
+					this._Código_Procedimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Atendimento]", Storage="_Código_Atendimento", DbType="Int NOT NULL")]
+		public int Código_Atendimento
+		{
+			get
+			{
+				return this._Código_Atendimento;
+			}
+			set
+			{
+				if ((this._Código_Atendimento != value))
+				{
+					this._Código_Atendimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
+		public int Código_Tratamento
+		{
+			get
+			{
+				return this._Código_Tratamento;
+			}
+			set
+			{
+				if ((this._Código_Tratamento != value))
+				{
+					this._Código_Tratamento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Descrição Procedimento]", Storage="_Descrição_Procedimento", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição_Procedimento
+		{
+			get
+			{
+				return this._Descrição_Procedimento;
+			}
+			set
+			{
+				if ((this._Descrição_Procedimento != value))
+				{
+					this._Descrição_Procedimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qtd", DbType="Int NOT NULL")]
+		public int qtd
+		{
+			get
+			{
+				return this._qtd;
+			}
+			set
+			{
+				if ((this._qtd != value))
+				{
+					this._qtd = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_funcionarios")]
+	public partial class v_funcionario1
 	{
 		
 		private int _Código;
@@ -4659,11 +4522,15 @@ namespace BackEnd.EntityData
 		
 		private System.Nullable<int> _Tipo_Usuário;
 		
-		public v_pessoa()
+		private decimal _Salário;
+		
+		private string _Cargo;
+		
+		public v_funcionario1()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
 		public int Código
 		{
 			get
@@ -4886,17 +4753,334 @@ namespace BackEnd.EntityData
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salário", DbType="Decimal(15,2) NOT NULL")]
+		public decimal Salário
+		{
+			get
+			{
+				return this._Salário;
+			}
+			set
+			{
+				if ((this._Salário != value))
+				{
+					this._Salário = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cargo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Cargo
+		{
+			get
+			{
+				return this._Cargo;
+			}
+			set
+			{
+				if ((this._Cargo != value))
+				{
+					this._Cargo = value;
+				}
+			}
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_procedimentos")]
-	public partial class v_procedimento
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_dentistas")]
+	public partial class v_dentista
 	{
 		
 		private int _Código;
 		
-		private string _Descrição;
+		private string _Nome;
 		
-		public v_procedimento()
+		private string _CPF;
+		
+		private string _RG;
+		
+		private System.DateTime _Data_de_Nascimento;
+		
+		private string _Telefone_1;
+		
+		private string _Telefone_2;
+		
+		private System.Nullable<char> _Sexo;
+		
+		private string _Endereço;
+		
+		private string _Usuário;
+		
+		private string _Senha;
+		
+		private int _Status;
+		
+		private string _Obs;
+		
+		private System.Nullable<int> _Tipo_Usuário;
+		
+		private string _CRO;
+		
+		public v_dentista()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this._Nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string CPF
+		{
+			get
+			{
+				return this._CPF;
+			}
+			set
+			{
+				if ((this._CPF != value))
+				{
+					this._CPF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RG", DbType="VarChar(12)")]
+		public string RG
+		{
+			get
+			{
+				return this._RG;
+			}
+			set
+			{
+				if ((this._RG != value))
+				{
+					this._RG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Data de Nascimento]", Storage="_Data_de_Nascimento", DbType="Date NOT NULL")]
+		public System.DateTime Data_de_Nascimento
+		{
+			get
+			{
+				return this._Data_de_Nascimento;
+			}
+			set
+			{
+				if ((this._Data_de_Nascimento != value))
+				{
+					this._Data_de_Nascimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Telefone 1]", Storage="_Telefone_1", DbType="VarChar(15)")]
+		public string Telefone_1
+		{
+			get
+			{
+				return this._Telefone_1;
+			}
+			set
+			{
+				if ((this._Telefone_1 != value))
+				{
+					this._Telefone_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Telefone 2]", Storage="_Telefone_2", DbType="VarChar(15)")]
+		public string Telefone_2
+		{
+			get
+			{
+				return this._Telefone_2;
+			}
+			set
+			{
+				if ((this._Telefone_2 != value))
+				{
+					this._Telefone_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="Char(1)")]
+		public System.Nullable<char> Sexo
+		{
+			get
+			{
+				return this._Sexo;
+			}
+			set
+			{
+				if ((this._Sexo != value))
+				{
+					this._Sexo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Endereço", DbType="VarChar(50)")]
+		public string Endereço
+		{
+			get
+			{
+				return this._Endereço;
+			}
+			set
+			{
+				if ((this._Endereço != value))
+				{
+					this._Endereço = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuário", DbType="VarChar(20)")]
+		public string Usuário
+		{
+			get
+			{
+				return this._Usuário;
+			}
+			set
+			{
+				if ((this._Usuário != value))
+				{
+					this._Usuário = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Senha", DbType="VarChar(50)")]
+		public string Senha
+		{
+			get
+			{
+				return this._Senha;
+			}
+			set
+			{
+				if ((this._Senha != value))
+				{
+					this._Senha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Obs", DbType="VarChar(200)")]
+		public string Obs
+		{
+			get
+			{
+				return this._Obs;
+			}
+			set
+			{
+				if ((this._Obs != value))
+				{
+					this._Obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Tipo Usuário]", Storage="_Tipo_Usuário", DbType="Int")]
+		public System.Nullable<int> Tipo_Usuário
+		{
+			get
+			{
+				return this._Tipo_Usuário;
+			}
+			set
+			{
+				if ((this._Tipo_Usuário != value))
+				{
+					this._Tipo_Usuário = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CRO", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CRO
+		{
+			get
+			{
+				return this._CRO;
+			}
+			set
+			{
+				if ((this._CRO != value))
+				{
+					this._CRO = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_convenios")]
+	public partial class v_convenio
+	{
+		
+		private int _Código;
+		
+		private string _CNPJ;
+		
+		private string _IE;
+		
+		private string _Razão_Social;
+		
+		private string _Nome_Fantasia;
+		
+		public v_convenio()
 		{
 		}
 		
@@ -4916,26 +5100,474 @@ namespace BackEnd.EntityData
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Descrição
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CNPJ", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CNPJ
 		{
 			get
 			{
-				return this._Descrição;
+				return this._CNPJ;
 			}
 			set
 			{
-				if ((this._Descrição != value))
+				if ((this._CNPJ != value))
 				{
-					this._Descrição = value;
+					this._CNPJ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IE", DbType="VarChar(20)")]
+		public string IE
+		{
+			get
+			{
+				return this._IE;
+			}
+			set
+			{
+				if ((this._IE != value))
+				{
+					this._IE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Razão Social]", Storage="_Razão_Social", DbType="VarChar(100)")]
+		public string Razão_Social
+		{
+			get
+			{
+				return this._Razão_Social;
+			}
+			set
+			{
+				if ((this._Razão_Social != value))
+				{
+					this._Razão_Social = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Nome Fantasia]", Storage="_Nome_Fantasia", DbType="VarChar(100)")]
+		public string Nome_Fantasia
+		{
+			get
+			{
+				return this._Nome_Fantasia;
+			}
+			set
+			{
+				if ((this._Nome_Fantasia != value))
+				{
+					this._Nome_Fantasia = value;
 				}
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_tratamentos")]
-	public partial class v_tratamento
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_cidades")]
+	public partial class v_cidade
 	{
+		
+		private int _Código;
+		
+		private string _Cidade;
+		
+		private string _UF;
+		
+		public v_cidade()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cidade", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string Cidade
+		{
+			get
+			{
+				return this._Cidade;
+			}
+			set
+			{
+				if ((this._Cidade != value))
+				{
+					this._Cidade = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UF", DbType="Char(2)")]
+		public string UF
+		{
+			get
+			{
+				return this._UF;
+			}
+			set
+			{
+				if ((this._UF != value))
+				{
+					this._UF = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_avaliacoes")]
+	public partial class v_avaliacoe
+	{
+		
+		private int _Código;
+		
+		private System.DateTime _Data;
+		
+		private string _Dentista;
+		
+		private string _Paciente;
+		
+		public v_avaliacoe()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
+		public System.DateTime Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this._Data = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Dentista
+		{
+			get
+			{
+				return this._Dentista;
+			}
+			set
+			{
+				if ((this._Dentista != value))
+				{
+					this._Dentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Paciente
+		{
+			get
+			{
+				return this._Paciente;
+			}
+			set
+			{
+				if ((this._Paciente != value))
+				{
+					this._Paciente = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_atendimento")]
+	public partial class v_atendimento
+	{
+		
+		private int _Código;
+		
+		private System.DateTime _Data;
+		
+		private int _Status;
+		
+		private string _Dentista;
+		
+		private int _Código_Tratamento;
+		
+		public v_atendimento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
+		public int Código
+		{
+			get
+			{
+				return this._Código;
+			}
+			set
+			{
+				if ((this._Código != value))
+				{
+					this._Código = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="DateTime NOT NULL")]
+		public System.DateTime Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this._Data = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
+		public int Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Dentista
+		{
+			get
+			{
+				return this._Dentista;
+			}
+			set
+			{
+				if ((this._Dentista != value))
+				{
+					this._Dentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
+		public int Código_Tratamento
+		{
+			get
+			{
+				return this._Código_Tratamento;
+			}
+			set
+			{
+				if ((this._Código_Tratamento != value))
+				{
+					this._Código_Tratamento = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_agenda")]
+	public partial class v_agenda
+	{
+		
+		private string _tipo;
+		
+		private int _id;
+		
+		private System.DateTime _data;
+		
+		private int _dentista;
+		
+		private string _nomeDentista;
+		
+		private int _paciente;
+		
+		private string _nomePaciente;
+		
+		private int _status;
+		
+		public v_agenda()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string tipo
+		{
+			get
+			{
+				return this._tipo;
+			}
+			set
+			{
+				if ((this._tipo != value))
+				{
+					this._tipo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
+		public System.DateTime data
+		{
+			get
+			{
+				return this._data;
+			}
+			set
+			{
+				if ((this._data != value))
+				{
+					this._data = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dentista", DbType="Int NOT NULL")]
+		public int dentista
+		{
+			get
+			{
+				return this._dentista;
+			}
+			set
+			{
+				if ((this._dentista != value))
+				{
+					this._dentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomeDentista", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nomeDentista
+		{
+			get
+			{
+				return this._nomeDentista;
+			}
+			set
+			{
+				if ((this._nomeDentista != value))
+				{
+					this._nomeDentista = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paciente", DbType="Int NOT NULL")]
+		public int paciente
+		{
+			get
+			{
+				return this._paciente;
+			}
+			set
+			{
+				if ((this._paciente != value))
+				{
+					this._paciente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomePaciente", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string nomePaciente
+		{
+			get
+			{
+				return this._nomePaciente;
+			}
+			set
+			{
+				if ((this._nomePaciente != value))
+				{
+					this._nomePaciente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_detalhesTratamento")]
+	public partial class v_detalhesTratamento
+	{
+		
+		private int _Código_Paciente;
+		
+		private string _Nome;
 		
 		private int _Código;
 		
@@ -4947,8 +5579,40 @@ namespace BackEnd.EntityData
 		
 		private System.Nullable<decimal> _Total;
 		
-		public v_tratamento()
+		public v_detalhesTratamento()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Paciente]", Storage="_Código_Paciente", DbType="Int NOT NULL")]
+		public int Código_Paciente
+		{
+			get
+			{
+				return this._Código_Paciente;
+			}
+			set
+			{
+				if ((this._Código_Paciente != value))
+				{
+					this._Código_Paciente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this._Nome = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Código", DbType="Int NOT NULL")]
@@ -5027,222 +5691,6 @@ namespace BackEnd.EntityData
 				if ((this._Total != value))
 				{
 					this._Total = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensTratamento")]
-	public partial class v_itensTratamento
-	{
-		
-		private int _Código_Tratamento;
-		
-		private int _Código_Procedimento;
-		
-		private string _Descrição;
-		
-		private int _Quantidade;
-		
-		private int _Status;
-		
-		private System.Nullable<decimal> _Valor;
-		
-		public v_itensTratamento()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
-		public int Código_Tratamento
-		{
-			get
-			{
-				return this._Código_Tratamento;
-			}
-			set
-			{
-				if ((this._Código_Tratamento != value))
-				{
-					this._Código_Tratamento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
-		public int Código_Procedimento
-		{
-			get
-			{
-				return this._Código_Procedimento;
-			}
-			set
-			{
-				if ((this._Código_Procedimento != value))
-				{
-					this._Código_Procedimento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descrição", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Descrição
-		{
-			get
-			{
-				return this._Descrição;
-			}
-			set
-			{
-				if ((this._Descrição != value))
-				{
-					this._Descrição = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantidade", DbType="Int NOT NULL")]
-		public int Quantidade
-		{
-			get
-			{
-				return this._Quantidade;
-			}
-			set
-			{
-				if ((this._Quantidade != value))
-				{
-					this._Quantidade = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Decimal(15,2)")]
-		public System.Nullable<decimal> Valor
-		{
-			get
-			{
-				return this._Valor;
-			}
-			set
-			{
-				if ((this._Valor != value))
-				{
-					this._Valor = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_itensAtendimento")]
-	public partial class v_itensAtendimento
-	{
-		
-		private int _Código_Procedimento;
-		
-		private int _Código_Atendimento;
-		
-		private int _Código_Tratamento;
-		
-		private string _Descrição_Procedimento;
-		
-		private int _qtd;
-		
-		public v_itensAtendimento()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Procedimento]", Storage="_Código_Procedimento", DbType="Int NOT NULL")]
-		public int Código_Procedimento
-		{
-			get
-			{
-				return this._Código_Procedimento;
-			}
-			set
-			{
-				if ((this._Código_Procedimento != value))
-				{
-					this._Código_Procedimento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Atendimento]", Storage="_Código_Atendimento", DbType="Int NOT NULL")]
-		public int Código_Atendimento
-		{
-			get
-			{
-				return this._Código_Atendimento;
-			}
-			set
-			{
-				if ((this._Código_Atendimento != value))
-				{
-					this._Código_Atendimento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Código Tratamento]", Storage="_Código_Tratamento", DbType="Int NOT NULL")]
-		public int Código_Tratamento
-		{
-			get
-			{
-				return this._Código_Tratamento;
-			}
-			set
-			{
-				if ((this._Código_Tratamento != value))
-				{
-					this._Código_Tratamento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Descrição Procedimento]", Storage="_Descrição_Procedimento", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string Descrição_Procedimento
-		{
-			get
-			{
-				return this._Descrição_Procedimento;
-			}
-			set
-			{
-				if ((this._Descrição_Procedimento != value))
-				{
-					this._Descrição_Procedimento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qtd", DbType="Int NOT NULL")]
-		public int qtd
-		{
-			get
-			{
-				return this._qtd;
-			}
-			set
-			{
-				if ((this._qtd != value))
-				{
-					this._qtd = value;
 				}
 			}
 		}

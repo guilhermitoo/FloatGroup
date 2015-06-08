@@ -41,24 +41,6 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(dentista dentista)
-        {
-            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
-            {
-                try
-                {
-                    Table<dentista> tabelaDentista = db.GetTable<dentista>();
-                    tabelaDentista.DeleteOnSubmit(tabelaDentista.First(p => p.pessoa.id == dentista.pessoa.id));
-                    db.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
-
         public dentista Obter(int id)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())

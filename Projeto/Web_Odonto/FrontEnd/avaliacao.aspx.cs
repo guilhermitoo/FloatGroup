@@ -197,7 +197,7 @@ namespace FrontEnd
                     // se não for registro novo, limpa os itens do banco para inserir novamente
                     tratModel.RemoverTodosItens(trat.avaliacao_id);
                 }
-                
+
                 foreach (v_itensTratamento v_item in aval.Values)
                 {
                     // preenche os dados do item
@@ -247,7 +247,7 @@ namespace FrontEnd
                 // e atribui o dictionary a variável
                 Session["avaliacao"] = aval;
             }
-            
+
             foreach (v_itensTratamento item in tratModel.ListarItens(idTrat))
             {                
                 aval.Add(item.Código_Procedimento, item);

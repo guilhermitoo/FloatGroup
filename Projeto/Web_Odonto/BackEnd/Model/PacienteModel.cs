@@ -36,25 +36,7 @@ namespace BackEnd.Model
             {
                 return false;
             }
-        }
-
-        public bool Excluir(paciente paciente)
-        {
-            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
-            {
-                try
-                {
-                    Table<paciente> tabelaPaciente = db.GetTable<paciente>();
-                    tabelaPaciente.DeleteOnSubmit(tabelaPaciente.First(p => p.pessoa.id == paciente.pessoa.id));
-                    db.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
+        }        
 
         public paciente Obter(int id)
         {

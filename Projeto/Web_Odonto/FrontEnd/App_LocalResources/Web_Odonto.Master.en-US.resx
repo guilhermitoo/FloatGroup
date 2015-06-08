@@ -150,6 +150,9 @@
   <data name="relatorio" xml:space="preserve">
     <value>Report</value>
   </data>
+  <data name="relatorio2" xml:space="preserve">
+    <value>null</value>
+  </data>
   <data name="statusTratamento" xml:space="preserve">
     <value>Treatment Status</value>
   </data>

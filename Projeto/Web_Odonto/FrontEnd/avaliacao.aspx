@@ -21,15 +21,15 @@
                         <br />                          
                         <asp:Button ID="btnBuscaAval" runat="server" Text="Buscar Avaliação" CssClass="btn btn-primary" OnClick="btnBuscaAval_Click" meta:resourcekey="btnBuscaAvalResource1"/>                                    
                     </div>                     
-                    <div class="col-md-2">                        
+                    <div class="col-md-3">                        
                         <asp:Label id="lblNumeroAval" Text="Número da Avaliação" runat="server" meta:resourcekey="lblNumeroAvalResource1" />
                         <input id="txtNumeroAvaliacao" readonly="true" class="form-control" runat="server"/>                                    
                     </div>   
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <asp:Label id="Label2" Text="Data da Avaliação" runat="server" meta:resourcekey="lblNumeroAvalResource1" />
                         <input id="txtDataAval" readonly="true" class="form-control" runat="server"/>                                    
                     </div>                             
-                    </div>
+                </div>
             </div>
             <asp:Panel class="panel panel-default" id="pnlProc" runat="server" Visible="False" meta:resourcekey="pnlProcResource1">
                 <div class="panel-body">               
@@ -38,11 +38,11 @@
                         <asp:DropDownList runat="server" ID="ddProcedimento" CssClass="form-control" meta:resourcekey="ddProcedimentoResource1">
                         </asp:DropDownList>       
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <asp:Label ID="lblQtd" Text="Quantid." runat="server" meta:resourcekey="lblQtdResource1"/>
                         <asp:TextBox ID="txtQtdProc" TextMode="Number" runat="server" CssClass="form-control" meta:resourcekey="txtQtdProcResource1"/>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <asp:Label ID="Label1" Text="Valor do Procedimento" runat="server" meta:resourcekey="Label1Resource1"/>
                         <input id="txtValor" runat="server" class="form-control" onkeyup="formataValor(this,event);" type="text"/>
                     &nbsp;</div>

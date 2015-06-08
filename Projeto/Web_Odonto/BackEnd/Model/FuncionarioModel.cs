@@ -38,24 +38,6 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(funcionario funcionario)
-        {
-            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
-            {
-                try
-                {
-                    Table<funcionario> tabelaFuncionario = db.GetTable<funcionario>();
-                    tabelaFuncionario.DeleteOnSubmit(tabelaFuncionario.First(p => p.pessoa.id == funcionario.pessoa.id));
-                    db.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
-
         public funcionario Obter(int id)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())

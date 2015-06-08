@@ -62,22 +62,6 @@ namespace FrontEnd
         protected void btnSair_Click(object sender, EventArgs e)
         {
             Response.Redirect("index.aspx");
-        }
-
-        protected void btnExcluir_Click(object sender, EventArgs e)
-        {
-            CidadeModel model = new CidadeModel();
-            cidade cid = new cidade();
-
-            if (Request.QueryString["ID"] != null)
-                cid.id = int.Parse(Request.QueryString["ID"]);
-
-            // verificar se deseja realmente excluir
-            model.Excluir(cid);
-
-            Response.Redirect("cidades.aspx");
-        }
-
-        
+        }        
     }
 }

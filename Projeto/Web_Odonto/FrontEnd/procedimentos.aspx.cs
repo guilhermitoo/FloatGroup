@@ -45,13 +45,15 @@ namespace FrontEnd
             procedimento.descricao = txtDescricao.Text;                        
 
             ProcedimentoModel model = new ProcedimentoModel();
-
-            //se existir ID então faz a edição, se não existir ID, é uma inserção
-            if (Request.QueryString["ID"] != null)
-                procedimento.id = int.Parse(Request.QueryString["ID"]);
-            // faz a inserção ou atualização do cadastro
-            if (model.InserirAtualizar(procedimento))                 
-                Response.Redirect("procedimentos.aspx"); 
+            if (txtDescricao.Text != "")
+            {
+                //se existir ID então faz a edição, se não existir ID, é uma inserção
+                if (Request.QueryString["ID"] != null)
+                    procedimento.id = int.Parse(Request.QueryString["ID"]);
+                // faz a inserção ou atualização do cadastro
+                if (model.InserirAtualizar(procedimento))
+                    Response.Redirect("procedimentos.aspx");
+            }
         }
 
         protected void btnListar_Click(object sender, EventArgs e)

@@ -314,6 +314,14 @@ namespace BackEnd.EntityData
 			}
 		}
 		
+		public System.Data.Linq.Table<v_detalheProcedimento> v_detalheProcedimentos
+		{
+			get
+			{
+				return this.GetTable<v_detalheProcedimento>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.alteraAtendimento")]
 		public int alteraAtendimento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> data, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> dentista_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tratamento_id)
 		{
@@ -5691,6 +5699,87 @@ namespace BackEnd.EntityData
 				if ((this._Total != value))
 				{
 					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.v_detalheProcedimento")]
+	public partial class v_detalheProcedimento
+	{
+		
+		private System.DateTime _data;
+		
+		private int _ID;
+		
+		private string _Descrição_do_Procedimento;
+		
+		private int _qtd;
+		
+		public v_detalheProcedimento()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
+		public System.DateTime data
+		{
+			get
+			{
+				return this._data;
+			}
+			set
+			{
+				if ((this._data != value))
+				{
+					this._data = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Descrição do Procedimento]", Storage="_Descrição_do_Procedimento", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Descrição_do_Procedimento
+		{
+			get
+			{
+				return this._Descrição_do_Procedimento;
+			}
+			set
+			{
+				if ((this._Descrição_do_Procedimento != value))
+				{
+					this._Descrição_do_Procedimento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_qtd", DbType="Int NOT NULL")]
+		public int qtd
+		{
+			get
+			{
+				return this._qtd;
+			}
+			set
+			{
+				if ((this._qtd != value))
+				{
+					this._qtd = value;
 				}
 			}
 		}

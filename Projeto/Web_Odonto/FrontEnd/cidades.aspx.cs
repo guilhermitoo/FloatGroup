@@ -38,14 +38,16 @@ namespace FrontEnd
             cidade.uf = ddUF.Text;            
 
             CidadeModel model = new CidadeModel();
-          
-            // se tiver ID preenche o parâmetro
-            if (Request.QueryString["ID"] != null)            
-                cidade.id = int.Parse(Request.QueryString["ID"]);
-            
-            // faz a inserção ou atualização do cadastro da cidade
-            if ( model.InserirAtualizar(cidade) )             
-                Response.Redirect("cidades.aspx");                             
+            if (txtNome.Text != "")
+            {
+                // se tiver ID preenche o parâmetro
+                if (Request.QueryString["ID"] != null)
+                    cidade.id = int.Parse(Request.QueryString["ID"]);
+
+                // faz a inserção ou atualização do cadastro da cidade
+                if (model.InserirAtualizar(cidade))
+                    Response.Redirect("cidades.aspx");
+            }
         }
 
         protected void btnListar_Click(object sender, EventArgs e)

@@ -21,11 +21,19 @@ namespace BackEnd.Model
 
             try
             {
-                Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
-                tabelaAtendimento.InsertOnSubmit(a);
-                tabelaAtendimento.Context.SubmitChanges();
+                // somente insere um atendimento com data posterior a data de agora
+                if (a.data > DateTime.Now)
+                {
+                    Table<atendimento> tabelaAtendimento = db.GetTable<atendimento>();
+                    tabelaAtendimento.InsertOnSubmit(a);
+                    tabelaAtendimento.Context.SubmitChanges();
 
-                return true;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch
             {

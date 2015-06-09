@@ -20,11 +20,18 @@ namespace BackEnd.Model
 
             try
             {
-                Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();                                
-                db.cadAvaliacao(a.data, a.dentista_id, a.paciente_id,a.status);
-                tabelaAvaliacao.Context.SubmitChanges();
-                
-                return true;
+                // não permite inserir uma avaliação com data inferior a data de agora
+                if (a.data >= DateTime.Now)
+                {
+                    Table<avaliacao> tabelaAvaliacao = db.GetTable<avaliacao>();
+                    db.cadAvaliacao(a.data, a.dentista_id, a.paciente_id, a.status);
+                    tabelaAvaliacao.Context.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch
             {

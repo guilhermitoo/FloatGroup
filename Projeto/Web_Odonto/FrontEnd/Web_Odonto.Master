@@ -92,7 +92,7 @@
                                     <a href="statusTratamento.aspx"><asp:Literal ID="lt10" Text="<%$ resources: statusTratamento %>" runat="server"/></a>
                                 </li>
                                 <li>
-                                    <a href="procedimentosDentistaPeriodo.aspx"><asp:Literal ID="Literal1" Text="<%$ resources: relatorio2 %>" runat="server"/></a>
+                                    <a href="procedimentosPeriodo.aspx"><asp:Literal ID="Literal1" Text="<%$ resources: relatorio2 %>" runat="server"/></a>
                                 </li>
                             </ul>
                         </li>

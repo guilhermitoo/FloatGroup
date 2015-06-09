@@ -70,7 +70,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
 
-                String sSql = "select T.*,P.nome" +
+                String sSql = "select T.* " +
                               " from tratamentos T" +
                               " join avaliacoes A on ( T.avaliacao_id = A.id )" +
                               " join pacientes P on ( A.paciente_id = P.pessoa_id )" +

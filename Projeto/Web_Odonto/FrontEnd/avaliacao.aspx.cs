@@ -113,37 +113,57 @@ namespace FrontEnd
 
         protected void btnAddProcedimento_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("atendimento.aspx?ID="+ddProcedimento.SelectedValue);
-            //recupera o id do procedimento que será adicionado no grid
-            int idProc = Int32.Parse(ddProcedimento.SelectedValue);
-            //recupera o dictionary da session
-            Dictionary<int, v_itensTratamento> aval =
-                Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
-
-            if (aval == null)
+            int qtd,status;
+            Decimal valor;
+            
+            // se qtd foi informada
+            if (txtQtdProc.Text != "")
+                qtd = Int32.Parse(txtQtdProc.Text);
+            else
+                qtd = 0;
+            
+            // se valor foi informado
+            if (txtValor.Value != "")
+                valor = Decimal.Parse(txtValor.Value);
+            else
+                valor = -1;
+            
+            // somente cadastra se qtd e valor forem informados
+            if ((qtd > 0) && (valor >= 0))
             {
-                // instancia o Dictionary
-                aval = new Dictionary<int, v_itensTratamento>();
-                // adiciona uma variável na sessão
-                // e atribui o dictionary a variável
-                Session["avaliacao"] = aval;
-            }
+                // o status inicial é 1
+                status = 1;
+                //recupera o id do procedimento que será adicionado no grid
+                int idProc = Int32.Parse(ddProcedimento.SelectedValue);
+                //recupera o dictionary da session
+                Dictionary<int, v_itensTratamento> aval =
+                    Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
 
-            // verifica se a chave (o id do procedimento) ja esta no dictionary
-            if (!aval.ContainsKey(idProc))
-            {
-                ProcedimentoModel pModel = new ProcedimentoModel();
-                v_itensTratamento item = new v_itensTratamento();
-                // preenche o item
-                item.Código_Procedimento = idProc;
-                item.Descrição = (pModel.Obter(idProc)).descricao;
-                item.Quantidade = Int32.Parse(txtQtdProc.Text);
-                item.Status = 1;
-                item.Valor = Decimal.Parse(txtValor.Value);
-                // adiciona os dados do item no dictionary
-                aval.Add(idProc, item);
-                // limpa os campos
-                AtualizaGrid();
+                if (aval == null)
+                {
+                    // instancia o Dictionary
+                    aval = new Dictionary<int, v_itensTratamento>();
+                    // adiciona uma variável na sessão
+                    // e atribui o dictionary a variável
+                    Session["avaliacao"] = aval;
+                }
+
+                // verifica se a chave (o id do procedimento) ja esta no dictionary
+                if (!aval.ContainsKey(idProc))
+                {
+                    ProcedimentoModel pModel = new ProcedimentoModel();
+                    v_itensTratamento item = new v_itensTratamento();
+                    // preenche o item
+                    item.Código_Procedimento = idProc;
+                    item.Descrição = (pModel.Obter(idProc)).descricao;
+                    item.Quantidade = qtd;
+                    item.Status = status;
+                    item.Valor = valor;
+                    // adiciona os dados do item no dictionary
+                    aval.Add(idProc, item);
+                    // limpa os campos
+                    AtualizaGrid();
+                }
             }
         }
 
@@ -273,6 +293,16 @@ namespace FrontEnd
                     }
                 }
             }
+        }
+
+        protected void btnSair_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("avaliacao.aspx");
         }
     }
 }

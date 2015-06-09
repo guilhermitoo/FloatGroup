@@ -39,23 +39,26 @@ namespace FrontEnd
             ConvenioModel model = new ConvenioModel();
             bool bNovo = true;
             //se existir ID então faz a edição, se não existir ID, é uma inserção
-            if (Request.QueryString["ID"] != null)
+            if (txtCNPJ.Value != "")
             {
-                convenio.id = int.Parse(Request.QueryString["ID"]);
-                bNovo = false;
+                if (Request.QueryString["ID"] != null)
+                {
+                    convenio.id = int.Parse(Request.QueryString["ID"]);
+                    bNovo = false;
+                }
+
+                if (model.ValidaCNPJ(txtCNPJ.Value) || !bNovo)
+                {
+                    convenio.cnpj = txtCNPJ.Value;
+                    convenio.ie = txtIe.Text;
+                    convenio.razao_social = txtRazao.Text;
+                    convenio.nome_fantasia = txtNomeFantasia.Text;
+
+                    // faz a inserção ou atualização do cadastro da cidade
+                    if (model.InserirAtualizar(convenio))
+                        Response.Redirect("convenios.aspx");
+                }
             }
-
-            if (model.ValidaCNPJ(txtCNPJ.Value) || !bNovo)
-            {
-                convenio.cnpj = txtCNPJ.Value;
-                convenio.ie = txtIe.Text;
-                convenio.razao_social = txtRazao.Text;
-                convenio.nome_fantasia = txtNomeFantasia.Text;                
-
-                // faz a inserção ou atualização do cadastro da cidade
-                if (model.InserirAtualizar(convenio))
-                    Response.Redirect("convenios.aspx");
-            }            
         }
 
         protected void btnSair_Click(object sender, EventArgs e)

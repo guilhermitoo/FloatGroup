@@ -55,9 +55,8 @@
                 <input class="form-control" id="txtNasc" js="data" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
                 <br />
                 <label><asp:Literal ID="lt08" Text="<%$ resources: rg  %>" runat="server"/></label>
-                <input id="txtRg" class="form-control" runat="server" onkeyup="formataRG(this,event);" maxlength="12"/>
-                <br />
-
+                <input id="txtRg" class="form-control" runat="server" onkeyup="formataRG(this,event);"  maxlength="12"/>
+                <br />                
                 <label><asp:Literal ID="lt09" Text="<%$ resources: cidade  %>" runat="server"/></label>
                 <asp:DropDownList ID="ddCidade" runat="server" CssClass="form-control" meta:resourcekey="ddCidadeResource1">                    
                 </asp:DropDownList>
@@ -155,7 +154,7 @@
                 calendarWeeks: true,
                 todayHighlight: true
             });
-
+            
         });
 
         function ModificaCampos() {

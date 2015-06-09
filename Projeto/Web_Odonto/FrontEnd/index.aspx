@@ -20,17 +20,7 @@
             <div class="form-group">
                 <br />
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder='<asp:Literal ID="lt03" Text="<%$ resources: digite1 %>" runat="server"/>'/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <asp:Literal ID="lt01" Text="<%$ resources: procurar %>" runat="server"/>
-                        </button>
-                    </span>
-                    <div class="col-md-1">
-                        <a href="agenda.html">
-            <button type="submit" class="btn btn-primary"><asp:Literal ID="lt02" Text="<%$ resources: cadusuario %>" runat="server"/></button>
-        </a>
-                    </div>
+                    
                 </div>
                 <br />
                 <!-- BOTÕES QUE LEVA A PÁGINA CADASTRAR -->

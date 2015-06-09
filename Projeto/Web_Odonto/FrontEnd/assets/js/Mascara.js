@@ -245,7 +245,7 @@ function formataRG(campo, evt) {
     evt = getEvent(evt);
     var tecla = getKeyCode(evt);
     if (!teclaValida(tecla)) return;
-    vr = campo.value = filtraNumeros(filtraCampo(campo));
+    vr = campo.value = filtraCampo(campo);
     tam = vr.length;
     if (tam >= 2 && tam < 5) campo.value = vr.substr(0, 2) + '.' + vr.substr(2);
     else if (tam >= 5 && tam < 8) campo.value = vr.substr(0, 2) + '.' + vr.substr(2, 3) + '.' + vr.substr(5);

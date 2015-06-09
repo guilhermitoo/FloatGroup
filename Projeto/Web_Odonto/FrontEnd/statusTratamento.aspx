@@ -26,11 +26,10 @@
         <asp:GridView runat="server" ID="gvListaTratamentos" AutoGenerateColumns="false" OnRowCommand="gvListraTratamentos_RowCommand"
                 CssClass="table table-bordered" DataKeyNames="Código" GridLines="Horizontal" AllowPaging="True" >
             <Columns>
-                <asp:TemplateField HeaderText="Código Tratamento" >
+                <asp:TemplateField HeaderText="Código Tratamento" HeaderStyle-Width="180px" >
                     <ItemTemplate>
                         <%#Eval("Código") %>
-                    </ItemTemplate>
-                    <HeaderStyle Width="35px" />
+                    </ItemTemplate>                    
                 </asp:TemplateField>     
                 <asp:TemplateField HeaderText="Nome do Paciente">
                     <ItemTemplate>

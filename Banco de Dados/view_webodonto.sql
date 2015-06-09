@@ -171,3 +171,14 @@ as
 	join avaliacoes A on (A.id = T.Código )
 	join pessoas P on (P.id = A.paciente_id )
 go
+
+create view v_detalheProcedimento
+as
+	select	A.data,
+			I.procedimento_id ID, 
+			P.descricao 'Descrição do Procedimento', 
+			I.qtd
+	from itensAtendimento I
+	join procedimentos P on ( I.procedimento_id = P.id )
+	join atendimentos A on ( A.id = I.atendimento_id )
+	where A.status = 2

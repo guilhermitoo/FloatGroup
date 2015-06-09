@@ -38,24 +38,6 @@ namespace BackEnd.Model
             }
         }
 
-        public bool Excluir(procedimento procedimento)
-        {
-            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
-            {
-                try
-                {
-                    Table<procedimento> tabelaProcedimento = db.GetTable<procedimento>();
-                    tabelaProcedimento.DeleteOnSubmit(tabelaProcedimento.First(p => p.id == procedimento.id));
-                    db.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
-
         public procedimento Obter(int id)
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
@@ -99,6 +81,21 @@ namespace BackEnd.Model
             }
         }
 
-       
+        // função que retorna da view v_datatlheProcedimento, filtrando a data pelo período.
+        // é utilizada no relatório de Procedimentos Realizados Por Período
+        public List<v_detalheProcedimento> ListarPorPeriodo(DateTime dDatIni, DateTime dDatFin)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())            
+            {
+                String sSql =   "select I.id,I.[Descrição do Procedimento],count(I.qtd) QTD from v_detalheProcedimento I " +
+                                " where I.data between '" + dDatIni.ToShortDateString() + "' "+
+                                " and '" + dDatFin.ToShortDateString() + "' " +
+                                " group by I.ID, I.[Descrição do Procedimento]";
+                var query = db.ExecuteQuery<v_detalheProcedimento>(sSql);
+
+                return query.ToList();
+            }            
+        }
+
     }
 }

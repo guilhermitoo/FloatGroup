@@ -30,7 +30,7 @@
                 </div>
                 <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">                    
                     <asp:Label id="lblNomeUsuario" runat="server" meta:resourcekey="lblNomeUsuarioResource1" />&nbsp;
-                    <asp:Button ID="btnSairLogado" runat="server" Text="Sair" CssClass="btn btn-danger" OnClick="btnSairLogado_Click" meta:resourcekey="btnSairLogadoResource1"/>
+                    <asp:Button ID="btnSairLogado" runat="server" Text="Sair" CssClass="btn btn-danger sair" OnClick="btnSairLogado_Click" meta:resourcekey="btnSairLogadoResource1"/>
                 </div>
             </nav>
         </asp:Panel>
@@ -58,3 +58,14 @@
 			        </div>            		                
         </asp:Panel>										
 	</div>
+
+<script type="text/javascript">
+    $(".sair").keydown(function (event) {
+
+        if (event.keyCode == '13') {
+
+            event.preventDefault();
+
+        }
+    });
+</script>   

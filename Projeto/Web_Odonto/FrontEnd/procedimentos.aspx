@@ -17,7 +17,7 @@
             <div class="panel-body">
                 <div class="row">
                     <!--Lado Esquerdo do Formulário -->
-                    <div class="col-md-6">                                                
+                    <div class="col-md-12">                                                
                         <label>
                             <asp:Literal ID="lt02" Text="<%$ resources: descricao %>" runat="server"/>
                         </label>

@@ -223,7 +223,7 @@
     <Content Include="listaProcedimentos.aspx" />
     <Content Include="LoginControl.ascx" />
     <Content Include="procedimentos.aspx" />
-    <Content Include="procedimentosDentistaPeriodo.aspx" />
+    <Content Include="procedimentosPeriodo.aspx" />
     <Content Include="relatorios.aspx" />
     <Content Include="statusTratamento.aspx" />
     <Content Include="Web.config">
@@ -350,12 +350,12 @@
     <Compile Include="procedimentos.aspx.designer.cs">
       <DependentUpon>procedimentos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="procedimentosDentistaPeriodo.aspx.cs">
-      <DependentUpon>procedimentosDentistaPeriodo.aspx</DependentUpon>
+    <Compile Include="procedimentosPeriodo.aspx.cs">
+      <DependentUpon>procedimentosPeriodo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="procedimentosDentistaPeriodo.aspx.designer.cs">
-      <DependentUpon>procedimentosDentistaPeriodo.aspx</DependentUpon>
+    <Compile Include="procedimentosPeriodo.aspx.designer.cs">
+      <DependentUpon>procedimentosPeriodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pessoas.aspx.cs">

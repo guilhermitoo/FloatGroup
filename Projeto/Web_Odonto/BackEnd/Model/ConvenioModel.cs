@@ -36,25 +36,7 @@ namespace BackEnd.Model
             {
                 return false;
             }
-        }
-
-        public bool Excluir(convenio convenio)
-        {
-            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
-            {
-                try
-                {
-                    Table<convenio> tabelaConvenio = db.GetTable<convenio>();
-                    tabelaConvenio.DeleteOnSubmit(tabelaConvenio.First(p => p.id == convenio.id));
-                    tabelaConvenio.Context.SubmitChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-        }
+        }       
 
         public convenio Obter(int id)
         {

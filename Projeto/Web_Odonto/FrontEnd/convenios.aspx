@@ -20,14 +20,14 @@
                 <div class="col-md-6">                                            
                     <div class="form-group">
                         <label>
-                            <asp:Literal ID="lt02" Text="<%$ resources: cnpj %>" runat="server"/>
+                            <asp:Literal ID="lt02" Text="<%$ resources: cnpj %>" runat="server"/> *
                         </label>                                               
                         <div class="input-group">                                                    
                             <input class="form-control" placeholder="<%$ resources: cnpj %>" id="txtCNPJ" 
                                 runat="server" onkeyup="formataCNPJ(this,event);" maxlength="18"/>
                             <span class="input-group-btn">
                                 <asp:Button CssClass="btn btn-default" id="btnProcuraCNPJ" runat="server" 
-                                    Text="Buscar" OnClick="btnProcuraCNPJ_Click" meta:resourcekey="btnProcuraCNPJResource1" />                                
+                                    Text="Buscar" OnClick="btnProcuraCNPJ_Click" meta:resourcekey="btnProcuraCNPJResource1" />                                                          
                             </span>
                         </div>
                         <asp:Label ID="lblAlertaCNPJ" runat="server" Font-Size="8pt" ForeColor="#00CC00" meta:resourcekey="lblAlertaCNPJResource1" />

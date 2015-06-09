@@ -151,9 +151,9 @@
     <value>Relatório</value>
   </data>
   <data name="relatorio2" xml:space="preserve">
-    <value>Procedimentos Dentista Período</value>
+    <value>Procedimentos por Período</value>
   </data>
   <data name="statusTratamento" xml:space="preserve">
-    <value>Status Tratamento</value>
+    <value>Status do Tratamento</value>
   </data>
 </root>

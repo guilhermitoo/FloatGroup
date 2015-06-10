@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
 
     <h2>
-    Pagina de Avaliação</h2>
+    Página de Avaliação</h2>
     <h5>
     Inicie seus tratamentos
     </h5>

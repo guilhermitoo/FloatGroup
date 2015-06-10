@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
     <asp:Panel runat="server" ID="pnlRelatorio">
         <div class="panel-heading">
-            <h2><label id="lbTitulo"><asp:Literal ID="lt00" Text="Relatório de Avaliações Realizadas por Período" runat="server"/></label></h2>                  
+            <h2><label id="lbTitulo"><asp:Literal ID="lt00" Text="Relatório de Procedimentos Realizados por Período" runat="server"/></label></h2>                  
             <input type="hidden" class="prog" runat="server" id="bd" value="0"/>                                                                                                                        
         </div>        
                 
@@ -46,7 +46,11 @@
                     </asp:TemplateField>   
                 </Columns>
             </asp:GridView>
-            <asp:Button id="btnPrint" runat="server" CssClass="btn btn-info" Text="Imprimir" Visible="false" OnClick="btnPrint_Click"/>
+            <asp:Button id="btnPrint" runat="server" CssClass="btn btn-info" Text="Imprimir" Visible="false" OnClick="btnPrint_Click"/>            
+            <asp:Panel CssClass="pull-right" runat="server" ID="pnlQtd">
+                <asp:Label runat="server" Text="Quantidade de Registros: " />
+                <asp:Label ID="lbQtdReg" runat="server"/>
+            </asp:Panel>
         </div>      
     </asp:Panel>
 </asp:Content>

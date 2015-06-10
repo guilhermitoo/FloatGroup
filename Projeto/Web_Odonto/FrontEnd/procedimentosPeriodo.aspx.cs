@@ -19,6 +19,7 @@ namespace FrontEnd
                 txtDatIni.Value = DateTime.Now.ToShortDateString();
                 txtDatFin.Value = DateTime.Now.Date.AddMonths(1).ToShortDateString();
                 btnPrint.Visible = false;
+                pnlQtd.Visible = false;
             }
         }
 
@@ -40,6 +41,8 @@ namespace FrontEnd
                 gvRelatorio.DataBind();
             }
             btnPrint.Visible = (gvRelatorio.Rows.Count > 0);
+            pnlQtd.Visible = (gvRelatorio.Rows.Count > 0);
+            lbQtdReg.Text = gvRelatorio.Rows.Count.ToString();
         }
 
         protected void btnPrint_Click(object sender, EventArgs e)

@@ -1,5 +1,5 @@
 -- CRIAÇÃO DE PROCEDURES --
-use WebOdonto1
+use WebOdonto
 go
 
 create procedure cadCidade

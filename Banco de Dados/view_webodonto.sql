@@ -1,4 +1,6 @@
 --View para todas tabelas
+use WebOdonto
+go
 
 create view v_cidades
 as

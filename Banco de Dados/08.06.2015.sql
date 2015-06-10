@@ -9,8 +9,9 @@ as
 	from itensAtendimento I
 	join procedimentos P on ( I.procedimento_id = P.id )
 	join atendimentos A on ( A.id = I.atendimento_id )
+	where A.status = 2
 
-
+	drop view v_detalheProcedimento
 
 select I.id,I.[Descrição do Procedimento],count(I.qtd) QTD from v_detalheProcedimento I
 where I.data between '20/01/2000' 

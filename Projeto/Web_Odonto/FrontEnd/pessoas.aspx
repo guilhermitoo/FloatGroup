@@ -74,7 +74,7 @@
                     <asp:Literal ID="lt13" Text="<%$ resources: observacao  %>" runat="server"/>
                 </label>
                 <asp:TextBox CssClass="form-control" ID="txtObs" runat="server" Height="57px" TextMode="MultiLine" meta:resourcekey="txtObsResource1" />                
-                <br />
+                </br>                
                 <!-- Funcionário e Dentista -->
                 <div id="dTipoUsuario" runat="server" js="TipoUsuario">
                     <label runat="server" id="lblTipoUsuario">
@@ -121,17 +121,18 @@
                         <asp:ListItem Selected="True" meta:resourcekey="ListItemResource10">Nenhum</asp:ListItem>
                     </asp:DropDownList>
                 </div>
-                <br />
             </div>            
         </div>
         <!-- row -->
         </div>
         <!-- panel-body -->
+        <asp:Label id="lb1" runat="server" Text="<%$ resources: detalhes  %>"/>
     </div>
     <!-- panel panel-default -->
     </div>
     <!-- col-md-12 -->
     <!-- Botões -->    
+    
     <div class="col-md-offset-3">    
         <div class="form-group">
             <asp:Button js="Salvar" ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-info" OnClick="btnSalvar_Click" meta:resourcekey="btnSalvarResource1" />

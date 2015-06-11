@@ -277,7 +277,7 @@
     <value />
   </data>
   <data name="cargo" xml:space="preserve">
-    <value>Job Title</value>
+    <value>Job Title *</value>
   </data>
   <data name="celular" xml:space="preserve">
     <value>Cell phone number</value>
@@ -289,10 +289,10 @@
     <value>Agreement</value>
   </data>
   <data name="cpf" xml:space="preserve">
-    <value>Individual Register</value>
+    <value>Individual Register *</value>
   </data>
   <data name="cro" xml:space="preserve">
-    <value>R.D.C (Regional Dentist Councilor)</value>
+    <value>Regional Dentist Councilor</value>
   </data>
   <data name="endereco" xml:space="preserve">
     <value>Address</value>
@@ -301,7 +301,7 @@
     <value>Birth Date</value>
   </data>
   <data name="nome" xml:space="preserve">
-    <value>Name:</value>
+    <value>Name *</value>
   </data>
   <data name="observacao" xml:space="preserve">
     <value>Note</value>
@@ -310,7 +310,7 @@
     <value>Identity card</value>
   </data>
   <data name="salario" xml:space="preserve">
-    <value>Salary</value>
+    <value>Salary *</value>
   </data>
   <data name="senha" xml:space="preserve">
     <value>Password</value>
@@ -319,7 +319,7 @@
     <value>Sex:</value>
   </data>
   <data name="status" xml:space="preserve">
-    <value>Status:</value>
+    <value>Status</value>
   </data>
   <data name="subtitulo" xml:space="preserve">
     <value>Register the Employee, patient or dentist</value>
@@ -344,5 +344,8 @@
   </data>
   <data name="cpfnaocadastrado" xml:space="preserve">
     <value>Not registered Individual Register </value>
+  </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>* The marked fields are mandatory</value>
   </data>
 </root>

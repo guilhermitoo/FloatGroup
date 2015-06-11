@@ -76,18 +76,18 @@ namespace FrontEnd
                     ddConvenio.Items.FindByValue(paciente.convenio_id.ToString());
                 }
                 // DADOS DE PESSOA
-                rdStatus.Items.FindByValue(pessoa.status.ToString());
+                rdStatus.SelectedValue = pessoa.status.ToString();                
                 txtNome.Text = pessoa.nome;
-                rdSexo.Items.FindByValue(pessoa.sexo.ToString());
+                rdSexo.SelectedValue = pessoa.sexo.ToString();                
                 txtNasc.Value = pessoa.nascimento.ToString();
                 txtRg.Value = pessoa.rg;
                 txtCpf.Value = pessoa.cpf;
-                ddCidade.Items.FindByValue(pessoa.cidade_id.ToString());
+                ddCidade.SelectedValue = pessoa.cidade_id.ToString();                
                 txtEndereco.Text = pessoa.endereco;                
                 txtTelefone1.Value = pessoa.telefone1;
                 txtTelefone2.Value = pessoa.telefone2;
                 txtObs.Text = pessoa.obs;
-                ddTipoUsuario.Items.FindByValue(pessoa.tipoUsuario.ToString());
+                ddTipoUsuario.SelectedValue = pessoa.tipoUsuario.ToString();                
                 txtUsuario.Text = pessoa.usuario;
                 txtSenha.Text = pessoa.senha;
             }
@@ -120,7 +120,7 @@ namespace FrontEnd
                 bNovo = false;
             }
 
-            if (pessoaModel.ValidaCPF(txtCpf.Value) || (! bNovo) )
+            if ((pessoaModel.ValidaCPF(txtCpf.Value) || (! bNovo)) && ValidaCamposObrigatórios())
             {
                 // DADOS DE PESSOA
                 pessoa.nome = txtNome.Text;
@@ -175,9 +175,6 @@ namespace FrontEnd
                         fModel.InserirAtualizar(funcionario);
                     }
                 }
-                else
-                {
-                }
                 Response.Redirect("pessoas.aspx");
             }
         }
@@ -224,5 +221,29 @@ namespace FrontEnd
             }
         }
 
+        private bool ValidaCamposObrigatórios()
+        {
+            // valida os campos obrigatórios
+            bool ok = true;
+            if (txtCpf.Value == "")
+                ok = false;
+            if (txtNome.Text == "")
+                ok = false;            
+            if (cbTipoPessoa.Items.FindByValue("D").Selected)
+            {
+                if (txtSalario.Value == "")
+                    ok = false;
+                if (txtCro.Text == "")
+                    ok = false;
+            }
+            if (cbTipoPessoa.Items.FindByValue("F").Selected)    
+            {
+                if (txtSalario.Value == "")
+                    ok = false;
+                if (txtCargo.Text == "")
+                    ok = false;
+            }
+            return ok;
+        }
     }
 }

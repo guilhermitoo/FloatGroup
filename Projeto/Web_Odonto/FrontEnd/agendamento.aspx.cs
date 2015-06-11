@@ -64,9 +64,11 @@ namespace FrontEnd
                     avaliacao.status = 1;
 
                     // faz a inserção da avaliação somente se o paciente selecionado
-                    // não tiver um tratamento em andamento
-                    TratamentoModel tratModel = new TratamentoModel();
-                    if ((tratModel.ListarPorPaciente(avaliacao.paciente_id)).Count() < 1)
+                    // não tiver um tratamento em andamento ou em orçamento
+                    PacienteModel pacModel = new PacienteModel();
+                    paciente p = new paciente();
+                    p = pacModel.Obter(avaliacao.paciente_id);
+                    if ( ! pacModel.TemTratamentoPendente(p) )
                     {
                         // verifica se não tem alguma avaliacão agendada depois da data atual
                         if ((model.ListarPorPaciente(avaliacao.paciente_id)).Count() < 1)

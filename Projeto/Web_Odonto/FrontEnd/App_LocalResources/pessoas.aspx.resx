@@ -277,7 +277,7 @@
     <value />
   </data>
   <data name="cargo" xml:space="preserve">
-    <value>Cargo</value>
+    <value>Cargo *</value>
   </data>
   <data name="celular" xml:space="preserve">
     <value>Celular</value>
@@ -289,7 +289,7 @@
     <value>Convênio</value>
   </data>
   <data name="cpf" xml:space="preserve">
-    <value>CPF</value>
+    <value>CPF *</value>
   </data>
   <data name="cro" xml:space="preserve">
     <value>C.R.O.</value>
@@ -301,7 +301,7 @@
     <value>Data do nascimento:</value>
   </data>
   <data name="nome" xml:space="preserve">
-    <value>Nome:</value>
+    <value>Nome *</value>
   </data>
   <data name="observacao" xml:space="preserve">
     <value>Observação</value>
@@ -310,7 +310,7 @@
     <value>RG</value>
   </data>
   <data name="salario" xml:space="preserve">
-    <value>Salário</value>
+    <value>Salário *</value>
   </data>
   <data name="senha" xml:space="preserve">
     <value>Senha</value>
@@ -319,7 +319,7 @@
     <value>Sexo</value>
   </data>
   <data name="status" xml:space="preserve">
-    <value>Status:</value>
+    <value>Status</value>
   </data>
   <data name="subtitulo" xml:space="preserve">
     <value>Faça cadastro de Funcionário, Paciente, e Dentista</value>
@@ -344,5 +344,8 @@
   </data>
   <data name="cpfnaocadastrado" xml:space="preserve">
     <value>CPF não cadastrado</value>
+  </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>* Os campos marcados são obrigatórios</value>
   </data>
 </root>

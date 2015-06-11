@@ -77,9 +77,13 @@ namespace FrontEnd
                 {
                     e.Row.BackColor = System.Drawing.Color.LightPink;                    
                 }
-                else
+                else if (status == 1)
                 {
                     e.Row.BackColor = System.Drawing.Color.White;
+                }
+                else
+                { 
+                    // verifica se está atrasado
                 }
             }
         }

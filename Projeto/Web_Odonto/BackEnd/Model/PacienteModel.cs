@@ -68,5 +68,25 @@ namespace BackEnd.Model
 
         }
 
+        // verifica se tem tratamento em aberto para o paciente
+        public bool TemTratamentoPendente(paciente p)
+        {
+            using(WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                try
+                {
+                    String sSql = "select T.avaliacao_id "+
+                                    "from tratamentos T "+
+                                    "join avaliacoes A on (A.id = T.avaliacao_id) "+
+                                    "where T.status < 3 "+
+                                    "and A.paciente_id = " + p.pessoa_id.ToString();
+                    var query = db.ExecuteQuery<tratamento>(sSql);
+                
+                    return (query.Count() > 0);
+                }
+                catch { return false; }
+            }            
+        }
+
     }// final
 }

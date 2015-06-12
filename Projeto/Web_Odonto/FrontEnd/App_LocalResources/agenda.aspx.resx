@@ -204,4 +204,19 @@
   <data name="nada" xml:space="preserve">
     <value>Nada agendado.</value>
   </data>
+  <data name="atrasado" xml:space="preserve">
+    <value>Atrasado</value>
+  </data>
+  <data name="cancelado" xml:space="preserve">
+    <value>Cancelado</value>
+  </data>
+  <data name="concluido" xml:space="preserve">
+    <value>Concluído</value>
+  </data>
+  <data name="pendente" xml:space="preserve">
+    <value>Pendente</value>
+  </data>
+  <data name="legenda" xml:space="preserve">
+    <value>Legenda de cores</value>
+  </data>
 </root>

@@ -204,4 +204,7 @@
   <data name="nada" xml:space="preserve">
     <value>Nothing today.</value>
   </data>
+  <data name="legenda" xml:space="preserve">
+    <value>Colors Description</value>
+  </data>
 </root>

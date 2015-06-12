@@ -79,7 +79,65 @@ meta:resourcekey="PageResource1" %>
             <%} %>
             </div>                                                                                
         </div>
-    </div>     
+    </div>  
+       
+    <div class="col-md-3">
+        <div class="panel panel-default">
+	        <div class="panel-heading"><asp:Literal ID="Literal7" Text="<%$ resources: legenda %>" runat="server"/></div>
+	            <div class="panel-body">
+	                <div class="table-responsive">
+		                <table class="table table-condensed">								
+		                <tbody>
+			                <tr>
+				                <th class="qverd"> </th>
+				                <td><asp:Literal ID="Literal3" Text="<%$ resources: concluido %>" runat="server"/></td>
+			                </tr>
+									  
+			                <tr>
+				                <th class="qverm"> </th>
+				                <td><asp:Literal ID="Literal4" Text="<%$ resources: cancelado %>" runat="server"/></td>
+			                </tr>
+									  
+			                <tr>
+				                <th class="qama"> </th>
+				                <td><asp:Literal ID="Literal5" Text="<%$ resources: atrasado %>" runat="server"/></td>
+			                </tr>
+									  
+			                <tr>
+				                <th class="qbran"> </th>
+				                <td><asp:Literal ID="Literal6" Text="<%$ resources: pendente %>" runat="server"/></td>	
+			                </tr>
+		                </tbody>
+		            </table>
+	            </div>
+	        </div>
+        </div>    
+    </div>
+
+    	<style>
+	.qbran { 
+	width: 15px; 
+	height: 15px;  
+	background: #eee; 
+	}
+	.qverm { 
+	width: 15px; 
+	height: 15px;  
+	background: #f00; 
+	}
+	.qama { 
+	width: 15px; 
+	height: 15px;  
+	background: #DAD018; 
+	}
+	.qverd { 
+	width: 15px; 
+	height: 15px;  
+	background: #9BCD9B; 
+	}
+	</style>
+
+
     <script type="text/javascript">
         $(document).ready(function () {
 

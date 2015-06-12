@@ -54,7 +54,8 @@
                             </asp:DropDownList>
                         </div>
                     </div>                            
-                </div>                    
+                </div> 
+                <asp:Label id="lb1" runat="server" Text="<%$ resources: detalhes  %>"/>                   
             </div>
         </div>
         <!-- Botões -->

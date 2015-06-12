@@ -10,7 +10,16 @@
 namespace FrontEnd {
     
     
-    public partial class atendimento1 {
+    public partial class tratamentosPeriodo {
+        
+        /// <summary>
+        /// pnlRelatorio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlRelatorio;
         
         /// <summary>
         /// lt00 control.
@@ -22,13 +31,31 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Literal lt00;
         
         /// <summary>
-        /// Literal1 control.
+        /// bd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden bd;
+        
+        /// <summary>
+        /// lbIni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbIni;
+        
+        /// <summary>
+        /// txtDatIni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDatIni;
         
         /// <summary>
         /// Label1 control.
@@ -40,58 +67,49 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// ddPacienteAtendimento control.
+        /// txtDatFin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddPacienteAtendimento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDatFin;
         
         /// <summary>
-        /// btnBuscaAtend control.
+        /// btnGerar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaAtend;
+        protected global::System.Web.UI.WebControls.Button btnGerar;
         
         /// <summary>
-        /// gvListaAtendimentos control.
+        /// gvRelatorio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvListaAtendimentos;
+        protected global::System.Web.UI.WebControls.GridView gvRelatorio;
         
         /// <summary>
-        /// pnlDetalhes control.
+        /// btnPrint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDetalhes;
+        protected global::System.Web.UI.WebControls.Button btnPrint;
         
         /// <summary>
-        /// lblNumeroAval control.
+        /// pnlQtd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumeroAval;
-        
-        /// <summary>
-        /// txtNumeroAtendimento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNumeroAtendimento;
+        protected global::System.Web.UI.WebControls.Panel pnlQtd;
         
         /// <summary>
         /// Label2 control.
@@ -103,75 +121,12 @@ namespace FrontEnd {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// txtDataAtendimento control.
+        /// lbQtdReg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDataAtendimento;
-        
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// txtDentista control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDentista;
-        
-        /// <summary>
-        /// lbl4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl4;
-        
-        /// <summary>
-        /// txtStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStatus;
-        
-        /// <summary>
-        /// gvItensAtendimento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvItensAtendimento;
-        
-        /// <summary>
-        /// btnConfirmar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmar;
-        
-        /// <summary>
-        /// btnCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.Label lbQtdReg;
     }
 }

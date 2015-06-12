@@ -76,14 +76,13 @@ namespace FrontEnd
                 else if (status == 3)
                 {
                     e.Row.BackColor = System.Drawing.Color.LightPink;                    
-                }
-                else if (status == 1)
+                }                
+                else
                 {
                     e.Row.BackColor = System.Drawing.Color.White;
-                }
-                else
-                { 
                     // verifica se está atrasado
+                    if (v.data < DateTime.Now)
+                        e.Row.BackColor = System.Drawing.Color.LightYellow;                    
                 }
             }
         }
@@ -94,9 +93,7 @@ namespace FrontEnd
             int linha = Convert.ToInt32(e.CommandArgument);
             // recupera o id do procedimento na linha clicada
             Int32 id = (Int32)gvAgenda.DataKeys[linha].Value;
-            String tipo = gvAgenda.DataKeys[linha][1].ToString();
-
-            
+            String tipo = gvAgenda.DataKeys[linha][1].ToString();            
 
             // deve verificar se é avaliação ou atendimento e redirecionar para a tela específica
             if (e.CommandName == "Abrir")

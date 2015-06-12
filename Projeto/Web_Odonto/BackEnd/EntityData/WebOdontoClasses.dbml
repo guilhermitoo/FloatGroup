@@ -326,6 +326,17 @@
       <Column Name="qtd" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.v_detalhesAvaliacao" Member="v_detalhesAvaliacaos">
+    <Type Name="v_detalhesAvaliacao">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPac" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Paciente" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idDent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dentista" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.alteraAtendimento" Method="alteraAtendimento">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="data" Type="System.DateTime" DbType="DateTime" />

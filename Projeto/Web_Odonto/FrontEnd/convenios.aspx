@@ -53,6 +53,7 @@
                 <!-- row -->
             </div>
             <!-- panel-body -->
+            <asp:Label id="lb1" runat="server" Text="<%$ resources: detalhes  %>"/>
         </div>
         <!-- panel panel-default -->
     </div>

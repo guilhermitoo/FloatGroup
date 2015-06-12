@@ -210,6 +210,7 @@
     <Content Include="assets\js\pt-br.js" />
     <Content Include="atendimento.aspx" />
     <Content Include="avaliacao.aspx" />
+    <Content Include="avaliacoesPeriodo.aspx" />
     <Content Include="cidades.aspx" />
     <Content Include="convenios.aspx" />
     <Content Include="Imprimir.aspx" />
@@ -226,6 +227,7 @@
     <Content Include="procedimentosPeriodo.aspx" />
     <Content Include="relatorios.aspx" />
     <Content Include="statusTratamento.aspx" />
+    <Content Include="tratamentosPeriodo.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -258,6 +260,13 @@
     </Compile>
     <Compile Include="avaliacao.aspx.designer.cs">
       <DependentUpon>avaliacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="avaliacoesPeriodo.aspx.cs">
+      <DependentUpon>avaliacoesPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="avaliacoesPeriodo.aspx.designer.cs">
+      <DependentUpon>avaliacoesPeriodo.aspx</DependentUpon>
     </Compile>
     <Compile Include="cidades.aspx.cs">
       <DependentUpon>cidades.aspx</DependentUpon>
@@ -379,6 +388,13 @@
     <Compile Include="statusTratamento.aspx.designer.cs">
       <DependentUpon>statusTratamento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="tratamentosPeriodo.aspx.cs">
+      <DependentUpon>tratamentosPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tratamentosPeriodo.aspx.designer.cs">
+      <DependentUpon>tratamentosPeriodo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Util.cs" />
     <Compile Include="Web_Odonto.Master.cs">
       <DependentUpon>Web_Odonto.Master</DependentUpon>
@@ -437,10 +453,26 @@
     <Content Include="App_LocalResources\Web_Odonto.Master.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\agendamento.aspx.en-US.resx" />
-    <Content Include="App_LocalResources\agendamento.aspx.resx" />
     <Content Include="App_LocalResources\statusTratamento.aspx.en-US.resx" />
     <Content Include="App_LocalResources\statusTratamento.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\agenda.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\agenda.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\agendamento.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\agendamento.aspx.en-US.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\atendimento.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\atendimento.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\avaliacao.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\avaliacao.aspx.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

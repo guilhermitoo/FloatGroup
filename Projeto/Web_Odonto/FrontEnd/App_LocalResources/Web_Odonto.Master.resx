@@ -153,6 +153,12 @@
   <data name="relatorio2" xml:space="preserve">
     <value>Procedimentos por Período</value>
   </data>
+  <data name="relatorio3" xml:space="preserve">
+    <value>Avaliações por Período</value>
+  </data>
+  <data name="relatorio4" xml:space="preserve">
+    <value>Tratamentos por Período</value>
+  </data>
   <data name="statusTratamento" xml:space="preserve">
     <value>Status do Tratamento</value>
   </data>

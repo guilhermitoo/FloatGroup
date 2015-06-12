@@ -5,15 +5,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
 
     <h2>
-    Página de Avaliação</h2>
+        <asp:Literal ID="lt00" Text="<%$ resources: titulo %>" runat="server"/></h2>
     <h5>
-    Inicie seus tratamentos
+        <asp:Literal ID="Literal1" Text="<%$ resources: subtitulo %>" runat="server"/>
     </h5>
     <div class="col-lg-12">
         <div class="panel panel-default">          
                 <div class="panel-body">
                     <div class="col-md-4">  
-                        <asp:Label Text="Paciente" runat="server" meta:resourcekey="LabelResource1"/>
+                        <asp:Label ID="Label1" Text="Paciente" runat="server" meta:resourcekey="LabelResource1"/>
                         <asp:DropDownList ID="ddPacienteAvaliacao" CssClass="form-control dropdown-toggle" runat="server" meta:resourcekey="ddPacienteAvaliacaoResource1" >
                         </asp:DropDownList>                                    
                     </div>     
@@ -43,9 +43,9 @@
                         <asp:TextBox ID="txtQtdProc" TextMode="Number" runat="server" CssClass="form-control" meta:resourcekey="txtQtdProcResource1"/>
                     </div>
                     <div class="col-md-3">
-                        <asp:Label ID="Label1" Text="Valor do Procedimento" runat="server" meta:resourcekey="Label1Resource1"/>
-                        <input id="txtValor" runat="server" class="form-control" onkeyup="formataValor(this,event);" type="text"/>
-                    &nbsp;</div>
+                        <asp:Label ID="Label3" Text="Valor do Procedimento" runat="server" meta:resourcekey="Label1Resource1"/>
+                        <input id="txtValor" runat="server" class="form-control vlr" onkeyup="formataValor(this,event);" type="text"/>
+                    &nbsp;&nbsp;</div>
                     <div class="col-md-2">
                         <br />
                         <asp:Button ID="btnAddProcedimento" runat="server" CssClass="btn btn-primary" Text="Adicionar" OnClick="btnAddProcedimento_Click" meta:resourcekey="btnAddProcedimentoResource1"/>
@@ -72,7 +72,7 @@
                             </ItemTemplate>
                             <HeaderStyle Width="50px" />
                         </asp:TemplateField>                        
-                        <asp:TemplateField HeaderText="Valor" meta:resourcekey="TemplateFieldResource4">
+                        <asp:TemplateField HeaderText="Valor" ItemStyle-CssClass="vlr" meta:resourcekey="TemplateFieldResource4">
                             <ItemTemplate>
                                 <%#Eval("Valor") %>
                             </ItemTemplate>
@@ -84,30 +84,34 @@
                         </asp:GridView>                                                         
                         <asp:Panel runat="server" CssClass="pull-right col-md-2" ID="pnlTotal" meta:resourcekey="pnlTotalResource1">
                             <asp:Label Text="Valor Total" ID="lblTotal" runat="server" meta:resourcekey="lblTotalResource1"/>
-                            <asp:TextBox ID="txtTotal" runat="server" CssClass="form-control" ReadOnly="True" meta:resourcekey="txtTotalResource1" />
+                            <asp:TextBox ID="txtTotal" runat="server" CssClass="form-control vlr" ReadOnly="True" />
                         </asp:Panel>
                     </div>
                 </div>                                                                                                                                                         
             </asp:Panel>    
     <div class="col-md-4">
     
-        <asp:Panel class="form-group" ID="pnlBotoes" runat="server" Visible="false">
+        <asp:Panel class="form-group" ID="pnlBotoes" runat="server" Visible="False" meta:resourcekey="pnlBotoesResource1">
             <asp:Button id="btnSalvar" CssClass="btn btn-info" Text="Salvar" runat="server" OnClick="btnSalvar_Click" meta:resourcekey="btnSalvarResource1"/>
-            <asp:Button id="btnLimpar" runat="server" CssClass="btn btn-success" Text="Limpar" OnClick="btnLimpar_Click"/>
-            <asp:Button id="btnSair" runat="server" CssClass="btn btn-warning" Text="Sair" OnClick="btnSair_Click"/>            
+            <asp:Button id="btnLimpar" runat="server" CssClass="btn btn-success" Text="Limpar" OnClick="btnLimpar_Click" meta:resourcekey="btnLimparResource1"/>
+            <asp:Button id="btnSair" runat="server" CssClass="btn btn-warning" Text="Sair" OnClick="btnSair_Click" meta:resourcekey="btnSairResource1"/>            
         </asp:Panel>    
     </div>
-    <asp:Panel ID="pnlIniciar" runat="server" class="pull-right" Visible="false">
+    <asp:Panel ID="pnlIniciar" runat="server" class="pull-right" Visible="False" meta:resourcekey="pnlIniciarResource1">
         <asp:Button id="btnIniciarTratamento" CssClass="btn btn-primary" runat="server" Text="Iniciar Tratamento" 
                       OnClick="btnIniciarTratamento_Click"  meta:resourcekey="btnIniciarTratamentoResource1" />
     </asp:Panel>
 </div>
 <!-- /. ROW -->
-
+    <style>
+        .vlr {
+            text-align : right;                        
+        }
+    </style>
     <script type="text/javascript">
         $(document).ready(function () {
-                    
-        }); 
+
+        });
     </script>
 
 </asp:Content>

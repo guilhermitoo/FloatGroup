@@ -18,15 +18,16 @@
                 <div class="row">
                     <!--Lado Esquerdo do Formulário -->
                     <div class="col-md-12">                                                
-                        <label>
+                        <asp:Label runat="server">
                             <asp:Literal ID="lt02" Text="<%$ resources: descricao %>" runat="server"/>
-                        </label>
+                        </asp:Label>
                         <asp:TextBox id="txtDescricao" runat="server" CssClass="form-control" meta:resourcekey="txtDescricaoResource1" />
                         <br /> 
                         </div>                                        
                     <!-- row -->
                 </div>
                 <!-- panel-body -->
+                <asp:Label id="lb1" runat="server" Text="<%$ resources: detalhes  %>"/>
             </div>
             <!-- panel panel-default -->
         </div>

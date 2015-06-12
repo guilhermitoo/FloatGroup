@@ -315,5 +315,21 @@ namespace BackEnd.Model
                 }
             }
         }       
+
+        
+        public List<v_detalhesTratamento> ListarPorPeriodo(DateTime dDatIni, DateTime dDatFin)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select * from v_detalhesTratamento " +
+                                " where [Data Inicial] between '" + dDatIni.ToShortDateString() + "' " +
+                                " and '" + dDatFin.ToShortDateString() + "' " +
+                                " and [Data Final] between '" + dDatIni.ToShortDateString() + "' " +
+                                " and '" + dDatFin.ToShortDateString() + "' ";                                
+                var query = db.ExecuteQuery<v_detalhesTratamento>(sSql);
+
+                return query.ToList();
+            }
+        }
     }
 }

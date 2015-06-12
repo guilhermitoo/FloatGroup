@@ -141,7 +141,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 String sSql = "select p.id,p.nome from dentistas d join pessoas p "+
-                              " on (d.pessoa_id = p.id) order by p.nome";
+                              " on (d.pessoa_id = p.id) where p.status = 1 order by p.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();
             }
@@ -152,7 +152,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 String sSql = "select p.id,p.nome from pacientes d join pessoas p "+
-                              " on (d.pessoa_id = p.id) order by p.nome";
+                              " on (d.pessoa_id = p.id) where p.status = 1 order by p.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();
             }
@@ -163,7 +163,7 @@ namespace BackEnd.Model
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
                 String sSql = "select p.id,p.nome,p.cpf,p.rg,p.status,d.cargo from funcionarios d join pessoas p " +
-                              " on (d.pessoa_id = p.id) order by p.nome";
+                              " on (d.pessoa_id = p.id) where p.status = 1 order by p.nome";
                 var query = db.ExecuteQuery<pessoa>(sSql);
                 return query.ToList();
             }

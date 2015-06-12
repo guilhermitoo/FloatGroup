@@ -68,39 +68,47 @@ namespace FrontEnd
                     PacienteModel pacModel = new PacienteModel();
                     paciente p = new paciente();
                     p = pacModel.Obter(avaliacao.paciente_id);
-                    if ( ! pacModel.TemTratamentoPendente(p) )
+                    if (!pacModel.TemTratamentoPendente(p))
                     {
                         // verifica se não tem alguma avaliacão agendada depois da data atual
-                        if ((model.ListarPorPaciente(avaliacao.paciente_id)).Count() < 1)
+                        List<avaliacao> listaAval = new List<avaliacao>();
+                        listaAval = model.ListarPorPaciente(avaliacao.paciente_id);
+                        if (listaAval.Count() < 1)
                         {
                             if (model.Inserir(avaliacao))
                             {
-                                Master.Status("Avaliação agendada com sucesso");
+                                string txt = (string)GetLocalResourceObject("avaliacaoagendadacomsucesso");
+                                Master.Status(txt);
                                 Response.Redirect("agenda.aspx");
                             }
                             else
                             {
-                                Master.Status("Erro ao agendar a avaliação");
+                                string txt = (string)GetLocalResourceObject("erroaoagendaraavaliacao");
+                                Master.Status(txt);
                             }
                         }
                         else
                         {
-                            Master.Status("O paciente já tem uma avaliação agendada");
+                            string txt = (string)GetLocalResourceObject("opacientejatemumaavaliacaoagendada");
+                            Master.Status(txt + listaAval.First().data.ToString());
                         }
                     }
                     else
                     {
-                        Master.Status("O paciente já tem um tratamento em andamento.");
+                        string txt = (string)GetLocalResourceObject("opacientejatemumtratamento");
+                        Master.Status(txt);
                     }
                 }
-                else 
+                else
                 {
-                    Master.Status("O dentista selecionado não está disponível nesse horário");
+                    string txt = (string)GetLocalResourceObject("dentistanaodisponivel");
+                    Master.Status(txt);
                 }
             }
             else
             {
-                Master.Status("Seleciona a data.");
+                string txt = (string)GetLocalResourceObject("selecioneadata");
+                Master.Status(txt);
             }
         }
 
@@ -108,7 +116,7 @@ namespace FrontEnd
         {
             // antes de realizar o processo da busca do tratamento, limpa o status da tela
             Master.Status("");
-            TratamentoModel tratModel = new TratamentoModel();            
+            TratamentoModel tratModel = new TratamentoModel();
 
             // obtem o id do tratamento em aberto do paciente selecionado
             try
@@ -116,7 +124,7 @@ namespace FrontEnd
                 tratamento tratamento = new tratamento();
                 TratamentoModel tModel = new TratamentoModel();
                 tratamento = (tratModel.ListarPorPaciente(Int32.Parse(ddPaciente.SelectedValue))).First();
-                int idTrat = tratamento.avaliacao_id;                
+                int idTrat = tratamento.avaliacao_id;
                 // exibe o número do tratamento e o status
                 txtNumeroTratamento.Text = idTrat.ToString();
                 txtStatusTratamento.Text = tModel.GetStatus(tratamento.status);
@@ -125,9 +133,11 @@ namespace FrontEnd
                 gvItensAtendimento.DataBind();
                 ControlaCampos(true);
             }
-            catch {
+            catch
+            {
                 ControlaCampos(false);
-                Master.Status("Tratamento não encontrado");
+                string txt = (string)GetLocalResourceObject("tratamentonaoencontrado");
+                Master.Status(txt);
             }
         }
 
@@ -182,27 +192,33 @@ namespace FrontEnd
                                     atModel.InserirItem(item);
                                 }
                             }
-                            Master.Status("Atendimento agendado com sucesso");
+
+                            string txt = (string)GetLocalResourceObject("atendimentoagendadocomsucesso");
+                            Master.Status(txt);
                             Response.Redirect("agenda.aspx");
                         }
                         else
                         {
-                            Master.Status("Erro ao agendar o atendimento");
+                            string txt = (string)GetLocalResourceObject("erroaoagendaroatendimento");
+                            Master.Status(txt);
                         }
                     }
                     else
                     {
-                        Master.Status("Selecione o paciente e busque o tratamento.");
+                        string txt = (string)GetLocalResourceObject("pacientebusquetratamento");
+                        Master.Status(txt);
                     }
                 }
                 else
                 {
-                    Master.Status("O dentista selecionado não está disponível nesse horário");
+                    string txt = (string)GetLocalResourceObject("dentistanaodisponivel");
+                    Master.Status(txt);
                 }
             }
             else
             {
-                Master.Status("Seleciona a data.");
+                string txt = (string)GetLocalResourceObject("selecioneadata");
+                Master.Status(txt);
             }
         }
 
@@ -214,7 +230,7 @@ namespace FrontEnd
             txtStatusTratamento.Visible = b;
             // quando b = false, ou seja, limpando os campos, esvazia o grid
             if (!b)
-            {                
+            {
                 LimpaGrid();
             }
         }

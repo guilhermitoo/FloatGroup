@@ -92,5 +92,19 @@ namespace BackEnd.Model
                 return query.ToList();
             }
         }
+
+        public List<v_detalhesAvaliacao> ListarPorPeriodo(DateTime dDatIni, DateTime dDatFin)
+        {
+            using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
+            {
+                String sSql = "select A.* from v_detalhesAvaliacao A " +
+                                " where A.data between '" + dDatIni.ToShortDateString() + "' " +
+                                " and '" + dDatFin.ToShortDateString() + "' " +
+                                " and status = 2";
+                var query = db.ExecuteQuery<v_detalhesAvaliacao>(sSql);
+
+                return query.ToList();
+            }
+        }
     }
 }

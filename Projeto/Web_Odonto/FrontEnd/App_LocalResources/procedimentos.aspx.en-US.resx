@@ -151,12 +151,15 @@
     <value />
   </data>
   <data name="descricao" xml:space="preserve">
-    <value>Full description of the procedure</value>
+    <value>Full description of the procedure *</value>
   </data>
   <data name="subtitulo" xml:space="preserve">
     <value>Do the procedure registration</value>
   </data>
   <data name="titulo" xml:space="preserve">
     <value>PROCEDURE REGISTRATION</value>
+  </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>* The marked fields are mandatory</value>
   </data>
 </root>

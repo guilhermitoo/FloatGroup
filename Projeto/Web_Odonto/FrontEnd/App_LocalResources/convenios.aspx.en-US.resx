@@ -195,4 +195,7 @@
   <data name="cnpjnaocadastrado" xml:space="preserve">
     <value>Not registered NRLP</value>
   </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>* The marked fields are mandatory</value>
+  </data>
 </root>

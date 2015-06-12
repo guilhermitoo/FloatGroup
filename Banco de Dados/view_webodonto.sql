@@ -184,3 +184,17 @@ as
 	join procedimentos P on ( I.procedimento_id = P.id )
 	join atendimentos A on ( A.id = I.atendimento_id )
 	where A.status = 2
+
+create view v_detalhesAvaliacao
+as
+select 
+	A.id,
+	PA.id idPac,
+	PA.nome Paciente,
+	DE.id idDent,
+	DE.nome Dentista,
+	A.data,
+	A.status
+from avaliacoes A 
+join pessoas PA on (A.paciente_id = PA.id )
+join pessoas DE on (A.dentista_id = DE.id )

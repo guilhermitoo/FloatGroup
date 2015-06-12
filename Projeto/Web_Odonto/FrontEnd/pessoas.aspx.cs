@@ -16,6 +16,16 @@ namespace FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // recupera a pessoa que está logada
+            pessoa p = Session["pessoa"] as pessoa;  
+            // verifica se o tipoUsuario == 1(padrao)
+            bool bAdmin = true;
+            if (p.tipoUsuario == 1)
+            {
+                cbTipoPessoa.Enabled = false;
+                cbTipoPessoa.Items.FindByValue("P").Selected = true;
+                bAdmin = false;
+            }
             if (!IsPostBack)
             {
                 // carrega todas as cidades e lista no DropDown Cidades            
@@ -31,17 +41,7 @@ namespace FrontEnd
                 ddConvenio.DataSource = conModel.Listar();
                 ddConvenio.DataValueField = "id";
                 ddConvenio.DataTextField = "razao_social";
-                ddConvenio.DataBind();
-
-                // recupera a pessoa que está logada
-                pessoa p = Session["pessoa"] as pessoa;
-
-                // verifica se o tipoUsuario == 1(padrao)
-                if (p.tipoUsuario == 1)
-                {
-                    cbTipoPessoa.Enabled = false;
-                    cbTipoPessoa.Items.FindByValue("P").Selected = true;
-                }
+                ddConvenio.DataBind();              
             }
 
             if (Request.QueryString["ID"] != null && !IsPostBack)
@@ -55,7 +55,7 @@ namespace FrontEnd
                 FuncionarioModel fModel = new FuncionarioModel();
                 //recupera a pessoa do id informado
                 pessoa pessoa = Model.Obter(id);       
-        
+                
                 // verifica se é dentista, funcionário ou paciente 
                 // se for algum deles atribui o valor
                 if ( dModel.Verifica(pessoa.id) ) {
@@ -63,6 +63,10 @@ namespace FrontEnd
                     cbTipoPessoa.Items.FindByValue("D").Selected = true;
                     txtCro.Text = dentista.cro;
                     txtSalario.Value = dentista.salario.ToString();
+                    if (!bAdmin)
+                    {
+                        Response.Redirect("pessoas.aspx");
+                    }
                 }
                 if ( fModel.Verifica(pessoa.id) ) {
                     funcionario funcionario = fModel.Obter(id);
@@ -74,6 +78,10 @@ namespace FrontEnd
                     paciente paciente = pModel.Obter(id);
                     cbTipoPessoa.Items.FindByValue("P").Selected = true;
                     ddConvenio.Items.FindByValue(paciente.convenio_id.ToString());
+                    if (!bAdmin)
+                    {
+                        Response.Redirect("pessoas.aspx");
+                    }
                 }
                 // DADOS DE PESSOA
                 rdStatus.SelectedValue = pessoa.status.ToString();                
@@ -208,8 +216,7 @@ namespace FrontEnd
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             PessoaModel p = new PessoaModel();
-
-            // incompleto
+            
             if (p.ValidaCPF(txtCpf.Value))
             {
                 string txt = (string)GetLocalResourceObject("cpfnaocadastrado");

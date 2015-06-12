@@ -94,6 +94,12 @@
                                 <li>
                                     <a href="procedimentosPeriodo.aspx"><asp:Literal ID="Literal1" Text="<%$ resources: relatorio2 %>" runat="server"/></a>
                                 </li>
+                                <li>
+                                    <a href="avaliacoesPeriodo.aspx"><asp:Literal ID="Literal2" Text="<%$ resources: relatorio3 %>" runat="server"/></a>
+                                </li>
+                                <li>
+                                    <a href="tratamentosPeriodo.aspx"><asp:Literal ID="Literal3" Text="<%$ resources: relatorio4 %>" runat="server"/></a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

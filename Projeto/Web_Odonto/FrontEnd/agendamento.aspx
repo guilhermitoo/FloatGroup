@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="agendamento.aspx.cs" Inherits="FrontEnd.agendamento" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="agendamento.aspx.cs" Inherits="FrontEnd.agendamento" meta:resourcekey="PageResource2" %>
 <%@ MasterType VirtualPath="~/Web_Odonto.master"  %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,11 +8,11 @@
                     <div class="col-md-12">
                         <br />
                         <button class="btn btn-primary" type="button" data-toggle="collapse" onclick="ExibeAtend()">
-                        Atendimento
+                            <asp:Literal ID="lt00" Text="<%$ resources: atendimento %>" runat="server"/>
                         </button>                                            
                         &nbsp;                                            
                         <button class="btn btn-primary" type="button" data-toggle="collapse" onclick="ExibeAval()">
-                        Avaliação
+                            <asp:Literal ID="Literal1" Text="<%$ resources: avaliacao %>" runat="server"/>
                         </button>
                     </div>                                        
                 </div>
@@ -21,12 +21,12 @@
                     <h2><label id="lbTitulo"></label></h2>
                     <hr />
                     <div class="col-md-4">
-                        <asp:Label ID="lblDentista" Text="Dentista" runat="server"/>
-                        <asp:DropDownList ID="ddDentista" runat="server" CssClass="form-control dropdown-toggle">
+                        <asp:Label ID="lblDentista" Text="Dentista" runat="server" meta:resourcekey="lblDentistaResource2"/>
+                        <asp:DropDownList ID="ddDentista" runat="server" CssClass="form-control dropdown-toggle" meta:resourcekey="ddDentistaResource2">
                         </asp:DropDownList>
                     </div>
-                    <div class="col-md-2">
-                        <label>Data da Consulta</label>
+                    <div class="col-md-3">
+                        <asp:Literal ID="Literal3" Text="<%$ resources: dtconsulta %>" runat="server"/>
                         <input class="form-control" id="txtDataConsulta" js="data" onkeyup="formataData(this,event);" runat="server" maxlength="10" />
                         <br />
                     </div>  
@@ -38,58 +38,64 @@
                             <div class="panel-body" >                                                   
                                 <%--<div class="col-md-12"></div> --%>
                                 <div class="col-md-8">  
-                                    <label>Paciente</label>                                            
-                                    <asp:DropDownList ID="ddPaciente" CssClass="form-control dropdown-toggle" runat="server">
+                                    <label><asp:Literal ID="Literal2" Text="<%$ resources: paciente %>" runat="server"/></label>                                            
+                                    <asp:DropDownList ID="ddPaciente" CssClass="form-control dropdown-toggle" runat="server" meta:resourcekey="ddPacienteResource2">
                                     </asp:DropDownList>                                    
                                 </div>                                                                                     
                                 <div class="col-md-4">    
                                     <br />                          
-                                    <asp:Button ID="btnBuscaTratamento" runat="server" Text="Buscar Tratamento" CssClass="btn btn-primary" OnClick="BuscaTratamento"/>                                    
+                                    <asp:Button ID="btnBuscaTratamento" runat="server" Text="Buscar Tratamento" CssClass="btn btn-primary" OnClick="BuscaTratamento" meta:resourcekey="btnBuscaTratamentoResource2"/>                                    
                                 </div>                                                           
                                 
                                 <div class="col-md-6">
                                     <br />
-                                    <asp:Label id="lblNumeroTrat" Text="Numero do Tratamento" runat="server" Visible="false" />
-                                    <asp:TextBox id="txtNumeroTratamento" ReadOnly="true" CssClass="form-control" runat="server" Visible="false" />                                    
+                                    <asp:Label id="lblNumeroTrat" Text="Numero do Tratamento" runat="server" Visible="False" meta:resourcekey="lblNumeroTratResource2" />
+                                    <asp:TextBox id="txtNumeroTratamento" ReadOnly="True" CssClass="form-control" runat="server" Visible="False" meta:resourcekey="txtNumeroTratamentoResource2" />                                    
                                 </div>
                                 <div class="col-md-6">                                    
                                     <br />
-                                    <asp:Label ID="lblStatusTrat" Text="Status do Tratamento" runat="server" Visible="false"/>
-                                    <asp:TextBox id="txtStatusTratamento" ReadOnly="true" CssClass="form-control" runat="server" Visible="false" />
+                                    <asp:Label ID="lblStatusTrat" Text="Status do Tratamento" runat="server" Visible="False" meta:resourcekey="lblStatusTratResource2"/>
+                                    <asp:TextBox id="txtStatusTratamento" ReadOnly="True" CssClass="form-control" runat="server" Visible="False" meta:resourcekey="txtStatusTratamentoResource2" />
                                 </div>                                
                                 <br />
                                                        
                                 <div class="col-lg-12">  
                                     <br />                                                                                                        
                                     <asp:GridView runat="server" ID="gvItensAtendimento" CssClass="table table-bordered table-striped" 
-                                        GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Código_Procedimento">
+                                        GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Código_Procedimento" meta:resourcekey="gvItensAtendimentoResource2">
                                     <Columns>
-                                    <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Selecione">
+                                    <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderText="Selecione" meta:resourcekey="TemplateFieldResource7">
                                         <ItemTemplate >
-                                            <asp:CheckBox id="cbProc" runat="server"/>
+                                            <asp:CheckBox id="cbProc" runat="server" meta:resourcekey="cbProcResource2"/>
                                         </ItemTemplate>                              
+
+<ItemStyle HorizontalAlign="Center"></ItemStyle>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="ID"  HeaderStyle-Width="35">
+                                    <asp:TemplateField HeaderText="ID"  HeaderStyle-Width="35" meta:resourcekey="TemplateFieldResource8">
                                         <ItemTemplate>
                                             <%#Eval("Código_Procedimento") %>
                                         </ItemTemplate>
+
+<HeaderStyle Width="35px"></HeaderStyle>
                                     </asp:TemplateField>                                    
-                                    <asp:TemplateField HeaderText="Descrição Procedimento">
+                                    <asp:TemplateField HeaderText="Descrição Procedimento" meta:resourcekey="TemplateFieldResource9">
                                         <ItemTemplate>
                                             <%#Eval("Descrição") %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Qtd" HeaderStyle-Width="50">
+                                    <asp:TemplateField HeaderText="Qtd" HeaderStyle-Width="50" meta:resourcekey="TemplateFieldResource10">
                                         <ItemTemplate>
                                             <%#Eval("Quantidade") %>
                                         </ItemTemplate>
+
+<HeaderStyle Width="50px"></HeaderStyle>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Status">
+                                    <asp:TemplateField HeaderText="Status" meta:resourcekey="TemplateFieldResource11">
                                         <ItemTemplate>
                                             <%#Eval("Status") %>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Valor">
+                                    <asp:TemplateField HeaderText="Valor" meta:resourcekey="TemplateFieldResource12">
                                         <ItemTemplate>
                                             <%#Eval("Valor") %>
                                         </ItemTemplate>
@@ -115,8 +121,8 @@
                         <div class="panel panel-default">
                             <div class="panel-body">                                                               
                                 <div class="col-md-12">
-                                    <asp:Label ID="lblPacienteAv" Text="Paciente" runat="server"/>
-                                    <asp:DropDownList ID="ddPacienteAv" runat="server" CssClass="form-control dropdown-toggle">
+                                    <asp:Label ID="lblPacienteAv" Text="Paciente" runat="server" meta:resourcekey="lblPacienteAvResource2"/>
+                                    <asp:DropDownList ID="ddPacienteAv" runat="server" CssClass="form-control dropdown-toggle" meta:resourcekey="ddPacienteAvResource2">
                                     </asp:DropDownList>                                    
                                     <br />
                                 </div>                                               
@@ -126,16 +132,16 @@
                 </div>
                     <!-- FIM CONTEUDO AVALIAÇÃO-->                                        
                 <div class="modal-footer">                                        
-                    <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-warning" Text="Voltar" OnClick="btnVoltar_Click" />
-                    <asp:Button js="btaten" id="btnFinalizaAtendimento" runat="server" CssClass="btn btn-primary" OnClick="btnFinalizaAgendamento_Click" Text="Agendar Atendimento" />                                            
-                    <asp:Button js="btaval" id="btnFinalizaAgendamento2" runat="server" CssClass="btn btn-primary" OnClick="CadAvaliacao" Text="Agendar Avaliação"/>                                        
+                    <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-warning" Text="Voltar" OnClick="btnVoltar_Click" meta:resourcekey="btnVoltarResource2" />
+                    <asp:Button js="btaten" id="btnFinalizaAtendimento" runat="server" CssClass="btn btn-primary" OnClick="btnFinalizaAgendamento_Click" Text="Agendar Atendimento" meta:resourcekey="btnFinalizaAtendimentoResource2" />                                            
+                    <asp:Button js="btaval" id="btnFinalizaAgendamento2" runat="server" CssClass="btn btn-primary" OnClick="CadAvaliacao" meta:resourcekey="btnFinalizaAgendamento2Resource2"/>                                        
                 </div>
                  
     <script type="text/javascript">
         $(document).ready(function () {
             //executa a função quando a página está pronta e carregada                        
             $('input[js="data"]').datetimepicker({
-                locale: 'pt-BR',                
+                locale: 'pt-BR',
             });
 
             ExibeAtend();

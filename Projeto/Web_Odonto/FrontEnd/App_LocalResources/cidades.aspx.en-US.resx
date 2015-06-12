@@ -330,4 +330,7 @@
   <data name="txtdigite" xml:space="preserve">
     <value>Enter the city name</value>
   </data>
+  <data name="detalhes" xml:space="preserve">
+    <value>* The marked fields are mandatory</value>
+  </data>
 </root>

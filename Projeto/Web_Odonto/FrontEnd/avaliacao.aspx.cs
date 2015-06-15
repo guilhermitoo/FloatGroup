@@ -60,6 +60,10 @@ namespace FrontEnd
 
         public void AtualizaGrid()
         {
+            // ao atualizar o grid oculta o pnlIniciar, forçando assim o usuário a salvar novamente
+            // o tratamento antes de iniciar o mesmo
+            pnlIniciar.Visible = false;
+
             // limpa campos da seleção do procedimento
             ddProcedimento.SelectedIndex = 0;
             txtQtdProc.Text = "";
@@ -77,6 +81,10 @@ namespace FrontEnd
         { 
             try
             {
+                // antes de buscar a avaliação, limpa a sessão                
+                pnlIniciar.Visible = false;
+                LimpaGrid();
+
                 AvaliacaoModel avModel = new AvaliacaoModel();
                 avaliacao a = avModel.Obter(id) as avaliacao;
                 if (a != null)
@@ -194,46 +202,51 @@ namespace FrontEnd
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            // salva o tratamento com status 1 (em orçamento)
-            TratamentoModel tratModel = new TratamentoModel();
-            tratamento trat = new tratamento();
             Dictionary<int, v_itensTratamento> aval =
-                        Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
-            itemTratamento item = new itemTratamento();
-
-            trat.avaliacao_id = Int32.Parse(txtNumeroAvaliacao.Value);            
-            trat.status = 1;
-            trat.total = Decimal.Parse(txtTotal.Text);
-
-            // verifica se o tratamento já está salvo no banco para poder comparar seus itens.
-            bool bNovo = false;
-            bNovo = (tratModel.Obter(trat.avaliacao_id) == null);            
-
-            if (tratModel.InserirAtualizar(trat))
+                            Session["avaliacao"] as Dictionary<int, v_itensTratamento>;
+            // somente salva o tratamento se pelo menos 1 procedimento estiver sido atribuido na avaliação
+            if ( aval != null)
             {
-                // se não for registro novo deve buscar os itens que já estão no tratamento e validar
-                if (!bNovo)
-                {
-                    // se não for registro novo, limpa os itens do banco para inserir novamente
-                    tratModel.RemoverTodosItens(trat.avaliacao_id);
-                }
+            // salva o tratamento com status 1 (em orçamento)
+                TratamentoModel tratModel = new TratamentoModel();
+                tratamento trat = new tratamento();
+                
+                itemTratamento item = new itemTratamento();
 
-                foreach (v_itensTratamento v_item in aval.Values)
+                trat.avaliacao_id = Int32.Parse(txtNumeroAvaliacao.Value);            
+                trat.status = 1;
+                trat.total = Decimal.Parse(txtTotal.Text);
+
+                // verifica se o tratamento já está salvo no banco para poder comparar seus itens.
+                bool bNovo = false;
+                bNovo = (tratModel.Obter(trat.avaliacao_id) == null);            
+
+                if (tratModel.InserirAtualizar(trat))
                 {
-                    // preenche os dados do item
-                    item.procedimento_id = v_item.Código_Procedimento;
-                    item.tratamento_id = trat.avaliacao_id;
-                    item.qtd = v_item.Quantidade;
-                    item.status = 1;
-                    item.valor = v_item.Valor;
-                    // insere o item do tratamento
-                    tratModel.InserirItem(item);
+                    // se não for registro novo deve buscar os itens que já estão no tratamento e validar
+                    if (!bNovo)
+                    {
+                        // se não for registro novo, limpa os itens do banco para inserir novamente
+                        tratModel.RemoverTodosItens(trat.avaliacao_id);
+                    }
+
+                    foreach (v_itensTratamento v_item in aval.Values)
+                    {
+                        // preenche os dados do item
+                        item.procedimento_id = v_item.Código_Procedimento;
+                        item.tratamento_id = trat.avaliacao_id;
+                        item.qtd = v_item.Quantidade;
+                        item.status = 1;
+                        item.valor = v_item.Valor;
+                        // insere o item do tratamento
+                        tratModel.InserirItem(item);
+                    }
+                    pnlIniciar.Visible = true;
                 }
-                pnlIniciar.Visible = true;
-            }
-            else
-            {
-                pnlIniciar.Visible = false;
+                else
+                {
+                    pnlIniciar.Visible = false;
+                }
             }
         }
 
@@ -274,6 +287,7 @@ namespace FrontEnd
                 // limpa os campos
                 AtualizaGrid();               
             }
+            pnlIniciar.Visible = true;
         }
 
         protected void btnIniciarTratamento_Click(object sender, EventArgs e)

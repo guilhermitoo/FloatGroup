@@ -32,14 +32,17 @@ namespace FrontEnd
             string parameter = Request["__EVENTARGUMENT"];
             if (parameter == "anterior")
             {
-                txtData.Value = DateTime.Parse(txtData.Value).AddDays(-1).ToShortDateString();
+                if (txtData.Value != "")
+                    txtData.Value = DateTime.Parse(txtData.Value).AddDays(-1).ToShortDateString();
             }
             else if (parameter == "posterior")
             {
-                txtData.Value = DateTime.Parse(txtData.Value).AddDays(1).ToShortDateString();
+                if (txtData.Value != "")
+                    txtData.Value = DateTime.Parse(txtData.Value).AddDays(1).ToShortDateString();
             }
             // exibe a data em formato longo, ou seja, por escrito
-            txtTexto.Text = DateTime.Parse(txtData.Value).ToLongDateString();
+            if (txtTexto.Text != "")
+                txtTexto.Text = DateTime.Parse(txtData.Value).ToLongDateString();
             DentistaModel dModel = new DentistaModel();
             // carrega a agenda do dentista na data selecionada
             gvAgenda.DataSource = dModel.Agenda(Int32.Parse(ddDentistas.SelectedValue), DateTime.Parse(txtData.Value));

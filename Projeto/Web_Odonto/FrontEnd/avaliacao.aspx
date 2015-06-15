@@ -26,7 +26,7 @@
                         <input id="txtNumeroAvaliacao" readonly="true" class="form-control" runat="server"/>                                    
                     </div>   
                     <div class="col-md-3">
-                        <asp:Label id="Label2" Text="Data da Avaliação" runat="server" meta:resourcekey="lblNumeroAvalResource1" />
+                        <asp:Label id="Label2" Text="Data da Avaliação" runat="server" meta:resourcekey="txtDataAvalResource1" />
                         <input id="txtDataAval" readonly="true" class="form-control" runat="server"/>                                    
                     </div>                             
                 </div>

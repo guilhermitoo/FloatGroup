@@ -33,7 +33,7 @@ meta:resourcekey="PageResource1" %>
                         <div class="input-group">                                            
                             <div runat="server" class="input-group-addon btn" id="btnAnterior" onclick="DiaAnterior()"><i class="fa fa-chevron-left"></i></div>
                             <input runat="server" id="txtData" onkeyup="formataData(this,event);"  onblur="Post()"
-                                    maxlength="10" class="dt form-control" type="text" />
+                                    maxlength="10" class="dt form-control" type="text" onkeypress="desabilitaPostDoEnter(event);" />
                             <div runat="server" class="input-group-addon btn" id="btnPosterior" onclick="DiaPosterior()"><i class="fa fa-chevron-right"></i></div>      
 
                                       

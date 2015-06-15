@@ -193,10 +193,20 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select I.* " +
-                              " from v_itensTratamento I " +
-                              " where I.[Código Tratamento] = " + idTratamento.ToString() +
-                              " and I.Status = 1 ";
+                String sSql =
+                            " select IT.[Código Tratamento],it.[Código Procedimento],IT.Descrição,IT.Quantidade - ( " +
+                                " select coalesce(sum(I.qtd),0) " +
+                                " from itensAtendimento I " +
+                                " join atendimentos A on (a.id = i.atendimento_id ) " +
+                                " where a.tratamento_id = " + idTratamento.ToString() +
+                                " and a.status = 2 " +
+                                " and i.procedimento_id = IT.[Código Procedimento] " +
+                            ") Quantidade " +
+                            " , IT.Status ,IT.Valor "+ 
+                            " from v_itensTratamento IT "+
+                            " join tratamentos T on ( T.avaliacao_id = IT.[Código Tratamento] ) "+
+                            " where T.avaliacao_id = " + idTratamento.ToString() +
+                            " and IT.Status = 1 ";
                 var query = db.ExecuteQuery<v_itensTratamento>(sSql);
                 return query.ToList();
             }
@@ -206,10 +216,13 @@ namespace BackEnd.Model
         {
             using (WebOdontoClassesDataContext db = new WebOdontoClassesDataContext())
             {
-                String sSql = "select I.* " +
-                              " from v_itensTratamento I " +
-                              " where I.[Código Tratamento] = " + idTratamento.ToString() +
-                              " and I.Status = 2 ";
+                String sSql = " select IT.[Código Procedimento],IT.[Descrição Procedimento] Descrição, SUM(IT.qtd) Quantidade " +
+                                " from v_itensAtendimento IT " +
+                                " join atendimentos A on (IT.[Código Atendimento] = A.id) " +
+                                " where A.status = 2 " +
+                                " and A.tratamento_id = " + idTratamento.ToString() +
+                                " group by IT.[Código Procedimento],IT.[Descrição Procedimento], IT.qtd ";
+                    
                 var query = db.ExecuteQuery<v_itensTratamento>(sSql);
                 return query.ToList();
             }
@@ -262,9 +275,10 @@ namespace BackEnd.Model
             {
                 Table<itemTratamento> tbItemTrat = db.GetTable<itemTratamento>();
                 String sSql = " select coalesce((( " +
-                " select SUM(I.qtd) from itensTratamento I" +
-                " where I.status = 2" +
-                " and I.tratamento_id = " + idTrat.ToString() +
+                " select SUM(I.qtd) from itensAtendimento I " +
+                " join atendimentos A on ( A.id = I.atendimento_id ) " +                                        
+                " where A.status = 2" +
+                " and A.tratamento_id = " + idTrat.ToString() +
                 " ) * 100) / ("+
                 " select SUM(I.qtd) from itensTratamento I"+
                 " where I.tratamento_id = " + idTrat.ToString() +

@@ -193,7 +193,7 @@
     <value />
   </data>
   <data name="lblNumeroAvalResource1.Text" xml:space="preserve">
-    <value>Data da Avaliação</value>
+    <value>Número da Avaliação</value>
   </data>
   <data name="lblNumeroAvalResource1.ToolTip" xml:space="preserve">
     <value />
@@ -296,5 +296,8 @@
   </data>
   <data name="titulo" xml:space="preserve">
     <value>Página de Avaliação</value>
+  </data>
+  <data name="txtDataAvalResource1.Text" xml:space="preserve">
+    <value>Data da Avaliação</value>
   </data>
 </root>

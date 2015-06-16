@@ -115,22 +115,22 @@ meta:resourcekey="PageResource1" %>
 	.qbran { 
 	width: 15px; 
 	height: 15px;  
-	background: #eee; 
+	background: #F5F5F5; 
 	}
 	.qverm { 
 	width: 15px; 
 	height: 15px;  
-	background: #f00; 
+	background: #FFB6C1; 
 	}
 	.qama { 
 	width: 15px; 
 	height: 15px;  
-	background: #DAD018; 
+	background: #FFFFE0; 
 	}
 	.qverd { 
 	width: 15px; 
 	height: 15px;  
-	background: #9BCD9B; 
+	background: #90EE90; 
 	}
 	</style>
 

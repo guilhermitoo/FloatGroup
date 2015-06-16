@@ -39,14 +39,15 @@
             <%                    
             if (Session["pessoa"] != null)
             {
-            %>                                              
+            %>  
+                                                    
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
-                    <ul class="nav" id="main-menu">
-                        &nbsp;                                                
-                        <li>
+                    <ul class="nav" id="main-menu">                                                                 
+                        <li></li>
+                        <%--<li>
                             <a class="active-menu" href="index.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/inicio_1.png" /></i> <asp:Literal ID="lt00" Text="<%$ resources: inicio %>" runat="server"/> </a>
-                        </li>
+                        </li>--%>                        
                         <li>
                             <a href="agenda.aspx"><i class="fa fa-3x"><img src="assets/img/icones_png/icones_1/agenda_1.png" /></i> <asp:Literal ID="lt07" Text="<%$ resources: agenda %>" runat="server"/></a>
                         </li>

@@ -82,7 +82,7 @@ namespace FrontEnd
                 }                
                 else
                 {
-                    e.Row.BackColor = System.Drawing.Color.White;
+                    e.Row.BackColor = System.Drawing.Color.WhiteSmoke;
                     // verifica se está atrasado
                     if (v.data < DateTime.Now)
                         e.Row.BackColor = System.Drawing.Color.LightYellow;                    

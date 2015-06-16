@@ -49,15 +49,6 @@ namespace FrontEnd {
         protected global::FrontEnd.LoginControl LoginControl1;
         
         /// <summary>
-        /// lt00 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lt00;
-        
-        /// <summary>
         /// lt07 control.
         /// </summary>
         /// <remarks>

@@ -26,14 +26,17 @@
                         <span class="icon-bar">
                         </span>
                     </button>
-                    <a class="img-responsive">
-                        <img src="assets/img/logo.png" /></a>
+                                        
+                    <a class="img-responsive" href="index.aspx">
+                        <img src="assets/img/logo.png" />                        
+                    </a>
+                    
                 </div>
                 <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">                    
                     <asp:Label id="lblNomeUsuario" runat="server" meta:resourcekey="lblNomeUsuarioResource1" />&nbsp;
                     <asp:Button id="btnSairLogado" runat="server" CssClass="btn btn-danger sair" onclick="btnSairLogado_Click" meta:resourcekey="btnSairLogadoResource1" OnKeyPress="desabilitaPostDoEnter(event);"/>                  
-                </div>
-            </nav>
+                </div>                
+            </nav>            
         </asp:Panel>
 			<asp:Panel id="pnlNaoLogado" runat="server" meta:resourcekey="pnlNaoLogadoResource1">                                    
 			        <div class="fundoLogin" style="color: white">                        

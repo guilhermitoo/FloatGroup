@@ -93,7 +93,7 @@
     
         <asp:Panel class="form-group" ID="pnlBotoes" runat="server" Visible="False" meta:resourcekey="pnlBotoesResource1">
             <asp:Button id="btnSalvar" CssClass="btn btn-info" Text="Salvar" runat="server" OnClick="btnSalvar_Click" meta:resourcekey="btnSalvarResource1"/>
-            <asp:Button id="btnLimpar" runat="server" CssClass="btn btn-success" Text="Limpar" OnClick="btnLimpar_Click" meta:resourcekey="btnLimparResource1"/>
+            <asp:Button id="btnLimpar" runat="server" CssClass="btn btn-danger" Text="Cancelar" OnClick="btnLimpar_Click" meta:resourcekey="btnLimparResource1"/>
             <asp:Button id="btnSair" runat="server" CssClass="btn btn-warning" Text="Sair" OnClick="btnSair_Click" meta:resourcekey="btnSairResource1"/>            
         </asp:Panel>    
     </div>

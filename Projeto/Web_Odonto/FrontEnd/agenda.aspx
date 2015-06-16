@@ -4,28 +4,58 @@ meta:resourcekey="PageResource1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">    
     
-    <h2><asp:Literal ID="lt01" Text="<%$ resources: titulo %>" runat="server"/></h2>
-    <h5>
-        <asp:Literal ID="Literal1" Text="<%$ resources: subtitulo %>" runat="server"/>
-    </h5>
-    <!-- ESCOLHA DE DENTISTA-->
-    <div class="col-md-5">
-        <asp:Label ID="lblDentistas" Text="Dentistas" runat="server" meta:resourcekey="lblDentistasResource1"/>
-        <asp:DropDownList ID="ddDentistas" runat="server" CssClass="form-control dropdown-toggle" meta:resourcekey="ddDentistasResource1">
-        </asp:DropDownList>
-    </div>
-    <!-- BOTÃO AGENDAR -->
-    <div class="col-md-4"> 
-        <br />        
-        <asp:Button CssClass="btn btn-success" id="btnCarregaAgenda" Text="Carregar Agenda" 
-                    runat="server" ToolTip="Carrega a agenda do dentista selecionado" OnClick="btnCarregaAgenda_Click" meta:resourcekey="btnCarregaAgendaResource1"/>
-         
-        <asp:Button CssClass="btn btn-primary" id="btnAgendar" Text="Agendar" runat="server" 
-            ToolTip="Abre a tela de agendamento, para agendar um atendimento ou avaliação" OnClick="btnAgendar_Click" meta:resourcekey="btnAgendarResource1" />        
-    </div>
-    <br />
-    <div class="col-md-12">
-        <br /><br />
+    <div class="col-lg-12">
+        <!-- ESCOLHA DE DENTISTA-->
+        <div class="col-md-8">
+            <h2><asp:Literal ID="lt01" Text="<%$ resources: titulo %>" runat="server"/></h2>
+            <h5>
+                <asp:Literal ID="Literal1" Text="<%$ resources: subtitulo %>" runat="server"/>
+            </h5>
+            <br />
+            <asp:Label ID="lblDentistas" Text="Dentistas" runat="server" meta:resourcekey="lblDentistasResource1"/>
+            <asp:DropDownList ID="ddDentistas" runat="server" CssClass="form-control dropdown-toggle" meta:resourcekey="ddDentistasResource1">
+            </asp:DropDownList>
+            <br />
+            <asp:Button CssClass="btn btn-success" id="btnCarregaAgenda" Text="Carregar Agenda" 
+                        runat="server" ToolTip="Carrega a agenda do dentista selecionado" OnClick="btnCarregaAgenda_Click" meta:resourcekey="btnCarregaAgendaResource1"/>            
+            <asp:Button CssClass="btn btn-primary" id="btnAgendar" Text="Agendar" runat="server" 
+                ToolTip="Abre a tela de agendamento, para agendar um atendimento ou avaliação" OnClick="btnAgendar_Click" meta:resourcekey="btnAgendarResource1" />        
+        </div>
+        <!-- BOTÃO AGENDAR -->
+        <div class="col-md-3 pull-right">
+            <div class="panel panel-default">
+	            <div class="panel-heading"><asp:Literal ID="Literal7" Text="<%$ resources: legenda %>" runat="server"/></div>
+	                <div class="panel-body">
+	                    <div class="table-responsive">
+		                    <table class="table table-condensed">								
+		                    <tbody>
+			                    <tr>
+				                    <th class="qverd"> </th>
+				                    <td><asp:Literal ID="Literal3" Text="<%$ resources: concluido %>" runat="server"/></td>
+			                    </tr>
+									  
+			                    <tr>
+				                    <th class="qverm"> </th>
+				                    <td><asp:Literal ID="Literal4" Text="<%$ resources: cancelado %>" runat="server"/></td>
+			                    </tr>
+									  
+			                    <tr>
+				                    <th class="qama"> </th>
+				                    <td><asp:Literal ID="Literal5" Text="<%$ resources: atrasado %>" runat="server"/></td>
+			                    </tr>
+									  
+			                    <tr>
+				                    <th class="qbran"> </th>
+				                    <td><asp:Literal ID="Literal6" Text="<%$ resources: pendente %>" runat="server"/></td>	
+			                    </tr>
+		                    </tbody>
+		                </table>
+	                </div>
+	            </div>
+            </div>    
+        </div>
+    </div>    
+    <div class="col-md-12">        
         <div class="panel panel-default">             
             <div class="panel-heading clearfix">
                 <div class="form-group">
@@ -33,14 +63,12 @@ meta:resourcekey="PageResource1" %>
                         <div class="input-group">                                            
                             <div runat="server" class="input-group-addon btn" id="btnAnterior" onclick="DiaAnterior()"><i class="fa fa-chevron-left"></i></div>
                             <input runat="server" id="txtData" onkeyup="formataData(this,event);"  onblur="Post()"
-                                    maxlength="10" class="dt form-control" type="text" onkeypress="desabilitaPostDoEnter(event);" />
-                            <div runat="server" class="input-group-addon btn" id="btnPosterior" onclick="DiaPosterior()"><i class="fa fa-chevron-right"></i></div>      
-
-                                      
+                                    maxlength="10" class="dt form-control" type="text" />
+                            <div runat="server" class="input-group-addon btn" id="btnPosterior" onclick="DiaPosterior()"><i class="fa fa-chevron-right"></i></div>                                            
                         </div>
                     </div>                                
                     <div class="col-sm-6 text-center">
-                        <h5><asp:Label ID="txtTexto" runat="server" class="text-center" meta:resourcekey="txtTextoResource1"/></h5>
+                        <h5><asp:Label ID="txtTexto" runat="server" class="text-center"/></h5>
                     </div>
                 </div>
             </div>
@@ -81,38 +109,7 @@ meta:resourcekey="PageResource1" %>
         </div>
     </div>  
        
-    <div class="col-md-3">
-        <div class="panel panel-default">
-	        <div class="panel-heading"><asp:Literal ID="Literal7" Text="<%$ resources: legenda %>" runat="server"/></div>
-	            <div class="panel-body">
-	                <div class="table-responsive">
-		                <table class="table table-condensed">								
-		                <tbody>
-			                <tr>
-				                <th class="qverd"> </th>
-				                <td><asp:Literal ID="Literal3" Text="<%$ resources: concluido %>" runat="server"/></td>
-			                </tr>
-									  
-			                <tr>
-				                <th class="qverm"> </th>
-				                <td><asp:Literal ID="Literal4" Text="<%$ resources: cancelado %>" runat="server"/></td>
-			                </tr>
-									  
-			                <tr>
-				                <th class="qama"> </th>
-				                <td><asp:Literal ID="Literal5" Text="<%$ resources: atrasado %>" runat="server"/></td>
-			                </tr>
-									  
-			                <tr>
-				                <th class="qbran"> </th>
-				                <td><asp:Literal ID="Literal6" Text="<%$ resources: pendente %>" runat="server"/></td>	
-			                </tr>
-		                </tbody>
-		            </table>
-	            </div>
-	        </div>
-        </div>    
-    </div>
+    
 
     	<style>
 	.qbran { 

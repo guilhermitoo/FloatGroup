@@ -136,7 +136,7 @@
     <value />
   </data>
   <data name="btnLimparResource1.Text" xml:space="preserve">
-    <value>Clean</value>
+    <value>Cancel</value>
   </data>
   <data name="btnLimparResource1.ToolTip" xml:space="preserve">
     <value />

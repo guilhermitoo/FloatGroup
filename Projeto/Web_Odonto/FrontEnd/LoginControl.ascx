@@ -26,7 +26,8 @@
                         <span class="icon-bar">
                         </span>
                     </button>
-                    <a class="navbar-brand">WebOdonto</a>
+                    <a class="img-responsive">
+                        <img src="assets/img/logo.png" /></a>
                 </div>
                 <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;">                    
                     <asp:Label id="lblNomeUsuario" runat="server" meta:resourcekey="lblNomeUsuarioResource1" />&nbsp;

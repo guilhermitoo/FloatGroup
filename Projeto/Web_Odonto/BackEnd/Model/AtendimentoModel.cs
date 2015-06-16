@@ -92,10 +92,6 @@ namespace BackEnd.Model
                                 " where id = " + id.ToString();
                 var query = db.ExecuteCommand(sSql);
                 
-                if (status == 2)
-                { // se o status foi modificado para 2, modifica o status dos itens que foram realizados                    
-                    
-                }
                 return true;
             }
             catch

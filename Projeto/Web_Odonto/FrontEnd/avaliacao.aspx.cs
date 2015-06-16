@@ -316,7 +316,22 @@ namespace FrontEnd
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("avaliacao.aspx");
+            TratamentoModel tModel = new TratamentoModel();
+            AvaliacaoModel avModel = new AvaliacaoModel();            
+            tratamento t = new tratamento();
+
+            int idAval;
+                        
+            if (txtNumeroAvaliacao.Value != "")
+            {// se houver avaliação carregada, verifica se ela gerou um tratamento
+                idAval = Int32.Parse(txtNumeroAvaliacao.Value);
+                t = tModel.Obter(idAval);
+                if (t == null)
+                {// se a aval~iação não gerou um tratamento, permite o cancelamento
+                    if (avModel.MudarStatus(idAval, 3))
+                        Response.Redirect("agenda.aspx");
+                }
+            }
         }
     }
 }

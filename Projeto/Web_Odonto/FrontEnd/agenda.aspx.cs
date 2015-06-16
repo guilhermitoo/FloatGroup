@@ -26,7 +26,7 @@ namespace FrontEnd
                 ddDentistas.DataBind();
                 ddDentistas.SelectedIndex = 0;
                 // pega a data de hoje
-                txtData.Value = DateTime.Now.ToShortDateString();                
+                txtData.Value = DateTime.Now.ToShortDateString();               
             }
             // verifica qual foi o botão que fez o PostBack e realiza as alterações
             string parameter = Request["__EVENTARGUMENT"];
@@ -41,7 +41,7 @@ namespace FrontEnd
                     txtData.Value = DateTime.Parse(txtData.Value).AddDays(1).ToShortDateString();
             }
             // exibe a data em formato longo, ou seja, por escrito
-            if (txtTexto.Text != "")
+            if (txtData.Value != "")
                 txtTexto.Text = DateTime.Parse(txtData.Value).ToLongDateString();
             DentistaModel dModel = new DentistaModel();
             // carrega a agenda do dentista na data selecionada

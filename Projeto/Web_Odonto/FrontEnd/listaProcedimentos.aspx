@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
-    <h1><asp:Literal ID="lt01" Text="<%$ resources: titulo %>" runat="server"/></h1>
+    <h2><asp:Literal ID="lt01" Text="<%$ resources: titulo %>" runat="server"/></h2>
     <br />  
     <br />        
     <div class="col-md-5">

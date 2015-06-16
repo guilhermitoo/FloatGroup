@@ -41,8 +41,13 @@
 			<asp:Panel id="pnlNaoLogado" runat="server" meta:resourcekey="pnlNaoLogadoResource1">                                    
 			        <div class="fundoLogin" style="color: white">                        
                         <!--<img src="assets/img/float.png" />-->
-                        <asp:Label runat="server" CssClass="col-md-12 textoTitulo" Text="Web Odonto" meta:resourcekey="LabelResource1"/>
+                        <%--<asp:Label runat="server" CssClass="col-md-12 textoTitulo" Text="Web Odonto" meta:resourcekey="LabelResource1"/>--%>
                         <div>
+                            <div class="col-md-12">
+                                <br /><br />                        
+                                <img src="assets/img/logo.png" />
+                                <br /><br />
+                            </div>
 				            <div class="col-sm-8">													
 					            <div class="col-md-4" >
                                     <asp:Label ID="lblUsuario" runat="server" Text="Usuário" meta:resourcekey="lblUsuarioResource1"></asp:Label>

@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
     
-    <h1><asp:Label ID="lbTitulo" runat="server" Text="Lista de Pessoas"/></h1>
+    <h2><asp:Label ID="lbTitulo" runat="server" Text="Lista de Pessoas"/></h2>
     <br />  
     <br />        
     <div class="col-md-5">

@@ -17,7 +17,7 @@
                     </div>                                        
                 </div>
                 <div class="panel-body">
-                    
+                    <br />
                     <h2><label id="lbTitulo"></label></h2>
                     <hr />
                     <div class="col-md-4">

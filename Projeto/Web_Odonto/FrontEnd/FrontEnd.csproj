@@ -475,6 +475,24 @@
     <Content Include="App_LocalResources\avaliacao.aspx.en-US.resx" />
     <Content Include="App_LocalResources\avaliacao.aspx.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\procedimentosPeriodo.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\procedimentosPeriodo.aspx.en-US.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\tratamentosPeriodo.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\tratamentosPeriodo.aspx.en-US.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\avaliacoesPeriodo.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\avaliacoesPeriodo.aspx.en-US.resx" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

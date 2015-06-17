@@ -285,4 +285,13 @@
   <data name="tratamentonaoencontrado" xml:space="preserve">
     <value>Treatment not found.</value>
   </data>
+  <data name="abrir" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="codtrat" xml:space="preserve">
+    <value>Treatment ID</value>
+  </data>
+  <data name="nomepac" xml:space="preserve">
+    <value>Patient Name</value>
+  </data>
 </root>

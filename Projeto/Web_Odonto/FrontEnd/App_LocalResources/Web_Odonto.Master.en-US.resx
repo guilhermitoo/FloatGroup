@@ -153,11 +153,11 @@
   <data name="relatorio2" xml:space="preserve">
     <value>Procedure Report</value>
   </data>
+  <data name="relatorio3" xml:space="preserve">
+    <value>Evaluation Report</value>
+  </data>
   <data name="relatorio4" xml:space="preserve">
     <value>Treatment Report</value>
-  </data>
-  <data name="relatório 3" xml:space="preserve">
-    <value>Evaluation Report</value>
   </data>
   <data name="statusTratamento" xml:space="preserve">
     <value>Treatment Status</value>

@@ -117,88 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnBuscaTratamentoResource1.Text" xml:space="preserve">
-    <value>Buscar Tratamentos</value>
+  <data name="btnGerarResource1.Text" xml:space="preserve">
+    <value>Generate Report</value>
   </data>
-  <data name="btnBuscaTratamentoResource1.ToolTip" xml:space="preserve">
+  <data name="btnGerarResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="ddPacienteResource1.ToolTip" xml:space="preserve">
+  <data name="btnPrintResource1.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="btnPrintResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gvProcConcluidosResource1.Caption" xml:space="preserve">
+  <data name="gvRelatorioResource1.Caption" xml:space="preserve">
     <value />
   </data>
-  <data name="gvProcConcluidosResource1.EmptyDataText" xml:space="preserve">
+  <data name="gvRelatorioResource1.EmptyDataText" xml:space="preserve">
     <value />
   </data>
-  <data name="gvProcConcluidosResource1.ToolTip" xml:space="preserve">
+  <data name="gvRelatorioResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gvProcPendentesResource1.Caption" xml:space="preserve">
+  <data name="Label1Resource1.Text" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="Label1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gvProcPendentesResource1.EmptyDataText" xml:space="preserve">
+  <data name="Label2Resource1.Text" xml:space="preserve">
+    <value>Number of Records</value>
+  </data>
+  <data name="Label2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="gvProcPendentesResource1.ToolTip" xml:space="preserve">
+  <data name="lbIniResource1.Text" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="lbIniResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="LabelResource1.Text" xml:space="preserve">
-    <value>Progresso do Tratamento: </value>
-  </data>
-  <data name="LabelResource1.ToolTip" xml:space="preserve">
+  <data name="lbQtdRegResource1.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="LabelResource2.Text" xml:space="preserve">
-    <value>Procedimentos Pendentes</value>
-  </data>
-  <data name="LabelResource2.ToolTip" xml:space="preserve">
+  <data name="lbQtdRegResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="LabelResource3.Text" xml:space="preserve">
-    <value>Procedimentos Concluidos</value>
-  </data>
-  <data name="LabelResource3.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lbDataFinResource1.Text" xml:space="preserve">
-    <value>Data Final</value>
-  </data>
-  <data name="lbDataFinResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lbDataIniResource1.Text" xml:space="preserve">
-    <value>Data Início</value>
-  </data>
-  <data name="lbDataIniResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lbNumTratResource1.Text" xml:space="preserve">
-    <value>Número do Tratamento</value>
-  </data>
-  <data name="lbNumTratResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lbPacienteResource1.Text" xml:space="preserve">
-    <value>Paciente</value>
-  </data>
-  <data name="lbPacienteResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lbStatusResource1.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="lbStatusResource1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="lt00Resource1.Text" xml:space="preserve">
+    <value>Treatment Report Done for a Period</value>
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value>WebOdonto</value>
   </data>
-  <data name="pnlTratamentoResource1.GroupingText" xml:space="preserve">
+  <data name="pnlQtdResource1.GroupingText" xml:space="preserve">
     <value />
   </data>
-  <data name="pnlTratamentoResource1.ToolTip" xml:space="preserve">
+  <data name="pnlQtdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlRelatorioResource1.GroupingText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pnlRelatorioResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
@@ -208,7 +187,7 @@
     <value />
   </data>
   <data name="TemplateFieldResource1.HeaderText" xml:space="preserve">
-    <value>ID</value>
+    <value>Treatment ID</value>
   </data>
   <data name="TemplateFieldResource2.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -217,7 +196,7 @@
     <value />
   </data>
   <data name="TemplateFieldResource2.HeaderText" xml:space="preserve">
-    <value>Descrição Procedimento</value>
+    <value>Patient</value>
   </data>
   <data name="TemplateFieldResource3.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -226,7 +205,7 @@
     <value />
   </data>
   <data name="TemplateFieldResource3.HeaderText" xml:space="preserve">
-    <value>Qtd</value>
+    <value>Initial Date</value>
   </data>
   <data name="TemplateFieldResource4.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -235,63 +214,6 @@
     <value />
   </data>
   <data name="TemplateFieldResource4.HeaderText" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="TemplateFieldResource5.AccessibleHeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TemplateFieldResource5.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TemplateFieldResource5.HeaderText" xml:space="preserve">
-    <value>Descrição Procedimento</value>
-  </data>
-  <data name="TemplateFieldResource6.AccessibleHeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TemplateFieldResource6.FooterText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TemplateFieldResource6.HeaderText" xml:space="preserve">
-    <value>Qtd</value>
-  </data>
-  <data name="txtDataFinResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtDataFinResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtDataIniResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtDataIniResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtNumTratResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtNumTratResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtStatusResource1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtStatusResource1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="titulo" xml:space="preserve">
-    <value>Buscar Tratamento</value>
-  </data>
-  <data name="tratamentonaoencontrado" xml:space="preserve">
-    <value>Tratamento não encontrado.</value>
-  </data>
-  <data name="abrir" xml:space="preserve">
-    <value>Abrir</value>
-  </data>
-  <data name="codtrat" xml:space="preserve">
-    <value>Código Tratamento</value>
-  </data>
-  <data name="nomepac" xml:space="preserve">
-    <value>Nome do Paciente</value>
+    <value>Final Date</value>
   </data>
 </root>

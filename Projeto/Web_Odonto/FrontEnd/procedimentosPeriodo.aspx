@@ -1,55 +1,58 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="procedimentosPeriodo.aspx.cs" Inherits="FrontEnd.procedimentosDentistaPeriodo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web_Odonto.Master" AutoEventWireup="true" CodeBehind="procedimentosPeriodo.aspx.cs" Inherits="FrontEnd.procedimentosDentistaPeriodo" meta:resourcekey="PageResource1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="p" runat="server">
-    <asp:Panel runat="server" ID="pnlRelatorio">
+    <asp:Panel runat="server" ID="pnlRelatorio" meta:resourcekey="pnlRelatorioResource1">
         <div class="panel-heading">
-            <h2><label id="lbTitulo"><asp:Literal ID="lt00" Text="Relatório de Procedimentos Realizados por Período" runat="server"/></label></h2>                  
+            <h2><label id="lbTitulo"><asp:Literal ID="lt00" Text="Relatório de Procedimentos Realizados por Período" runat="server" meta:resourcekey="lt00Resource1"/></label></h2>                  
             <input type="hidden" class="prog" runat="server" id="bd" value="0"/>                                                                                                                        
+            </input>
         </div>        
                 
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">                                                                                   
                     <div class="col-md-2">
-                        <asp:Label id="lbIni" runat="server" Text="Período de"/>
+                        <asp:Label id="lbIni" runat="server" Text="Período de" meta:resourcekey="lbIniResource1"/>
                         <input type="text" runat="server" id="txtDatIni" class="form-control" onkeyup="formataData(this,event);" maxlength="10"/>                        
-                    </div>                
+                    &nbsp;</div>                
                     <div class="col-md-2">
-                        <asp:Label id="Label1" runat="server" Text="até"/>
+                        <asp:Label id="Label1" runat="server" Text="até" meta:resourcekey="Label1Resource1"/>
                         <input type="text" runat="server" id="txtDatFin" class="form-control" onkeyup="formataData(this,event);" maxlength="10"/>                        
-                    </div>
+                    &nbsp;</div>
                     <div class="col-md-2">    
                         <br />                          
-                        <asp:Button ID="btnGerar" runat="server" Text="Gerar Relatório" CssClass="btn btn-primary" OnClick="btnGerar_Click" />                                    
+                        <asp:Button ID="btnGerar" runat="server" Text="Gerar Relatório" CssClass="btn btn-primary" OnClick="btnGerar_Click" meta:resourcekey="btnGerarResource1" />                                    
                     </div>        
                 </div>
             </div>
 
-            <asp:GridView ID="gvRelatorio" runat="server" AllowPaging="true" CssClass="table table-bordered table-striped" 
-                    DataKeyNames="ID" AutoGenerateColumns="false">            
+            <asp:GridView ID="gvRelatorio" runat="server" AllowPaging="True" CssClass="table table-bordered table-striped" 
+                    DataKeyNames="ID" AutoGenerateColumns="False" meta:resourcekey="gvRelatorioResource1">            
                 <Columns>                    
-                    <asp:TemplateField HeaderText="Código"  HeaderStyle-Width="20">                    
+                    <asp:TemplateField HeaderText="Código" meta:resourcekey="TemplateFieldResource1">                    
                         <ItemTemplate>
                             <%#Eval("ID") %>
                         </ItemTemplate>                    
+                        <HeaderStyle Width="20px" />
                     </asp:TemplateField>   
-                    <asp:TemplateField HeaderText="Descrição do Procedimento">                    
+                    <asp:TemplateField HeaderText="Descrição do Procedimento" meta:resourcekey="TemplateFieldResource2">                    
                         <ItemTemplate>
                             <%#Eval("Descrição_do_Procedimento") %>
                         </ItemTemplate>                    
                     </asp:TemplateField>   
-                    <asp:TemplateField HeaderText="Qtd Realizada" HeaderStyle-Width="120">                    
+                    <asp:TemplateField HeaderText="Qtd Realizada" meta:resourcekey="TemplateFieldResource3">                    
                         <ItemTemplate>
                             <%#Eval("qtd") %>
                         </ItemTemplate>                    
+                        <HeaderStyle Width="120px" />
                     </asp:TemplateField>   
                 </Columns>
             </asp:GridView>
-            <asp:Button id="btnPrint" runat="server" CssClass="btn btn-info" Text="Imprimir" Visible="false" OnClick="btnPrint_Click"/>            
-            <asp:Panel CssClass="pull-right" runat="server" ID="pnlQtd">
-                <asp:Label runat="server" Text="Quantidade de Registros: " />
-                <asp:Label ID="lbQtdReg" runat="server"/>
+            <asp:Button id="btnPrint" runat="server" CssClass="btn btn-info" Text="Imprimir" Visible="False" OnClick="btnPrint_Click" meta:resourcekey="btnPrintResource1"/>            
+            <asp:Panel CssClass="pull-right" runat="server" ID="pnlQtd" meta:resourcekey="pnlQtdResource1">
+                <asp:Label runat="server" Text="Quantidade de Registros: " meta:resourcekey="LabelResource1" />
+                <asp:Label ID="lbQtdReg" runat="server" meta:resourcekey="lbQtdRegResource1"/>
             </asp:Panel>
         </div>      
     </asp:Panel>

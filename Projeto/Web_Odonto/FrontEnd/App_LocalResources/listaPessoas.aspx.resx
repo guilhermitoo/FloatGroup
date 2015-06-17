@@ -171,4 +171,7 @@
   <data name="tituloPaciente" xml:space="preserve">
     <value>Lista de Pacientes</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Digite o nome do convênio que deseja buscar</value>
+  </data>
 </root>

@@ -175,10 +175,10 @@
     <value />
   </data>
   <data name="cnpj" xml:space="preserve">
-    <value>NRLP National Registration for legal person</value>
+    <value>National Registration for legal person</value>
   </data>
   <data name="ie" xml:space="preserve">
-    <value>SR (State Registration)</value>
+    <value>State Registration</value>
   </data>
   <data name="nomefantasia" xml:space="preserve">
     <value>Fantasy Name</value>
@@ -193,7 +193,7 @@
     <value>AGREEMENT REGISTRATION</value>
   </data>
   <data name="cnpjnaocadastrado" xml:space="preserve">
-    <value>Not registered NRLP</value>
+    <value>Not registered National Registration for legal person</value>
   </data>
   <data name="detalhes" xml:space="preserve">
     <value>* The marked fields are mandatory</value>

@@ -156,4 +156,7 @@
   <data name="uf" xml:space="preserve">
     <value>State</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Enter the covenant name you want to search</value>
+  </data>
 </root>

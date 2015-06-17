@@ -171,4 +171,7 @@
   <data name="tituloPaciente" xml:space="preserve">
     <value>Patient List</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Enter the covenant name you want to search</value>
+  </data>
 </root>

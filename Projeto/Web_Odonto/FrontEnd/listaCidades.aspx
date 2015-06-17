@@ -7,9 +7,9 @@
     <br />  
     <br />        
     <div class="col-md-5">
-        <asp:TextBox ID="txtNomeCidade" runat="server" CssClass="form-control" placeholder="Digite o nome da cidade que deseja buscar" ToolTip="Nome da Cidade" meta:resourcekey="txtNomeCidadeResource1" ></asp:TextBox>    
+        <asp:TextBox ID="txtNomeCidade" runat="server" CssClass="form-control" placeholder="<%$ resources: praceholder %>" ToolTip="Nome da Cidade" meta:resourcekey="txtNomeCidadeResource1" ></asp:TextBox>    
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
         <asp:Button ID="btnBuscarCidade" runat="server" CssClass="btn btn-primary" Text="Buscar" OnClick="btnBuscarCidade_Click" meta:resourcekey="btnBuscarCidadeResource1"/>
         <asp:Button ID="btnVoltar" runat="server" CssClass="btn btn-warning" Text="Voltar" OnClick="btnVoltar_Click" meta:resourcekey="btnVoltarResource1" />
     </div>

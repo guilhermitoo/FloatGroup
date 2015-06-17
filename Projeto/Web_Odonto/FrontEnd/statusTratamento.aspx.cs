@@ -100,7 +100,8 @@ namespace FrontEnd
                 // atribui os valores da barra de progresso
                 //pbProgresso.Style.Value = "width: "+tModel.PorcentagemConcluida(idTrat).ToString()+"%";
                 bd.Value = tModel.PorcentagemConcluida(idTrat).ToString();
-                pbProgresso.InnerText = tModel.PorcentagemConcluida(idTrat).ToString() + "% Concluído";
+                string txt = (string)GetLocalResourceObject("concluido");
+                pbProgresso.InnerText = tModel.PorcentagemConcluida(idTrat).ToString() + txt;
                 // lista os procedimentos do tratamento no GridView
                 gvProcPendentes.DataSource = tModel.ListarItensPendentes(idTrat);
                 gvProcPendentes.DataBind();

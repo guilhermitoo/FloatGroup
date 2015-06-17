@@ -215,12 +215,9 @@
     <Content Include="cidades.aspx" />
     <Content Include="convenios.aspx" />
     <Content Include="Imprimir.aspx" />
-    <Content Include="listaDentistas.aspx" />
-    <Content Include="listaFuncionarios.aspx" />
     <Content Include="index.aspx" />
     <Content Include="listaCidades.aspx" />
     <Content Include="listaConvenios.aspx" />
-    <Content Include="listaPacientes.aspx" />
     <Content Include="listaPessoas.aspx" />
     <Content Include="listaProcedimentos.aspx" />
     <Content Include="LoginControl.ascx" />
@@ -290,20 +287,6 @@
     <Compile Include="Imprimir.aspx.designer.cs">
       <DependentUpon>Imprimir.aspx</DependentUpon>
     </Compile>
-    <Compile Include="listaDentistas.aspx.cs">
-      <DependentUpon>listaDentistas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="listaDentistas.aspx.designer.cs">
-      <DependentUpon>listaDentistas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="listaFuncionarios.aspx.cs">
-      <DependentUpon>listaFuncionarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="listaFuncionarios.aspx.designer.cs">
-      <DependentUpon>listaFuncionarios.aspx</DependentUpon>
-    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,13 +307,6 @@
     </Compile>
     <Compile Include="listaConvenios.aspx.designer.cs">
       <DependentUpon>listaConvenios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="listaPacientes.aspx.cs">
-      <DependentUpon>listaPacientes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="listaPacientes.aspx.designer.cs">
-      <DependentUpon>listaPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="listaPessoas.aspx.cs">
       <DependentUpon>listaPessoas.aspx</DependentUpon>

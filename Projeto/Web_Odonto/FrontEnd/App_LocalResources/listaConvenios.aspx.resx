@@ -162,4 +162,7 @@
   <data name="id" xml:space="preserve">
     <value>ID</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Digite o nome do convênio que deseja buscar</value>
+  </data>
 </root>

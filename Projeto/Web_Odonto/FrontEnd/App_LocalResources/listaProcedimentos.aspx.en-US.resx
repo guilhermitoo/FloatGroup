@@ -153,4 +153,7 @@
   <data name="titulo" xml:space="preserve">
     <value>Procedure list</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Enter the covenant name you want to search</value>
+  </data>
 </root>

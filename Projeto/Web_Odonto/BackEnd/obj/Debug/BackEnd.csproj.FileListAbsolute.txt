@@ -14,3 +14,8 @@ C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\bin\Debu
 C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
 C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb
 C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+C:\Users\Gui\Desktop\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll.config
+C:\Users\Gui\Desktop\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll
+C:\Users\Gui\Desktop\Web_Odonto\BackEnd\bin\Debug\BackEnd.pdb
+C:\Users\Gui\Desktop\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
+C:\Users\Gui\Desktop\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb

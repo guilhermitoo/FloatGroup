@@ -184,6 +184,6 @@
     <value />
   </data>
   <data name="acessonegado" xml:space="preserve">
-    <value>Invalid user or password!</value>
+    <value>Invalid user or password</value>
   </data>
 </root>

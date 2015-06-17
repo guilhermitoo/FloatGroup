@@ -85,11 +85,11 @@ meta:resourcekey="PageResource1" %>
                     </ItemTemplate>
                     <HeaderStyle Width="20px"></HeaderStyle>
                 </asp:TemplateField>                                    
-                <asp:TemplateField HeaderText="Horário" HeaderStyle-Width="20" meta:resourcekey="TemplateFieldResource2">
+                <asp:TemplateField HeaderText="Horário" HeaderStyle-Width="100" meta:resourcekey="TemplateFieldResource2">
                     <ItemTemplate>
                         <%# DateTime.Parse(Eval("data").ToString()).ToShortTimeString() %>
                     </ItemTemplate>
-                    <HeaderStyle Width="20px"></HeaderStyle>
+                    <HeaderStyle Width="100px"></HeaderStyle>
                 </asp:TemplateField>                                
                     <asp:TemplateField HeaderText="Nome do Paciente" meta:resourcekey="TemplateFieldResource3" >
                     <ItemTemplate>

@@ -18,9 +18,9 @@
                 <div class="row">
                     <!--Lado Esquerdo do Formulário -->
                     <div class="col-md-12">                                                
-                        <asp:Label runat="server">
+                        <label>
                             <asp:Literal ID="lt02" Text="<%$ resources: descricao %>" runat="server"/>
-                        </asp:Label>
+                        </label>
                         <asp:TextBox id="txtDescricao" runat="server" CssClass="form-control" meta:resourcekey="txtDescricaoResource1" />
                         <br /> 
                         </div>                                        

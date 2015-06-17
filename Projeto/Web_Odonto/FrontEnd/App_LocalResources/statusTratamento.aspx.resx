@@ -294,4 +294,7 @@
   <data name="nomepac" xml:space="preserve">
     <value>Nome do Paciente</value>
   </data>
+  <data name="concluido" xml:space="preserve">
+    <value>% Concluído</value>
+  </data>
 </root>

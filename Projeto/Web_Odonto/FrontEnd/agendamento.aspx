@@ -151,8 +151,15 @@
             $('#pnlAtendimento').fadeOut(300);
             $('#pnlAvaliacao').delay(300).fadeIn(300);
             $('input[js="btaten"]').hide();
-            $('input[js="btaval"]').show();
-            $('#lbTitulo').text('AGENDAR AVALIAÇÃO');
+            $('input[js="btaval"]').show();            
+
+            var lang = navigator.language;
+            if (lang == 'en-US') {
+                $('#lbTitulo').text('EVALUATION SCHEDULE');
+            }
+            else {
+                $('#lbTitulo').text('AGENDAR AVALIAÇÃO');
+            }
         }
 
         function ExibeAtend() {
@@ -160,7 +167,15 @@
             $('#pnlAtendimento').delay(300).fadeIn(300);
             $('input[js="btaval"]').hide();
             $('input[js="btaten"]').show();
-            $('#lbTitulo').text('AGENDAR ATENDIMENTO');
+            
+            var lang = navigator.language;
+            if (lang == 'en-US') {
+                $('#lbTitulo').text('SERVICE SCHEDULE');
+            }
+            else {
+                $('#lbTitulo').text('AGENDAR ATENDIMENTO');
+            }
+
         }
 
     </script>

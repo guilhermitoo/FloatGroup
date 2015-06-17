@@ -316,7 +316,7 @@
     <value>Password</value>
   </data>
   <data name="sexo" xml:space="preserve">
-    <value>Sex:</value>
+    <value>Sex</value>
   </data>
   <data name="status" xml:space="preserve">
     <value>Status</value>

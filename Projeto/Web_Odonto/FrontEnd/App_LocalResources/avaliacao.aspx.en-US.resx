@@ -300,4 +300,7 @@
   <data name="txtDataAvalResource1.Text" xml:space="preserve">
     <value>Evaluation Date</value>
   </data>
+  <data name="nenhum" xml:space="preserve">
+    <value>None</value>
+  </data>
 </root>

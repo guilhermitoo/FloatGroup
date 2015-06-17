@@ -156,4 +156,7 @@
   <data name="uf" xml:space="preserve">
     <value>UF</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Digite o nome do convênio que deseja buscar</value>
+  </data>
 </root>

@@ -78,9 +78,10 @@ namespace FrontEnd
         }
 
         private void BuscaAvaliacao(int id)
-        { 
+        {
+            
             try
-            {
+            {                
                 // antes de buscar a avaliação, limpa a sessão                
                 pnlIniciar.Visible = false;
                 LimpaGrid();
@@ -101,8 +102,8 @@ namespace FrontEnd
                     }
                 }
                 else
-                {
-                    txtNumeroAvaliacao.Value = "Nenhum";
+                {                    
+                    txtNumeroAvaliacao.Value = "";
                     txtDataAval.Value = "";
                     pnlProc.Visible = false;
                     pnlBotoes.Visible = false;
@@ -111,7 +112,7 @@ namespace FrontEnd
             }
             catch
             {
-                txtNumeroAvaliacao.Value = "Nenhum";
+                txtNumeroAvaliacao.Value = "";
                 txtDataAval.Value = "";
                 pnlProc.Visible = false;
                 pnlBotoes.Visible = false;

@@ -153,4 +153,7 @@
   <data name="titulo" xml:space="preserve">
     <value>Lista de Procedimentos</value>
   </data>
+  <data name="praceholder" xml:space="preserve">
+    <value>Digite o nome do convênio que deseja buscar</value>
+  </data>
 </root>

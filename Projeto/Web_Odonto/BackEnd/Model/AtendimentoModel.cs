@@ -16,7 +16,7 @@ namespace BackEnd.Model
         public AtendimentoModel() { }
 
         public bool Inserir(atendimento a)
-        {
+        {           
             WebOdontoClassesDataContext db = new WebOdontoClassesDataContext();
 
             try
@@ -147,6 +147,7 @@ namespace BackEnd.Model
             {
                 case 1:
                     sStatus = "Pendente";
+                    //System.Threading.Thread.CurrentThread.CurrentCulture   
                     break;
                 case 2:
                     sStatus = "Concluído";

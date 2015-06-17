@@ -121,46 +121,46 @@
     <value>Treatment Session</value>
   </data>
   <data name="atendimentoagendadocomsucesso" xml:space="preserve">
-    <value>Successfully scheduled service.</value>
+    <value>Successfully scheduled service</value>
   </data>
   <data name="avaliacao" xml:space="preserve">
     <value>Evaluation</value>
   </data>
   <data name="avaliacaoagendadacomsucesso" xml:space="preserve">
-    <value>Successfully scheduled evaluation.</value>
+    <value>Successfully scheduled evaluation</value>
   </data>
   <data name="btnBuscaTratamentoResource1.Text" xml:space="preserve">
-    <value>Search Treatment.</value>
+    <value>Search Treatment</value>
   </data>
   <data name="btnBuscaTratamentoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnBuscaTratamentoResource2.Text" xml:space="preserve">
-    <value>Search Treatment.</value>
+    <value>Search Treatment</value>
   </data>
   <data name="btnBuscaTratamentoResource2.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnFinalizaAgendamento2Resource1.Text" xml:space="preserve">
-    <value>Evaluation Schedule.</value>
+    <value>Evaluation Schedule</value>
   </data>
   <data name="btnFinalizaAgendamento2Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnFinalizaAgendamento2Resource2.Text" xml:space="preserve">
-    <value>Evaluation Schedule.</value>
+    <value>Evaluation Schedule</value>
   </data>
   <data name="btnFinalizaAgendamento2Resource2.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnFinalizaAtendimentoResource1.Text" xml:space="preserve">
-    <value>Service Schedule.</value>
+    <value>Service Schedule</value>
   </data>
   <data name="btnFinalizaAtendimentoResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="btnFinalizaAtendimentoResource2.Text" xml:space="preserve">
-    <value>Service Schedule.</value>
+    <value>Service Schedule</value>
   </data>
   <data name="btnFinalizaAtendimentoResource2.ToolTip" xml:space="preserve">
     <value />
@@ -208,16 +208,16 @@
     <value />
   </data>
   <data name="dentistanaodisponivel" xml:space="preserve">
-    <value>The selected dentist is not available at this time.</value>
+    <value>The selected dentist is not available at this time</value>
   </data>
   <data name="dtconsulta" xml:space="preserve">
-    <value>Date Query.</value>
+    <value>Date Query</value>
   </data>
   <data name="erroaoagendaraavaliacao" xml:space="preserve">
-    <value>Error Schedule the evaluation.</value>
+    <value>Error Schedule the evaluation</value>
   </data>
   <data name="erroaoagendaroatendimento" xml:space="preserve">
-    <value>Error schedule the service.</value>
+    <value>Error schedule the service</value>
   </data>
   <data name="gvItensAtendimentoResource1.Caption" xml:space="preserve">
     <value />
@@ -250,13 +250,13 @@
     <value />
   </data>
   <data name="lblNumeroTratResource1.Text" xml:space="preserve">
-    <value>Number of treatment.</value>
+    <value>Number of treatment</value>
   </data>
   <data name="lblNumeroTratResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="lblNumeroTratResource2.Text" xml:space="preserve">
-    <value>Number of treatment.</value>
+    <value>Number of treatment</value>
   </data>
   <data name="lblNumeroTratResource2.ToolTip" xml:space="preserve">
     <value />
@@ -289,13 +289,13 @@
     <value>The patient already has a scheduled evaluation, in date:</value>
   </data>
   <data name="opacientejatemumtratamento" xml:space="preserve">
-    <value>The patient already has a treatment in progress.</value>
+    <value>The patient already has a treatment in progress</value>
   </data>
   <data name="paciente" xml:space="preserve">
     <value>Patient</value>
   </data>
   <data name="pacientebusquetratamento" xml:space="preserve">
-    <value>Select the patient and seek treatment.</value>
+    <value>Select the patient and seek treatment</value>
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value>WebOdonto</value>
@@ -304,7 +304,7 @@
     <value>WebOdonto</value>
   </data>
   <data name="selecioneadata" xml:space="preserve">
-    <value>Select date.</value>
+    <value>Select date</value>
   </data>
   <data name="TemplateFieldResource1.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -358,7 +358,7 @@
     <value />
   </data>
   <data name="TemplateFieldResource3.HeaderText" xml:space="preserve">
-    <value>Procedure Description.</value>
+    <value>Procedure Description</value>
   </data>
   <data name="TemplateFieldResource4.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -412,10 +412,10 @@
     <value />
   </data>
   <data name="TemplateFieldResource9.HeaderText" xml:space="preserve">
-    <value>Procedure Description.</value>
+    <value>Procedure Description</value>
   </data>
   <data name="tratamentonaoencontrado" xml:space="preserve">
-    <value>Treatment not found.</value>
+    <value>Treatment not found</value>
   </data>
   <data name="txtNumeroTratamentoResource1.Text" xml:space="preserve">
     <value />

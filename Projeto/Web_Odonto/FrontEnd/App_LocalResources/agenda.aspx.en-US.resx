@@ -121,13 +121,13 @@
     <value>Schedule</value>
   </data>
   <data name="btnAgendarResource1.ToolTip" xml:space="preserve">
-    <value>Schedule open, for schedule servisse or review.</value>
+    <value>Schedule open, for schedule servisse or review</value>
   </data>
   <data name="btnCarregaAgendaResource1.Text" xml:space="preserve">
     <value>Load Schedule</value>
   </data>
   <data name="btnCarregaAgendaResource1.ToolTip" xml:space="preserve">
-    <value>Load schedule dentist select.</value>
+    <value>Load schedule dentist select</value>
   </data>
   <data name="ButtonFieldResource1.AccessibleHeaderText" xml:space="preserve">
     <value />
@@ -202,9 +202,21 @@
     <value>SCHEDULE</value>
   </data>
   <data name="nada" xml:space="preserve">
-    <value>Nothing today.</value>
+    <value>Nothing today</value>
   </data>
   <data name="legenda" xml:space="preserve">
     <value>Colors Description</value>
+  </data>
+  <data name="atrasado" xml:space="preserve">
+    <value>Late</value>
+  </data>
+  <data name="cancelado" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="concluido" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="pendente" xml:space="preserve">
+    <value>Pending</value>
   </data>
 </root>

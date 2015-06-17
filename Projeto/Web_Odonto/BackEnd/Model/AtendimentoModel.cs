@@ -141,22 +141,36 @@ namespace BackEnd.Model
 
         public String GetStatus(int iStatus)
         {
-            String sStatus;
+            String sStatus, pendente,concluido,cancelado,nenhum;
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.IetfLanguageTag.ToString() == "en-US")
+            {
+                pendente = "Pending";
+                concluido = "Completed";
+                cancelado = "Canceled";
+                nenhum = "None";
+            }
+            else
+            {
+                pendente = "Pendente";
+                concluido = "Concluído";
+                cancelado = "Cancelado";
+                nenhum = "Nenhum";
+            }
+
             // 1 = Em Orçameto, 2 = Em Andamento, 3 = Concluído
             switch (iStatus)
             {
-                case 1:
-                    sStatus = "Pendente";
-                    //System.Threading.Thread.CurrentThread.CurrentCulture   
+                case 1:                
+                    sStatus = pendente;                    
                     break;
                 case 2:
-                    sStatus = "Concluído";
+                    sStatus = concluido;
                     break;
                 case 3:
-                    sStatus = "Cancelado";
+                    sStatus = cancelado;
                     break;
                 default:
-                    sStatus = "Nenhum";
+                    sStatus = nenhum;
                     break;
             }
             return sStatus;

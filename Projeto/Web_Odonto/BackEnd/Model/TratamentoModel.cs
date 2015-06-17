@@ -98,21 +98,35 @@ namespace BackEnd.Model
 
         public String GetStatus(int iStatus)
         {
-            String sStatus;
+            String sStatus,s1,s2,s3,sd;
             // 1 = Em Orçameto, 2 = Em Andamento, 3 = Concluído
+            if (System.Threading.Thread.CurrentThread.CurrentCulture.IetfLanguageTag.ToString() == "en-US")
+            {
+                s1 = "In Budget";
+                s2 = "In Progress";
+                s3 = "Completed";
+                sd = "None";
+            }
+            else
+            {
+                s1 = "Em Orçamento";
+                s2 = "Em Andamento";
+                s3 = "Concluído";
+                sd = "Nenhum";
+            }
             switch (iStatus)
             {
                 case 1:
-                    sStatus = "Em Orçamento";
+                    sStatus = s1;
                     break;
                 case 2:
-                    sStatus = "Em Andamento";
+                    sStatus = s2;
                     break;
                 case 3:
-                    sStatus = "Concluído";
+                    sStatus = s3;
                     break;
                 default:
-                    sStatus = "Nenhum";
+                    sStatus = sd;
                     break;
             }
             return sStatus;

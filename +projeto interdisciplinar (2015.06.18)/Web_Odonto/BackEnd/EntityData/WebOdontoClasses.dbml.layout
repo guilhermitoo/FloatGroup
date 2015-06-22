@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18, 19.75" name="WebOdontoClasses">
+  <DataContextMoniker Name="/WebOdontoClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="998b3eef-86d2-4f65-b835-e12db1664106" absoluteBounds="9, 5.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/atendimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15a523db-4ac4-4abb-910a-9c43731c9d2b" absoluteBounds="9.015, 6.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="113f1776-6968-42a9-b989-626da635d7a3" absoluteBounds="9, 2.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/avaliacao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8dd38ab-98d8-41bb-b059-89743bedc956" absoluteBounds="9.015, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b15e257-db85-4126-9d13-9797068d2fc8" absoluteBounds="0.75, 5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/cidade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91408560-3645-4a8f-8f7f-9f9cff24a13c" absoluteBounds="0.765, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="87fe169a-9a07-4b13-8418-0919b5bf3aee" absoluteBounds="3.5, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/convenio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed14cf2c-8e62-4798-94da-9b8a7f4b5d1f" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc152694-6453-40d1-9c1b-64d190f568ef" absoluteBounds="6.25, 5.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/dentista" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e444e4aa-0fad-4ee6-87d6-e3236ca36129" absoluteBounds="6.265, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e66c425-02b8-45ff-8c16-234eaae95d63" absoluteBounds="6.25, 8, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/funcionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16979738-9d04-4500-ad1e-a8c2af1ad4a2" absoluteBounds="6.265, 8.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08c8a76f-1946-482a-ad0b-dc2fe22c61d1" absoluteBounds="11.75, 5.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/itemAtendimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8da48446-5b4c-4ca7-864e-96597e98e285" absoluteBounds="11.765, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b440a3f9-c7b1-45f9-9ed7-661accd5de07" absoluteBounds="14.5, 2.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/itemTratamento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da7d046c-307c-47af-837d-81519635cde7" absoluteBounds="14.515, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4345ec03-8286-411b-867d-a5b68303ff9e" absoluteBounds="6.25, 3, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/paciente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="507fc168-4cac-4418-ac17-81787647c8bf" absoluteBounds="6.265, 3.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df7a0424-88b0-4bda-add1-7913c096b46a" absoluteBounds="3.5, 3.75, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/pessoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62ea4a61-2e47-4b21-b28e-9e55b8c73a97" absoluteBounds="3.515, 4.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7a33651-f832-42eb-b572-dc6008069396" absoluteBounds="11.75, 8.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/procedimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="188c260f-6068-4994-9950-73417cd0ff93" absoluteBounds="11.765, 8.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16057c62-de63-4878-b842-a319609b9887" absoluteBounds="11.75, 2.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/tratamento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="178162df-e849-42f3-b977-1e0004473fd6" absoluteBounds="11.765, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 6.56814697265625); (9 : 6.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/dentista/dentista_atendimento" />
+      <nodes>
+        <classShapeMoniker Id="fc152694-6453-40d1-9c1b-64d190f568ef" />
+        <classShapeMoniker Id="998b3eef-86d2-4f65-b835-e12db1664106" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.63544840494792); (7.25 : 1.63544840494792); (7.25 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/convenio/convenio_paciente" />
+      <nodes>
+        <classShapeMoniker Id="87fe169a-9a07-4b13-8418-0919b5bf3aee" />
+        <classShapeMoniker Id="4345ec03-8286-411b-867d-a5b68303ff9e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.56814697265625); (6.25 : 6.56814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/pessoa/pessoa_dentista" />
+      <nodes>
+        <classShapeMoniker Id="df7a0424-88b0-4bda-add1-7913c096b46a" />
+        <classShapeMoniker Id="fc152694-6453-40d1-9c1b-64d190f568ef" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 7.4439111328125); (4.5 : 8.69314697265625); (6.25 : 8.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/pessoa/pessoa_funcionario" />
+      <nodes>
+        <classShapeMoniker Id="df7a0424-88b0-4bda-add1-7913c096b46a" />
+        <classShapeMoniker Id="0e66c425-02b8-45ff-8c16-234eaae95d63" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.97199625651042); (6.25 : 3.97199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/pessoa/pessoa_paciente" />
+      <nodes>
+        <classShapeMoniker Id="df7a0424-88b0-4bda-add1-7913c096b46a" />
+        <classShapeMoniker Id="4345ec03-8286-411b-867d-a5b68303ff9e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.69314697265625); (3.5 : 5.69314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/cidade/cidade_pessoa" />
+      <nodes>
+        <classShapeMoniker Id="8b15e257-db85-4126-9d13-9797068d2fc8" />
+        <classShapeMoniker Id="df7a0424-88b0-4bda-add1-7913c096b46a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.75 : 4.02089680989583); (11.375 : 4.39589680989583); (11.375 : 6.06532148632813); (11 : 6.06532148632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/tratamento/tratamento_atendimento" />
+      <nodes>
+        <classShapeMoniker Id="16057c62-de63-4878-b842-a319609b9887" />
+        <classShapeMoniker Id="998b3eef-86d2-4f65-b835-e12db1664106" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.875); (8.625 : 5.5); (8.625 : 3.13544840494792); (9 : 3.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/dentista/dentista_avaliacao" />
+      <nodes>
+        <classShapeMoniker Id="fc152694-6453-40d1-9c1b-64d190f568ef" />
+        <classShapeMoniker Id="113f1776-6968-42a9-b989-626da635d7a3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 3.64067260742187); (8.54166666666667 : 3.64067260742187 : JumpStart); (8.70833333333333 : 3.64067260742187 : JumpEnd); (9 : 3.64067260742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/paciente/paciente_avaliacao" />
+      <nodes>
+        <classShapeMoniker Id="4345ec03-8286-411b-867d-a5b68303ff9e" />
+        <classShapeMoniker Id="113f1776-6968-42a9-b989-626da635d7a3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 6.72580771582031); (11.75 : 6.72580771582031)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/atendimento/atendimento_itemAtendimento" />
+      <nodes>
+        <classShapeMoniker Id="998b3eef-86d2-4f65-b835-e12db1664106" />
+        <classShapeMoniker Id="08c8a76f-1946-482a-ad0b-dc2fe22c61d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.75 : 8.5); (12.75 : 7.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/procedimento/procedimento_itemAtendimento" />
+      <nodes>
+        <classShapeMoniker Id="e7a33651-f832-42eb-b572-dc6008069396" />
+        <classShapeMoniker Id="08c8a76f-1946-482a-ad0b-dc2fe22c61d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 8.5); (14.125 : 8.125); (14.125 : 3.13544840494792); (14.5 : 3.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/procedimento/procedimento_itemTratamento" />
+      <nodes>
+        <classShapeMoniker Id="e7a33651-f832-42eb-b572-dc6008069396" />
+        <classShapeMoniker Id="b440a3f9-c7b1-45f9-9ed7-661accd5de07" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 2.63022420247396); (14.5 : 2.63022420247396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/tratamento/tratamento_itemTratamento" />
+      <nodes>
+        <classShapeMoniker Id="16057c62-de63-4878-b842-a319609b9887" />
+        <classShapeMoniker Id="b440a3f9-c7b1-45f9-9ed7-661accd5de07" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 3.10419590494792); (11.75 : 3.10419590494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/WebOdontoClassesDataContext/avaliacao/avaliacao_tratamento" />
+      <nodes>
+        <classShapeMoniker Id="113f1776-6968-42a9-b989-626da635d7a3" />
+        <classShapeMoniker Id="16057c62-de63-4878-b842-a319609b9887" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="035a5cdb-90de-484f-b688-b5b620ed1378" absoluteBounds="14.75, 5.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_funcionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="102904b3-113b-49f0-89d0-cdebed8dde83" absoluteBounds="14.765, 6.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3dd37781-4b88-48a2-b55a-703c5f39fd18" absoluteBounds="0.75, 8.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_tratamento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a5f82be-729f-4345-a077-9afd6d1a62b5" absoluteBounds="0.765, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34284301-595b-4ab0-81b9-c53462977759" absoluteBounds="3.75, 10.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_procedimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="523f46d8-ca86-443a-859c-77ce887bd8ca" absoluteBounds="3.765, 11.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d57da104-49d0-4015-9b52-ceb53c30bc5c" absoluteBounds="6.75, 10.75, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_pessoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e57ea378-2237-4b41-b79f-e457a7eeec2e" absoluteBounds="6.765, 11.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca788206-f55a-4bca-ad1a-cd226b62932b" absoluteBounds="9.75, 10.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_paciente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07b33505-6d67-4470-b5a2-2f90d8de74a0" absoluteBounds="9.765, 11.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72da37b4-aeef-4c7b-99a5-e5130c518969" absoluteBounds="0.75, 12.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_itensTratamento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b7bc627-0cc4-4d0b-94f3-2ee3fc05c50c" absoluteBounds="0.765, 13.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc883443-e3c0-4847-b661-2826c553a13f" absoluteBounds="12.75, 10.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_itensAtendimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45ae722e-6448-4412-b0de-39ae3818d222" absoluteBounds="12.765, 11.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec996433-ac8f-4cfe-8fa4-298a13ac7943" absoluteBounds="12.75, 13.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_funcionario1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4939afc4-6319-41d5-a923-48fb6eb92cea" absoluteBounds="12.765, 14.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c156ecd-3987-4e0a-8820-93afa83ceab2" absoluteBounds="0.75, 15.75, 2, 3.6939111328125005">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_dentista" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58ed7baa-7e9e-4eb5-a319-e3bdad447009" absoluteBounds="0.765, 16.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ce526a6-93a2-44b7-9692-2276c7198eaa" absoluteBounds="3.75, 15.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_convenio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="026f236f-3109-4d06-ab97-34642a46b7ea" absoluteBounds="3.765, 16.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="970a5515-1810-4536-a03c-cfbeedf5ba4f" absoluteBounds="6.75, 15.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_cidade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5435a84b-3cd8-4f74-8718-d115b162ba89" absoluteBounds="6.765, 16.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c44e769f-9193-40db-98a7-9960edd33719" absoluteBounds="15.75, 10.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_avaliacoe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e2dabbe-72f6-461d-b91c-37e1088f4642" absoluteBounds="15.765, 11.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6404151-ac07-4f80-bda3-57a529de6655" absoluteBounds="15.75, 13.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_atendimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8bebd2c4-a2a8-4ba7-aab6-5f1a6e588f2a" absoluteBounds="15.765, 14.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43bf74ac-9c1b-4503-9c84-b796ec758b88" absoluteBounds="15.75, 16.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_agenda" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60faf714-5400-4a2b-ac6b-39f4c7a28719" absoluteBounds="15.765, 17.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="12db59f3-5753-48da-994e-93627c2b7e86" absoluteBounds="0.75, 2.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_detalhesTratamento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60e2bde4-6149-4e5c-bc62-284362e30f3b" absoluteBounds="0.765, 2.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="afca99c5-de31-4728-ba1d-f7842c46052f" absoluteBounds="0.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/WebOdontoClassesDataContext/v_detalheProcedimento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcb48b50-2668-4e24-9e1e-75f6e32ffcad" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

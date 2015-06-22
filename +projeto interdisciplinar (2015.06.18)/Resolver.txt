@@ -1,0 +1,32 @@
+excluir gerar receita, imagem, e medicamentos
+
+
+
+Fazer:
+- Casos de uso expandidos/diagramas de sequência
+- Comparar casos de uso com sistema (todas as telas estão descritas?)
+- Conferir métodos das classes no diagrama de classes
+- Inserir status no diagrama de máquina de estados
+- Teste de qualidade de software
+- Preencher documentação final
+
+
+Grupo:
+- Ao realizar um agendamento de atendimento na tela de seleção de tratamento já vem preenchida com algum paciente ou vem em branco pra ser pesquisado o paciente? (caso de uso 13)
+- Inserir "Gerar Receita" no caso de uso 13 e no diagrama de sequência. (vai para uma outra tela ou será somente um campo do atendimento? - verificar pois "gerar receita é um caso de uso!)
+- Início com a opção de busca e cadastro de usuário (tem que ter casos de uso para estes?).
+- Vai ter caso de uso Realizar Avaliação?
+
+Daniela:
+- Diagrama de sequência 13 - Vai usar as classes ItensTratamento e ItensAtendimento?
+- O paciente participa como ator no Diagrama de Sequência (caso de uso 13)?
+- Ver se o diagrama de sequência do caso de uso 12 está correto o acesso de paciente por pessoa.
+
+
+
+
+
+
+
+
+

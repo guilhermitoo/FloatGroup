@@ -1,0 +1,28 @@
+H:\Dados\Web_Odonto\FrontEnd\bin\FrontEnd.dll
+H:\Dados\Web_Odonto\FrontEnd\bin\FrontEnd.pdb
+H:\Dados\Web_Odonto\FrontEnd\bin\BackEnd.dll
+H:\Dados\Web_Odonto\FrontEnd\bin\BackEnd.pdb
+H:\Dados\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
+H:\Dados\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.dll
+H:\Dados\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\FrontEnd.dll
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\FrontEnd.pdb
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\BackEnd.dll
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\BackEnd.pdb
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.dll
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\FrontEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\FrontEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\BackEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\bin\BackEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.pdb
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\bin\FrontEnd.dll
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\bin\FrontEnd.pdb
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\bin\BackEnd.dll
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\bin\BackEnd.pdb
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.csprojResolveAssemblyReference.cache
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.dll
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\FrontEnd\obj\Debug\FrontEnd.pdb

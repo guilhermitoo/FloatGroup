@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46205761-94A7-4B4D-A872-4E14CE376A72}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrontEnd</RootNamespace>
+    <AssemblyName>FrontEnd</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="agenda.aspx" />
+    <Content Include="agendamento.aspx" />
+    <Content Include="assets\css\bootstrap-datetimepicker.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\fundo.css" />
+    <Content Include="assets\css\opensans.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\full_calendar\css\bootstrap-fullcalendar.css" />
+    <Content Include="assets\full_calendar\js\calendar-conf-events.js" />
+    <Content Include="assets\full_calendar\js\fullcalendar.min.js" />
+    <Content Include="assets\img\1.png" />
+    <Content Include="assets\img\2.png" />
+    <Content Include="assets\img\3.png" />
+    <Content Include="assets\img\4.png" />
+    <Content Include="assets\img\check.png" />
+    <Content Include="assets\img\find_user.png" />
+    <Content Include="assets\img\float.png" />
+    <Content Include="assets\img\lixo.png" />
+    <Content Include="assets\img\main-bg.png" />
+    <Content Include="assets\img\novo.png" />
+    <Content Include="assets\img\pendente.png" />
+    <Content Include="assets\img\pendente2.png" />
+    <Content Include="assets\img\webodontologo.png" />
+    <Content Include="assets\img\icones png\icones_1\agenda_1.png" />
+    <Content Include="assets\img\icones png\icones_1\atendimento_1.png" />
+    <Content Include="assets\img\icones png\icones_1\cadastro_1.png" />
+    <Content Include="assets\img\icones png\icones_1\inicio_1.png" />
+    <Content Include="assets\img\icones png\icones_1\relatorio_1.png" />
+    <Content Include="assets\img\icones png\ícones_2\agenda_2.png" />
+    <Content Include="assets\img\icones png\ícones_2\atendimento_2.png" />
+    <Content Include="assets\img\icones png\ícones_2\cadastro_2.png" />
+    <Content Include="assets\img\icones png\ícones_2\inicio_2.png" />
+    <Content Include="assets\img\icones png\ícones_2\relatorio_2.png" />
+    <Content Include="assets\img\icones png\ícones_3\agenda_3.png" />
+    <Content Include="assets\img\icones png\ícones_3\atendimento_3.png" />
+    <Content Include="assets\img\icones png\ícones_3\cadastro_3.png" />
+    <Content Include="assets\img\icones png\ícones_3\inicio_3.png" />
+    <Content Include="assets\img\icones png\ícones_3\relatorio_3.png" />
+    <Content Include="assets\js\bootstrap-datetimepicker.js" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="assets\js\datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="assets\js\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="assets\js\datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="assets\js\datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\js\jquery-1.10.2.js" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\external\jquery\jquery.js" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-icons_222222_256x240.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\index.html" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.css" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.js" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.min.css" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.structure.css" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.structure.min.css" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
+    <Content Include="assets\js\jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
+    <Content Include="assets\js\jquery.metisMenu.js" />
+    <Content Include="assets\js\mascara.js" />
+    <Content Include="assets\js\moment.js" />
+    <Content Include="assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="assets\js\morris\morris.js" />
+    <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="assets\js\pt-br.js" />
+    <Content Include="atendimento.aspx" />
+    <Content Include="avaliacao.aspx" />
+    <Content Include="cidades.aspx" />
+    <Content Include="convenios.aspx" />
+    <Content Include="Imprimir.aspx" />
+    <Content Include="listaDentistas.aspx" />
+    <Content Include="listaFuncionarios.aspx" />
+    <Content Include="index.aspx" />
+    <Content Include="listaCidades.aspx" />
+    <Content Include="listaConvenios.aspx" />
+    <Content Include="listaPacientes.aspx" />
+    <Content Include="listaPessoas.aspx" />
+    <Content Include="listaProcedimentos.aspx" />
+    <Content Include="LoginControl.ascx" />
+    <Content Include="procedimentos.aspx" />
+    <Content Include="procedimentosPeriodo.aspx" />
+    <Content Include="relatorios.aspx" />
+    <Content Include="statusTratamento.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="agenda.aspx.cs">
+      <DependentUpon>agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agenda.aspx.designer.cs">
+      <DependentUpon>agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agendamento.aspx.cs">
+      <DependentUpon>agendamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agendamento.aspx.designer.cs">
+      <DependentUpon>agendamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="atendimento.aspx.cs">
+      <DependentUpon>atendimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="atendimento.aspx.designer.cs">
+      <DependentUpon>atendimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="avaliacao.aspx.cs">
+      <DependentUpon>avaliacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="avaliacao.aspx.designer.cs">
+      <DependentUpon>avaliacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cidades.aspx.cs">
+      <DependentUpon>cidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cidades.aspx.designer.cs">
+      <DependentUpon>cidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="convenios.aspx.cs">
+      <DependentUpon>convenios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="convenios.aspx.designer.cs">
+      <DependentUpon>convenios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Imprimir.aspx.cs">
+      <DependentUpon>Imprimir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Imprimir.aspx.designer.cs">
+      <DependentUpon>Imprimir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaDentistas.aspx.cs">
+      <DependentUpon>listaDentistas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaDentistas.aspx.designer.cs">
+      <DependentUpon>listaDentistas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaFuncionarios.aspx.cs">
+      <DependentUpon>listaFuncionarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaFuncionarios.aspx.designer.cs">
+      <DependentUpon>listaFuncionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaCidades.aspx.cs">
+      <DependentUpon>listaCidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaCidades.aspx.designer.cs">
+      <DependentUpon>listaCidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaConvenios.aspx.cs">
+      <DependentUpon>listaConvenios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaConvenios.aspx.designer.cs">
+      <DependentUpon>listaConvenios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaPacientes.aspx.cs">
+      <DependentUpon>listaPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaPacientes.aspx.designer.cs">
+      <DependentUpon>listaPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaPessoas.aspx.cs">
+      <DependentUpon>listaPessoas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaPessoas.aspx.designer.cs">
+      <DependentUpon>listaPessoas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listaProcedimentos.aspx.cs">
+      <DependentUpon>listaProcedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaProcedimentos.aspx.designer.cs">
+      <DependentUpon>listaProcedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginControl.ascx.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginControl.ascx.designer.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="procedimentos.aspx.cs">
+      <DependentUpon>procedimentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="procedimentos.aspx.designer.cs">
+      <DependentUpon>procedimentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="procedimentosPeriodo.aspx.cs">
+      <DependentUpon>procedimentosPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="procedimentosPeriodo.aspx.designer.cs">
+      <DependentUpon>procedimentosPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pessoas.aspx.cs">
+      <DependentUpon>pessoas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pessoas.aspx.designer.cs">
+      <DependentUpon>pessoas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="relatorios.aspx.cs">
+      <DependentUpon>relatorios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="relatorios.aspx.designer.cs">
+      <DependentUpon>relatorios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="statusTratamento.aspx.cs">
+      <DependentUpon>statusTratamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="statusTratamento.aspx.designer.cs">
+      <DependentUpon>statusTratamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="Web_Odonto.Master.cs">
+      <DependentUpon>Web_Odonto.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web_Odonto.Master.designer.cs">
+      <DependentUpon>Web_Odonto.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="pessoas.aspx" />
+    <Content Include="Web_Odonto.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackEnd\BackEnd.csproj">
+      <Project>{efda2804-7282-4106-870e-ca1a01053566}</Project>
+      <Name>BackEnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\cidades.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\cidades.aspx.resx" />
+    <Content Include="App_LocalResources\convenios.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\convenios.aspx.resx" />
+    <Content Include="App_LocalResources\index.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\index.aspx.resx" />
+    <Content Include="App_LocalResources\listaCidades.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaCidades.aspx.resx" />
+    <Content Include="App_LocalResources\listaConvenios.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaConvenios.aspx.resx" />
+    <Content Include="App_LocalResources\listaPessoas.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaPessoas.aspx.resx" />
+    <Content Include="App_LocalResources\listaProcedimentos.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\listaProcedimentos.aspx.resx" />
+    <Content Include="App_LocalResources\LoginControl.ascx.en-US.resx" />
+    <Content Include="App_LocalResources\LoginControl.ascx.resx" />
+    <Content Include="App_LocalResources\pessoas.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\pessoas.aspx.resx" />
+    <Content Include="App_LocalResources\procedimentos.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\procedimentos.aspx.resx" />
+    <Content Include="App_LocalResources\Web_Odonto.Master.en-US.resx" />
+    <Content Include="App_LocalResources\Web_Odonto.Master.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\agendamento.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\agendamento.aspx.resx" />
+    <Content Include="App_LocalResources\statusTratamento.aspx.en-US.resx" />
+    <Content Include="App_LocalResources\statusTratamento.aspx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3814/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

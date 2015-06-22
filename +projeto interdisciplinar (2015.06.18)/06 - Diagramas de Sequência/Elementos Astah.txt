@@ -1,0 +1,15 @@
+Actor0 - Administrador
+Actor1 - Dentista
+Actor3 - Funcionário
+
+Boundary0 - Efetuar Login
+Boundary1 - Cadastrar Pessoa
+Boundary2 - Cadastrar Convênio
+Boundary3 - Cadastrar Medicamento
+Boundary4 - Cadastrar Procedimento
+Boundary5 - Cadastrar Cidade
+Boundary6 - Agendar Avaliação
+Boundary7 - Agendar Atendimento
+Boundary8 - Avaliação
+Boundary9 - Efetuar Logoff
+Boundary10 - Atendimento

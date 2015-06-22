@@ -1,0 +1,22 @@
+H:\Dados\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll
+H:\Dados\Web_Odonto\BackEnd\bin\Debug\BackEnd.pdb
+H:\Dados\Web_Odonto\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+H:\Dados\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
+H:\Dados\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\bin\Debug\BackEnd.pdb
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
+C:\Users\JúniØ\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\bin\Debug\BackEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll.config
+C:\Users\Gui\Documents\FloatGroup\FloatGroup\Projeto\Web_Odonto\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll.config
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\BackEnd\bin\Debug\BackEnd.dll
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\BackEnd\bin\Debug\BackEnd.pdb
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\BackEnd\obj\Debug\BackEnd.dll
+D:\++projeto interdisciplinar (2015.06.09)\Web_Odonto\BackEnd\obj\Debug\BackEnd.pdb
